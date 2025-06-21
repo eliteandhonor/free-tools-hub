@@ -66,6 +66,11 @@ keyword density are likewise skipped if their elements are missing. These
 safeguards prevent console errors when the feature markup is omitted. The
 copy statistics button handler now checks for `.copy-stats-btn` before
 registering its event listener to avoid errors when the button is absent.
+
+## Testing
+
+Run `npm test` to execute the Mocha test suite. Install dependencies first with
+`npm install` if necessary. All tests must pass before committing changes.
 ## License
 
 This project is licensed under the [MIT License](LICENSE).

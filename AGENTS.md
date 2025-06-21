@@ -45,5 +45,6 @@ Deployment is a simple file upload to an HTTP server. For a full guide, see `DEP
 - Group related file updates in a single commit.
 - Do not commit changes to files under `vendor/` unless updating libraries per the checklist.
 - When committing future changes, summarize the modifications—e.g., “Add Node checks and enable globstar in doctor script.”
+- Always run `npm test` and ensure all tests pass before committing.
 
 This AGENTS file is the authoritative reference for future modifications to this repository.
