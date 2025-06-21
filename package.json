@@ -1,6 +1,11 @@
 {
   "name": "free-tools-hub",
   "private": true,
+  "scripts": {
+    "lint:html": "sh -c \"npx --no-install htmlhint $(find . -path './vendor' -prune -o -name '*.html' -print | tr '\n' ' ')\"",
+    "lint:css": "sh -c \"npx --no-install csslint $(find . -path './vendor' -prune -o -name '*.css' -print | tr '\n' ' ')\"",
+    "lint": "npm run lint:html && npm run lint:css"
+  },
   "devDependencies": {
     "csslint": "^1.0.5",
     "htmlhint": "^1.6.3"
