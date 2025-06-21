@@ -17,6 +17,7 @@ Python steps are skipped automatically if the repository contains no Python code
 ### Usage
 
 ```bash
+npm install
 chmod +x project-doctor.sh
 ./project-doctor.sh
 ```

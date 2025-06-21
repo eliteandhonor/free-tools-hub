@@ -1,0 +1,8 @@
+{
+  "name": "free-tools-hub",
+  "private": true,
+  "devDependencies": {
+    "csslint": "^1.0.5",
+    "htmlhint": "^1.6.3"
+  }
+}
