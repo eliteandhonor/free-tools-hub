@@ -24,6 +24,13 @@ check_python() {
     fi
 }
 
+check_node() {
+    if command -v node &> /dev/null || command -v npx &> /dev/null; then
+        return 0
+    fi
+    return 1
+}
+
 setup_env() {
     # Create/activate venv only if Python code exists
     if ! has_python_code; then
@@ -106,7 +113,11 @@ if has_python_code; then
     run_python_checks
 else
     echo -e "${YELLOW}No Python code detected. Skipping Python checks.${NC}"
-    run_web_checks
+    if check_node; then
+        run_web_checks
+    else
+        echo -e "${YELLOW}Node.js not found. Skipping web checks.${NC}"
+    fi
 fi
 
 echo -e "\n${GREEN}Checks completed. Review outputs for any warnings.${NC}"
