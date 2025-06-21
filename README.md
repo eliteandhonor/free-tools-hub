@@ -47,6 +47,15 @@ When editing pages under `tools/` that list multiple tools (such as `/tools/gene
 
 This ensures search engines get an accurate view of the available tools.
 
+## Tool JavaScript Integration
+
+Each tool's logic resides in a `script.js` file within its folder. Include this script before the closing </body> element:
+
+```html
+<script src="script.js"></script>
+```
+
+Avoid duplicating logic with inline JavaScript.
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
