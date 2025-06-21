@@ -316,47 +316,7 @@
         });
     </script>
 
-<!-- Floating Ball (MiniMax Agent) -->
-<div id="minimax-floating-ball">
-  <div class="minimax-ball-content" tabindex="0" aria-label="Created by MiniMax Agent" role="button">
-    <div class="minimax-logo-wave" aria-hidden="true"></div>
-    <span class="minimax-ball-text">Created by MiniMax Agent</span>
-  </div>
-  <div class="minimax-close-icon" tabindex="0" aria-label="Close floating ball" role="button">×</div>
-</div>
-<script>
-// Initialize floating ball functionality (now fully CSS-based for animation)
-function initFloatingBall() {
-  const ball = document.getElementById('minimax-floating-ball');
-  if (!ball) return;
-  // Animate in using CSS class
-  ball.classList.add('show');
-  // Handle logo click
-  const ballContent = ball.querySelector('.minimax-ball-content');
-  ballContent.addEventListener('click', function (e) {
-    e.stopPropagation();
-    window.open('https://agent.minimax.io/agent', '_blank', 'noopener');
-    ball.classList.add('active');
-    setTimeout(() => ball.classList.remove('active'), 150);
-  });
-  // Handle close button click and keyboard
-  const closeIcon = ball.querySelector('.minimax-close-icon');
-  function closeBall(e) {
-    e.stopPropagation();
-    ball.classList.remove('show');
-    setTimeout(() => { ball.style.display = 'none'; }, 300);
-  }
-  closeIcon.addEventListener('click', closeBall);
-  closeIcon.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') closeBall(e);
-  });
-  // Keyboard accessibility for floating ball
-  ball.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') ballContent.click();
-  });
-}
-document.addEventListener('DOMContentLoaded', initFloatingBall);
-</script>
+
 
 <script>
 // Common Tool Functionality

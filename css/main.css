@@ -2862,8 +2862,7 @@ a:hover {
 
 /* Chat Widget Fixes */
 .chat-widget,
-#chat-widget,
-#minimax-floating-ball {
+#chat-widget {
     position: fixed !important;
     bottom: 20px !important;
     right: 20px !important;
@@ -2875,8 +2874,7 @@ a:hover {
 /* Ensure chat widget doesn't overlap CTAs */
 @media (max-width: 768px) {
     .chat-widget,
-    #chat-widget,
-    #minimax-floating-ball {
+    #chat-widget {
         bottom: 80px !important; /* Move higher on mobile */
         right: 15px !important;
         z-index: 998 !important;
@@ -2893,8 +2891,7 @@ a:hover {
 /* High contrast mode support for chat widget */
 @media (prefers-contrast: high) {
     .chat-widget,
-    #chat-widget,
-    #minimax-floating-ball {
+    #chat-widget {
         border: 2px solid currentColor !important;
     }
 }
