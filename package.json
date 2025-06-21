@@ -2,12 +2,15 @@
   "name": "free-tools-hub",
   "private": true,
   "scripts": {
-    "lint:html": "sh -c \"npx --no-install htmlhint $(find . -path './vendor' -prune -o -name '*.html' -print | tr '\n' ' ')\"",
-    "lint:css": "sh -c \"npx --no-install csslint $(find . -path './vendor' -prune -o -name '*.css' -print | tr '\n' ' ')\"",
-    "lint": "npm run lint:html && npm run lint:css"
+    "lint:html": "sh -c \"npx --no-install htmlhint $(find . -path './vendor' -prune -o -name '*.html' -print | tr '\\n' ' ')\"",
+    "lint:css": "sh -c \"npx --no-install csslint $(find . -path './vendor' -prune -o -name '*.css' -print | tr '\\n' ' ')\"",
+    "lint": "npm run lint:html && npm run lint:css",
+    "test": "mocha tests"
   },
   "devDependencies": {
     "csslint": "^1.0.5",
-    "htmlhint": "^1.6.3"
+    "htmlhint": "^1.6.3",
+    "mocha": "^10.2.0",
+    "chai": "^4.3.10"
   }
 }

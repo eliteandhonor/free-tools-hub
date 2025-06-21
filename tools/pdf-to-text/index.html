@@ -27,52 +27,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" onerror="this.onerror=null;this.href='/vendor/bootstrap/css/bootstrap.min.css'">
     
     <!-- PDF.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js">
-        function validatePdfFile(file) {
-            // Check file extension
-            const validExtensions = ['.pdf'];
-            const fileName = file.name.toLowerCase();
-            const hasValidExtension = validExtensions.some(ext => fileName.endsWith(ext));
-            
-            // Check MIME type
-            const validMimeTypes = ['application/pdf'];
-            const hasValidMimeType = validMimeTypes.includes(file.type);
-            
-            if (!hasValidExtension && !hasValidMimeType) {
-                alert('Please select a valid PDF file. Only PDF files are supported.');
-                return false;
-            }
-            
-            // Check file size (limit to 10MB)
-            const maxSize = 10 * 1024 * 1024; // 10MB
-            if (file.size > maxSize) {
-                alert('File size too large. Please select a PDF file smaller than 10MB.');
-                return false;
-            }
-            
-            return true;
-        }
-        
-        // Update file input handler
-        document.getElementById('pdf-file').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file && !validatePdfFile(file)) {
-                this.value = ''; // Clear the input
-                return;
-            }
-            
-            if (file) {
-                document.getElementById('file-info').innerHTML = `
-                    <div class="file-info-item">
-                        <i class="fas fa-file-pdf"></i>
-                        <span><strong>${file.name}</strong> (${(file.size / 1024 / 1024).toFixed(2)} MB)</span>
-                    </div>
-                `;
-                document.getElementById('extract-btn').disabled = false;
-            }
-        });
-        
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     
     <!-- Custom CSS -->
     
@@ -202,6 +157,7 @@
             });
             </script>
             
+    <script src="script.js"></script>
 </body>
 </html>\",
     \"description\": \"Extract text from PDF files online. Free PDF to text converter that works entirely in your browser with no uploads required.\",
@@ -265,52 +221,7 @@
         
     </script>
     <!-- Vendor Library Loader with CDN Fallbacks -->
-    <script src="../../js/vendor-loader.js">
-        function validatePdfFile(file) {
-            // Check file extension
-            const validExtensions = ['.pdf'];
-            const fileName = file.name.toLowerCase();
-            const hasValidExtension = validExtensions.some(ext => fileName.endsWith(ext));
-            
-            // Check MIME type
-            const validMimeTypes = ['application/pdf'];
-            const hasValidMimeType = validMimeTypes.includes(file.type);
-            
-            if (!hasValidExtension && !hasValidMimeType) {
-                alert('Please select a valid PDF file. Only PDF files are supported.');
-                return false;
-            }
-            
-            // Check file size (limit to 10MB)
-            const maxSize = 10 * 1024 * 1024; // 10MB
-            if (file.size > maxSize) {
-                alert('File size too large. Please select a PDF file smaller than 10MB.');
-                return false;
-            }
-            
-            return true;
-        }
-        
-        // Update file input handler
-        document.getElementById('pdf-file').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file && !validatePdfFile(file)) {
-                this.value = ''; // Clear the input
-                return;
-            }
-            
-            if (file) {
-                document.getElementById('file-info').innerHTML = `
-                    <div class="file-info-item">
-                        <i class="fas fa-file-pdf"></i>
-                        <span><strong>${file.name}</strong> (${(file.size / 1024 / 1024).toFixed(2)} MB)</span>
-                    </div>
-                `;
-                document.getElementById('extract-btn').disabled = false;
-            }
-        });
-        
-    </script>
+    <script src="../../js/vendor-loader.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -519,226 +430,9 @@
     </main>
 
     <!-- Bootstrap JS -->
-    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\">
-        function validatePdfFile(file) {
-            // Check file extension
-            const validExtensions = ['.pdf'];
-            const fileName = file.name.toLowerCase();
-            const hasValidExtension = validExtensions.some(ext => fileName.endsWith(ext));
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
             
-            // Check MIME type
-            const validMimeTypes = ['application/pdf'];
-            const hasValidMimeType = validMimeTypes.includes(file.type);
-            
-            if (!hasValidExtension && !hasValidMimeType) {
-                alert('Please select a valid PDF file. Only PDF files are supported.');
-                return false;
-            }
-            
-            // Check file size (limit to 10MB)
-            const maxSize = 10 * 1024 * 1024; // 10MB
-            if (file.size > maxSize) {
-                alert('File size too large. Please select a PDF file smaller than 10MB.');
-                return false;
-            }
-            
-            return true;
-        }
-        
-        // Update file input handler
-        document.getElementById('pdf-file').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file && !validatePdfFile(file)) {
-                this.value = ''; // Clear the input
-                return;
-            }
-            
-            if (file) {
-                document.getElementById('file-info').innerHTML = `
-                    <div class="file-info-item">
-                        <i class="fas fa-file-pdf"></i>
-                        <span><strong>${file.name}</strong> (${(file.size / 1024 / 1024).toFixed(2)} MB)</span>
-                    </div>
-                `;
-                document.getElementById('extract-btn').disabled = false;
-            }
-        });
-        
-    </script>
-    <script src=\"script.js\">
-        function validatePdfFile(file) {
-            // Check file extension
-            const validExtensions = ['.pdf'];
-            const fileName = file.name.toLowerCase();
-            const hasValidExtension = validExtensions.some(ext => fileName.endsWith(ext));
-            
-            // Check MIME type
-            const validMimeTypes = ['application/pdf'];
-            const hasValidMimeType = validMimeTypes.includes(file.type);
-            
-            if (!hasValidExtension && !hasValidMimeType) {
-                alert('Please select a valid PDF file. Only PDF files are supported.');
-                return false;
-            }
-            
-            // Check file size (limit to 10MB)
-            const maxSize = 10 * 1024 * 1024; // 10MB
-            if (file.size > maxSize) {
-                alert('File size too large. Please select a PDF file smaller than 10MB.');
-                return false;
-            }
-            
-            return true;
-        }
-        
-        // Update file input handler
-        document.getElementById('pdf-file').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file && !validatePdfFile(file)) {
-                this.value = ''; // Clear the input
-                return;
-            }
-            
-            if (file) {
-                document.getElementById('file-info').innerHTML = `
-                    <div class="file-info-item">
-                        <i class="fas fa-file-pdf"></i>
-                        <span><strong>${file.name}</strong> (${(file.size / 1024 / 1024).toFixed(2)} MB)</span>
-                    </div>
-                `;
-                document.getElementById('extract-btn').disabled = false;
-            }
-        });
-        
-    </script>
-
-
-
-
-            <script>
-            // Common Tool Functionality
-            document.addEventListener('DOMContentLoaded', function() {
-                // Add ARIA labels to buttons and inputs
-                const buttons = document.querySelectorAll('button');
-                buttons.forEach(button => {
-                    if (!button.getAttribute('aria-label') && button.textContent.trim()) {
-                        button.setAttribute('aria-label', button.textContent.trim());
-                    }
-                });
-                
-                // Add alt text to images missing it
-                const images = document.querySelectorAll('img');
-                images.forEach(img => {
-                    if (!img.getAttribute('alt')) {
-                        img.setAttribute('alt', '');
-                    }
-                });
-                
-                // Disable buttons until valid input
-                const inputFields = document.querySelectorAll('input[type="text"], textarea');
-                const actionButtons = document.querySelectorAll('.btn-primary, button[onclick]');
-                
-                function checkInputs() {
-                    const hasInput = Array.from(inputFields).some(field => field.value.trim().length > 0);
-                    actionButtons.forEach(button => {
-                        if (button.textContent.includes('Copy') || 
-                            button.textContent.includes('Download') || 
-                            button.textContent.includes('Generate')) {
-                            button.disabled = !hasInput;
-                        }
-                    });
-                }
-                
-                inputFields.forEach(field => {
-                    field.addEventListener('input', checkInputs);
-                });
-                
-                // Initial check
-                checkInputs();
-                
-                // Add success/error notifications
-                window.showNotification = function(message, type = 'success') {
-                    const notification = document.createElement('div');
-                    notification.className = `notification notification-${type}`;
-                    notification.innerHTML = `
-                        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}" aria-hidden="true"></i>
-                        <span>${message}</span>
-                    `;
-                    
-                    notification.style.cssText = `
-                        position: fixed;
-                        top: 20px;
-                        right: 20px;
-                        background: ${type === 'success' ? '#10b981' : '#ef4444'};
-                        color: white;
-                        padding: 1rem 1.5rem;
-                        border-radius: 8px;
-                        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-                        z-index: 1000;
-                        opacity: 0;
-                        transform: translateX(100%);
-                        transition: all 0.3s ease;
-                        max-width: 400px;
-                        display: flex;
-                        align-items: center;
-                        gap: 0.5rem;
-                    `;
-                    
-                    document.body.appendChild(notification);
-                    
-                    setTimeout(() => {
-                        notification.style.opacity = '1';
-                        notification.style.transform = 'translateX(0)';
-                    }, 100);
-                    
-                    setTimeout(() => {
-                        notification.style.opacity = '0';
-                        notification.style.transform = 'translateX(100%)';
-                        setTimeout(() => {
-                            if (notification.parentNode) {
-                                document.body.removeChild(notification);
-                            }
-                        }, 300);
-                    }, 3000);
-                };
-                
-                // Enhanced copy functionality
-                window.copyToClipboard = async function(text) {
-                    try {
-                        if (navigator.clipboard && window.isSecureContext) {
-                            await navigator.clipboard.writeText(text);
-                            showNotification('Copied to clipboard!', 'success');
-                            return true;
-                        } else {
-                            // Fallback for older browsers
-                            const textArea = document.createElement('textarea');
-                            textArea.value = text;
-                            textArea.style.position = 'fixed';
-                            textArea.style.left = '-999999px';
-                            textArea.style.top = '-999999px';
-                            document.body.appendChild(textArea);
-                            textArea.focus();
-                            textArea.select();
-                            
-                            try {
-                                document.execCommand('copy');
-                                textArea.remove();
-                                showNotification('Copied to clipboard!', 'success');
-                                return true;
-                            } catch (err) {
-                                textArea.remove();
-                                showNotification('Failed to copy to clipboard', 'error');
-                                return false;
-                            }
-                        }
-                    } catch (err) {
-                        showNotification('Failed to copy to clipboard', 'error');
-                        return false;
-                    }
-                };
-            });
-            </script>
-            
+    <script src="script.js"></script>
 </body>
 </html>",
             "item": "/tools/pdf-to-text/"
@@ -920,6 +614,7 @@
             });
             </script>
             
+    <script src="script.js"></script>
 </body>
 </html>",
     "description": "Extract text from PDF files online. Free PDF to text converter that works entirely in your browser with no uploads required.",
@@ -983,52 +678,7 @@
         
     </script>
     <!-- Vendor Library Loader with CDN Fallbacks -->
-    <script src="../../js/vendor-loader.js">
-        function validatePdfFile(file) {
-            // Check file extension
-            const validExtensions = ['.pdf'];
-            const fileName = file.name.toLowerCase();
-            const hasValidExtension = validExtensions.some(ext => fileName.endsWith(ext));
-            
-            // Check MIME type
-            const validMimeTypes = ['application/pdf'];
-            const hasValidMimeType = validMimeTypes.includes(file.type);
-            
-            if (!hasValidExtension && !hasValidMimeType) {
-                alert('Please select a valid PDF file. Only PDF files are supported.');
-                return false;
-            }
-            
-            // Check file size (limit to 10MB)
-            const maxSize = 10 * 1024 * 1024; // 10MB
-            if (file.size > maxSize) {
-                alert('File size too large. Please select a PDF file smaller than 10MB.');
-                return false;
-            }
-            
-            return true;
-        }
-        
-        // Update file input handler
-        document.getElementById('pdf-file').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file && !validatePdfFile(file)) {
-                this.value = ''; // Clear the input
-                return;
-            }
-            
-            if (file) {
-                document.getElementById('file-info').innerHTML = `
-                    <div class="file-info-item">
-                        <i class="fas fa-file-pdf"></i>
-                        <span><strong>${file.name}</strong> (${(file.size / 1024 / 1024).toFixed(2)} MB)</span>
-                    </div>
-                `;
-                document.getElementById('extract-btn').disabled = false;
-            }
-        });
-        
-    </script>
+    <script src="../../js/vendor-loader.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -1237,98 +887,8 @@
     </main>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-        function validatePdfFile(file) {
-            // Check file extension
-            const validExtensions = ['.pdf'];
-            const fileName = file.name.toLowerCase();
-            const hasValidExtension = validExtensions.some(ext => fileName.endsWith(ext));
-            
-            // Check MIME type
-            const validMimeTypes = ['application/pdf'];
-            const hasValidMimeType = validMimeTypes.includes(file.type);
-            
-            if (!hasValidExtension && !hasValidMimeType) {
-                alert('Please select a valid PDF file. Only PDF files are supported.');
-                return false;
-            }
-            
-            // Check file size (limit to 10MB)
-            const maxSize = 10 * 1024 * 1024; // 10MB
-            if (file.size > maxSize) {
-                alert('File size too large. Please select a PDF file smaller than 10MB.');
-                return false;
-            }
-            
-            return true;
-        }
-        
-        // Update file input handler
-        document.getElementById('pdf-file').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file && !validatePdfFile(file)) {
-                this.value = ''; // Clear the input
-                return;
-            }
-            
-            if (file) {
-                document.getElementById('file-info').innerHTML = `
-                    <div class="file-info-item">
-                        <i class="fas fa-file-pdf"></i>
-                        <span><strong>${file.name}</strong> (${(file.size / 1024 / 1024).toFixed(2)} MB)</span>
-                    </div>
-                `;
-                document.getElementById('extract-btn').disabled = false;
-            }
-        });
-        
-    </script>
-    <script src="script.js">
-        function validatePdfFile(file) {
-            // Check file extension
-            const validExtensions = ['.pdf'];
-            const fileName = file.name.toLowerCase();
-            const hasValidExtension = validExtensions.some(ext => fileName.endsWith(ext));
-            
-            // Check MIME type
-            const validMimeTypes = ['application/pdf'];
-            const hasValidMimeType = validMimeTypes.includes(file.type);
-            
-            if (!hasValidExtension && !hasValidMimeType) {
-                alert('Please select a valid PDF file. Only PDF files are supported.');
-                return false;
-            }
-            
-            // Check file size (limit to 10MB)
-            const maxSize = 10 * 1024 * 1024; // 10MB
-            if (file.size > maxSize) {
-                alert('File size too large. Please select a PDF file smaller than 10MB.');
-                return false;
-            }
-            
-            return true;
-        }
-        
-        // Update file input handler
-        document.getElementById('pdf-file').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file && !validatePdfFile(file)) {
-                this.value = ''; // Clear the input
-                return;
-            }
-            
-            if (file) {
-                document.getElementById('file-info').innerHTML = `
-                    <div class="file-info-item">
-                        <i class="fas fa-file-pdf"></i>
-                        <span><strong>${file.name}</strong> (${(file.size / 1024 / 1024).toFixed(2)} MB)</span>
-                    </div>
-                `;
-                document.getElementById('extract-btn').disabled = false;
-            }
-        });
-        
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 
 
 
@@ -1457,5 +1017,6 @@
             });
             </script>
             
+    <script src="script.js"></script>
 </body>
 </html>
