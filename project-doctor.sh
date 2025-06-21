@@ -105,11 +105,11 @@ run_web_checks() {
   echo -e "\n${BLUE}========== WEB QUALITY ==========${NC}"
   echo -e "${YELLOW}HTML validation...${NC}"
   shopt -s globstar
-  npx --yes htmlhint **/*.html || true
+  npx --no-install htmlhint **/*.html || true
 
   echo -e "\n${YELLOW}CSS linting...${NC}"
   shopt -s globstar
-  npx --yes csslint **/*.css || true
+  npx --no-install csslint **/*.css || true
 }
 
 # Main execution
