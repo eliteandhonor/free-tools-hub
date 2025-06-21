@@ -104,12 +104,12 @@ run_python_checks() {
 run_web_checks() {
   echo -e "\n${BLUE}========== WEB QUALITY ==========${NC}"
   echo -e "${YELLOW}HTML validation...${NC}"
-  shopt -s globstar
-  npx --no-install htmlhint **/*.html || true
+  html_files=$(find . -path './vendor' -prune -o -name '*.html' -print)
+  npx --no-install htmlhint ${html_files} || true
 
   echo -e "\n${YELLOW}CSS linting...${NC}"
-  shopt -s globstar
-  npx --no-install csslint **/*.css || true
+  css_files=$(find . -path './vendor' -prune -o -name '*.css' -print)
+  npx --no-install csslint ${css_files} || true
 }
 
 # Main execution

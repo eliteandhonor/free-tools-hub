@@ -22,4 +22,4 @@ chmod +x project-doctor.sh
 ./project-doctor.sh
 ```
 
-The script lints HTML/CSS assets and optionally runs Python checks. Review the output for any warnings.
+The script lints HTML/CSS assets (ignoring third-party files in `vendor/`) and optionally runs Python checks. Review the output for any warnings.
