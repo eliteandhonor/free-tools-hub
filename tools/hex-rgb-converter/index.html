@@ -35,9 +35,424 @@
     {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Hex to RGB Color Converter - Free Tools Hub</title>\n    <meta name=\"description\" content=\"Convert colors between HEX, RGB, HSL, and HSV formats. Free color converter with live preview and copy functionality for web development.\">\n    <meta name=\"keywords\" content=\"hex to rgb converter, color converter, rgb to hex, hsl color, hsv color, web colors, css colors\">\n    <link rel=\"canonical\" href=\"/tools/hex-rgb-converter/\">\n    \n    <!-- Open Graph / Facebook -->\n    <meta property=\"og:type\" content=\"website\">\n    <meta property=\"og:url\" content=\"/tools/hex-rgb-converter/\">\n    <meta property=\"og:title\" content=\"Hex to RGB Color Converter - Free Tools Hub\">\n    <meta property=\"og:description\" content=\"Convert colors between HEX, RGB, HSL, and HSV formats with live preview.\">\n    \n    <!-- Favicon -->\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"/favicon.ico\">\n    \n    <!-- Stylesheets -->\n    \n    <link href=\"../../css/main.css\" rel=\"stylesheet\">\n    <!-- Vendor Library Loader with CDN Fallbacks -->
+    "name": "Hex to RGB Color Converter - Free Tools Hub</title>
+    <meta name=\"description\" content=\"Convert colors between HEX, RGB, HSL, and HSV formats. Free color converter with live preview and copy functionality for web development.\">
+    <meta name=\"keywords\" content=\"hex to rgb converter, color converter, rgb to hex, hsl color, hsv color, web colors, css colors\">
+    <link rel=\"canonical\" href=\"/tools/hex-rgb-converter/\">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property=\"og:type\" content=\"website\">
+    <meta property=\"og:url\" content=\"/tools/hex-rgb-converter/\">
+    <meta property=\"og:title\" content=\"Hex to RGB Color Converter - Free Tools Hub\">
+    <meta property=\"og:description\" content=\"Convert colors between HEX, RGB, HSL, and HSV formats with live preview.\">
+    
+    <!-- Favicon -->
+    <link rel=\"icon\" type=\"image/x-icon\" href=\"/favicon.ico\">
+    
+    <!-- Stylesheets -->
+    
+    <link href=\"../../css/main.css\" rel=\"stylesheet\">
+    <!-- Vendor Library Loader with CDN Fallbacks -->
     <script src="../../js/vendor-loader.js"></script>
-</head>\n<body>\n    <!-- Header -->\n    <header class=\"header\">\n        <nav class=\"navbar\">\n            <div class=\"container\">\n                <div class=\"nav-wrapper\">\n                    <a href=\"/\" class=\"logo\">\n                        <i class=\"fas fa-tools\"></i>\n                        <span>Free Tools Hub</span>\n                    </a>\n                    \n                    <div class=\"nav-links\">\n                        <a href=\"/\" class=\"nav-link\">Home</a>\n                        <a href=\"/tools/\" class=\"nav-link\">All Tools</a>\n                        <div class=\"dropdown\">\n                            <a href=\"#\" class=\"nav-link dropdown-toggle\">Categories <i class=\"fas fa-chevron-down\"></i></a>\n                            <div class=\"dropdown-menu\">\n                                <a href=\"/tools/text/\" class=\"dropdown-item\">Text Tools</a>\n                                <a href=\"/tools/seo/\" class=\"dropdown-item\">SEO Tools</a>\n                                <a href=\"/tools/developer/\" class=\"dropdown-item\">Developer Tools</a>\n                                <a href=\"/tools/calculator/\" class=\"dropdown-item\">Calculators</a>\n                                <a href=\"/tools/converter/\" class=\"dropdown-item\">Converters</a>\n                                <a href=\"/tools/generator/\" class=\"dropdown-item\">Generators</a>\n                            </div>\n                        </div>\n                        <a href=\"/about/\" class=\"nav-link\">About</a>\n                        <a href=\"/contact/\" class=\"nav-link\">Contact</a>\n                    </div>\n                    \n                    <button class=\"mobile-menu-btn\">\n                        <span></span>\n                        <span></span>\n                        <span></span>\n                    </button>\n                </div>\n            </div>\n        </nav>\n    </header>\n\n    <!-- Main Content -->\n    <main class=\"main\" role="main">\n        <div class=\"container\">\n            <!-- Breadcrumb -->\n            <nav class=\"breadcrumb\">\n                <a href=\"/\">Home</a>\n                <span class=\"separator\">/</span>\n                <a href=\"/tools/\">Tools</a>\n                <span class=\"separator\">/</span>\n                <a href=\"/tools/converter/\">Converters</a>\n                <span class=\"separator\">/</span>\n                <span class=\"current\">Hex to RGB Converter</span>\n            </nav>\n\n            <!-- Tool Header -->\n            <div class=\"tool-header\">\n                <h1 class=\"tool-title\">\n                    <i class=\"fas fa-palette\"></i>\n                    Hex to RGB Color Converter\n                </h1>\n                <p class=\"tool-description\">\n                    Convert colors between HEX, RGB, HSL, and HSV formats with live preview. Perfect for web development, design, and digital art projects.\n                </p>\n            </div>\n\n            <!-- Tool Content -->\n            <div class=\"tool-wrapper\">\n                <div class=\"tool-container\">\n                    <!-- Color Preview -->\n                    <div class=\"color-preview-section\">\n                        <div class=\"color-preview\" id=\"color-preview\"></div>\n                        <div class=\"color-info\">\n                            <p id=\"color-name\">Select or enter a color</p>\n                        </div>\n                    </div>\n\n                    <!-- Input Methods -->\n                    <div class=\"input-methods\">\n                        <!-- Color Picker -->\n                        <div class=\"input-group\">\n                            <label for=\"color-picker\">Color Picker:</label>\n                            <div class=\"picker-wrapper\">\n                                <input type=\"color\" id=\"color-picker\" class=\"color-input\">\n                                <span class=\"picker-label\">Click to pick a color</span>\n                            </div>\n                        </div>\n\n                        <!-- HEX Input -->\n                        <div class=\"input-group\">\n                            <label for=\"hex-input\">HEX Color:</label>\n                            <div class=\"input-with-copy\">\n                                <input type=\"text\" id=\"hex-input\" class=\"form-control color-format-input\" \n                                       placeholder=\"#FF5733\" maxlength=\"7\">\n                                <button class=\"copy-btn\" data-target=\"hex-input\">\n                                    <i class=\"fas fa-copy\"></i>\n                                </button>\n                            </div>\n                        </div>\n\n                        <!-- RGB Input -->\n                        <div class=\"input-group\">\n                            <label>RGB Color:</label>\n                            <div class=\"rgb-inputs\">\n                                <div class=\"rgb-component\">\n                                    <label for=\"rgb-r\">R:</label>\n                                    <input type=\"number\" id=\"rgb-r\" class=\"form-control rgb-input\" \n                                           min=\"0\" max=\"255\" placeholder=\"255\">\n                                </div>\n                                <div class=\"rgb-component\">\n                                    <label for=\"rgb-g\">G:</label>\n                                    <input type=\"number\" id=\"rgb-g\" class=\"form-control rgb-input\" \n                                           min=\"0\" max=\"255\" placeholder=\"87\">\n                                </div>\n                                <div class=\"rgb-component\">\n                                    <label for=\"rgb-b\">B:</label>\n                                    <input type=\"number\" id=\"rgb-b\" class=\"form-control rgb-input\" \n                                           min=\"0\" max=\"255\" placeholder=\"51\">\n                                </div>\n                                <button class=\"copy-btn\" data-format=\"rgb\">\n                                    <i class=\"fas fa-copy\"></i>\n                                </button>\n                            </div>\n                        </div>\n\n                        <!-- HSL Input -->\n                        <div class=\"input-group\">\n                            <label>HSL Color:</label>\n                            <div class=\"hsl-inputs\">\n                                <div class=\"hsl-component\">\n                                    <label for=\"hsl-h\">H:</label>\n                                    <input type=\"number\" id=\"hsl-h\" class=\"form-control hsl-input\" \n                                           min=\"0\" max=\"360\" placeholder=\"12\">\n                                </div>\n                                <div class=\"hsl-component\">\n                                    <label for=\"hsl-s\">S:</label>\n                                    <input type=\"number\" id=\"hsl-s\" class=\"form-control hsl-input\" \n                                           min=\"0\" max=\"100\" placeholder=\"80\">\n                                </div>\n                                <div class=\"hsl-component\">\n                                    <label for=\"hsl-l\">L:</label>\n                                    <input type=\"number\" id=\"hsl-l\" class=\"form-control hsl-input\" \n                                           min=\"0\" max=\"100\" placeholder=\"60\">\n                                </div>\n                                <button class=\"copy-btn\" data-format=\"hsl\">\n                                    <i class=\"fas fa-copy\"></i>\n                                </button>\n                            </div>\n                        </div>\n\n                        <!-- HSV Input -->\n                        <div class=\"input-group\">\n                            <label>HSV Color:</label>\n                            <div class=\"hsv-inputs\">\n                                <div class=\"hsv-component\">\n                                    <label for=\"hsv-h\">H:</label>\n                                    <input type=\"number\" id=\"hsv-h\" class=\"form-control hsv-input\" \n                                           min=\"0\" max=\"360\" placeholder=\"12\">\n                                </div>\n                                <div class=\"hsv-component\">\n                                    <label for=\"hsv-s\">S:</label>\n                                    <input type=\"number\" id=\"hsv-s\" class=\"form-control hsv-input\" \n                                           min=\"0\" max=\"100\" placeholder=\"80\">\n                                </div>\n                                <div class=\"hsv-component\">\n                                    <label for=\"hsv-v\">V:</label>\n                                    <input type=\"number\" id=\"hsv-v\" class=\"form-control hsv-input\" \n                                           min=\"0\" max=\"100\" placeholder=\"100\">\n                                </div>\n                                <button class=\"copy-btn\" data-format=\"hsv\">\n                                    <i class=\"fas fa-copy\"></i>\n                                </button>\n                            </div>\n                        </div>\n                    </div>\n\n                    <!-- Format Output -->\n                    <div class=\"format-outputs\">\n                        <h3>All Formats</h3>\n                        <div class=\"output-grid\">\n                            <div class=\"output-item\">\n                                <label>HEX:</label>\n                                <div class=\"output-value\">\n                                    <input type=\"text\" id=\"output-hex\" class=\"form-control\" readonly>\n                                    <button class=\"copy-btn-small\" data-target=\"output-hex\">\n                                        <i class=\"fas fa-copy\"></i>\n                                    </button>\n                                </div>\n                            </div>\n                            <div class=\"output-item\">\n                                <label>RGB:</label>\n                                <div class=\"output-value\">\n                                    <input type=\"text\" id=\"output-rgb\" class=\"form-control\" readonly>\n                                    <button class=\"copy-btn-small\" data-target=\"output-rgb\">\n                                        <i class=\"fas fa-copy\"></i>\n                                    </button>\n                                </div>\n                            </div>\n                            <div class=\"output-item\">\n                                <label>HSL:</label>\n                                <div class=\"output-value\">\n                                    <input type=\"text\" id=\"output-hsl\" class=\"form-control\" readonly>\n                                    <button class=\"copy-btn-small\" data-target=\"output-hsl\">\n                                        <i class=\"fas fa-copy\"></i>\n                                    </button>\n                                </div>\n                            </div>\n                            <div class=\"output-item\">\n                                <label>HSV:</label>\n                                <div class=\"output-value\">\n                                    <input type=\"text\" id=\"output-hsv\" class=\"form-control\" readonly>\n                                    <button class=\"copy-btn-small\" data-target=\"output-hsv\">\n                                        <i class=\"fas fa-copy\"></i>\n                                    </button>\n                                </div>\n                            </div>\n                            <div class=\"output-item\">\n                                <label>CSS RGB:</label>\n                                <div class=\"output-value\">\n                                    <input type=\"text\" id=\"output-css-rgb\" class=\"form-control\" readonly>\n                                    <button class=\"copy-btn-small\" data-target=\"output-css-rgb\">\n                                        <i class=\"fas fa-copy\"></i>\n                                    </button>\n                                </div>\n                            </div>\n                            <div class=\"output-item\">\n                                <label>CSS HSL:</label>\n                                <div class=\"output-value\">\n                                    <input type=\"text\" id=\"output-css-hsl\" class=\"form-control\" readonly>\n                                    <button class=\"copy-btn-small\" data-target=\"output-css-hsl\">\n                                        <i class=\"fas fa-copy\"></i>\n                                    </button>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n\n                    <!-- Color Palette Generator -->\n                    <div class=\"palette-section\">\n                        <h3>Color Harmonies</h3>\n                        <div class=\"palette-types\">\n                            <button class=\"palette-btn active\" data-type=\"complementary\">Complementary</button>\n                            <button class=\"palette-btn\" data-type=\"triadic\">Triadic</button>\n                            <button class=\"palette-btn\" data-type=\"analogous\">Analogous</button>\n                            <button class=\"palette-btn\" data-type=\"monochromatic\">Monochromatic</button>\n                        </div>\n                        <div class=\"palette-preview\" id=\"palette-preview\">\n                            <!-- Palette colors will be generated here -->\n                        </div>\n                    </div>\n\n                    <!-- Actions -->\n                    <div class=\"tool-actions\">\n                        <button id=\"random-color-btn\" class=\"btn btn-secondary\">\n                            <i class=\"fas fa-random\"></i>\n                            Random Color\n                        </button>\n                        <button id=\"clear-all-btn\" class=\"btn btn-secondary\">\n                            <i class=\"fas fa-trash\"></i>\n                            Clear All\n                        </button>\n                    </div>\n                </div>\n\n                <!-- Tool Information -->\n                <div class=\"tool-container\">\n                    <h2>About Color Conversion</h2>\n                    <p>Color conversion allows you to translate colors between different color models and formats used in web development, graphic design, and digital art.</p>\n                    \n                    <h3>Color Format Guide:</h3>\n                    <div class=\"color-format-guide\">\n                        <div class=\"format-item\">\n                            <h4><i class=\"fas fa-hashtag\"></i> HEX Colors</h4>\n                            <p>Hexadecimal color notation using 6 digits (0-9, A-F). Widely used in web development.</p>\n                            <div class=\"example\"> #FF5733 (red-orange color)</div>\n                        </div>\n                        <div class=\"format-item\">\n                            <h4><i class=\"fas fa-cube\"></i> RGB Colors</h4>\n                            <p>Red, Green, Blue values from 0-255. Additive color model used by screens and displays.</p>\n                            <div class=\"example\"> rgb(255, 87, 51)</div>\n                        </div>\n                        <div class=\"format-item\">\n                            <h4><i class=\"fas fa-adjust\"></i> HSL Colors</h4>\n                            <p>Hue (0-360\u00b0), Saturation (0-100%), Lightness (0-100%). Intuitive for color adjustments.</p>\n                            <div class=\"example\"> hsl(12, 80%, 60%)</div>\n                        </div>\n                        <div class=\"format-item\">\n                            <h4><i class=\"fas fa-sun\"></i> HSV Colors</h4>\n                            <p>Hue (0-360\u00b0), Saturation (0-100%), Value/Brightness (0-100%). Used in color pickers.</p>\n                            <div class=\"example\"> hsv(12, 80%, 100%)</div>\n                        </div>\n                    </div>\n\n                    <h3>Features:</h3>\n                    <ul>\n                        <li>Convert between HEX, RGB, HSL, and HSV formats</li>\n                        <li>Interactive color picker for visual selection</li>\n                        <li>Live color preview with real-time updates</li>\n                        <li>Generate color harmonies and palettes</li>\n                        <li>Copy any format to clipboard instantly</li>\n                        <li>CSS-ready format outputs</li>\n                        <li>Random color generator</li>\n                        <li>Input validation and error handling</li>\n                    </ul>\n\n                    <h3>Use Cases:</h3>\n                    <ul>\n                        <li>Web development and CSS styling</li>\n                        <li>Graphic design and branding</li>\n                        <li>Digital art and illustration</li>\n                        <li>UI/UX design workflows</li>\n                        <li>Color scheme development</li>\n                        <li>Print design color matching</li>\n                        <li>Mobile app development</li>\n                        <li>Educational color theory learning</li>\n                    </ul>\n\n                    <h3>Color Theory Tips:</h3>\n                    <ol>\n                        <li><strong>Complementary:</strong> Colors opposite on the color wheel - high contrast and vibrancy</li>\n                        <li><strong>Triadic:</strong> Three colors evenly spaced - balanced and harmonious</li>\n                        <li><strong>Analogous:</strong> Colors next to each other - creates serene and comfortable designs</li>\n                        <li><strong>Monochromatic:</strong> Different shades and tints of one color - creates cohesive looks</li>\n                    </ol>\n                </div>\n\n                <!-- Related Tools -->\n                <div class=\"tool-container\">\n                    <h2>Related Tools</h2>\n                    <div class=\"related-tools\">\n                        <a href=\"/tools/color-picker/\" class=\"related-tool\">\n                            <i class=\"fas fa-palette\"></i>\n                            Color Picker & Palette Generator\n                        </a>\n                        <a href=\"/tools/base64-encoder-decoder/\" class=\"related-tool\">\n                            <i class=\"fas fa-lock\"></i>\n                            Base64 Encoder/Decoder\n                        </a>\n                        <a href=\"/tools/url-encoder-decoder/\" class=\"related-tool\">\n                            <i class=\"fas fa-link\"></i>\n                            URL Encoder/Decoder\n                        </a>\n                        <a href=\"/tools/html-encoder-decoder/\" class=\"related-tool\">\n                            <i class=\"fas fa-code\"></i>\n                            HTML Encoder/Decoder\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </main>\n\n    <!-- Footer -->\n    <footer class=\"footer\">\n        <div class=\"container\">\n            <div class=\"footer-grid\">\n                <div class=\"footer-section\">\n                    <h4>Free Tools Hub</h4>\n                    <p>Your go-to destination for professional online tools and utilities. Fast, secure, and always free.</p>\n                </div>\n                \n                <div class=\"footer-section\">\n                    <h4>Tool Categories</h4>\n                    <ul class=\"footer-links\">\n                        <li><a href=\"/tools/text/\">Text Tools</a></li>\n                        <li><a href=\"/tools/seo/\">SEO Tools</a></li>\n                        <li><a href=\"/tools/developer/\">Developer Tools</a></li>\n                        <li><a href=\"/tools/calculator/\">Calculators</a></li>\n                        <li><a href=\"/tools/converter/\">Converters</a></li>\n                        <li><a href=\"/tools/generator/\">Generators</a></li>\n                    </ul>\n                </div>\n                \n                <div class=\"footer-section\">\n                    <h4>Popular Tools</h4>\n                    <ul class=\"footer-links\">\n                        <li><a href=\"/tools/word-counter/\">Word Counter</a></li>\n                        <li><a href=\"/tools/password-generator/\">Password Generator</a></li>\n                        <li><a href=\"/tools/json-formatter/\">JSON Formatter</a></li>\n                        <li><a href=\"/tools/bmi-calculator/\">BMI Calculator</a></li>\n                        <li><a href=\"/tools/qr-code-generator/\">QR Code Generator</a></li>\n                        <li><a href=\"/tools/meta-tag-generator/\">Meta Tag Generator</a></li>\n                    </ul>\n                </div>\n                \n                <div class=\"footer-section\">\n                    <h4>Support</h4>\n                    <ul class=\"footer-links\">\n                        <li><a href=\"/about/\">About Us</a></li>\n                        <li><a href=\"/contact/\">Contact</a></li>\n                        <li><a href=\"/privacy/\">Privacy Policy</a></li>\n                        <li><a href=\"/terms/\">Terms of Service</a></li>\n                        <li><a href=\"/sitemap.xml\">Sitemap</a></li>\n                        <li><a href=\"/feedback/\">Feedback</a></li>\n                    </ul>\n                </div>\n            </div>\n            \n            <div class=\"footer-bottom\">\n                <p>&copy; 2025 Free Tools Hub. All rights reserved.",
+</head>
+<body>
+    <!-- Header -->
+    <header class=\"header\">
+        <nav class=\"navbar\">
+            <div class=\"container\">
+                <div class=\"nav-wrapper\">
+                    <a href=\"/\" class=\"logo\">
+                        <i class=\"fas fa-tools\"></i>
+                        <span>Free Tools Hub</span>
+                    </a>
+                    
+                    <div class=\"nav-links\">
+                        <a href=\"/\" class=\"nav-link\">Home</a>
+                        <a href=\"/tools/\" class=\"nav-link\">All Tools</a>
+                        <div class=\"dropdown\">
+                            <a href=\"#\" class=\"nav-link dropdown-toggle\">Categories <i class=\"fas fa-chevron-down\"></i></a>
+                            <div class=\"dropdown-menu\">
+                                <a href=\"/tools/text/\" class=\"dropdown-item\">Text Tools</a>
+                                <a href=\"/tools/seo/\" class=\"dropdown-item\">SEO Tools</a>
+                                <a href=\"/tools/developer/\" class=\"dropdown-item\">Developer Tools</a>
+                                <a href=\"/tools/calculator/\" class=\"dropdown-item\">Calculators</a>
+                                <a href=\"/tools/converter/\" class=\"dropdown-item\">Converters</a>
+                                <a href=\"/tools/generator/\" class=\"dropdown-item\">Generators</a>
+                            </div>
+                        </div>
+                        <a href=\"/about/\" class=\"nav-link\">About</a>
+                        <a href=\"/contact/\" class=\"nav-link\">Contact</a>
+                    </div>
+                    
+                    <button class=\"mobile-menu-btn\">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class=\"main\" role="main">
+        <div class=\"container\">
+            <!-- Breadcrumb -->
+            <nav class=\"breadcrumb\">
+                <a href=\"/\">Home</a>
+                <span class=\"separator\">/</span>
+                <a href=\"/tools/\">Tools</a>
+                <span class=\"separator\">/</span>
+                <a href=\"/tools/converter/\">Converters</a>
+                <span class=\"separator\">/</span>
+                <span class=\"current\">Hex to RGB Converter</span>
+            </nav>
+
+            <!-- Tool Header -->
+            <div class=\"tool-header\">
+                <h1 class=\"tool-title\">
+                    <i class=\"fas fa-palette\"></i>
+                    Hex to RGB Color Converter
+                </h1>
+                <p class=\"tool-description\">
+                    Convert colors between HEX, RGB, HSL, and HSV formats with live preview. Perfect for web development, design, and digital art projects.
+                </p>
+            </div>
+
+            <!-- Tool Content -->
+            <div class=\"tool-wrapper\">
+                <div class=\"tool-container\">
+                    <!-- Color Preview -->
+                    <div class=\"color-preview-section\">
+                        <div class=\"color-preview\" id=\"color-preview\"></div>
+                        <div class=\"color-info\">
+                            <p id=\"color-name\">Select or enter a color</p>
+                        </div>
+                    </div>
+
+                    <!-- Input Methods -->
+                    <div class=\"input-methods\">
+                        <!-- Color Picker -->
+                        <div class=\"input-group\">
+                            <label for=\"color-picker\">Color Picker:</label>
+                            <div class=\"picker-wrapper\">
+                                <input type=\"color\" id=\"color-picker\" class=\"color-input\">
+                                <span class=\"picker-label\">Click to pick a color</span>
+                            </div>
+                        </div>
+
+                        <!-- HEX Input -->
+                        <div class=\"input-group\">
+                            <label for=\"hex-input\">HEX Color:</label>
+                            <div class=\"input-with-copy\">
+                                <input type=\"text\" id=\"hex-input\" class=\"form-control color-format-input\" 
+                                       placeholder=\"#FF5733\" maxlength=\"7\">
+                                <button class=\"copy-btn\" data-target=\"hex-input\">
+                                    <i class=\"fas fa-copy\"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- RGB Input -->
+                        <div class=\"input-group\">
+                            <label>RGB Color:</label>
+                            <div class=\"rgb-inputs\">
+                                <div class=\"rgb-component\">
+                                    <label for=\"rgb-r\">R:</label>
+                                    <input type=\"number\" id=\"rgb-r\" class=\"form-control rgb-input\" 
+                                           min=\"0\" max=\"255\" placeholder=\"255\">
+                                </div>
+                                <div class=\"rgb-component\">
+                                    <label for=\"rgb-g\">G:</label>
+                                    <input type=\"number\" id=\"rgb-g\" class=\"form-control rgb-input\" 
+                                           min=\"0\" max=\"255\" placeholder=\"87\">
+                                </div>
+                                <div class=\"rgb-component\">
+                                    <label for=\"rgb-b\">B:</label>
+                                    <input type=\"number\" id=\"rgb-b\" class=\"form-control rgb-input\" 
+                                           min=\"0\" max=\"255\" placeholder=\"51\">
+                                </div>
+                                <button class=\"copy-btn\" data-format=\"rgb\">
+                                    <i class=\"fas fa-copy\"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- HSL Input -->
+                        <div class=\"input-group\">
+                            <label>HSL Color:</label>
+                            <div class=\"hsl-inputs\">
+                                <div class=\"hsl-component\">
+                                    <label for=\"hsl-h\">H:</label>
+                                    <input type=\"number\" id=\"hsl-h\" class=\"form-control hsl-input\" 
+                                           min=\"0\" max=\"360\" placeholder=\"12\">
+                                </div>
+                                <div class=\"hsl-component\">
+                                    <label for=\"hsl-s\">S:</label>
+                                    <input type=\"number\" id=\"hsl-s\" class=\"form-control hsl-input\" 
+                                           min=\"0\" max=\"100\" placeholder=\"80\">
+                                </div>
+                                <div class=\"hsl-component\">
+                                    <label for=\"hsl-l\">L:</label>
+                                    <input type=\"number\" id=\"hsl-l\" class=\"form-control hsl-input\" 
+                                           min=\"0\" max=\"100\" placeholder=\"60\">
+                                </div>
+                                <button class=\"copy-btn\" data-format=\"hsl\">
+                                    <i class=\"fas fa-copy\"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- HSV Input -->
+                        <div class=\"input-group\">
+                            <label>HSV Color:</label>
+                            <div class=\"hsv-inputs\">
+                                <div class=\"hsv-component\">
+                                    <label for=\"hsv-h\">H:</label>
+                                    <input type=\"number\" id=\"hsv-h\" class=\"form-control hsv-input\" 
+                                           min=\"0\" max=\"360\" placeholder=\"12\">
+                                </div>
+                                <div class=\"hsv-component\">
+                                    <label for=\"hsv-s\">S:</label>
+                                    <input type=\"number\" id=\"hsv-s\" class=\"form-control hsv-input\" 
+                                           min=\"0\" max=\"100\" placeholder=\"80\">
+                                </div>
+                                <div class=\"hsv-component\">
+                                    <label for=\"hsv-v\">V:</label>
+                                    <input type=\"number\" id=\"hsv-v\" class=\"form-control hsv-input\" 
+                                           min=\"0\" max=\"100\" placeholder=\"100\">
+                                </div>
+                                <button class=\"copy-btn\" data-format=\"hsv\">
+                                    <i class=\"fas fa-copy\"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Format Output -->
+                    <div class=\"format-outputs\">
+                        <h3>All Formats</h3>
+                        <div class=\"output-grid\">
+                            <div class=\"output-item\">
+                                <label>HEX:</label>
+                                <div class=\"output-value\">
+                                    <input type=\"text\" id=\"output-hex\" class=\"form-control\" readonly>
+                                    <button class=\"copy-btn-small\" data-target=\"output-hex\">
+                                        <i class=\"fas fa-copy\"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class=\"output-item\">
+                                <label>RGB:</label>
+                                <div class=\"output-value\">
+                                    <input type=\"text\" id=\"output-rgb\" class=\"form-control\" readonly>
+                                    <button class=\"copy-btn-small\" data-target=\"output-rgb\">
+                                        <i class=\"fas fa-copy\"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class=\"output-item\">
+                                <label>HSL:</label>
+                                <div class=\"output-value\">
+                                    <input type=\"text\" id=\"output-hsl\" class=\"form-control\" readonly>
+                                    <button class=\"copy-btn-small\" data-target=\"output-hsl\">
+                                        <i class=\"fas fa-copy\"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class=\"output-item\">
+                                <label>HSV:</label>
+                                <div class=\"output-value\">
+                                    <input type=\"text\" id=\"output-hsv\" class=\"form-control\" readonly>
+                                    <button class=\"copy-btn-small\" data-target=\"output-hsv\">
+                                        <i class=\"fas fa-copy\"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class=\"output-item\">
+                                <label>CSS RGB:</label>
+                                <div class=\"output-value\">
+                                    <input type=\"text\" id=\"output-css-rgb\" class=\"form-control\" readonly>
+                                    <button class=\"copy-btn-small\" data-target=\"output-css-rgb\">
+                                        <i class=\"fas fa-copy\"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class=\"output-item\">
+                                <label>CSS HSL:</label>
+                                <div class=\"output-value\">
+                                    <input type=\"text\" id=\"output-css-hsl\" class=\"form-control\" readonly>
+                                    <button class=\"copy-btn-small\" data-target=\"output-css-hsl\">
+                                        <i class=\"fas fa-copy\"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Color Palette Generator -->
+                    <div class=\"palette-section\">
+                        <h3>Color Harmonies</h3>
+                        <div class=\"palette-types\">
+                            <button class=\"palette-btn active\" data-type=\"complementary\">Complementary</button>
+                            <button class=\"palette-btn\" data-type=\"triadic\">Triadic</button>
+                            <button class=\"palette-btn\" data-type=\"analogous\">Analogous</button>
+                            <button class=\"palette-btn\" data-type=\"monochromatic\">Monochromatic</button>
+                        </div>
+                        <div class=\"palette-preview\" id=\"palette-preview\">
+                            <!-- Palette colors will be generated here -->
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class=\"tool-actions\">
+                        <button id=\"random-color-btn\" class=\"btn btn-secondary\">
+                            <i class=\"fas fa-random\"></i>
+                            Random Color
+                        </button>
+                        <button id=\"clear-all-btn\" class=\"btn btn-secondary\">
+                            <i class=\"fas fa-trash\"></i>
+                            Clear All
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tool Information -->
+                <div class=\"tool-container\">
+                    <h2>About Color Conversion</h2>
+                    <p>Color conversion allows you to translate colors between different color models and formats used in web development, graphic design, and digital art.</p>
+                    
+                    <h3>Color Format Guide:</h3>
+                    <div class=\"color-format-guide\">
+                        <div class=\"format-item\">
+                            <h4><i class=\"fas fa-hashtag\"></i> HEX Colors</h4>
+                            <p>Hexadecimal color notation using 6 digits (0-9, A-F). Widely used in web development.</p>
+                            <div class=\"example\"> #FF5733 (red-orange color)</div>
+                        </div>
+                        <div class=\"format-item\">
+                            <h4><i class=\"fas fa-cube\"></i> RGB Colors</h4>
+                            <p>Red, Green, Blue values from 0-255. Additive color model used by screens and displays.</p>
+                            <div class=\"example\"> rgb(255, 87, 51)</div>
+                        </div>
+                        <div class=\"format-item\">
+                            <h4><i class=\"fas fa-adjust\"></i> HSL Colors</h4>
+                            <p>Hue (0-360\u00b0), Saturation (0-100%), Lightness (0-100%). Intuitive for color adjustments.</p>
+                            <div class=\"example\"> hsl(12, 80%, 60%)</div>
+                        </div>
+                        <div class=\"format-item\">
+                            <h4><i class=\"fas fa-sun\"></i> HSV Colors</h4>
+                            <p>Hue (0-360\u00b0), Saturation (0-100%), Value/Brightness (0-100%). Used in color pickers.</p>
+                            <div class=\"example\"> hsv(12, 80%, 100%)</div>
+                        </div>
+                    </div>
+
+                    <h3>Features:</h3>
+                    <ul>
+                        <li>Convert between HEX, RGB, HSL, and HSV formats</li>
+                        <li>Interactive color picker for visual selection</li>
+                        <li>Live color preview with real-time updates</li>
+                        <li>Generate color harmonies and palettes</li>
+                        <li>Copy any format to clipboard instantly</li>
+                        <li>CSS-ready format outputs</li>
+                        <li>Random color generator</li>
+                        <li>Input validation and error handling</li>
+                    </ul>
+
+                    <h3>Use Cases:</h3>
+                    <ul>
+                        <li>Web development and CSS styling</li>
+                        <li>Graphic design and branding</li>
+                        <li>Digital art and illustration</li>
+                        <li>UI/UX design workflows</li>
+                        <li>Color scheme development</li>
+                        <li>Print design color matching</li>
+                        <li>Mobile app development</li>
+                        <li>Educational color theory learning</li>
+                    </ul>
+
+                    <h3>Color Theory Tips:</h3>
+                    <ol>
+                        <li><strong>Complementary:</strong> Colors opposite on the color wheel - high contrast and vibrancy</li>
+                        <li><strong>Triadic:</strong> Three colors evenly spaced - balanced and harmonious</li>
+                        <li><strong>Analogous:</strong> Colors next to each other - creates serene and comfortable designs</li>
+                        <li><strong>Monochromatic:</strong> Different shades and tints of one color - creates cohesive looks</li>
+                    </ol>
+                </div>
+
+                <!-- Related Tools -->
+                <div class=\"tool-container\">
+                    <h2>Related Tools</h2>
+                    <div class=\"related-tools\">
+                        <a href=\"/tools/color-picker/\" class=\"related-tool\">
+                            <i class=\"fas fa-palette\"></i>
+                            Color Picker & Palette Generator
+                        </a>
+                        <a href=\"/tools/base64-encoder-decoder/\" class=\"related-tool\">
+                            <i class=\"fas fa-lock\"></i>
+                            Base64 Encoder/Decoder
+                        </a>
+                        <a href=\"/tools/url-encoder-decoder/\" class=\"related-tool\">
+                            <i class=\"fas fa-link\"></i>
+                            URL Encoder/Decoder
+                        </a>
+                        <a href=\"/tools/html-encoder-decoder/\" class=\"related-tool\">
+                            <i class=\"fas fa-code\"></i>
+                            HTML Encoder/Decoder
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class=\"footer\">
+        <div class=\"container\">
+            <div class=\"footer-grid\">
+                <div class=\"footer-section\">
+                    <h4>Free Tools Hub</h4>
+                    <p>Your go-to destination for professional online tools and utilities. Fast, secure, and always free.</p>
+                </div>
+                
+                <div class=\"footer-section\">
+                    <h4>Tool Categories</h4>
+                    <ul class=\"footer-links\">
+                        <li><a href=\"/tools/text/\">Text Tools</a></li>
+                        <li><a href=\"/tools/seo/\">SEO Tools</a></li>
+                        <li><a href=\"/tools/developer/\">Developer Tools</a></li>
+                        <li><a href=\"/tools/calculator/\">Calculators</a></li>
+                        <li><a href=\"/tools/converter/\">Converters</a></li>
+                        <li><a href=\"/tools/generator/\">Generators</a></li>
+                    </ul>
+                </div>
+                
+                <div class=\"footer-section\">
+                    <h4>Popular Tools</h4>
+                    <ul class=\"footer-links\">
+                        <li><a href=\"/tools/word-counter/\">Word Counter</a></li>
+                        <li><a href=\"/tools/password-generator/\">Password Generator</a></li>
+                        <li><a href=\"/tools/json-formatter/\">JSON Formatter</a></li>
+                        <li><a href=\"/tools/bmi-calculator/\">BMI Calculator</a></li>
+                        <li><a href=\"/tools/qr-code-generator/\">QR Code Generator</a></li>
+                        <li><a href=\"/tools/meta-tag-generator/\">Meta Tag Generator</a></li>
+                    </ul>
+                </div>
+                
+                <div class=\"footer-section\">
+                    <h4>Support</h4>
+                    <ul class=\"footer-links\">
+                        <li><a href=\"/about/\">About Us</a></li>
+                        <li><a href=\"/contact/\">Contact</a></li>
+                        <li><a href=\"/privacy/\">Privacy Policy</a></li>
+                        <li><a href=\"/terms/\">Terms of Service</a></li>
+                        <li><a href=\"/sitemap.xml\">Sitemap</a></li>
+                        <li><a href=\"/feedback/\">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class=\"footer-bottom\">
+                <p>&copy; 2025 Free Tools Hub. All rights reserved.",
     "description": "Convert colors between HEX, RGB, HSL, and HSV formats. Free color converter with live preview and copy functionality for web development.",
     "url": "/tools/hex-rgb-converter/",
     "applicationCategory": "UtilityApplication",

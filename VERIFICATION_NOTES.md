@@ -37,3 +37,4 @@ The verification script may show "missing tools" due to:
 - Responsive design working
 - Accessibility features added
 - SEO optimization complete
+- Converted stray `\n` sequences to newline characters in several tool pages
