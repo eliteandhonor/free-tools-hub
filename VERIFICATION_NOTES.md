@@ -44,3 +44,4 @@ The verification script may show "missing tools" due to:
 - Fixed clear button selector in Word Counter tool; now uses `document.querySelector('.clear-btn')` and toggles visibility correctly.
 - Removed inline code from script tags in pdf-to-text tool to avoid duplication
 
+- Appended newline to free-tools-hub.code-workspace for consistent formatting
