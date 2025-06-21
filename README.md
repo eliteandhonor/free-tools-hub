@@ -23,3 +23,4 @@ chmod +x project-doctor.sh
 ```
 
 The script lints HTML/CSS assets (ignoring third-party files in `vendor/`) and optionally runs Python checks. Review the output for any warnings.
+Custom lint rules are stored in `.htmlhintrc` and `.csslintrc` at the project root.

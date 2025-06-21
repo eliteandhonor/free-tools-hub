@@ -1,0 +1,5 @@
+{
+  "exclude-list": "vendor/",
+  "errors": "import,duplicate-properties,known-properties,empty-rules",
+  "ignore": "adjoining-classes,box-model,ids,outline-none,qualified-headings"
+}
