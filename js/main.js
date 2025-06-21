@@ -101,8 +101,9 @@ const FreeToolsHub = {
     
     // Setup mobile navigation
     setupMobileNavigation: function() {
-        const navToggle = document.getElementById('navbar-toggle');
-        const navMenu = document.getElementById('navbar-nav');
+        // Use class selectors for flexible markup across pages
+        const navToggle = document.querySelector('.navbar-toggle');
+        const navMenu = document.querySelector('.navbar-nav');
         
         if (navToggle && navMenu) {
             navToggle.addEventListener('click', () => {
