@@ -13,6 +13,10 @@ echo -e "${BLUE}
           FREE TOOLS HUB - COMPREHENSIVE DOCTOR        
 ======================================================${NC}"
 
+has_python_code() {
+    [ -d "src" ] || find . -name '*.py' | grep -q .
+}
+
 check_python() {
     if ! command -v python3 &> /dev/null; then
         echo -e "${RED}Python 3 required${NC}"
@@ -21,7 +25,11 @@ check_python() {
 }
 
 setup_env() {
-    # Create/activate venv
+    # Create/activate venv only if Python code exists
+    if ! has_python_code; then
+        return
+    fi
+
     if [ ! -d "venv" ]; then
         echo -e "${BLUE}Creating virtual environment...${NC}"
         python3 -m venv venv
@@ -53,7 +61,7 @@ setup_env() {
     fi
 }
 
-run_checks() {
+run_python_checks() {
     echo -e "\n${BLUE}========== CODE QUALITY ==========${NC}"
     echo -e "${YELLOW}Running Pylint...${NC}"
     pylint --output-format=colorized --ignore=venv . || true
@@ -82,9 +90,23 @@ run_checks() {
     pipdeptree --warn silence || true
 }
 
+run_web_checks() {
+    echo -e "\n${BLUE}========== WEB QUALITY ==========${NC}"
+    echo -e "${YELLOW}HTML validation...${NC}"
+    npx --yes htmlhint **/*.html || true
+
+    echo -e "\n${YELLOW}CSS linting...${NC}"
+    npx --yes csslint **/*.css || true
+}
+
 # Main execution
-check_python
-setup_env
-run_checks
+if has_python_code; then
+    check_python
+    setup_env
+    run_python_checks
+else
+    echo -e "${YELLOW}No Python code detected. Skipping Python checks.${NC}"
+    run_web_checks
+fi
 
 echo -e "\n${GREEN}Checks completed. Review outputs for any warnings.${NC}"
