@@ -19,9 +19,10 @@ Supplementary files include `manifest.json`, `robots.txt`, and common pages unde
 1. Each tool lives in `tools/<tool-id>/`.
 2. Create an `index.html` page using existing tools as reference. Include security headers and SEO meta tags like those in `index.html`.
 3. Add any JavaScript in a `script.js` file. Keep code modular; use classes similar to current tools.
-4. Register the new tool inside `data/tools-config.json` with its id, name, description, category, and features list.
-5. Avoid editing vendor libraries; load them via `js/vendor-loader.js` for CDN fallback behaviour.
-6. Test the tool locally using a static file server, e.g. `python3 -m http.server` from repository root, then browse to `http://localhost:8000`.
+4. Always include <script src="script.js"></script> before </body> in each tool's index.html.
+5. Register the new tool inside `data/tools-config.json` with its id, name, description, category, and features list.
+6. Avoid editing vendor libraries; load them via `js/vendor-loader.js` for CDN fallback behaviour.
+7. Test the tool locally using a static file server, e.g. `python3 -m http.server` from repository root, then browse to `http://localhost:8000`.
 
 ## Site-Wide Development Guidelines
 
