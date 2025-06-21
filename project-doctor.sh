@@ -35,6 +35,13 @@ check_node() {
     fi
 }
 
+ensure_node_deps() {
+    if [ ! -d "node_modules" ]; then
+        echo -e "${BLUE}Installing npm dependencies...${NC}"
+        npm install
+    fi
+}
+
 setup_env() {
     # Create/activate venv only if Python code exists
     if ! has_python_code; then
@@ -120,6 +127,7 @@ if has_python_code; then
 else
     echo -e "${YELLOW}No Python code detected. Skipping Python checks.${NC}"
     check_node
+    ensure_node_deps
     run_web_checks
 fi
 
