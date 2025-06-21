@@ -677,8 +677,9 @@
                 
                 Object.entries(readingSpeeds).forEach(([speed, wpm]) => {
                     const minutes = Math.ceil(wordCount / wpm);
-                    const timeText = minutes < 1 ? '< 1 min' : 
-                                   minutes === 1 ? '1 min' : 
+                    const timeText = wordCount === 0 ? '0 min' :
+                                   minutes < 1 ? '< 1 min' :
+                                   minutes === 1 ? '1 min' :
                                    `${minutes} min`;
                     document.getElementById(`reading-${speed}`).textContent = timeText;
                 });
