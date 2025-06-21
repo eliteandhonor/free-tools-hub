@@ -38,7 +38,8 @@ class WordCounter {
         // Action buttons
         document.querySelector('.clear-btn').addEventListener('click', () => this.clearText());
         document.querySelector('.copy-btn').addEventListener('click', () => this.copyText());
-        document.querySelector('.copy-stats-btn').addEventListener('click', () => this.copyStats());
+        const copyStatsBtn = document.querySelector('.copy-stats-btn');
+        if (copyStatsBtn) copyStatsBtn.addEventListener('click', () => this.copyStats());
         document.querySelector('.download-btn').addEventListener('click', () => this.downloadText());
 
         // File upload
@@ -111,10 +112,14 @@ class WordCounter {
         window.addEventListener('beforeunload', () => this.saveToLocalStorage());
 
         // Text formatting buttons
-        document.getElementById('uppercase-btn').addEventListener('click', () => this.transformText('uppercase'));
-        document.getElementById('lowercase-btn').addEventListener('click', () => this.transformText('lowercase'));
-        document.getElementById('sentence-case-btn').addEventListener('click', () => this.transformText('sentence'));
-        document.getElementById('remove-extra-spaces-btn').addEventListener('click', () => this.transformText('spaces'));
+        const uppercaseBtn = document.getElementById('uppercase-btn');
+        if (uppercaseBtn) uppercaseBtn.addEventListener('click', () => this.transformText('uppercase'));
+        const lowercaseBtn = document.getElementById('lowercase-btn');
+        if (lowercaseBtn) lowercaseBtn.addEventListener('click', () => this.transformText('lowercase'));
+        const sentenceCaseBtn = document.getElementById('sentence-case-btn');
+        if (sentenceCaseBtn) sentenceCaseBtn.addEventListener('click', () => this.transformText('sentence'));
+        const removeSpacesBtn = document.getElementById('remove-extra-spaces-btn');
+        if (removeSpacesBtn) removeSpacesBtn.addEventListener('click', () => this.transformText('spaces'));
 
         // History navigation
         const undoBtn = document.getElementById('undo-btn');
