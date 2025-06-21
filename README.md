@@ -56,6 +56,14 @@ Each tool's logic resides in a `script.js` file within its folder. Include this 
 ```
 
 Avoid duplicating logic with inline JavaScript.
+
+### Word Counter Notes
+
+The Word Counter tool now guards optional UI elements before wiring events.
+Listeners for goal inputs, undo/redo, and keyword-density toggles are only
+registered when the corresponding elements exist. Updates to goal progress or
+keyword density are likewise skipped if their elements are missing. These
+safeguards prevent console errors when the feature markup is omitted.
 ## License
 
 This project is licensed under the [MIT License](LICENSE).

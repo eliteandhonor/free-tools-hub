@@ -26,11 +26,14 @@ class WordCounter {
 
     bindEvents() {
         // Text input events
-        document.getElementById('text-input').addEventListener('input', () => this.onTextInput());
-        document.getElementById('text-input').addEventListener('paste', () => {
+        const textInput = document.getElementById('text-input');
+        if (textInput) {
+            textInput.addEventListener('input', () => this.onTextInput());
+            textInput.addEventListener('paste', () => {
             // Small delay to allow paste to complete
             setTimeout(() => this.onTextInput(), 10);
         });
+        }
 
         // Action buttons
         document.querySelector('.clear-btn').addEventListener('click', () => this.clearText());
@@ -43,42 +46,65 @@ class WordCounter {
         document.querySelector('.upload-btn')?.addEventListener('click', () => document.getElementById('file-input').click());
 
         // Settings toggles
-        document.getElementById('include-spaces').addEventListener('change', (e) => {
-            this.settings.includeSpaces = e.target.checked;
-            this.updateCounts();
-            this.saveSettings();
-        });
+        const includeSpaces = document.getElementById('include-spaces');
+        if (includeSpaces) {
+            includeSpaces.addEventListener('change', (e) => {
+                this.settings.includeSpaces = e.target.checked;
+                this.updateCounts();
+                this.saveSettings();
+            });
+        }
 
-        document.getElementById('count-punctuation').addEventListener('change', (e) => {
-            this.settings.countPunctuation = e.target.checked;
-            this.updateCounts();
-            this.saveSettings();
-        });
+        const countPunctuation = document.getElementById('count-punctuation');
+        if (countPunctuation) {
+            countPunctuation.addEventListener('change', (e) => {
+                this.settings.countPunctuation = e.target.checked;
+                this.updateCounts();
+                this.saveSettings();
+            });
+        }
 
-        document.getElementById('real-time-count').addEventListener('change', (e) => {
-            this.settings.realTimeCount = e.target.checked;
-            this.saveSettings();
-        });
+        const realTimeCount = document.getElementById('real-time-count');
+        if (realTimeCount) {
+            realTimeCount.addEventListener('change', (e) => {
+                this.settings.realTimeCount = e.target.checked;
+                this.saveSettings();
+            });
+        }
 
-        document.getElementById('show-reading-time').addEventListener('change', (e) => {
-            this.settings.showReadingTime = e.target.checked;
-            this.updateCounts();
-            this.saveSettings();
-        });
+        const showReadingTime = document.getElementById('show-reading-time');
+        if (showReadingTime) {
+            showReadingTime.addEventListener('change', (e) => {
+                this.settings.showReadingTime = e.target.checked;
+                this.updateCounts();
+                this.saveSettings();
+            });
+        }
 
-        document.getElementById('show-keyword-density').addEventListener('change', (e) => {
-            this.settings.showKeywordDensity = e.target.checked;
-            this.toggleKeywordDensity(e.target.checked);
-            this.saveSettings();
-        });
+        const showKeywordDensity = document.getElementById('show-keyword-density');
+        if (showKeywordDensity) {
+            showKeywordDensity.addEventListener('change', (e) => {
+                this.settings.showKeywordDensity = e.target.checked;
+                this.toggleKeywordDensity(e.target.checked);
+                this.saveSettings();
+            });
+        }
 
         // Analysis options
-        document.getElementById('analyze-btn').addEventListener('click', () => this.performDetailedAnalysis());
-        document.getElementById('export-analysis-btn').addEventListener('click', () => this.exportAnalysis());
+        const analyzeBtn = document.getElementById('analyze-btn');
+        if (analyzeBtn) analyzeBtn.addEventListener('click', () => this.performDetailedAnalysis());
+        const exportAnalysisBtn = document.getElementById('export-analysis-btn');
+        if (exportAnalysisBtn) exportAnalysisBtn.addEventListener('click', () => this.exportAnalysis());
 
         // Target goals
-        document.getElementById('word-goal').addEventListener('input', () => this.updateGoalProgress());
-        document.getElementById('char-goal').addEventListener('input', () => this.updateGoalProgress());
+        const wordGoalInput = document.getElementById('word-goal');
+        if (wordGoalInput) {
+            wordGoalInput.addEventListener('input', () => this.updateGoalProgress());
+        }
+        const charGoalInput = document.getElementById('char-goal');
+        if (charGoalInput) {
+            charGoalInput.addEventListener('input', () => this.updateGoalProgress());
+        }
 
         // Auto-save functionality
         setInterval(() => this.saveToLocalStorage(), 5000);
@@ -91,8 +117,10 @@ class WordCounter {
         document.getElementById('remove-extra-spaces-btn').addEventListener('click', () => this.transformText('spaces'));
 
         // History navigation
-        document.getElementById('undo-btn').addEventListener('click', () => this.undo());
-        document.getElementById('redo-btn').addEventListener('click', () => this.redo());
+        const undoBtn = document.getElementById('undo-btn');
+        if (undoBtn) undoBtn.addEventListener('click', () => this.undo());
+        const redoBtn = document.getElementById('redo-btn');
+        if (redoBtn) redoBtn.addEventListener('click', () => this.redo());
     }
 
     onTextInput() {
@@ -102,7 +130,9 @@ class WordCounter {
             this.updateCounts();
         }
         
-        this.updateGoalProgress();
+        if (document.getElementById('word-goal') || document.getElementById('char-goal')) {
+            this.updateGoalProgress();
+        }
         this.saveToLocalStorage();
         
         // Add to history for undo/redo
@@ -323,44 +353,59 @@ class WordCounter {
     updateGoalProgress() {
         const text = document.getElementById('text-input').value;
         const stats = this.analyzeText(text);
-        
-        const wordGoal = parseInt(document.getElementById('word-goal').value) || 0;
-        const charGoal = parseInt(document.getElementById('char-goal').value) || 0;
+
+        const wordGoalInput = document.getElementById('word-goal');
+        const charGoalInput = document.getElementById('char-goal');
+
+        if (!wordGoalInput && !charGoalInput) {
+            return;
+        }
+
+        const wordGoal = parseInt(wordGoalInput?.value) || 0;
+        const charGoal = parseInt(charGoalInput?.value) || 0;
         
         // Update word goal progress
-        if (wordGoal > 0) {
-            const wordProgress = Math.min(100, (stats.words / wordGoal) * 100);
-            document.getElementById('word-progress').style.width = wordProgress + '%';
-            document.getElementById('word-progress-text').textContent = 
-                `${stats.words} / ${wordGoal} words (${Math.round(wordProgress)}%)`;
-            
-            if (stats.words >= wordGoal) {
-                document.getElementById('word-progress').style.backgroundColor = '#10b981';
-                this.showGoalAchieved('word');
+        const wordProgressBar = document.getElementById('word-progress');
+        const wordProgressText = document.getElementById('word-progress-text');
+        if (wordProgressBar && wordProgressText) {
+            if (wordGoal > 0) {
+                const wordProgress = Math.min(100, (stats.words / wordGoal) * 100);
+                wordProgressBar.style.width = wordProgress + '%';
+                wordProgressText.textContent =
+                    `${stats.words} / ${wordGoal} words (${Math.round(wordProgress)}%)`;
+
+                if (stats.words >= wordGoal) {
+                    wordProgressBar.style.backgroundColor = '#10b981';
+                    this.showGoalAchieved('word');
+                } else {
+                    wordProgressBar.style.backgroundColor = '#3b82f6';
+                }
             } else {
-                document.getElementById('word-progress').style.backgroundColor = '#3b82f6';
+                wordProgressBar.style.width = '0%';
+                wordProgressText.textContent = 'Set a word goal';
             }
-        } else {
-            document.getElementById('word-progress').style.width = '0%';
-            document.getElementById('word-progress-text').textContent = 'Set a word goal';
         }
         
         // Update character goal progress
-        if (charGoal > 0) {
-            const charProgress = Math.min(100, (stats.characters / charGoal) * 100);
-            document.getElementById('char-progress').style.width = charProgress + '%';
-            document.getElementById('char-progress-text').textContent = 
-                `${stats.characters} / ${charGoal} characters (${Math.round(charProgress)}%)`;
-            
-            if (stats.characters >= charGoal) {
-                document.getElementById('char-progress').style.backgroundColor = '#10b981';
-                this.showGoalAchieved('character');
+        const charProgressBar = document.getElementById('char-progress');
+        const charProgressText = document.getElementById('char-progress-text');
+        if (charProgressBar && charProgressText) {
+            if (charGoal > 0) {
+                const charProgress = Math.min(100, (stats.characters / charGoal) * 100);
+                charProgressBar.style.width = charProgress + '%';
+                charProgressText.textContent =
+                    `${stats.characters} / ${charGoal} characters (${Math.round(charProgress)}%)`;
+
+                if (stats.characters >= charGoal) {
+                    charProgressBar.style.backgroundColor = '#10b981';
+                    this.showGoalAchieved('character');
+                } else {
+                    charProgressBar.style.backgroundColor = '#3b82f6';
+                }
             } else {
-                document.getElementById('char-progress').style.backgroundColor = '#3b82f6';
+                charProgressBar.style.width = '0%';
+                charProgressText.textContent = 'Set a character goal';
             }
-        } else {
-            document.getElementById('char-progress').style.width = '0%';
-            document.getElementById('char-progress-text').textContent = 'Set a character goal';
         }
     }
 
@@ -379,8 +424,10 @@ class WordCounter {
 
     toggleKeywordDensity(show) {
         const keywordSection = document.getElementById('keyword-density-section');
+        if (!keywordSection) return;
+
         keywordSection.style.display = show ? 'block' : 'none';
-        
+
         if (show) {
             this.updateKeywordDensity();
         }
@@ -389,10 +436,12 @@ class WordCounter {
     updateKeywordDensity() {
         const text = document.getElementById('text-input').value;
         const stats = this.analyzeText(text);
-        
+
+        const keywordList = document.getElementById('keyword-density-list');
+        if (!keywordList) return;
+
         if (stats.words === 0) {
-            document.getElementById('keyword-density-list').innerHTML = 
-                '<div class="keyword-item">No text to analyze</div>';
+            keywordList.innerHTML = '<div class="keyword-item">No text to analyze</div>';
             return;
         }
         
@@ -404,7 +453,6 @@ class WordCounter {
             .sort(([,a], [,b]) => b - a)
             .slice(0, 10);
         
-        const keywordList = document.getElementById('keyword-density-list');
         keywordList.innerHTML = '';
         
         if (filteredFrequency.length === 0) {
@@ -768,14 +816,21 @@ Reading time: ${this.calculateReadingTime(stats.words)}`;
 
     initializeSettings() {
         // Apply saved settings to UI
-        document.getElementById('include-spaces').checked = this.settings.includeSpaces;
-        document.getElementById('count-punctuation').checked = this.settings.countPunctuation;
-        document.getElementById('real-time-count').checked = this.settings.realTimeCount;
-        document.getElementById('show-reading-time').checked = this.settings.showReadingTime;
-        document.getElementById('show-keyword-density').checked = this.settings.showKeywordDensity;
-        
+        const includeSpaces = document.getElementById('include-spaces');
+        if (includeSpaces) includeSpaces.checked = this.settings.includeSpaces;
+        const countPunctuation = document.getElementById('count-punctuation');
+        if (countPunctuation) countPunctuation.checked = this.settings.countPunctuation;
+        const realTimeCount = document.getElementById('real-time-count');
+        if (realTimeCount) realTimeCount.checked = this.settings.realTimeCount;
+        const showReadingTime = document.getElementById('show-reading-time');
+        if (showReadingTime) showReadingTime.checked = this.settings.showReadingTime;
+        const showKeywordDensity = document.getElementById('show-keyword-density');
+        if (showKeywordDensity) showKeywordDensity.checked = this.settings.showKeywordDensity;
+
         // Apply settings
-        this.toggleKeywordDensity(this.settings.showKeywordDensity);
+        if (document.getElementById('keyword-density-section')) {
+            this.toggleKeywordDensity(this.settings.showKeywordDensity);
+        }
     }
 
     // Message display methods
