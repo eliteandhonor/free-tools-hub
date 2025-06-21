@@ -31,7 +31,7 @@ Custom lint rules are stored in `.htmlhintrc` and `.csslintrc` at the project ro
 
 ## Sitemap Generation
 
-Run `node scripts/generate-sitemap.js` after adding or updating tools. This script reads `data/tools-config.json` and rewrites `sitemap.xml` with a `<url>` entry for each tool. Validate the result with `xmllint --noout sitemap.xml`.
+Run `node scripts/generate-sitemap.js` after adding or updating tools. The script reads `data/tools-config.json`, writes a `<url>` entry for each tool, and updates all `<lastmod>` dates to the current day using `new Date().toISOString().slice(0,10)`. Validate the result with `xmllint --noout sitemap.xml`.
 
 ## License
 

@@ -15,9 +15,12 @@ if (idx === -1) {
   throw new Error('Marker not found in sitemap');
 }
 
-const header = existing.substring(0, idx + marker.length);
+// Use the current date in YYYY-MM-DD format for each sitemap generation
+const lastmod = new Date().toISOString().slice(0, 10);
+
+let header = existing.substring(0, idx + marker.length);
+header = header.replace(/<lastmod>.*?<\/lastmod>/g, `<lastmod>${lastmod}</lastmod>`);
 const footer = '\n</urlset>\n';
-const lastmod = '2025-06-20';
 
 const toolEntries = tools.map(t =>
   `    <url><loc>https://SITE_URL_PLACEHOLDER/tools/${t.id}/</loc><lastmod>${lastmod}</lastmod><priority>0.8</priority></url>`
