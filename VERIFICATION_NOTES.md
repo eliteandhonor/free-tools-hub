@@ -45,3 +45,4 @@ The verification script may show "missing tools" due to:
 - Removed inline code from script tags in pdf-to-text tool to avoid duplication
 
 - Appended newline to free-tools-hub.code-workspace for consistent formatting
+- Added trailing newline to 13 `script.js` files: age-calculator, hex-rgb-converter, keyword-density-checker, logo-generator, meta-tag-generator, password-generator, robots-txt-generator, seo-analyzer, serp-preview, sitemap-generator, text-case-converter, url-encoder-decoder, uuid-generator
