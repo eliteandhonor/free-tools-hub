@@ -42,3 +42,5 @@ The verification script may show "missing tools" due to:
 - Verified `tools/*-generator/index.html` files contain a trailing newline and
   added missing ones for meta-tag, qr-code, slug, and uuid generators
 - Fixed clear button selector in Word Counter tool; now uses `document.querySelector('.clear-btn')` and toggles visibility correctly.
+- Removed inline code from script tags in pdf-to-text tool to avoid duplication
+
