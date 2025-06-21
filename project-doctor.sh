@@ -1,0 +1,90 @@
+#!/bin/bash
+set -euo pipefail
+
+# Colors
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+BLUE='\033[0;34m'
+NC='\033[0m'
+
+echo -e "${BLUE}
+======================================================
+          FREE TOOLS HUB - COMPREHENSIVE DOCTOR        
+======================================================${NC}"
+
+check_python() {
+    if ! command -v python3 &> /dev/null; then
+        echo -e "${RED}Python 3 required${NC}"
+        exit 1
+    fi
+}
+
+setup_env() {
+    # Create/activate venv
+    if [ ! -d "venv" ]; then
+        echo -e "${BLUE}Creating virtual environment...${NC}"
+        python3 -m venv venv
+    fi
+    
+    # Cross-platform activation
+    if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
+        source venv/Scripts/activate || {
+            echo -e "${RED}Failed to activate venv${NC}"
+            exit 1
+        }
+    else
+        source venv/bin/activate || {
+            echo -e "${RED}Failed to activate venv${NC}"
+            exit 1
+        }
+    fi
+    
+    # Install dependencies
+    echo -e "${BLUE}Installing dependencies...${NC}"
+    if ! pip install --upgrade pip setuptools wheel; then
+        echo -e "${RED}Failed to upgrade core tools${NC}"
+        exit 1
+    fi
+    
+    if ! pip install -r requirements.txt; then
+        echo -e "${RED}Dependency installation failed${NC}"
+        exit 1
+    fi
+}
+
+run_checks() {
+    echo -e "\n${BLUE}========== CODE QUALITY ==========${NC}"
+    echo -e "${YELLOW}Running Pylint...${NC}"
+    pylint --output-format=colorized . || true
+    
+    echo -e "\n${YELLOW}Flake8 checks...${NC}"
+    flake8 . || true
+    
+    echo -e "\n${YELLOW}Type checking with mypy...${NC}"
+    mypy . || true
+    
+    echo -e "\n${YELLOW}Security scan with Bandit...${NC}"
+    bandit -r . || true
+    
+    echo -e "\n${YELLOW}Secret detection...${NC}"
+    detect-secrets scan . || true
+    
+    echo -e "\n${BLUE}========== TESTING ==========${NC}"
+    echo -e "${YELLOW}Running tests...${NC}"
+    pytest --cov=src --cov-report=term-missing || true
+    
+    echo -e "\n${YELLOW}Performance benchmarks...${NC}"
+    pytest --benchmark-only || true
+    
+    echo -e "\n${BLUE}========== MAINTENANCE ==========${NC}"
+    echo -e "${YELLOW}Checking dependencies...${NC}"
+    pipdeptree --warn silence || true
+}
+
+# Main execution
+check_python
+setup_env
+run_checks
+
+echo -e "\n${GREEN}Checks completed. Review outputs for any warnings.${NC}"
