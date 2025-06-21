@@ -56,7 +56,7 @@ setup_env() {
 run_checks() {
     echo -e "\n${BLUE}========== CODE QUALITY ==========${NC}"
     echo -e "${YELLOW}Running Pylint...${NC}"
-    pylint --output-format=colorized . || true
+    pylint --output-format=colorized --ignore=venv . || true
     
     echo -e "\n${YELLOW}Flake8 checks...${NC}"
     flake8 . || true
