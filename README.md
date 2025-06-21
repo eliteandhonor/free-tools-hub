@@ -72,6 +72,11 @@ safeguards prevent console errors when the feature markup is omitted. The
 copy statistics button handler now checks for `.copy-stats-btn` before
 registering its event listener to avoid errors when the button is absent.
 
+## Housekeeping
+
+Removed unused `script_backup.js` from the barcode generator tool.
+
+
 ## Testing
 
 Run `npm test` to execute the Mocha test suite. Install dependencies first with
