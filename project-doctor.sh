@@ -1,6 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
+# Enable recursive globbing so '**' patterns traverse directories
+# Nullglob prevents unmatched globs from expanding to literal strings
+shopt -s globstar nullglob
+
 # Colors
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
