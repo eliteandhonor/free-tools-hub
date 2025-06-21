@@ -35,7 +35,23 @@
     {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "HTML/CSS/JS Beautifier - Free Tools Hub</title>\n    <meta name=\"description\" content=\"Format and beautify HTML, CSS, and JavaScript code online. Free code formatter with syntax highlighting, indentation, and minification options.\">\n    <meta name=\"keywords\" content=\"code beautifier, html formatter, css formatter, javascript formatter, code formatter, pretty print\">\n    <link rel=\"canonical\" href=\"/tools/code-beautifier/\">\n    \n    <!-- Open Graph / Facebook -->\n    <meta property=\"og:type\" content=\"website\">\n    <meta property=\"og:url\" content=\"/tools/code-beautifier/\">\n    <meta property=\"og:title\" content=\"HTML/CSS/JS Beautifier - Free Tools Hub\">\n    <meta property=\"og:description\" content=\"Format and beautify HTML, CSS, and JavaScript code online for free. Professional code formatter with syntax highlighting.\">\n    \n    <!-- Favicon -->\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"/favicon.ico\">\n    \n    <!-- Stylesheets -->\n    \n    <link href=\"../../css/main.css\" rel=\"stylesheet\">\n    <!-- Vendor Library Loader with CDN Fallbacks -->
+    "name": "HTML/CSS/JS Beautifier - Free Tools Hub",
+    "description": "Format and beautify HTML, CSS, and JavaScript code online. Free code formatter with syntax highlighting, indentation, and minification options.",
+    "url": "/tools/code-beautifier/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Free Tools Hub"
+    }
+    }
+    </script>
+    <!-- Vendor Library Loader with CDN Fallbacks -->
     <script src="../../js/vendor-loader.js"></script>
 </head>\n<body>\n    <!-- Header -->\n    <header class=\"header\">\n        <nav class=\"navbar\">\n            <div class=\"container\">\n                <div class=\"nav-wrapper\">\n                    <a href=\"/\" class=\"logo\">\n                        <i class=\"fas fa-tools\"></i>\n                        <span>Free Tools Hub</span>\n                    </a>\n                    \n                    <div class=\"nav-links\">\n                        <a href=\"/\" class=\"nav-link\">Home</a>\n                        <a href=\"/tools/\" class=\"nav-link\">All Tools</a>\n                        <div class=\"dropdown\">\n                            <a href=\"#\" class=\"nav-link dropdown-toggle\">Categories <i class=\"fas fa-chevron-down\"></i></a>\n                            <div class=\"dropdown-menu\">\n                                <a href=\"/tools/text/\" class=\"dropdown-item\">Text Tools</a>\n                                <a href=\"/tools/seo/\" class=\"dropdown-item\">SEO Tools</a>\n                                <a href=\"/tools/developer/\" class=\"dropdown-item\">Developer Tools</a>\n                                <a href=\"/tools/calculator/\" class=\"dropdown-item\">Calculators</a>\n                                <a href=\"/tools/converter/\" class=\"dropdown-item\">Converters</a>\n                                <a href=\"/tools/generator/\" class=\"dropdown-item\">Generators</a>\n                            </div>\n                        </div>\n                        <a href=\"/about/\" class=\"nav-link\">About</a>\n                        <a href=\"/contact/\" class=\"nav-link\">Contact</a>\n                    </div>\n                    \n                    <button class=\"mobile-menu-btn\">\n                        <span></span>\n                        <span></span>\n                        <span></span>\n                    </button>\n                </div>\n            </div>\n        </nav>\n    </header>\n\n    <!-- Main Content -->\n    <main class=\"main\" role="main">\n        <div class=\"container\">\n            <!-- Breadcrumb -->\n            <nav class=\"breadcrumb\">\n                <a href=\"/\">Home</a>\n                <span class=\"separator\">/</span>\n                <a href=\"/tools/\">Tools</a>\n                <span class=\"separator\">/</span>\n                <a href=\"/tools/developer/\">Developer Tools</a>\n                <span class=\"separator\">/</span>\n                <span class=\"current\">Code Beautifier</span>\n            </nav>\n\n            <!-- Tool Header -->\n            <div class=\"tool-header\">\n                <h1 class=\"tool-title\">\n                    <i class=\"fas fa-magic\"></i>\n                    HTML/CSS/JS Beautifier\n                </h1>\n                <p class=\"tool-description\">\n                    Format and beautify HTML, CSS, and JavaScript code with proper indentation, syntax highlighting, and structure optimization. Perfect for developers and code optimization.\n                </p>\n            </div>\n\n            <!-- Tool Content -->\n            <div class=\"tool-wrapper\">\n                <div class=\"tool-container\">\n                    <!-- Language Selection -->\n                    <div class=\"tool-controls\">\n                        <div class=\"control-group\">\n                            <label for=\"language-select\">Language:</label>\n                            <select id=\"language-select\" class=\"form-control\">\n                                <option value=\"html\">HTML</option>\n                                <option value=\"css\">CSS</option>\n                                <option value=\"js\">JavaScript</option>\n                                <option value=\"json\">JSON</option>\n                            </select>\n                        </div>\n\n                        <div class=\"control-group\">\n                            <label for=\"indent-size\">Indent Size:</label>\n                            <select id=\"indent-size\" class=\"form-control\">\n                                <option value=\"2\">2 spaces</option>\n                                <option value=\"4\" selected>4 spaces</option>\n                                <option value=\"tab\">Tab</option>\n                            </select>\n                        </div>\n\n                        <div class=\"control-group\">\n                            <label for=\"max-line-length\">Max Line Length:</label>\n                            <input type=\"number\" id=\"max-line-length\" class=\"form-control\" value=\"80\" min=\"40\" max=\"200\">\n                        </div>\n                    </div>\n\n                    <!-- Code Input/Output -->\n                    <div class=\"code-editor-wrapper\">\n                        <div class=\"code-section\">\n                            <div class=\"section-header\">\n                                <label for=\"code-input\">Input Code:</label>\n                                <div class=\"section-actions\">\n                                    <button id=\"paste-btn\" class=\"btn btn-secondary btn-sm\">\n                                        <i class=\"fas fa-clipboard\"></i>\n                                        Paste\n                                    </button>\n                                    <button id=\"upload-btn\" class=\"btn btn-secondary btn-sm\">\n                                        <i class=\"fas fa-upload\"></i>\n                                        Upload File\n                                    </button>\n                                    <input type=\"file\" id=\"file-input\" style=\"display: none;\" accept=\".html,.css,.js,.json\">\n                                </div>\n                            </div>\n                            <textarea id=\"code-input\" class=\"form-control code-editor\" rows=\"15\" placeholder=\"Paste your code here or upload a file...\"></textarea>\n                        </div>\n\n                        <div class=\"action-buttons\">\n                            <button id=\"beautify-btn\" class=\"btn btn-primary\">\n                                <i class=\"fas fa-magic\"></i>\n                                Beautify Code\n                            </button>\n                            <button id=\"minify-btn\" class=\"btn btn-secondary\">\n                                <i class=\"fas fa-compress\"></i>\n                                Minify Code\n                            </button>\n                            <button id=\"clear-btn\" class=\"btn btn-secondary\">\n                                <i class=\"fas fa-trash\"></i>\n                                Clear\n                            </button>\n                        </div>\n\n                        <div class=\"code-section\">\n                            <div class=\"section-header\">\n                                <label for=\"code-output\">Formatted Code:</label>\n                                <div class=\"section-actions\">\n                                    <button id=\"copy-btn\" class=\"btn btn-secondary btn-sm\">\n                                        <i class=\"fas fa-copy\"></i>\n                                        Copy\n                                    </button>\n                                    <button id=\"download-btn\" class=\"btn btn-secondary btn-sm\">\n                                        <i class=\"fas fa-download\"></i>\n                                        Download\n                                    </button>\n                                </div>\n                            </div>\n                            <textarea id=\"code-output\" class=\"form-control code-editor\" rows=\"15\" readonly placeholder=\"Formatted code will appear here...\"></textarea>\n                        </div>\n                    </div>\n\n                    <!-- Statistics -->\n                    <div class=\"tool-stats\">\n                        <div class=\"stats-grid\">\n                            <div class=\"stat-item\">\n                                <div class=\"stat-value\" id=\"input-lines\">0</div>\n                                <div class=\"stat-label\">Input Lines</div>\n                            </div>\n                            <div class=\"stat-item\">\n                                <div class=\"stat-value\" id=\"output-lines\">0</div>\n                                <div class=\"stat-label\">Output Lines</div>\n                            </div>\n                            <div class=\"stat-item\">\n                                <div class=\"stat-value\" id=\"input-size\">0</div>\n                                <div class=\"stat-label\">Input Size (bytes)</div>\n                            </div>\n                            <div class=\"stat-item\">\n                                <div class=\"stat-value\" id=\"output-size\">0</div>\n                                <div class=\"stat-label\">Output Size (bytes)</div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <!-- Tool Information -->\n                <div class=\"tool-container\">\n                    <h2>About Code Beautification</h2>\n                    <p>Code beautification (also known as code formatting or pretty printing) is the process of improving the visual appearance and structure of code without changing its functionality. This makes code more readable, maintainable, and professional.</p>\n                    \n                    <h3>Supported Languages:</h3>\n                    <ul>\n                        <li><strong>HTML:</strong> Formats HTML markup with proper indentation and structure</li>\n                        <li><strong>CSS:</strong> Organizes CSS rules, properties, and selectors</li>\n                        <li><strong>JavaScript:</strong> Formats JS code with proper spacing and indentation</li>\n                        <li><strong>JSON:</strong> Pretty prints JSON data with readable formatting</li>\n                    </ul>\n\n                    <h3>Features:</h3>\n                    <ul>\n                        <li>Multiple language support (HTML, CSS, JavaScript, JSON)</li>\n                        <li>Customizable indentation (spaces or tabs)</li>\n                        <li>Configurable line length limits</li>\n                        <li>Code minification option</li>\n                        <li>File upload and download support</li>\n                        <li>Real-time statistics and analysis</li>\n                        <li>Syntax error detection</li>\n                        <li>Copy to clipboard functionality</li>\n                    </ul>\n\n                    <h3>Benefits of Code Beautification:</h3>\n                    <ul>\n                        <li><strong>Improved Readability:</strong> Well-formatted code is easier to read and understand</li>\n                        <li><strong>Better Maintenance:</strong> Consistent formatting makes code easier to maintain</li>\n                        <li><strong>Team Collaboration:</strong> Standardized formatting helps team development</li>\n                        <li><strong>Debugging:</strong> Proper indentation makes it easier to spot errors</li>\n                        <li><strong>Professional Appearance:</strong> Clean code looks more professional</li>\n                        <li><strong>Code Reviews:</strong> Formatted code is easier to review and audit</li>\n                    </ul>\n\n                    <h3>Use Cases:</h3>\n                    <ul>\n                        <li>Formatting minified or compressed code</li>\n                        <li>Standardizing code from different developers</li>\n                        <li>Preparing code for documentation or presentations</li>\n                        <li>Improving legacy code readability</li>\n                        <li>Educational purposes and learning</li>\n                        <li>Code quality assurance</li>\n                    </ul>\n                </div>\n\n                <!-- Related Tools -->\n                <div class=\"tool-container\">\n                    <h2>Related Tools</h2>\n                    <div class=\"related-tools\">\n                        <a href=\"/tools/html-minifier/\" class=\"related-tool\">\n                            <i class=\"fas fa-compress-alt\"></i>\n                            HTML Minifier\n                        </a>\n                        <a href=\"/tools/css-minifier/\" class=\"related-tool\">\n                            <i class=\"fas fa-compress\"></i>\n                            CSS Minifier\n                        </a>\n                        <a href=\"/tools/json-formatter/\" class=\"related-tool\">\n                            <i class=\"fas fa-code\"></i>\n                            JSON Formatter\n                        </a>\n                        <a href=\"/tools/base64-encoder-decoder/\" class=\"related-tool\">\n                            <i class=\"fas fa-lock\"></i>\n                            Base64 Encoder/Decoder\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </main>\n\n    <!-- Footer -->\n    <footer class=\"footer\">\n        <div class=\"container\">\n            <div class=\"footer-grid\">\n                <div class=\"footer-section\">\n                    <h4>Free Tools Hub</h4>\n                    <p>Your go-to destination for professional online tools and utilities. Fast, secure, and always free.</p>\n                </div>\n                \n                <div class=\"footer-section\">\n                    <h4>Tool Categories</h4>\n                    <ul class=\"footer-links\">\n                        <li><a href=\"/tools/text/\">Text Tools</a></li>\n                        <li><a href=\"/tools/seo/\">SEO Tools</a></li>\n                        <li><a href=\"/tools/developer/\">Developer Tools</a></li>\n                        <li><a href=\"/tools/calculator/\">Calculators</a></li>\n                        <li><a href=\"/tools/converter/\">Converters</a></li>\n                        <li><a href=\"/tools/generator/\">Generators</a></li>\n                    </ul>\n                </div>\n                \n                <div class=\"footer-section\">\n                    <h4>Popular Tools</h4>\n                    <ul class=\"footer-links\">\n                        <li><a href=\"/tools/word-counter/\">Word Counter</a></li>\n                        <li><a href=\"/tools/password-generator/\">Password Generator</a></li>\n                        <li><a href=\"/tools/json-formatter/\">JSON Formatter</a></li>\n                        <li><a href=\"/tools/bmi-calculator/\">BMI Calculator</a></li>\n                        <li><a href=\"/tools/qr-code-generator/\">QR Code Generator</a></li>\n                        <li><a href=\"/tools/meta-tag-generator/\">Meta Tag Generator</a></li>\n                    </ul>\n                </div>\n                \n                <div class=\"footer-section\">\n                    <h4>Support</h4>\n                    <ul class=\"footer-links\">\n                        <li><a href=\"/about/\">About Us</a></li>\n                        <li><a href=\"/contact/\">Contact</a></li>\n                        <li><a href=\"/privacy/\">Privacy Policy</a></li>\n                        <li><a href=\"/terms/\">Terms of Service</a></li>\n                        <li><a href=\"/sitemap.xml\">Sitemap</a></li>\n                        <li><a href=\"/feedback/\">Feedback</a></li>\n                    </ul>\n                </div>\n            </div>\n            \n            <div class=\"footer-bottom\">\n                <p>&copy; 2025 Free Tools Hub. All rights reserved.",
     "description": "Format and beautify HTML, CSS, and JavaScript code online. Free code formatter with syntax highlighting, indentation, and minification options.",
@@ -80,23 +96,12 @@
         {
             "@type": "ListItem",
             "position": 4,
-            "name": "HTML/CSS/JS Beautifier - Free Tools Hub</title>
-    <meta name=\"description\" content=\"Format and beautify HTML, CSS, and JavaScript code online. Free code formatter with syntax highlighting, indentation, and minification options.\">
-    <meta name=\"keywords\" content=\"code beautifier, html formatter, css formatter, javascript formatter, code formatter, pretty print\">
-    <link rel=\"canonical\" href=\"/tools/code-beautifier/\">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property=\"og:type\" content=\"website\">
-    <meta property=\"og:url\" content=\"/tools/code-beautifier/\">
-    <meta property=\"og:title\" content=\"HTML/CSS/JS Beautifier - Free Tools Hub\">
-    <meta property=\"og:description\" content=\"Format and beautify HTML, CSS, and JavaScript code online for free. Professional code formatter with syntax highlighting.\">
-    
-    <!-- Favicon -->
-    <link rel=\"icon\" type=\"image/x-icon\" href=\"/favicon.ico\">
-    
-    <!-- Stylesheets -->
-    <link href=\"../../vendor/fontawesome/css/all.min.css\" rel=\"stylesheet\">
-    <link href=\"../../css/main.css\" rel=\"stylesheet\">
+            "name": "HTML/CSS/JS Beautifier",
+            "item": "/tools/code-beautifier/"
+        }
+    ]
+    }
+    </script>
 
     <!-- Structured Data -->
     <script type=\"application/ld+json\">
@@ -1007,5 +1012,71 @@ document.addEventListener('DOMContentLoaded', initFloatingBall);
             });
             </script>
             
+    <!-- Accessibility Improvements -->
+    <script>
+    // This script removes whitespace text nodes from UL and OL elements to fix accessibility issues
+    document.addEventListener('DOMContentLoaded', function() {
+        // Find all UL and OL elements
+        const listElements = document.querySelectorAll('ul, ol');
+        
+        // For each list element, remove all text nodes that are only whitespace
+        listElements.forEach(function(list) {
+            let child = list.firstChild;
+            while(child) {
+                let nextChild = child.nextSibling;
+                if(child.nodeType === 3 && child.nodeValue.trim() === '') {
+                    list.removeChild(child);
+                }
+                child = nextChild;
+            }
+        });
+        
+        // Make sure file inputs have proper accessibility attributes
+        const fileInputs = document.querySelectorAll('input[type="file"]');
+        fileInputs.forEach(function(input, index) {
+            // Add unique IDs to prevent duplicates
+            input.id = 'file-input-' + (index + 1);
+            
+            // Add accessibility attributes if they don't exist
+            if (!input.hasAttribute('title')) {
+                input.setAttribute('title', 'Upload code file');
+            }
+            if (!input.hasAttribute('aria-label')) {
+                input.setAttribute('aria-label', 'Upload code file');
+            }
+            
+            // Replace inline styles with class
+            if (input.getAttribute('style') && input.getAttribute('style').includes('display: none')) {
+                input.removeAttribute('style');
+                input.classList.add('file-input-hidden');
+            }
+        });
+        
+        // Add accessibility to buttons that may not have aria-labels
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(function(button) {
+            if (!button.hasAttribute('aria-label')) {
+                const buttonText = button.textContent.trim();
+                if (buttonText) {
+                    button.setAttribute('aria-label', buttonText);
+                }
+            }
+            
+            // Make icons decorative
+            const icons = button.querySelectorAll('i.fas, i.far, i.fab');
+            icons.forEach(function(icon) {
+                icon.setAttribute('aria-hidden', 'true');
+            });
+        });
+        
+        // Add floating ball accessibility
+        const floatingBall = document.getElementById('minimax-floating-ball');
+        if (floatingBall) {
+            floatingBall.setAttribute('aria-label', 'AI Assistant');
+            floatingBall.setAttribute('role', 'button');
+            floatingBall.setAttribute('tabindex', '0');
+        }
+    });
+    </script>
 </body>
 </html>
