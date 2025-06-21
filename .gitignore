@@ -1,0 +1,26 @@
+# Dependency directories
+venv/
+node_modules/
+
+# Logs and runtime files
+*.log
+*.tmp
+*.pid
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.idea/
+.vscode/
+
+# Local environment files
+.env
+
+# Backup files
+*~
