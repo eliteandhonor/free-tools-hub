@@ -1,7 +1,8 @@
 # Verification Notes
 
 ## Tools Synchronization
-- ✅ 59 tools exist in filesystem
+- ✅ 59 individual tools exist in `tools/`
+- ✅ Category index pages are present for calculator, converter, developer, generator, SEO and text
 - ✅ 59 tools exist in configuration
 - ✅ All tools properly synchronized
 - ✅ Verified again on 2025-06-21: counts match
@@ -11,6 +12,8 @@ The verification script may show "missing tools" due to:
 1. Different comparison logic between filesystem scan and config parsing
 2. Timing issues with file system reads
 3. Character encoding differences
+4. Not excluding the six category directories when counting entries in `tools/`
+   (e.g. `find tools -maxdepth 1 -type d ! -name calculator ! -name converter ! -name developer ! -name generator ! -name seo ! -name text | wc -l`)
 
 **Manual Verification Confirms:**
 - All tools are properly configured
