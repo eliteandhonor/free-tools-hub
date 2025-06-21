@@ -1,6 +1,6 @@
 # Free Tools Hub
 
-This repository contains the static files for the **Free Tools Hub** website. It houses more than 50 browser-based utilities organised under the `tools/` directory.
+This repository contains the static files for the **Free Tools Hub** website. It houses 59 browser-based utilities organised under the `tools/` directory.
 
 ## Project Doctor
 
