@@ -21,7 +21,12 @@ Python steps are skipped automatically if the repository contains no Python code
 npm install
 chmod +x project-doctor.sh
 ./project-doctor.sh
+# Quick lint only
+npm run lint
 ```
+
+Use `npm run lint` when you only need to validate HTML and CSS without running
+the full doctor script.
 
 The script automatically installs missing Node dependencies if needed.
 
