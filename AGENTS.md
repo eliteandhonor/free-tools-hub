@@ -1,6 +1,9 @@
 # Repository Overview
 
-This project is a fully static website containing more than 50 individual tools.  
+This project is a fully static website containing 59 individual tools.  
+**Current Tool Count:** 59
+Remember to update this count whenever new tools are added.
+
 Core directories:
 
 - `tools/` – each tool has its own folder with `index.html` and `script.js`.
