@@ -39,3 +39,5 @@ The verification script may show "missing tools" due to:
 - SEO optimization complete
 - Converted stray `\n` sequences to newline characters in several tool pages
 - Ensure all HTML and JSON files end with a newline at EOF
+- Verified `tools/*-generator/index.html` files contain a trailing newline and
+  added missing ones for meta-tag, qr-code, slug, and uuid generators
