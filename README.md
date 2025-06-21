@@ -28,7 +28,13 @@ The script automatically installs missing Node dependencies if needed.
 The script lints HTML/CSS assets (ignoring third-party files in `vendor/`) and optionally runs Python checks. Review the output for any warnings.
 Custom lint rules are stored in `.htmlhintrc` and `.csslintrc` at the project root.
 
+
+## Sitemap Generation
+
+Run `node scripts/generate-sitemap.js` after adding or updating tools. This script reads `data/tools-config.json` and rewrites `sitemap.xml` with a `<url>` entry for each tool. Validate the result with `xmllint --noout sitemap.xml`.
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
 
