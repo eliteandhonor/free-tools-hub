@@ -102,12 +102,14 @@ run_python_checks() {
 }
 
 run_web_checks() {
-    echo -e "\n${BLUE}========== WEB QUALITY ==========${NC}"
-    echo -e "${YELLOW}HTML validation...${NC}"
-    npx --yes htmlhint **/*.html || true
+  echo -e "\n${BLUE}========== WEB QUALITY ==========${NC}"
+  echo -e "${YELLOW}HTML validation...${NC}"
+  shopt -s globstar
+  npx --yes htmlhint **/*.html || true
 
-    echo -e "\n${YELLOW}CSS linting...${NC}"
-    npx --yes csslint **/*.css || true
+  echo -e "\n${YELLOW}CSS linting...${NC}"
+  shopt -s globstar
+  npx --yes csslint **/*.css || true
 }
 
 # Main execution
