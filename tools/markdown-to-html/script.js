@@ -216,7 +216,7 @@ function convertMarkdown(text) {
 }
 
 const result = convertMarkdown('# Hello World');
-console.log(result);
+if (DEBUG) console.log(result);
 \\`\\`\\`
 
 ## Table Example

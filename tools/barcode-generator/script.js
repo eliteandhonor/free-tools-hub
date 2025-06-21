@@ -1,7 +1,7 @@
 // Simple Barcode Generator Tool
 class BarcodeGenerator {
     constructor() {
-        console.log('Initializing Simple Barcode Generator');
+        if (DEBUG) console.log('Initializing Simple Barcode Generator');
         this.generatedBarcode = null;
         this.init();
     }
@@ -16,7 +16,7 @@ class BarcodeGenerator {
     }
     
     setupGenerator() {
-        console.log('Setting up barcode generator...');
+        if (DEBUG) console.log('Setting up barcode generator...');
         
         // Get form elements
         const form = document.getElementById('barcodeForm');
@@ -25,7 +25,7 @@ class BarcodeGenerator {
         const preview = document.getElementById('barcodePreview');
         const resultSection = document.getElementById('resultSection');
         
-        console.log('Elements found:', {
+        if (DEBUG) console.log('Elements found:', {
             form: !!form,
             textInput: !!textInput,
             typeSelect: !!typeSelect,
@@ -41,18 +41,18 @@ class BarcodeGenerator {
         // Attach form submission handler
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            console.log('Form submitted!');
+            if (DEBUG) console.log('Form submitted!');
             this.generateBarcode(textInput.value.trim(), typeSelect.value, preview, resultSection);
         });
         
-        console.log('Barcode generator setup complete');
+        if (DEBUG) console.log('Barcode generator setup complete');
     }
     
     async generateBarcode(text, type, preview, resultSection) {
-        console.log('Generating barcode:', { text, type });
+        if (DEBUG) console.log('Generating barcode:', { text, type });
         
         if (!text) {
-            console.log('No text provided');
+            if (DEBUG) console.log('No text provided');
             return;
         }
         
@@ -70,7 +70,7 @@ class BarcodeGenerator {
             
             // Generate barcode
             if (typeof JsBarcode !== 'undefined') {
-                console.log('Generating with JsBarcode');
+                if (DEBUG) console.log('Generating with JsBarcode');
                 JsBarcode(canvas, text, {
                     format: type.toUpperCase(),
                     width: 2,
@@ -78,7 +78,7 @@ class BarcodeGenerator {
                     displayValue: true
                 });
             } else {
-                console.log('Generating with fallback');
+                if (DEBUG) console.log('Generating with fallback');
                 this.drawFallbackBarcode(canvas, text);
             }
             
@@ -87,7 +87,7 @@ class BarcodeGenerator {
             resultSection.style.display = 'block';
             this.generatedBarcode = canvas;
             
-            console.log('Barcode generated successfully');
+            if (DEBUG) console.log('Barcode generated successfully');
             
         } catch (error) {
             console.error('Barcode generation error:', error);
@@ -101,11 +101,11 @@ class BarcodeGenerator {
         }
         
         return new Promise((resolve, reject) => {
-            console.log('Loading JsBarcode library...');
+            if (DEBUG) console.log('Loading JsBarcode library...');
             const script = document.createElement('script');
             script.src = 'https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js';
             script.onload = () => {
-                console.log('JsBarcode loaded successfully');
+                if (DEBUG) console.log('JsBarcode loaded successfully');
                 resolve();
             };
             script.onerror = () => {
@@ -173,7 +173,7 @@ class BarcodeGenerator {
 
 // Initialize the barcode generator when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Initializing Barcode Generator...');
+    if (DEBUG) console.log('Initializing Barcode Generator...');
     const generator = new BarcodeGenerator();
     
     // Attach download handlers
