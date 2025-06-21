@@ -20,6 +20,7 @@
    # Replace URL placeholder in sitemap.xml
    sed -i 's/SITE_URL_PLACEHOLDER/https://yourdomain.com/g' sitemap.xml
    ```
+   The repository uses `SITE_URL_PLACEHOLDER` in `sitemap.xml`. Run this command after each build to insert your production domain.
 
 3. **Web Server Configuration**
    
