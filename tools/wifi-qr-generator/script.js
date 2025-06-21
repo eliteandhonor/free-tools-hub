@@ -18,10 +18,10 @@ class WiFiQRGenerator {
             const script = document.createElement('script');
             script.src = '../../vendor/qrcodejs/qrcode.min.js';
             script.onload = () => {
-                console.log('QRCode library loaded from vendor');
+                if (DEBUG) console.log('QRCode library loaded from vendor');
                 // Check if we need compatibility layer
                 if (typeof QRCode === 'undefined' && typeof qrcode !== 'undefined') {
-                    console.log('Creating QRCode compatibility layer');
+                    if (DEBUG) console.log('Creating QRCode compatibility layer');
                     this.createQRCodeCompatibility();
                 }
                 resolve();
@@ -38,7 +38,7 @@ class WiFiQRGenerator {
         const script = document.createElement('script');
         script.src = 'https://cdn.jsdelivr.net/npm/davidshimjs-qrcodejs@0.0.2/qrcode.min.js';
         script.onload = () => {
-            console.log('QRCode library loaded from CDN');
+            if (DEBUG) console.log('QRCode library loaded from CDN');
             resolve();
         };
         script.onerror = () => {
