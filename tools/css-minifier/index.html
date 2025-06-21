@@ -35,9 +35,317 @@
     {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "CSS Minifier - Free Tools Hub</title>\n    <meta name=\"description\" content=\"Minify CSS code online for free. Reduce file size, improve website performance, and optimize CSS for production deployment.\">\n    <meta name=\"keywords\" content=\"css minifier, minify css, css compressor, css optimizer, web performance\">\n    <link rel=\"canonical\" href=\"/tools/css-minifier/\">\n    \n    <!-- Open Graph / Facebook -->\n    <meta property=\"og:type\" content=\"website\">\n    <meta property=\"og:url\" content=\"/tools/css-minifier/\">\n    <meta property=\"og:title\" content=\"CSS Minifier - Free Tools Hub\">\n    <meta property=\"og:description\" content=\"Minify CSS code online for free. Reduce file size and improve website performance.\">\n    \n    <!-- Favicon -->\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"/favicon.ico\">\n    \n    <!-- Stylesheets -->\n    \n    <link href=\"../../css/main.css\" rel=\"stylesheet\">\n    <!-- Vendor Library Loader with CDN Fallbacks -->
+    "name": "CSS Minifier - Free Tools Hub</title>
+    <meta name=\"description\" content=\"Minify CSS code online for free. Reduce file size, improve website performance, and optimize CSS for production deployment.\">
+    <meta name=\"keywords\" content=\"css minifier, minify css, css compressor, css optimizer, web performance\">
+    <link rel=\"canonical\" href=\"/tools/css-minifier/\">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property=\"og:type\" content=\"website\">
+    <meta property=\"og:url\" content=\"/tools/css-minifier/\">
+    <meta property=\"og:title\" content=\"CSS Minifier - Free Tools Hub\">
+    <meta property=\"og:description\" content=\"Minify CSS code online for free. Reduce file size and improve website performance.\">
+    
+    <!-- Favicon -->
+    <link rel=\"icon\" type=\"image/x-icon\" href=\"/favicon.ico\">
+    
+    <!-- Stylesheets -->
+    
+    <link href=\"../../css/main.css\" rel=\"stylesheet\">
+    <!-- Vendor Library Loader with CDN Fallbacks -->
     <script src="../../js/vendor-loader.js"></script>
-</head>\n<body>\n    <!-- Header -->\n    <header class=\"header\">\n        <nav class=\"navbar\">\n            <div class=\"container\">\n                <div class=\"nav-wrapper\">\n                    <a href=\"/\" class=\"logo\">\n                        <i class=\"fas fa-tools\"></i>\n                        <span>Free Tools Hub</span>\n                    </a>\n                    \n                    <div class=\"nav-links\">\n                        <a href=\"/\" class=\"nav-link\">Home</a>\n                        <a href=\"/tools/\" class=\"nav-link\">All Tools</a>\n                        <div class=\"dropdown\">\n                            <a href=\"#\" class=\"nav-link dropdown-toggle\">Categories <i class=\"fas fa-chevron-down\"></i></a>\n                            <div class=\"dropdown-menu\">\n                                <a href=\"/tools/text/\" class=\"dropdown-item\">Text Tools</a>\n                                <a href=\"/tools/seo/\" class=\"dropdown-item\">SEO Tools</a>\n                                <a href=\"/tools/developer/\" class=\"dropdown-item\">Developer Tools</a>\n                                <a href=\"/tools/calculator/\" class=\"dropdown-item\">Calculators</a>\n                                <a href=\"/tools/converter/\" class=\"dropdown-item\">Converters</a>\n                                <a href=\"/tools/generator/\" class=\"dropdown-item\">Generators</a>\n                            </div>\n                        </div>\n                        <a href=\"/about/\" class=\"nav-link\">About</a>\n                        <a href=\"/contact/\" class=\"nav-link\">Contact</a>\n                    </div>\n                    \n                    <button class=\"mobile-menu-btn\">\n                        <span></span>\n                        <span></span>\n                        <span></span>\n                    </button>\n                </div>\n            </div>\n        </nav>\n    </header>\n\n    <!-- Main Content -->\n    <main class=\"main\" role="main">\n        <div class=\"container\">\n            <!-- Breadcrumb -->\n            <nav class=\"breadcrumb\">\n                <a href=\"/\">Home</a>\n                <span class=\"separator\">/</span>\n                <a href=\"/tools/\">Tools</a>\n                <span class=\"separator\">/</span>\n                <a href=\"/tools/developer/\">Developer Tools</a>\n                <span class=\"separator\">/</span>\n                <span class=\"current\">CSS Minifier</span>\n            </nav>\n\n            <!-- Tool Header -->\n            <div class=\"tool-header\">\n                <h1 class=\"tool-title\">\n                    <i class=\"fab fa-css3-alt\"></i>\n                    CSS Minifier\n                </h1>\n                <p class=\"tool-description\">\n                    Minify and compress CSS code to reduce file size and improve website performance. Remove unnecessary whitespace, comments, and optimize your CSS for production.\n                </p>\n            </div>\n\n            <!-- Tool Content -->\n            <div class=\"tool-wrapper\">\n                <div class=\"tool-container\">\n                    <div class=\"tool-tabs\">\n                        <button class=\"tab-button active\" data-tab=\"minify\">\n                            <i class=\"fas fa-compress-alt\"></i>\n                            Minify CSS\n                        </button>\n                        <button class=\"tab-button\" data-tab=\"beautify\">\n                            <i class=\"fas fa-expand-alt\"></i>\n                            Beautify CSS\n                        </button>\n                    </div>\n\n                    <!-- CSS Minify Tab -->\n                    <div id=\"minify-tab\" class=\"tab-content active\">\n                        <div class=\"tool-section\">\n                            <label for=\"css-input\">Enter CSS to minify:</label>\n                            <textarea id=\"css-input\" class=\"form-control code-editor\" rows=\"12\" placeholder=\"/* Enter your CSS code here */\nbody {\n    margin: 0;\n    padding: 20px;\n    font-family: Arial, sans-serif;\n    background-color: #f5f5f5;\n}\n\n.container {\n    max-width: 1200px;\n    margin: 0 auto;\n    padding: 0 15px;\n}\n\nh1, h2, h3 {\n    color: #333;\n    margin-bottom: 10px;\n}\"></textarea>\n                            \n                            <div class=\"control-buttons\">\n                                <button id=\"minify-btn\" class=\"btn btn-primary\">\n                                    <i class=\"fas fa-compress-alt\"></i>\n                                    Minify CSS\n                                </button>\n                                <button id=\"copy-minified-btn\" class=\"btn btn-secondary\">\n                                    <i class=\"fas fa-copy\"></i>\n                                    Copy Result\n                                </button>\n                                <button id=\"download-minified-btn\" class=\"btn btn-secondary\">\n                                    <i class=\"fas fa-download\"></i>\n                                    Download CSS\n                                </button>\n                                <button id=\"clear-minified-btn\" class=\"btn btn-secondary\">\n                                    <i class=\"fas fa-trash\"></i>\n                                    Clear\n                                </button>\n                                <label for=\"file-input\" class=\"btn btn-secondary\">\n                                    <i class=\"fas fa-upload\"></i>\n                                    Upload CSS File\n                                </label>\n                                <input type=\"file\" id=\"file-input\" accept=\".css\" style=\"display: none;\">\n                            </div>\n                            \n                            <label for=\"css-output\">Minified CSS:</label>\n                            <textarea id=\"css-output\" class=\"form-control code-editor\" rows=\"8\" readonly placeholder=\"Minified CSS will appear here...\"></textarea>\n                        </div>\n                    </div>\n\n                    <!-- CSS Beautify Tab -->\n                    <div id=\"beautify-tab\" class=\"tab-content\">\n                        <div class=\"tool-section\">\n                            <label for=\"css-beautify-input\">Enter minified CSS to beautify:</label>\n                            <textarea id=\"css-beautify-input\" class=\"form-control code-editor\" rows=\"8\" placeholder=\"Enter minified CSS code here...\"></textarea>\n                            \n                            <div class=\"control-buttons\">\n                                <button id=\"beautify-btn\" class=\"btn btn-primary\">\n                                    <i class=\"fas fa-expand-alt\"></i>\n                                    Beautify CSS\n                                </button>\n                                <button id=\"copy-beautified-btn\" class=\"btn btn-secondary\">\n                                    <i class=\"fas fa-copy\"></i>\n                                    Copy Result\n                                </button>\n                                <button id=\"download-beautified-btn\" class=\"btn btn-secondary\">\n                                    <i class=\"fas fa-download\"></i>\n                                    Download CSS\n                                </button>\n                                <button id=\"clear-beautified-btn\" class=\"btn btn-secondary\">\n                                    <i class=\"fas fa-trash\"></i>\n                                    Clear\n                                </button>\n                            </div>\n                            \n                            <label for=\"css-beautify-output\">Beautified CSS:</label>\n                            <textarea id=\"css-beautify-output\" class=\"form-control code-editor\" rows=\"12\" readonly placeholder=\"Beautified CSS will appear here...\"></textarea>\n                        </div>\n                    </div>\n\n                    <!-- Statistics -->\n                    <div class=\"tool-stats\">\n                        <div class=\"stats-grid\">\n                            <div class=\"stat-item\">\n                                <div class=\"stat-value\" id=\"original-size\">0</div>\n                                <div class=\"stat-label\">Original Size (bytes)</div>\n                            </div>\n                            <div class=\"stat-item\">\n                                <div class=\"stat-value\" id=\"minified-size\">0</div>\n                                <div class=\"stat-label\">Minified Size (bytes)</div>\n                            </div>\n                            <div class=\"stat-item\">\n                                <div class=\"stat-value\" id=\"saved-bytes\">0</div>\n                                <div class=\"stat-label\">Saved Bytes</div>\n                            </div>\n                            <div class=\"stat-item\">\n                                <div class=\"stat-value\" id=\"compression-ratio\">0%</div>\n                                <div class=\"stat-label\">Compression Ratio</div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <!-- Tool Information -->\n                <div class=\"tool-container\">\n                    <h2>About CSS Minification</h2>\n                    <p>CSS minification is the process of removing unnecessary characters from CSS code without changing its functionality. This includes removing whitespace, comments, and optimizing the code structure to reduce file size.</p>\n                    \n                    <h3>Benefits of Minifying CSS:</h3>\n                    <ul>\n                        <li><strong>Faster Loading:</strong> Smaller file sizes mean faster download times</li>\n                        <li><strong>Bandwidth Savings:</strong> Reduced data transfer costs</li>\n                        <li><strong>Better Performance:</strong> Improved website speed and user experience</li>\n                        <li><strong>SEO Benefits:</strong> Search engines favor faster-loading websites</li>\n                        <li><strong>Server Load:</strong> Reduced server bandwidth usage</li>\n                    </ul>\n\n                    <h3>What Gets Removed:</h3>\n                    <ul>\n                        <li>Unnecessary whitespace and line breaks</li>\n                        <li>Comments and documentation</li>\n                        <li>Redundant semicolons</li>\n                        <li>Empty CSS rules</li>\n                        <li>Unnecessary quotes around CSS values</li>\n                    </ul>\n\n                    <h3>Features:</h3>\n                    <ul>\n                        <li>Real-time CSS minification</li>\n                        <li>CSS beautification to restore formatting</li>\n                        <li>File upload support</li>\n                        <li>Download minified CSS files</li>\n                        <li>Compression statistics</li>\n                        <li>Copy to clipboard functionality</li>\n                    </ul>\n                </div>\n\n                <!-- Related Tools -->\n                <div class=\"tool-container\">\n                    <h2>Related Tools</h2>\n                    <div class=\"related-tools\">\n                        <a href=\"/tools/html-minifier/\" class=\"related-tool\">\n                            <i class=\"fab fa-html5\"></i>\n                            HTML Minifier\n                        </a>\n                        <a href=\"/tools/json-formatter/\" class=\"related-tool\">\n                            <i class=\"fas fa-code\"></i>\n                            JSON Formatter\n                        </a>\n                        <a href=\"/tools/html-encoder-decoder/\" class=\"related-tool\">\n                            <i class=\"fas fa-code\"></i>\n                            HTML Encoder/Decoder\n                        </a>\n                        <a href=\"/tools/base64-encoder-decoder/\" class=\"related-tool\">\n                            <i class=\"fas fa-key\"></i>\n                            Base64 Encoder/Decoder\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </main>\n\n    <!-- Footer -->\n    <footer class=\"footer\">\n        <div class=\"container\">\n            <div class=\"footer-grid\">\n                <div class=\"footer-section\">\n                    <h4>Free Tools Hub</h4>\n                    <p>Your go-to destination for professional online tools and utilities. Fast, secure, and always free.</p>\n                </div>\n                \n                <div class=\"footer-section\">\n                    <h4>Tool Categories</h4>\n                    <ul class=\"footer-links\">\n                        <li><a href=\"/tools/text/\">Text Tools</a></li>\n                        <li><a href=\"/tools/seo/\">SEO Tools</a></li>\n                        <li><a href=\"/tools/developer/\">Developer Tools</a></li>\n                        <li><a href=\"/tools/calculator/\">Calculators</a></li>\n                        <li><a href=\"/tools/converter/\">Converters</a></li>\n                        <li><a href=\"/tools/generator/\">Generators</a></li>\n                    </ul>\n                </div>\n                \n                <div class=\"footer-section\">\n                    <h4>Popular Tools</h4>\n                    <ul class=\"footer-links\">\n                        <li><a href=\"/tools/word-counter/\">Word Counter</a></li>\n                        <li><a href=\"/tools/password-generator/\">Password Generator</a></li>\n                        <li><a href=\"/tools/json-formatter/\">JSON Formatter</a></li>\n                        <li><a href=\"/tools/bmi-calculator/\">BMI Calculator</a></li>\n                        <li><a href=\"/tools/qr-code-generator/\">QR Code Generator</a></li>\n                        <li><a href=\"/tools/meta-tag-generator/\">Meta Tag Generator</a></li>\n                    </ul>\n                </div>\n                \n                <div class=\"footer-section\">\n                    <h4>Support</h4>\n                    <ul class=\"footer-links\">\n                        <li><a href=\"/about/\">About Us</a></li>\n                        <li><a href=\"/contact/\">Contact</a></li>\n                        <li><a href=\"/privacy/\">Privacy Policy</a></li>\n                        <li><a href=\"/terms/\">Terms of Service</a></li>\n                        <li><a href=\"/sitemap.xml\">Sitemap</a></li>\n                        <li><a href=\"/feedback/\">Feedback</a></li>\n                    </ul>\n                </div>\n            </div>\n            \n            <div class=\"footer-bottom\">\n                <p>&copy; 2025 Free Tools Hub. All rights reserved.",
+</head>
+<body>
+    <!-- Header -->
+    <header class=\"header\">
+        <nav class=\"navbar\">
+            <div class=\"container\">
+                <div class=\"nav-wrapper\">
+                    <a href=\"/\" class=\"logo\">
+                        <i class=\"fas fa-tools\"></i>
+                        <span>Free Tools Hub</span>
+                    </a>
+                    
+                    <div class=\"nav-links\">
+                        <a href=\"/\" class=\"nav-link\">Home</a>
+                        <a href=\"/tools/\" class=\"nav-link\">All Tools</a>
+                        <div class=\"dropdown\">
+                            <a href=\"#\" class=\"nav-link dropdown-toggle\">Categories <i class=\"fas fa-chevron-down\"></i></a>
+                            <div class=\"dropdown-menu\">
+                                <a href=\"/tools/text/\" class=\"dropdown-item\">Text Tools</a>
+                                <a href=\"/tools/seo/\" class=\"dropdown-item\">SEO Tools</a>
+                                <a href=\"/tools/developer/\" class=\"dropdown-item\">Developer Tools</a>
+                                <a href=\"/tools/calculator/\" class=\"dropdown-item\">Calculators</a>
+                                <a href=\"/tools/converter/\" class=\"dropdown-item\">Converters</a>
+                                <a href=\"/tools/generator/\" class=\"dropdown-item\">Generators</a>
+                            </div>
+                        </div>
+                        <a href=\"/about/\" class=\"nav-link\">About</a>
+                        <a href=\"/contact/\" class=\"nav-link\">Contact</a>
+                    </div>
+                    
+                    <button class=\"mobile-menu-btn\">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class=\"main\" role="main">
+        <div class=\"container\">
+            <!-- Breadcrumb -->
+            <nav class=\"breadcrumb\">
+                <a href=\"/\">Home</a>
+                <span class=\"separator\">/</span>
+                <a href=\"/tools/\">Tools</a>
+                <span class=\"separator\">/</span>
+                <a href=\"/tools/developer/\">Developer Tools</a>
+                <span class=\"separator\">/</span>
+                <span class=\"current\">CSS Minifier</span>
+            </nav>
+
+            <!-- Tool Header -->
+            <div class=\"tool-header\">
+                <h1 class=\"tool-title\">
+                    <i class=\"fab fa-css3-alt\"></i>
+                    CSS Minifier
+                </h1>
+                <p class=\"tool-description\">
+                    Minify and compress CSS code to reduce file size and improve website performance. Remove unnecessary whitespace, comments, and optimize your CSS for production.
+                </p>
+            </div>
+
+            <!-- Tool Content -->
+            <div class=\"tool-wrapper\">
+                <div class=\"tool-container\">
+                    <div class=\"tool-tabs\">
+                        <button class=\"tab-button active\" data-tab=\"minify\">
+                            <i class=\"fas fa-compress-alt\"></i>
+                            Minify CSS
+                        </button>
+                        <button class=\"tab-button\" data-tab=\"beautify\">
+                            <i class=\"fas fa-expand-alt\"></i>
+                            Beautify CSS
+                        </button>
+                    </div>
+
+                    <!-- CSS Minify Tab -->
+                    <div id=\"minify-tab\" class=\"tab-content active\">
+                        <div class=\"tool-section\">
+                            <label for=\"css-input\">Enter CSS to minify:</label>
+                            <textarea id=\"css-input\" class=\"form-control code-editor\" rows=\"12\" placeholder=\"/* Enter your CSS code here */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3 {
+    color: #333;
+    margin-bottom: 10px;
+}\"></textarea>
+                            
+                            <div class=\"control-buttons\">
+                                <button id=\"minify-btn\" class=\"btn btn-primary\">
+                                    <i class=\"fas fa-compress-alt\"></i>
+                                    Minify CSS
+                                </button>
+                                <button id=\"copy-minified-btn\" class=\"btn btn-secondary\">
+                                    <i class=\"fas fa-copy\"></i>
+                                    Copy Result
+                                </button>
+                                <button id=\"download-minified-btn\" class=\"btn btn-secondary\">
+                                    <i class=\"fas fa-download\"></i>
+                                    Download CSS
+                                </button>
+                                <button id=\"clear-minified-btn\" class=\"btn btn-secondary\">
+                                    <i class=\"fas fa-trash\"></i>
+                                    Clear
+                                </button>
+                                <label for=\"file-input\" class=\"btn btn-secondary\">
+                                    <i class=\"fas fa-upload\"></i>
+                                    Upload CSS File
+                                </label>
+                                <input type=\"file\" id=\"file-input\" accept=\".css\" style=\"display: none;\">
+                            </div>
+                            
+                            <label for=\"css-output\">Minified CSS:</label>
+                            <textarea id=\"css-output\" class=\"form-control code-editor\" rows=\"8\" readonly placeholder=\"Minified CSS will appear here...\"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- CSS Beautify Tab -->
+                    <div id=\"beautify-tab\" class=\"tab-content\">
+                        <div class=\"tool-section\">
+                            <label for=\"css-beautify-input\">Enter minified CSS to beautify:</label>
+                            <textarea id=\"css-beautify-input\" class=\"form-control code-editor\" rows=\"8\" placeholder=\"Enter minified CSS code here...\"></textarea>
+                            
+                            <div class=\"control-buttons\">
+                                <button id=\"beautify-btn\" class=\"btn btn-primary\">
+                                    <i class=\"fas fa-expand-alt\"></i>
+                                    Beautify CSS
+                                </button>
+                                <button id=\"copy-beautified-btn\" class=\"btn btn-secondary\">
+                                    <i class=\"fas fa-copy\"></i>
+                                    Copy Result
+                                </button>
+                                <button id=\"download-beautified-btn\" class=\"btn btn-secondary\">
+                                    <i class=\"fas fa-download\"></i>
+                                    Download CSS
+                                </button>
+                                <button id=\"clear-beautified-btn\" class=\"btn btn-secondary\">
+                                    <i class=\"fas fa-trash\"></i>
+                                    Clear
+                                </button>
+                            </div>
+                            
+                            <label for=\"css-beautify-output\">Beautified CSS:</label>
+                            <textarea id=\"css-beautify-output\" class=\"form-control code-editor\" rows=\"12\" readonly placeholder=\"Beautified CSS will appear here...\"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Statistics -->
+                    <div class=\"tool-stats\">
+                        <div class=\"stats-grid\">
+                            <div class=\"stat-item\">
+                                <div class=\"stat-value\" id=\"original-size\">0</div>
+                                <div class=\"stat-label\">Original Size (bytes)</div>
+                            </div>
+                            <div class=\"stat-item\">
+                                <div class=\"stat-value\" id=\"minified-size\">0</div>
+                                <div class=\"stat-label\">Minified Size (bytes)</div>
+                            </div>
+                            <div class=\"stat-item\">
+                                <div class=\"stat-value\" id=\"saved-bytes\">0</div>
+                                <div class=\"stat-label\">Saved Bytes</div>
+                            </div>
+                            <div class=\"stat-item\">
+                                <div class=\"stat-value\" id=\"compression-ratio\">0%</div>
+                                <div class=\"stat-label\">Compression Ratio</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool Information -->
+                <div class=\"tool-container\">
+                    <h2>About CSS Minification</h2>
+                    <p>CSS minification is the process of removing unnecessary characters from CSS code without changing its functionality. This includes removing whitespace, comments, and optimizing the code structure to reduce file size.</p>
+                    
+                    <h3>Benefits of Minifying CSS:</h3>
+                    <ul>
+                        <li><strong>Faster Loading:</strong> Smaller file sizes mean faster download times</li>
+                        <li><strong>Bandwidth Savings:</strong> Reduced data transfer costs</li>
+                        <li><strong>Better Performance:</strong> Improved website speed and user experience</li>
+                        <li><strong>SEO Benefits:</strong> Search engines favor faster-loading websites</li>
+                        <li><strong>Server Load:</strong> Reduced server bandwidth usage</li>
+                    </ul>
+
+                    <h3>What Gets Removed:</h3>
+                    <ul>
+                        <li>Unnecessary whitespace and line breaks</li>
+                        <li>Comments and documentation</li>
+                        <li>Redundant semicolons</li>
+                        <li>Empty CSS rules</li>
+                        <li>Unnecessary quotes around CSS values</li>
+                    </ul>
+
+                    <h3>Features:</h3>
+                    <ul>
+                        <li>Real-time CSS minification</li>
+                        <li>CSS beautification to restore formatting</li>
+                        <li>File upload support</li>
+                        <li>Download minified CSS files</li>
+                        <li>Compression statistics</li>
+                        <li>Copy to clipboard functionality</li>
+                    </ul>
+                </div>
+
+                <!-- Related Tools -->
+                <div class=\"tool-container\">
+                    <h2>Related Tools</h2>
+                    <div class=\"related-tools\">
+                        <a href=\"/tools/html-minifier/\" class=\"related-tool\">
+                            <i class=\"fab fa-html5\"></i>
+                            HTML Minifier
+                        </a>
+                        <a href=\"/tools/json-formatter/\" class=\"related-tool\">
+                            <i class=\"fas fa-code\"></i>
+                            JSON Formatter
+                        </a>
+                        <a href=\"/tools/html-encoder-decoder/\" class=\"related-tool\">
+                            <i class=\"fas fa-code\"></i>
+                            HTML Encoder/Decoder
+                        </a>
+                        <a href=\"/tools/base64-encoder-decoder/\" class=\"related-tool\">
+                            <i class=\"fas fa-key\"></i>
+                            Base64 Encoder/Decoder
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class=\"footer\">
+        <div class=\"container\">
+            <div class=\"footer-grid\">
+                <div class=\"footer-section\">
+                    <h4>Free Tools Hub</h4>
+                    <p>Your go-to destination for professional online tools and utilities. Fast, secure, and always free.</p>
+                </div>
+                
+                <div class=\"footer-section\">
+                    <h4>Tool Categories</h4>
+                    <ul class=\"footer-links\">
+                        <li><a href=\"/tools/text/\">Text Tools</a></li>
+                        <li><a href=\"/tools/seo/\">SEO Tools</a></li>
+                        <li><a href=\"/tools/developer/\">Developer Tools</a></li>
+                        <li><a href=\"/tools/calculator/\">Calculators</a></li>
+                        <li><a href=\"/tools/converter/\">Converters</a></li>
+                        <li><a href=\"/tools/generator/\">Generators</a></li>
+                    </ul>
+                </div>
+                
+                <div class=\"footer-section\">
+                    <h4>Popular Tools</h4>
+                    <ul class=\"footer-links\">
+                        <li><a href=\"/tools/word-counter/\">Word Counter</a></li>
+                        <li><a href=\"/tools/password-generator/\">Password Generator</a></li>
+                        <li><a href=\"/tools/json-formatter/\">JSON Formatter</a></li>
+                        <li><a href=\"/tools/bmi-calculator/\">BMI Calculator</a></li>
+                        <li><a href=\"/tools/qr-code-generator/\">QR Code Generator</a></li>
+                        <li><a href=\"/tools/meta-tag-generator/\">Meta Tag Generator</a></li>
+                    </ul>
+                </div>
+                
+                <div class=\"footer-section\">
+                    <h4>Support</h4>
+                    <ul class=\"footer-links\">
+                        <li><a href=\"/about/\">About Us</a></li>
+                        <li><a href=\"/contact/\">Contact</a></li>
+                        <li><a href=\"/privacy/\">Privacy Policy</a></li>
+                        <li><a href=\"/terms/\">Terms of Service</a></li>
+                        <li><a href=\"/sitemap.xml\">Sitemap</a></li>
+                        <li><a href=\"/feedback/\">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class=\"footer-bottom\">
+                <p>&copy; 2025 Free Tools Hub. All rights reserved.",
     "description": "Minify CSS code online for free. Reduce file size, improve website performance, and optimize CSS for production deployment.",
     "url": "/tools/css-minifier/",
     "applicationCategory": "UtilityApplication",
@@ -103,9 +411,317 @@
     {
     \"@context\": \"https://schema.org\",
     \"@type\": \"WebApplication\",
-    \"name\": \"CSS Minifier - Free Tools Hub</title>\n    <meta name=\\"description\\" content=\\"Minify CSS code online for free. Reduce file size, improve website performance, and optimize CSS for production deployment.\\">\n    <meta name=\\"keywords\\" content=\\"css minifier, minify css, css compressor, css optimizer, web performance\\">\n    <link rel=\\"canonical\\" href=\\"/tools/css-minifier/\\">\n    \n    <!-- Open Graph / Facebook -->\n    <meta property=\\"og:type\\" content=\\"website\\">\n    <meta property=\\"og:url\\" content=\\"/tools/css-minifier/\\">\n    <meta property=\\"og:title\\" content=\\"CSS Minifier - Free Tools Hub\\">\n    <meta property=\\"og:description\\" content=\\"Minify CSS code online for free. Reduce file size and improve website performance.\\">\n    \n    <!-- Favicon -->\n    <link rel=\\"icon\\" type=\\"image/x-icon\\" href=\\"/favicon.ico\\">\n    \n    <!-- Stylesheets -->\n    \n    <link href=\\"../../css/main.css\\" rel=\\"stylesheet\\">\n    <!-- Vendor Library Loader with CDN Fallbacks -->
+    \"name\": \"CSS Minifier - Free Tools Hub</title>
+    <meta name=\\"description\\" content=\\"Minify CSS code online for free. Reduce file size, improve website performance, and optimize CSS for production deployment.\\">
+    <meta name=\\"keywords\\" content=\\"css minifier, minify css, css compressor, css optimizer, web performance\\">
+    <link rel=\\"canonical\\" href=\\"/tools/css-minifier/\\">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property=\\"og:type\\" content=\\"website\\">
+    <meta property=\\"og:url\\" content=\\"/tools/css-minifier/\\">
+    <meta property=\\"og:title\\" content=\\"CSS Minifier - Free Tools Hub\\">
+    <meta property=\\"og:description\\" content=\\"Minify CSS code online for free. Reduce file size and improve website performance.\\">
+    
+    <!-- Favicon -->
+    <link rel=\\"icon\\" type=\\"image/x-icon\\" href=\\"/favicon.ico\\">
+    
+    <!-- Stylesheets -->
+    
+    <link href=\\"../../css/main.css\\" rel=\\"stylesheet\\">
+    <!-- Vendor Library Loader with CDN Fallbacks -->
     <script src="../../js/vendor-loader.js"></script>
-</head>\n<body>\n    <!-- Header -->\n    <header class=\\"header\\">\n        <nav class=\\"navbar\\">\n            <div class=\\"container\\">\n                <div class=\\"nav-wrapper\\">\n                    <a href=\\"/\\" class=\\"logo\\">\n                        <i class=\\"fas fa-tools\\"></i>\n                        <span>Free Tools Hub</span>\n                    </a>\n                    \n                    <div class=\\"nav-links\\">\n                        <a href=\\"/\\" class=\\"nav-link\\">Home</a>\n                        <a href=\\"/tools/\\" class=\\"nav-link\\">All Tools</a>\n                        <div class=\\"dropdown\\">\n                            <a href=\\"#\\" class=\\"nav-link dropdown-toggle\\">Categories <i class=\\"fas fa-chevron-down\\"></i></a>\n                            <div class=\\"dropdown-menu\\">\n                                <a href=\\"/tools/text/\\" class=\\"dropdown-item\\">Text Tools</a>\n                                <a href=\\"/tools/seo/\\" class=\\"dropdown-item\\">SEO Tools</a>\n                                <a href=\\"/tools/developer/\\" class=\\"dropdown-item\\">Developer Tools</a>\n                                <a href=\\"/tools/calculator/\\" class=\\"dropdown-item\\">Calculators</a>\n                                <a href=\\"/tools/converter/\\" class=\\"dropdown-item\\">Converters</a>\n                                <a href=\\"/tools/generator/\\" class=\\"dropdown-item\\">Generators</a>\n                            </div>\n                        </div>\n                        <a href=\\"/about/\\" class=\\"nav-link\\">About</a>\n                        <a href=\\"/contact/\\" class=\\"nav-link\\">Contact</a>\n                    </div>\n                    \n                    <button class=\\"mobile-menu-btn\\">\n                        <span></span>\n                        <span></span>\n                        <span></span>\n                    </button>\n                </div>\n            </div>\n        </nav>\n    </header>\n\n    <!-- Main Content -->\n    <main class=\\"main\\" role=\"main\">\n        <div class=\\"container\\">\n            <!-- Breadcrumb -->\n            <nav class=\\"breadcrumb\\">\n                <a href=\\"/\\">Home</a>\n                <span class=\\"separator\\">/</span>\n                <a href=\\"/tools/\\">Tools</a>\n                <span class=\\"separator\\">/</span>\n                <a href=\\"/tools/developer/\\">Developer Tools</a>\n                <span class=\\"separator\\">/</span>\n                <span class=\\"current\\">CSS Minifier</span>\n            </nav>\n\n            <!-- Tool Header -->\n            <div class=\\"tool-header\\">\n                <h1 class=\\"tool-title\\">\n                    <i class=\\"fab fa-css3-alt\\"></i>\n                    CSS Minifier\n                </h1>\n                <p class=\\"tool-description\\">\n                    Minify and compress CSS code to reduce file size and improve website performance. Remove unnecessary whitespace, comments, and optimize your CSS for production.\n                </p>\n            </div>\n\n            <!-- Tool Content -->\n            <div class=\\"tool-wrapper\\">\n                <div class=\\"tool-container\\">\n                    <div class=\\"tool-tabs\\">\n                        <button class=\\"tab-button active\\" data-tab=\\"minify\\">\n                            <i class=\\"fas fa-compress-alt\\"></i>\n                            Minify CSS\n                        </button>\n                        <button class=\\"tab-button\\" data-tab=\\"beautify\\">\n                            <i class=\\"fas fa-expand-alt\\"></i>\n                            Beautify CSS\n                        </button>\n                    </div>\n\n                    <!-- CSS Minify Tab -->\n                    <div id=\\"minify-tab\\" class=\\"tab-content active\\">\n                        <div class=\\"tool-section\\">\n                            <label for=\\"css-input\\">Enter CSS to minify:</label>\n                            <textarea id=\\"css-input\\" class=\\"form-control code-editor\\" rows=\\"12\\" placeholder=\\"/* Enter your CSS code here */\nbody {\n    margin: 0;\n    padding: 20px;\n    font-family: Arial, sans-serif;\n    background-color: #f5f5f5;\n}\n\n.container {\n    max-width: 1200px;\n    margin: 0 auto;\n    padding: 0 15px;\n}\n\nh1, h2, h3 {\n    color: #333;\n    margin-bottom: 10px;\n}\\"></textarea>\n                            \n                            <div class=\\"control-buttons\\">\n                                <button id=\\"minify-btn\\" class=\\"btn btn-primary\\">\n                                    <i class=\\"fas fa-compress-alt\\"></i>\n                                    Minify CSS\n                                </button>\n                                <button id=\\"copy-minified-btn\\" class=\\"btn btn-secondary\\">\n                                    <i class=\\"fas fa-copy\\"></i>\n                                    Copy Result\n                                </button>\n                                <button id=\\"download-minified-btn\\" class=\\"btn btn-secondary\\">\n                                    <i class=\\"fas fa-download\\"></i>\n                                    Download CSS\n                                </button>\n                                <button id=\\"clear-minified-btn\\" class=\\"btn btn-secondary\\">\n                                    <i class=\\"fas fa-trash\\"></i>\n                                    Clear\n                                </button>\n                                <label for=\\"file-input\\" class=\\"btn btn-secondary\\">\n                                    <i class=\\"fas fa-upload\\"></i>\n                                    Upload CSS File\n                                </label>\n                                <input type=\\"file\\" id=\\"file-input\\" accept=\\".css\\" style=\\"display: none;\\">\n                            </div>\n                            \n                            <label for=\\"css-output\\">Minified CSS:</label>\n                            <textarea id=\\"css-output\\" class=\\"form-control code-editor\\" rows=\\"8\\" readonly placeholder=\\"Minified CSS will appear here...\\"></textarea>\n                        </div>\n                    </div>\n\n                    <!-- CSS Beautify Tab -->\n                    <div id=\\"beautify-tab\\" class=\\"tab-content\\">\n                        <div class=\\"tool-section\\">\n                            <label for=\\"css-beautify-input\\">Enter minified CSS to beautify:</label>\n                            <textarea id=\\"css-beautify-input\\" class=\\"form-control code-editor\\" rows=\\"8\\" placeholder=\\"Enter minified CSS code here...\\"></textarea>\n                            \n                            <div class=\\"control-buttons\\">\n                                <button id=\\"beautify-btn\\" class=\\"btn btn-primary\\">\n                                    <i class=\\"fas fa-expand-alt\\"></i>\n                                    Beautify CSS\n                                </button>\n                                <button id=\\"copy-beautified-btn\\" class=\\"btn btn-secondary\\">\n                                    <i class=\\"fas fa-copy\\"></i>\n                                    Copy Result\n                                </button>\n                                <button id=\\"download-beautified-btn\\" class=\\"btn btn-secondary\\">\n                                    <i class=\\"fas fa-download\\"></i>\n                                    Download CSS\n                                </button>\n                                <button id=\\"clear-beautified-btn\\" class=\\"btn btn-secondary\\">\n                                    <i class=\\"fas fa-trash\\"></i>\n                                    Clear\n                                </button>\n                            </div>\n                            \n                            <label for=\\"css-beautify-output\\">Beautified CSS:</label>\n                            <textarea id=\\"css-beautify-output\\" class=\\"form-control code-editor\\" rows=\\"12\\" readonly placeholder=\\"Beautified CSS will appear here...\\"></textarea>\n                        </div>\n                    </div>\n\n                    <!-- Statistics -->\n                    <div class=\\"tool-stats\\">\n                        <div class=\\"stats-grid\\">\n                            <div class=\\"stat-item\\">\n                                <div class=\\"stat-value\\" id=\\"original-size\\">0</div>\n                                <div class=\\"stat-label\\">Original Size (bytes)</div>\n                            </div>\n                            <div class=\\"stat-item\\">\n                                <div class=\\"stat-value\\" id=\\"minified-size\\">0</div>\n                                <div class=\\"stat-label\\">Minified Size (bytes)</div>\n                            </div>\n                            <div class=\\"stat-item\\">\n                                <div class=\\"stat-value\\" id=\\"saved-bytes\\">0</div>\n                                <div class=\\"stat-label\\">Saved Bytes</div>\n                            </div>\n                            <div class=\\"stat-item\\">\n                                <div class=\\"stat-value\\" id=\\"compression-ratio\\">0%</div>\n                                <div class=\\"stat-label\\">Compression Ratio</div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <!-- Tool Information -->\n                <div class=\\"tool-container\\">\n                    <h2>About CSS Minification</h2>\n                    <p>CSS minification is the process of removing unnecessary characters from CSS code without changing its functionality. This includes removing whitespace, comments, and optimizing the code structure to reduce file size.</p>\n                    \n                    <h3>Benefits of Minifying CSS:</h3>\n                    <ul>\n                        <li><strong>Faster Loading:</strong> Smaller file sizes mean faster download times</li>\n                        <li><strong>Bandwidth Savings:</strong> Reduced data transfer costs</li>\n                        <li><strong>Better Performance:</strong> Improved website speed and user experience</li>\n                        <li><strong>SEO Benefits:</strong> Search engines favor faster-loading websites</li>\n                        <li><strong>Server Load:</strong> Reduced server bandwidth usage</li>\n                    </ul>\n\n                    <h3>What Gets Removed:</h3>\n                    <ul>\n                        <li>Unnecessary whitespace and line breaks</li>\n                        <li>Comments and documentation</li>\n                        <li>Redundant semicolons</li>\n                        <li>Empty CSS rules</li>\n                        <li>Unnecessary quotes around CSS values</li>\n                    </ul>\n\n                    <h3>Features:</h3>\n                    <ul>\n                        <li>Real-time CSS minification</li>\n                        <li>CSS beautification to restore formatting</li>\n                        <li>File upload support</li>\n                        <li>Download minified CSS files</li>\n                        <li>Compression statistics</li>\n                        <li>Copy to clipboard functionality</li>\n                    </ul>\n                </div>\n\n                <!-- Related Tools -->\n                <div class=\\"tool-container\\">\n                    <h2>Related Tools</h2>\n                    <div class=\\"related-tools\\">\n                        <a href=\\"/tools/html-minifier/\\" class=\\"related-tool\\">\n                            <i class=\\"fab fa-html5\\"></i>\n                            HTML Minifier\n                        </a>\n                        <a href=\\"/tools/json-formatter/\\" class=\\"related-tool\\">\n                            <i class=\\"fas fa-code\\"></i>\n                            JSON Formatter\n                        </a>\n                        <a href=\\"/tools/html-encoder-decoder/\\" class=\\"related-tool\\">\n                            <i class=\\"fas fa-code\\"></i>\n                            HTML Encoder/Decoder\n                        </a>\n                        <a href=\\"/tools/base64-encoder-decoder/\\" class=\\"related-tool\\">\n                            <i class=\\"fas fa-key\\"></i>\n                            Base64 Encoder/Decoder\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </main>\n\n    <!-- Footer -->\n    <footer class=\\"footer\\">\n        <div class=\\"container\\">\n            <div class=\\"footer-grid\\">\n                <div class=\\"footer-section\\">\n                    <h4>Free Tools Hub</h4>\n                    <p>Your go-to destination for professional online tools and utilities. Fast, secure, and always free.</p>\n                </div>\n                \n                <div class=\\"footer-section\\">\n                    <h4>Tool Categories</h4>\n                    <ul class=\\"footer-links\\">\n                        <li><a href=\\"/tools/text/\\">Text Tools</a></li>\n                        <li><a href=\\"/tools/seo/\\">SEO Tools</a></li>\n                        <li><a href=\\"/tools/developer/\\">Developer Tools</a></li>\n                        <li><a href=\\"/tools/calculator/\\">Calculators</a></li>\n                        <li><a href=\\"/tools/converter/\\">Converters</a></li>\n                        <li><a href=\\"/tools/generator/\\">Generators</a></li>\n                    </ul>\n                </div>\n                \n                <div class=\\"footer-section\\">\n                    <h4>Popular Tools</h4>\n                    <ul class=\\"footer-links\\">\n                        <li><a href=\\"/tools/word-counter/\\">Word Counter</a></li>\n                        <li><a href=\\"/tools/password-generator/\\">Password Generator</a></li>\n                        <li><a href=\\"/tools/json-formatter/\\">JSON Formatter</a></li>\n                        <li><a href=\\"/tools/bmi-calculator/\\">BMI Calculator</a></li>\n                        <li><a href=\\"/tools/qr-code-generator/\\">QR Code Generator</a></li>\n                        <li><a href=\\"/tools/meta-tag-generator/\\">Meta Tag Generator</a></li>\n                    </ul>\n                </div>\n                \n                <div class=\\"footer-section\\">\n                    <h4>Support</h4>\n                    <ul class=\\"footer-links\\">\n                        <li><a href=\\"/about/\\">About Us</a></li>\n                        <li><a href=\\"/contact/\\">Contact</a></li>\n                        <li><a href=\\"/privacy/\\">Privacy Policy</a></li>\n                        <li><a href=\\"/terms/\\">Terms of Service</a></li>\n                        <li><a href=\\"/sitemap.xml\\">Sitemap</a></li>\n                        <li><a href=\\"/feedback/\\">Feedback</a></li>\n                    </ul>\n                </div>\n            </div>\n            \n            <div class=\\"footer-bottom\\">\n                <p>&copy; 2025 Free Tools Hub. All rights reserved.\",
+</head>
+<body>
+    <!-- Header -->
+    <header class=\\"header\\">
+        <nav class=\\"navbar\\">
+            <div class=\\"container\\">
+                <div class=\\"nav-wrapper\\">
+                    <a href=\\"/\\" class=\\"logo\\">
+                        <i class=\\"fas fa-tools\\"></i>
+                        <span>Free Tools Hub</span>
+                    </a>
+                    
+                    <div class=\\"nav-links\\">
+                        <a href=\\"/\\" class=\\"nav-link\\">Home</a>
+                        <a href=\\"/tools/\\" class=\\"nav-link\\">All Tools</a>
+                        <div class=\\"dropdown\\">
+                            <a href=\\"#\\" class=\\"nav-link dropdown-toggle\\">Categories <i class=\\"fas fa-chevron-down\\"></i></a>
+                            <div class=\\"dropdown-menu\\">
+                                <a href=\\"/tools/text/\\" class=\\"dropdown-item\\">Text Tools</a>
+                                <a href=\\"/tools/seo/\\" class=\\"dropdown-item\\">SEO Tools</a>
+                                <a href=\\"/tools/developer/\\" class=\\"dropdown-item\\">Developer Tools</a>
+                                <a href=\\"/tools/calculator/\\" class=\\"dropdown-item\\">Calculators</a>
+                                <a href=\\"/tools/converter/\\" class=\\"dropdown-item\\">Converters</a>
+                                <a href=\\"/tools/generator/\\" class=\\"dropdown-item\\">Generators</a>
+                            </div>
+                        </div>
+                        <a href=\\"/about/\\" class=\\"nav-link\\">About</a>
+                        <a href=\\"/contact/\\" class=\\"nav-link\\">Contact</a>
+                    </div>
+                    
+                    <button class=\\"mobile-menu-btn\\">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class=\\"main\\" role=\"main\">
+        <div class=\\"container\\">
+            <!-- Breadcrumb -->
+            <nav class=\\"breadcrumb\\">
+                <a href=\\"/\\">Home</a>
+                <span class=\\"separator\\">/</span>
+                <a href=\\"/tools/\\">Tools</a>
+                <span class=\\"separator\\">/</span>
+                <a href=\\"/tools/developer/\\">Developer Tools</a>
+                <span class=\\"separator\\">/</span>
+                <span class=\\"current\\">CSS Minifier</span>
+            </nav>
+
+            <!-- Tool Header -->
+            <div class=\\"tool-header\\">
+                <h1 class=\\"tool-title\\">
+                    <i class=\\"fab fa-css3-alt\\"></i>
+                    CSS Minifier
+                </h1>
+                <p class=\\"tool-description\\">
+                    Minify and compress CSS code to reduce file size and improve website performance. Remove unnecessary whitespace, comments, and optimize your CSS for production.
+                </p>
+            </div>
+
+            <!-- Tool Content -->
+            <div class=\\"tool-wrapper\\">
+                <div class=\\"tool-container\\">
+                    <div class=\\"tool-tabs\\">
+                        <button class=\\"tab-button active\\" data-tab=\\"minify\\">
+                            <i class=\\"fas fa-compress-alt\\"></i>
+                            Minify CSS
+                        </button>
+                        <button class=\\"tab-button\\" data-tab=\\"beautify\\">
+                            <i class=\\"fas fa-expand-alt\\"></i>
+                            Beautify CSS
+                        </button>
+                    </div>
+
+                    <!-- CSS Minify Tab -->
+                    <div id=\\"minify-tab\\" class=\\"tab-content active\\">
+                        <div class=\\"tool-section\\">
+                            <label for=\\"css-input\\">Enter CSS to minify:</label>
+                            <textarea id=\\"css-input\\" class=\\"form-control code-editor\\" rows=\\"12\\" placeholder=\\"/* Enter your CSS code here */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3 {
+    color: #333;
+    margin-bottom: 10px;
+}\\"></textarea>
+                            
+                            <div class=\\"control-buttons\\">
+                                <button id=\\"minify-btn\\" class=\\"btn btn-primary\\">
+                                    <i class=\\"fas fa-compress-alt\\"></i>
+                                    Minify CSS
+                                </button>
+                                <button id=\\"copy-minified-btn\\" class=\\"btn btn-secondary\\">
+                                    <i class=\\"fas fa-copy\\"></i>
+                                    Copy Result
+                                </button>
+                                <button id=\\"download-minified-btn\\" class=\\"btn btn-secondary\\">
+                                    <i class=\\"fas fa-download\\"></i>
+                                    Download CSS
+                                </button>
+                                <button id=\\"clear-minified-btn\\" class=\\"btn btn-secondary\\">
+                                    <i class=\\"fas fa-trash\\"></i>
+                                    Clear
+                                </button>
+                                <label for=\\"file-input\\" class=\\"btn btn-secondary\\">
+                                    <i class=\\"fas fa-upload\\"></i>
+                                    Upload CSS File
+                                </label>
+                                <input type=\\"file\\" id=\\"file-input\\" accept=\\".css\\" style=\\"display: none;\\">
+                            </div>
+                            
+                            <label for=\\"css-output\\">Minified CSS:</label>
+                            <textarea id=\\"css-output\\" class=\\"form-control code-editor\\" rows=\\"8\\" readonly placeholder=\\"Minified CSS will appear here...\\"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- CSS Beautify Tab -->
+                    <div id=\\"beautify-tab\\" class=\\"tab-content\\">
+                        <div class=\\"tool-section\\">
+                            <label for=\\"css-beautify-input\\">Enter minified CSS to beautify:</label>
+                            <textarea id=\\"css-beautify-input\\" class=\\"form-control code-editor\\" rows=\\"8\\" placeholder=\\"Enter minified CSS code here...\\"></textarea>
+                            
+                            <div class=\\"control-buttons\\">
+                                <button id=\\"beautify-btn\\" class=\\"btn btn-primary\\">
+                                    <i class=\\"fas fa-expand-alt\\"></i>
+                                    Beautify CSS
+                                </button>
+                                <button id=\\"copy-beautified-btn\\" class=\\"btn btn-secondary\\">
+                                    <i class=\\"fas fa-copy\\"></i>
+                                    Copy Result
+                                </button>
+                                <button id=\\"download-beautified-btn\\" class=\\"btn btn-secondary\\">
+                                    <i class=\\"fas fa-download\\"></i>
+                                    Download CSS
+                                </button>
+                                <button id=\\"clear-beautified-btn\\" class=\\"btn btn-secondary\\">
+                                    <i class=\\"fas fa-trash\\"></i>
+                                    Clear
+                                </button>
+                            </div>
+                            
+                            <label for=\\"css-beautify-output\\">Beautified CSS:</label>
+                            <textarea id=\\"css-beautify-output\\" class=\\"form-control code-editor\\" rows=\\"12\\" readonly placeholder=\\"Beautified CSS will appear here...\\"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Statistics -->
+                    <div class=\\"tool-stats\\">
+                        <div class=\\"stats-grid\\">
+                            <div class=\\"stat-item\\">
+                                <div class=\\"stat-value\\" id=\\"original-size\\">0</div>
+                                <div class=\\"stat-label\\">Original Size (bytes)</div>
+                            </div>
+                            <div class=\\"stat-item\\">
+                                <div class=\\"stat-value\\" id=\\"minified-size\\">0</div>
+                                <div class=\\"stat-label\\">Minified Size (bytes)</div>
+                            </div>
+                            <div class=\\"stat-item\\">
+                                <div class=\\"stat-value\\" id=\\"saved-bytes\\">0</div>
+                                <div class=\\"stat-label\\">Saved Bytes</div>
+                            </div>
+                            <div class=\\"stat-item\\">
+                                <div class=\\"stat-value\\" id=\\"compression-ratio\\">0%</div>
+                                <div class=\\"stat-label\\">Compression Ratio</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool Information -->
+                <div class=\\"tool-container\\">
+                    <h2>About CSS Minification</h2>
+                    <p>CSS minification is the process of removing unnecessary characters from CSS code without changing its functionality. This includes removing whitespace, comments, and optimizing the code structure to reduce file size.</p>
+                    
+                    <h3>Benefits of Minifying CSS:</h3>
+                    <ul>
+                        <li><strong>Faster Loading:</strong> Smaller file sizes mean faster download times</li>
+                        <li><strong>Bandwidth Savings:</strong> Reduced data transfer costs</li>
+                        <li><strong>Better Performance:</strong> Improved website speed and user experience</li>
+                        <li><strong>SEO Benefits:</strong> Search engines favor faster-loading websites</li>
+                        <li><strong>Server Load:</strong> Reduced server bandwidth usage</li>
+                    </ul>
+
+                    <h3>What Gets Removed:</h3>
+                    <ul>
+                        <li>Unnecessary whitespace and line breaks</li>
+                        <li>Comments and documentation</li>
+                        <li>Redundant semicolons</li>
+                        <li>Empty CSS rules</li>
+                        <li>Unnecessary quotes around CSS values</li>
+                    </ul>
+
+                    <h3>Features:</h3>
+                    <ul>
+                        <li>Real-time CSS minification</li>
+                        <li>CSS beautification to restore formatting</li>
+                        <li>File upload support</li>
+                        <li>Download minified CSS files</li>
+                        <li>Compression statistics</li>
+                        <li>Copy to clipboard functionality</li>
+                    </ul>
+                </div>
+
+                <!-- Related Tools -->
+                <div class=\\"tool-container\\">
+                    <h2>Related Tools</h2>
+                    <div class=\\"related-tools\\">
+                        <a href=\\"/tools/html-minifier/\\" class=\\"related-tool\\">
+                            <i class=\\"fab fa-html5\\"></i>
+                            HTML Minifier
+                        </a>
+                        <a href=\\"/tools/json-formatter/\\" class=\\"related-tool\\">
+                            <i class=\\"fas fa-code\\"></i>
+                            JSON Formatter
+                        </a>
+                        <a href=\\"/tools/html-encoder-decoder/\\" class=\\"related-tool\\">
+                            <i class=\\"fas fa-code\\"></i>
+                            HTML Encoder/Decoder
+                        </a>
+                        <a href=\\"/tools/base64-encoder-decoder/\\" class=\\"related-tool\\">
+                            <i class=\\"fas fa-key\\"></i>
+                            Base64 Encoder/Decoder
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class=\\"footer\\">
+        <div class=\\"container\\">
+            <div class=\\"footer-grid\\">
+                <div class=\\"footer-section\\">
+                    <h4>Free Tools Hub</h4>
+                    <p>Your go-to destination for professional online tools and utilities. Fast, secure, and always free.</p>
+                </div>
+                
+                <div class=\\"footer-section\\">
+                    <h4>Tool Categories</h4>
+                    <ul class=\\"footer-links\\">
+                        <li><a href=\\"/tools/text/\\">Text Tools</a></li>
+                        <li><a href=\\"/tools/seo/\\">SEO Tools</a></li>
+                        <li><a href=\\"/tools/developer/\\">Developer Tools</a></li>
+                        <li><a href=\\"/tools/calculator/\\">Calculators</a></li>
+                        <li><a href=\\"/tools/converter/\\">Converters</a></li>
+                        <li><a href=\\"/tools/generator/\\">Generators</a></li>
+                    </ul>
+                </div>
+                
+                <div class=\\"footer-section\\">
+                    <h4>Popular Tools</h4>
+                    <ul class=\\"footer-links\\">
+                        <li><a href=\\"/tools/word-counter/\\">Word Counter</a></li>
+                        <li><a href=\\"/tools/password-generator/\\">Password Generator</a></li>
+                        <li><a href=\\"/tools/json-formatter/\\">JSON Formatter</a></li>
+                        <li><a href=\\"/tools/bmi-calculator/\\">BMI Calculator</a></li>
+                        <li><a href=\\"/tools/qr-code-generator/\\">QR Code Generator</a></li>
+                        <li><a href=\\"/tools/meta-tag-generator/\\">Meta Tag Generator</a></li>
+                    </ul>
+                </div>
+                
+                <div class=\\"footer-section\\">
+                    <h4>Support</h4>
+                    <ul class=\\"footer-links\\">
+                        <li><a href=\\"/about/\\">About Us</a></li>
+                        <li><a href=\\"/contact/\\">Contact</a></li>
+                        <li><a href=\\"/privacy/\\">Privacy Policy</a></li>
+                        <li><a href=\\"/terms/\\">Terms of Service</a></li>
+                        <li><a href=\\"/sitemap.xml\\">Sitemap</a></li>
+                        <li><a href=\\"/feedback/\\">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class=\\"footer-bottom\\">
+                <p>&copy; 2025 Free Tools Hub. All rights reserved.\",
     \"description\": \"Minify CSS code online for free. Reduce file size, improve website performance, and optimize CSS for production deployment.\",
     \"url\": \"/tools/css-minifier/\",
     \"applicationCategory\": \"UtilityApplication\",

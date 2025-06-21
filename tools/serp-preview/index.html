@@ -554,7 +554,8 @@
                 const title = document.getElementById('pageTitle').value;
                 const description = document.getElementById('metaDescription').value;
                 
-                const htmlCode = `<title>${title}</title>\n<meta name="description" content="${description}">`;
+                const htmlCode = `<title>${title}</title>
+<meta name="description" content="${description}">`;
                 
                 navigator.clipboard.writeText(htmlCode).then(() => {
                     const btn = document.querySelector('button[onclick="copyHTML()"]');
