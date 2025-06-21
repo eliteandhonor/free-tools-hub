@@ -1,103 +1,61 @@
-# Code Quality and Testing Tools
-pylint>=2.17.0  # Python code linting
-flake8>=6.1.0  # Code style enforcement
-black>=23.7.0  # Code formatter
-isort>=5.12.0  # Import sorter
-mypy>=1.6.1  # Static type checking
-bandit>=1.7.5  # Security linter
-safety>=2.3.5  # Dependency security checker
-pydocstyle>=6.3.0  # Docstring style checker
-pycodestyle>=2.11.0  # PEP8 style guide checker
-vulture>=2.9.1  # Find dead code
-radon>=6.0.1  # Code metrics and complexity
-xenon>=0.9.1  # Monitor code complexity
-pydantic>=2.4.2  # Data validation and settings management
+# Code Quality & Security
+pylint>=3.3.1            # Python linter (includes pyreverse)
+flake8>=7.1.1            # Code style
+black>=24.0.0            # Formatter
+isort>=5.13.2            # Import sorter
+mypy>=1.11.2             # Type checking
+bandit>=1.7.10           # Security linter
+safety>=3.2.0            # Dependency security
+pydocstyle>=6.3.0        # Docstring checks
+pycodestyle>=2.12.1      # PEP8
+vulture>=2.11.0          # Dead code
+radon>=6.0.1             # Complexity
+xenon>=0.9.1             # Complexity monitoring
+pydantic>=2.9.2          # Data validation
+flake8-bugbear>=24.0.0   # Extra lint rules
 
-# Testing Frameworks
-pytest>=7.4.2  # Testing framework
-pytest-cov>=4.1.0  # Coverage reports
-pytest-xdist>=3.3.1  # Distributed testing
-pytest-benchmark>=4.0.0  # Benchmark testing
-pytest-mock>=3.11.1  # Mocking
-pytest-html>=4.0.2  # HTML reports for pytest
-hypothesis>=6.86.0  # Property based testing
-behave>=1.2.6  # Behavior-driven development
-tox>=4.11.3  # Virtualenv management for testing
+# Testing
+pytest>=8.3.3            # Test framework
+pytest-cov>=5.0.0        # Coverage
+pytest-xdist>=3.6.1      # Parallel tests
+pytest-benchmark>=5.1.0  # Performance tests
+pytest-mock>=3.14.0      # Mocking
+pytest-html>=4.1.1       # HTML reports
+hypothesis>=6.118.1      # Property-based testing
+tox>=4.21.2              # Test environments
 
-# Debugging and Profiling
-pudb>=2022.1.3  # Visual debugger
-line-profiler>=4.1.1  # Line-by-line profiling
-memory-profiler>=0.61.0  # Memory profiling
-py-spy>=0.3.14  # Sampling profiler for Python
-pyinstrument>=4.6.1  # Python profiler with call graphs
-scalene>=1.5.26  # CPU and memory profiler
-pycallgraph2>=1.1.3  # Call graph visualization
+# Debugging & Profiling
+pudb>=2024.1.2           # Debugger
+line-profiler>=4.1.3     # Line profiling
+memory-profiler>=0.61.0  # Memory usage
+py-spy>=0.4.0            # Sampling profiler
+pyinstrument>=4.7.0      # Call graphs
+scalene>=1.5.45          # CPU/Memory profiler
 
-# Package Management
-pip>=23.2.1  # Package installer
-setuptools>=68.2.2  # Package development tools
-twine>=4.0.2  # Package upload
-wheel>=0.41.2  # Built-package format
-pip-review>=1.3.0  # Check for package updates
-pipenv>=2023.10.3  # Virtual environment management
-poetry>=1.6.1  # Dependency management
-pipdeptree>=2.11.0  # Display dependency tree
+# Static Analysis
+pytype>=2024.10.11       # Type checker
+pyright>=1.1.389         # Fast type checker
+semgrep>=1.91.0          # Code pattern matching
+detect-secrets>=1.5.0    # Secret scanning
+pyjwt>=2.9.0             # JWT security
+cryptography>=45.0.1     # Crypto lib
 
-# Static Analysis and Security
-pytype>=2023.10.17  # Type checker
-pyright>=1.1.330  # Static type checker
-pyre-check>=0.9.18  # Performance type checker
-semgrep>=1.38.0  # Code pattern matcher
-detect-secrets>=1.4.0  # Secret detector
-dodgy>=0.2.1  # Find potential security issues
-pyjwt>=2.8.0  # JSON Web Token implementation
-cryptography>=41.0.4  # Cryptographic recipes
+# Dev Tools
+pip>=24.0                # Package installer
+setuptools>=75.1.0       # Package setup
+twine>=5.1.1             # Package uploads
+wheel>=0.45.1            # Wheel packages
+pipenv>=2024.0.1         # Environment management
+poetry>=2.0.1            # Dependency management
+pipdeptree>=2.26.1       # Dependency visualization
 
-# Code Structure and Documentation
-pyan3>=1.2.0  # Generate call graphs
-pyreverse>=1.9.8  # UML diagrams for code
-sphinx>=7.2.6  # Documentation generator
-pdoc>=14.1.0  # Auto-documentation generator
-interrogate>=1.5.0  # Check for docstring coverage
+# Documentation
+sphinx>=8.1.3            # Documentation
+pdoc>=15.0.0             # Auto-docs
+interrogate>=1.5.0       # Doc coverage
 
-# Maintenance and Monitoring
-watchdog>=3.0.0  # File system monitoring
-pre-commit>=3.5.0  # Git pre-commit hook manager
-commitizen>=3.10.0  # Standardize commit messages
-gitlint>=0.19.1  # Git commit linter
-bump2version>=1.0.1  # Version management
-
-# Log Analysis
-loguru>=0.7.0  # Improved logging
-structlog>=23.2.0  # Structured logging
-eliot>=1.15.0  # Logging causal chains
-python-json-logger>=2.0.7  # JSON log formatter
-
-# Network Monitoring
-httpx>=0.25.0  # HTTP client
-requests-toolbelt>=1.0.0  # Requests utilities
-mitmproxy>=10.1.1  # HTTPS proxy
-
-# Environment Management
-conda>=23.9.0  # Package and environment management
-virtualenv>=20.24.5  # Virtual environment creator
-python-dotenv>=1.0.0  # Environment variable management
-
-# System Utilities
-psutil>=5.9.5  # Process utilities
-pyelftools>=0.29  # ELF file parsing
-PyYAML>=6.0.1  # YAML parser
-rich>=13.6.0  # Terminal formatting
-typer>=0.9.0  # CLI building
-click>=8.1.7  # Command line interface creation
-pyfiglet>=1.0.2  # ASCII art
-tabulate>=0.9.0  # Pretty-print tabular data
-
-# Database Debugging
-sqlite-utils>=3.35.1  # CLI for SQLite
-sqlparse>=0.4.4  # SQL parser
-
-# Performance Testing
-locust>=2.16.1  # Load testing
-wrk>=0.0.1  # HTTP benchmarking wrapper
-hyperfine-py>=1.2.0  # Command-line benchmarking
+# Monitoring
+watchdog>=6.0.0          # File watching
+pre-commit>=4.0.1        # Git hooks
+commitizen>=3.29.0       # Commit messages
+bump2version>=1.0.1      # Version bumps
