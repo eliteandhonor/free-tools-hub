@@ -19,6 +19,8 @@
    ```bash
    # Replace URL placeholder in sitemap.xml
    sed -i 's/SITE_URL_PLACEHOLDER/https://yourdomain.com/g' sitemap.xml
+   # Update placeholders in index.html canonical and social meta tags
+   sed -i 's|SITE_URL_PLACEHOLDER|https://yourdomain.com|g' index.html
    ```
 
 3. **Web Server Configuration**
