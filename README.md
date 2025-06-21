@@ -1,19 +1,24 @@
 # Free Tools Hub
 
-This repository contains the source files for the Free Tools Hub static website.
+This repository contains the static files for the **Free Tools Hub** website. It houses more than 50 browser-based utilities organised under the `tools/` directory.
 
 ## Project Doctor
 
-Run the comprehensive health check script before committing changes.
+Run the `project-doctor.sh` script before committing to check code quality and validate the site.
+
+### Requirements
+
+- Bash
+- Python 3
+- Node.js
+
+Python steps are skipped automatically if the repository contains no Python code.
+
+### Usage
 
 ```bash
-# Give execution permission once
 chmod +x project-doctor.sh
-
-# Execute the script
 ./project-doctor.sh
-# or
-bash project-doctor.sh
 ```
 
-The script runs linters, tests, and other verifications. Review the output for warnings.
+The script lints HTML/CSS assets and optionally runs Python checks. Review the output for any warnings.
