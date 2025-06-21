@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <title>Markdown to HTML Converter - Free Tools Hub</title>
+    <meta name="description" content="Convert Markdown to HTML with live preview. Support for GitHub Flavored Markdown, tables, code highlighting, and custom styling options.">
+    <meta name="author" content="Free Tools Hub">
+    <meta name="keywords" content="markdown to html converter, markdown parser, github flavored markdown, md to html, markdown preview">
+    <link rel="canonical" href="/tools/markdown-to-html/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/tools/markdown-to-html/">
+    <meta property="og:title" content="Markdown to HTML Converter - Free Tools Hub">
+    <meta property="og:description" content="Convert Markdown to HTML with live preview and GitHub Flavored Markdown support.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" onerror="this.onerror=null;this.href='/vendor/fontawesome/css/all.min.css'">
+    <link href="../../css/main.css" rel="stylesheet">
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Markdown to HTML Converter - Free Tools Hub</title>\n    <meta name=\"description\" content=\"Convert Markdown to HTML with live preview. Support for GitHub Flavored Markdown, tables, code highlighting, and custom styling options.\">\n    <meta name=\"keywords\" content=\"markdown to html converter, markdown parser, github flavored markdown, md to html, markdown preview\">\n    <link rel=\"canonical\" href=\"/tools/markdown-to-html/\">\n    \n    <!-- Open Graph / Facebook -->\n    <meta property=\"og:type\" content=\"website\">\n    <meta property=\"og:url\" content=\"/tools/markdown-to-html/\">\n    <meta property=\"og:title\" content=\"Markdown to HTML Converter - Free Tools Hub\">\n    <meta property=\"og:description\" content=\"Convert Markdown to HTML with live preview and GitHub Flavored Markdown support.\">\n    \n    <!-- Favicon -->\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"/favicon.ico\">\n    \n    <!-- Stylesheets -->\n    \n    <link href=\"../../css/main.css\" rel=\"stylesheet\">\n    <!-- Prism.js for syntax highlighting -->\n    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css\" rel=\"stylesheet\">\n    <!-- Vendor Library Loader with CDN Fallbacks -->
+    <script src="../../js/vendor-loader.js"></script>
+</head>\n<body>\n    <!-- Header -->\n    <header class=\"header\">\n        <nav class=\"navbar\">\n            <div class=\"container\">\n                <div class=\"nav-wrapper\">\n                    <a href=\"/\" class=\"logo\">\n                        <i class=\"fas fa-tools\"></i>\n                        <span>Free Tools Hub</span>\n                    </a>\n                    \n                    <div class=\"nav-links\">\n                        <a href=\"/\" class=\"nav-link\">Home</a>\n                        <a href=\"/tools/\" class=\"nav-link\">All Tools</a>\n                        <div class=\"dropdown\">\n                            <a href=\"#\" class=\"nav-link dropdown-toggle\">Categories <i class=\"fas fa-chevron-down\"></i></a>\n                            <div class=\"dropdown-menu\">\n                                <a href=\"/tools/text/\" class=\"dropdown-item\">Text Tools</a>\n                                <a href=\"/tools/seo/\" class=\"dropdown-item\">SEO Tools</a>\n                                <a href=\"/tools/developer/\" class=\"dropdown-item\">Developer Tools</a>\n                                <a href=\"/tools/calculator/\" class=\"dropdown-item\">Calculators</a>\n                                <a href=\"/tools/converter/\" class=\"dropdown-item\">Converters</a>\n                                <a href=\"/tools/generator/\" class=\"dropdown-item\">Generators</a>\n                            </div>\n                        </div>\n                        <a href=\"/about/\" class=\"nav-link\">About</a>\n                        <a href=\"/contact/\" class=\"nav-link\">Contact</a>\n                    </div>\n                    \n                    <button class=\"mobile-menu-btn\">\n                        <span></span>\n                        <span></span>\n                        <span></span>\n                    </button>\n                </div>\n            </div>\n        </nav>\n    </header>\n\n    <!-- Main Content -->\n    <main class=\"main\" role="main">\n        <div class=\"container\">\n            <!-- Breadcrumb -->\n            <nav class=\"breadcrumb\">\n                <a href=\"/\">Home</a>\n                <span class=\"separator\">/</span>\n                <a href=\"/tools/\">Tools</a>\n                <span class=\"separator\">/</span>\n                <a href=\"/tools/converter/\">Converters</a>\n                <span class=\"separator\">/</span>\n                <span class=\"current\">Markdown to HTML</span>\n            </nav>\n\n            <!-- Tool Header -->\n            <div class=\"tool-header\">\n                <h1 class=\"tool-title\">\n                    <i class=\"fab fa-markdown\"></i>\n                    Markdown to HTML Converter\n                </h1>\n                <p class=\"tool-description\">\n                    Convert Markdown text to HTML with live preview. Supports GitHub Flavored Markdown, tables, code blocks, and syntax highlighting.\n                </p>\n            </div>\n\n            <!-- Tool Content -->\n            <div class=\"tool-wrapper\">\n                <div class=\"tool-container\">\n                    <!-- Settings Panel -->\n                    <div class=\"settings-panel\">\n                        <div class=\"settings-group\">\n                            <label class=\"setting-item\">\n                                <input type=\"checkbox\" id=\"enable-gfm\" checked>\n                                <span class=\"checkmark\"></span>\n                                GitHub Flavored Markdown\n                            </label>\n                            <label class=\"setting-item\">\n                                <input type=\"checkbox\" id=\"enable-tables\" checked>\n                                <span class=\"checkmark\"></span>\n                                Tables\n                            </label>\n                            <label class=\"setting-item\">\n                                <input type=\"checkbox\" id=\"enable-breaks\" checked>\n                                <span class=\"checkmark\"></span>\n                                Line Breaks\n                            </label>\n                            <label class=\"setting-item\">\n                                <input type=\"checkbox\" id=\"enable-strikethrough\" checked>\n                                <span class=\"checkmark\"></span>\n                                Strikethrough\n                            </label>\n                            <label class=\"setting-item\">\n                                <input type=\"checkbox\" id=\"enable-tasklists\" checked>\n                                <span class=\"checkmark\"></span>\n                                Task Lists\n                            </label>\n                        </div>\n                        \n                        <div class=\"settings-group\">\n                            <label for=\"theme-select\">Preview Theme:</label>\n                            <select id=\"theme-select\" class=\"form-control\">\n                                <option value=\"github\">GitHub</option>\n                                <option value=\"dark\">Dark</option>\n                                <option value=\"clean\">Clean</option>\n                                <option value=\"minimal\">Minimal</option>\n                            </select>\n                        </div>\n                    </div>\n\n                    <!-- Markdown Editor -->\n                    <div class=\"editor-container\">\n                        <div class=\"editor-panel\">\n                            <div class=\"panel-header\">\n                                <h3><i class=\"fab fa-markdown\"></i> Markdown Input</h3>\n                                <div class=\"panel-actions\">\n                                    <button id=\"clear-input-btn\" class=\"btn btn-small\">\n                                        <i class=\"fas fa-trash\"></i>\n                                        Clear\n                                    </button>\n                                    <button id=\"load-sample-btn\" class=\"btn btn-small\">\n                                        <i class=\"fas fa-file-alt\"></i>\n                                        Sample\n                                    </button>\n                                    <button id=\"upload-file-btn\" class=\"btn btn-small\">\n                                        <i class=\"fas fa-upload\"></i>\n                                        Upload\n                                    </button>\n                                    <input type=\"file\" id=\"file-input\" accept=\".md,.txt\" style=\"display: none;\">\n                                </div>\n                            </div>\n                            <textarea id=\"markdown-input\" class=\"markdown-editor\" placeholder=\"\"></textarea>\n                            <div class=\"editor-stats\">\n                                <span id=\"char-count\">0 characters</span>\n                                <span id=\"word-count\">0 words</span>\n                                <span id=\"line-count\">0 lines</span>\n                            </div>\n                        </div>\n\n                        <div class=\"preview-panel\">\n                            <div class=\"panel-header\">\n                                <h3><i class=\"fas fa-eye\"></i> HTML Preview</h3>\n                                <div class=\"panel-actions\">\n                                    <button id=\"copy-html-btn\" class=\"btn btn-small\">\n                                        <i class=\"fas fa-copy\"></i>\n                                        Copy HTML\n                                    </button>\n                                    <button id=\"download-html-btn\" class=\"btn btn-small\">\n                                        <i class=\"fas fa-download\"></i>\n                                        Download\n                                    </button>\n                                    <button id=\"toggle-view-btn\" class=\"btn btn-small\">\n                                        <i class=\"fas fa-code\"></i>\n                                        Raw HTML\n                                    </button>\n                                </div>\n                            </div>\n                            <div id=\"html-preview\" class=\"html-preview\"></div>\n                            <textarea id=\"html-output\" class=\"html-output\" readonly style=\"display: none;\"></textarea>\n                        </div>\n                    </div>\n\n                    <!-- Quick Actions -->\n                    <div class=\"quick-actions\">\n                        <h3>Quick Actions</h3>\n                        <div class=\"action-buttons\">\n                            <button class=\"action-btn\" data-action=\"heading\">\n                                <i class=\"fas fa-heading\"></i>\n                                <span>Add Heading</span>\n                            </button>\n                            <button class=\"action-btn\" data-action=\"bold\">\n                                <i class=\"fas fa-bold\"></i>\n                                <span>Bold</span>\n                            </button>\n                            <button class=\"action-btn\" data-action=\"italic\">\n                                <i class=\"fas fa-italic\"></i>\n                                <span>Italic</span>\n                            </button>\n                            <button class=\"action-btn\" data-action=\"link\">\n                                <i class=\"fas fa-link\"></i>\n                                <span>Link</span>\n                            </button>\n                            <button class=\"action-btn\" data-action=\"image\">\n                                <i class=\"fas fa-image\"></i>\n                                <span>Image</span>\n                            </button>\n                            <button class=\"action-btn\" data-action=\"code\">\n                                <i class=\"fas fa-code\"></i>\n                                <span>Code Block</span>\n                            </button>\n                            <button class=\"action-btn\" data-action=\"table\">\n                                <i class=\"fas fa-table\"></i>\n                                <span>Table</span>\n                            </button>\n                            <button class=\"action-btn\" data-action=\"list\">\n                                <i class=\"fas fa-list\"></i>\n                                <span>List</span>\n                            </button>\n                        </div>\n                    </div>\n                </div>\n\n                <!-- Tool Information -->\n                <div class=\"tool-container\">\n                    <h2>About Markdown to HTML Conversion</h2>\n                    <p>Markdown is a lightweight markup language that allows you to format text using simple syntax. This tool converts Markdown to HTML while preserving formatting and adding syntax highlighting.</p>\n                    \n                    <h3>Supported Markdown Features:</h3>\n                    <div class=\"features-grid\">\n                        <div class=\"feature-item\">\n                            <h4><i class=\"fas fa-heading\"></i> Headers</h4>\n                            <p>H1-H6 headers using # syntax</p>\n                            <code># Header 1<br>## Header 2</code>\n                        </div>\n                        <div class=\"feature-item\">\n                            <h4><i class=\"fas fa-bold\"></i> Text Formatting</h4>\n                            <p>Bold, italic, strikethrough text</p>\n                            <code>**bold** *italic* ~~strikethrough~~</code>\n                        </div>\n                        <div class=\"feature-item\">\n                            <h4><i class=\"fas fa-list\"></i> Lists</h4>\n                            <p>Ordered and unordered lists</p>\n                            <code>- Item 1<br>1. Numbered item</code>\n                        </div>\n                        <div class=\"feature-item\">\n                            <h4><i class=\"fas fa-link\"></i> Links & Images</h4>\n                            <p>Hyperlinks and embedded images</p>\n                            <code>[Link](url)<br>![Image](url)</code>\n                        </div>\n                        <div class=\"feature-item\">\n                            <h4><i class=\"fas fa-code\"></i> Code Blocks</h4>\n                            <p>Inline code and syntax highlighted blocks</p>\n                            <code>`inline code`<br>```javascript<br>code block<br>```</code>\n                        </div>\n                        <div class=\"feature-item\">\n                            <h4><i class=\"fas fa-table\"></i> Tables</h4>\n                            <p>GitHub Flavored Markdown tables</p>\n                            <code>",
+    "description": "Convert Markdown to HTML with live preview. Support for GitHub Flavored Markdown, tables, code highlighting, and custom styling options.",
+    "url": "/tools/markdown-to-html/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Free Tools Hub"
+    }
+}
+    </script>
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "/tools/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Tools",
+            "item": "/tools/tools/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Markdown to HTML Converter - Free Tools Hub</title>
+    <meta name=\"description\" content=\"Convert Markdown to HTML with live preview. Support for GitHub Flavored Markdown, tables, code highlighting, and custom styling options.\">
+    <meta name=\"keywords\" content=\"markdown to html converter, markdown parser, github flavored markdown, md to html, markdown preview\">
+    <link rel=\"canonical\" href=\"/tools/markdown-to-html/\">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property=\"og:type\" content=\"website\">
+    <meta property=\"og:url\" content=\"/tools/markdown-to-html/\">
+    <meta property=\"og:title\" content=\"Markdown to HTML Converter - Free Tools Hub\">
+    <meta property=\"og:description\" content=\"Convert Markdown to HTML with live preview and GitHub Flavored Markdown support.\">
+    
+    <!-- Favicon -->
+    <link rel=\"icon\" type=\"image/x-icon\" href=\"/favicon.ico\">
+    
+    <!-- Stylesheets -->
+    <link href=\"../../vendor/fontawesome/css/all.min.css\" rel=\"stylesheet\">
+    <link href=\"../../css/main.css\" rel=\"stylesheet\">
+    <!-- Prism.js for syntax highlighting -->
+    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css\" rel=\"stylesheet\">
+
+    <!-- Structured Data -->
+    <script type=\"application/ld+json\">
+    {
+    \"@context\": \"https://schema.org\",
+    \"@type\": \"WebApplication\",
+    \"name\": \"Markdown to HTML Converter - Free Tools Hub</title>\n    <meta name=\\"description\\" content=\\"Convert Markdown to HTML with live preview. Support for GitHub Flavored Markdown, tables, code highlighting, and custom styling options.\\">\n    <meta name=\\"keywords\\" content=\\"markdown to html converter, markdown parser, github flavored markdown, md to html, markdown preview\\">\n    <link rel=\\"canonical\\" href=\\"/tools/markdown-to-html/\\">\n    \n    <!-- Open Graph / Facebook -->\n    <meta property=\\"og:type\\" content=\\"website\\">\n    <meta property=\\"og:url\\" content=\\"/tools/markdown-to-html/\\">\n    <meta property=\\"og:title\\" content=\\"Markdown to HTML Converter - Free Tools Hub\\">\n    <meta property=\\"og:description\\" content=\\"Convert Markdown to HTML with live preview and GitHub Flavored Markdown support.\\">\n    \n    <!-- Favicon -->\n    <link rel=\\"icon\\" type=\\"image/x-icon\\" href=\\"/favicon.ico\\">\n    \n    <!-- Stylesheets -->\n    \n    <link href=\\"../../css/main.css\\" rel=\\"stylesheet\\">\n    <!-- Prism.js for syntax highlighting -->\n    <link href=\\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css\\" rel=\\"stylesheet\\">\n    <!-- Vendor Library Loader with CDN Fallbacks -->
+    <script src="../../js/vendor-loader.js"></script>
+</head>\n<body>\n    <!-- Header -->\n    <header class=\\"header\\">\n        <nav class=\\"navbar\\">\n            <div class=\\"container\\">\n                <div class=\\"nav-wrapper\\">\n                    <a href=\\"/\\" class=\\"logo\\">\n                        <i class=\\"fas fa-tools\\"></i>\n                        <span>Free Tools Hub</span>\n                    </a>\n                    \n                    <div class=\\"nav-links\\">\n                        <a href=\\"/\\" class=\\"nav-link\\">Home</a>\n                        <a href=\\"/tools/\\" class=\\"nav-link\\">All Tools</a>\n                        <div class=\\"dropdown\\">\n                            <a href=\\"#\\" class=\\"nav-link dropdown-toggle\\">Categories <i class=\\"fas fa-chevron-down\\"></i></a>\n                            <div class=\\"dropdown-menu\\">\n                                <a href=\\"/tools/text/\\" class=\\"dropdown-item\\">Text Tools</a>\n                                <a href=\\"/tools/seo/\\" class=\\"dropdown-item\\">SEO Tools</a>\n                                <a href=\\"/tools/developer/\\" class=\\"dropdown-item\\">Developer Tools</a>\n                                <a href=\\"/tools/calculator/\\" class=\\"dropdown-item\\">Calculators</a>\n                                <a href=\\"/tools/converter/\\" class=\\"dropdown-item\\">Converters</a>\n                                <a href=\\"/tools/generator/\\" class=\\"dropdown-item\\">Generators</a>\n                            </div>\n                        </div>\n                        <a href=\\"/about/\\" class=\\"nav-link\\">About</a>\n                        <a href=\\"/contact/\\" class=\\"nav-link\\">Contact</a>\n                    </div>\n                    \n                    <button class=\\"mobile-menu-btn\\">\n                        <span></span>\n                        <span></span>\n                        <span></span>\n                    </button>\n                </div>\n            </div>\n        </nav>\n    </header>\n\n    <!-- Main Content -->\n    <main class=\\"main\\" role=\"main\">\n        <div class=\\"container\\">\n            <!-- Breadcrumb -->\n            <nav class=\\"breadcrumb\\">\n                <a href=\\"/\\">Home</a>\n                <span class=\\"separator\\">/</span>\n                <a href=\\"/tools/\\">Tools</a>\n                <span class=\\"separator\\">/</span>\n                <a href=\\"/tools/converter/\\">Converters</a>\n                <span class=\\"separator\\">/</span>\n                <span class=\\"current\\">Markdown to HTML</span>\n            </nav>\n\n            <!-- Tool Header -->\n            <div class=\\"tool-header\\">\n                <h1 class=\\"tool-title\\">\n                    <i class=\\"fab fa-markdown\\"></i>\n                    Markdown to HTML Converter\n                </h1>\n                <p class=\\"tool-description\\">\n                    Convert Markdown text to HTML with live preview. Supports GitHub Flavored Markdown, tables, code blocks, and syntax highlighting.\n                </p>\n            </div>\n\n            <!-- Tool Content -->\n            <div class=\\"tool-wrapper\\">\n                <div class=\\"tool-container\\">\n                    <!-- Settings Panel -->\n                    <div class=\\"settings-panel\\">\n                        <div class=\\"settings-group\\">\n                            <label class=\\"setting-item\\">\n                                <input type=\\"checkbox\\" id=\\"enable-gfm\\" checked>\n                                <span class=\\"checkmark\\"></span>\n                                GitHub Flavored Markdown\n                            </label>\n                            <label class=\\"setting-item\\">\n                                <input type=\\"checkbox\\" id=\\"enable-tables\\" checked>\n                                <span class=\\"checkmark\\"></span>\n                                Tables\n                            </label>\n                            <label class=\\"setting-item\\">\n                                <input type=\\"checkbox\\" id=\\"enable-breaks\\" checked>\n                                <span class=\\"checkmark\\"></span>\n                                Line Breaks\n                            </label>\n                            <label class=\\"setting-item\\">\n                                <input type=\\"checkbox\\" id=\\"enable-strikethrough\\" checked>\n                                <span class=\\"checkmark\\"></span>\n                                Strikethrough\n                            </label>\n                            <label class=\\"setting-item\\">\n                                <input type=\\"checkbox\\" id=\\"enable-tasklists\\" checked>\n                                <span class=\\"checkmark\\"></span>\n                                Task Lists\n                            </label>\n                        </div>\n                        \n                        <div class=\\"settings-group\\">\n                            <label for=\\"theme-select\\">Preview Theme:</label>\n                            <select id=\\"theme-select\\" class=\\"form-control\\">\n                                <option value=\\"github\\">GitHub</option>\n                                <option value=\\"dark\\">Dark</option>\n                                <option value=\\"clean\\">Clean</option>\n                                <option value=\\"minimal\\">Minimal</option>\n                            </select>\n                        </div>\n                    </div>\n\n                    <!-- Markdown Editor -->\n                    <div class=\\"editor-container\\">\n                        <div class=\\"editor-panel\\">\n                            <div class=\\"panel-header\\">\n                                <h3><i class=\\"fab fa-markdown\\"></i> Markdown Input</h3>\n                                <div class=\\"panel-actions\\">\n                                    <button id=\\"clear-input-btn\\" class=\\"btn btn-small\\">\n                                        <i class=\\"fas fa-trash\\"></i>\n                                        Clear\n                                    </button>\n                                    <button id=\\"load-sample-btn\\" class=\\"btn btn-small\\">\n                                        <i class=\\"fas fa-file-alt\\"></i>\n                                        Sample\n                                    </button>\n                                    <button id=\\"upload-file-btn\\" class=\\"btn btn-small\\">\n                                        <i class=\\"fas fa-upload\\"></i>\n                                        Upload\n                                    </button>\n                                    <input type=\\"file\\" id=\\"file-input\\" accept=\\".md,.txt\\" style=\\"display: none;\\">\n                                </div>\n                            </div>\n                            <textarea id=\\"markdown-input\\" class=\\"markdown-editor\\" placeholder=\\"\\"></textarea>\n                            <div class=\\"editor-stats\\">\n                                <span id=\\"char-count\\">0 characters</span>\n                                <span id=\\"word-count\\">0 words</span>\n                                <span id=\\"line-count\\">0 lines</span>\n                            </div>\n                        </div>\n\n                        <div class=\\"preview-panel\\">\n                            <div class=\\"panel-header\\">\n                                <h3><i class=\\"fas fa-eye\\"></i> HTML Preview</h3>\n                                <div class=\\"panel-actions\\">\n                                    <button id=\\"copy-html-btn\\" class=\\"btn btn-small\\">\n                                        <i class=\\"fas fa-copy\\"></i>\n                                        Copy HTML\n                                    </button>\n                                    <button id=\\"download-html-btn\\" class=\\"btn btn-small\\">\n                                        <i class=\\"fas fa-download\\"></i>\n                                        Download\n                                    </button>\n                                    <button id=\\"toggle-view-btn\\" class=\\"btn btn-small\\">\n                                        <i class=\\"fas fa-code\\"></i>\n                                        Raw HTML\n                                    </button>\n                                </div>\n                            </div>\n                            <div id=\\"html-preview\\" class=\\"html-preview\\"></div>\n                            <textarea id=\\"html-output\\" class=\\"html-output\\" readonly style=\\"display: none;\\"></textarea>\n                        </div>\n                    </div>\n\n                    <!-- Quick Actions -->\n                    <div class=\\"quick-actions\\">\n                        <h3>Quick Actions</h3>\n                        <div class=\\"action-buttons\\">\n                            <button class=\\"action-btn\\" data-action=\\"heading\\">\n                                <i class=\\"fas fa-heading\\"></i>\n                                <span>Add Heading</span>\n                            </button>\n                            <button class=\\"action-btn\\" data-action=\\"bold\\">\n                                <i class=\\"fas fa-bold\\"></i>\n                                <span>Bold</span>\n                            </button>\n                            <button class=\\"action-btn\\" data-action=\\"italic\\">\n                                <i class=\\"fas fa-italic\\"></i>\n                                <span>Italic</span>\n                            </button>\n                            <button class=\\"action-btn\\" data-action=\\"link\\">\n                                <i class=\\"fas fa-link\\"></i>\n                                <span>Link</span>\n                            </button>\n                            <button class=\\"action-btn\\" data-action=\\"image\\">\n                                <i class=\\"fas fa-image\\"></i>\n                                <span>Image</span>\n                            </button>\n                            <button class=\\"action-btn\\" data-action=\\"code\\">\n                                <i class=\\"fas fa-code\\"></i>\n                                <span>Code Block</span>\n                            </button>\n                            <button class=\\"action-btn\\" data-action=\\"table\\">\n                                <i class=\\"fas fa-table\\"></i>\n                                <span>Table</span>\n                            </button>\n                            <button class=\\"action-btn\\" data-action=\\"list\\">\n                                <i class=\\"fas fa-list\\"></i>\n                                <span>List</span>\n                            </button>\n                        </div>\n                    </div>\n                </div>\n\n                <!-- Tool Information -->\n                <div class=\\"tool-container\\">\n                    <h2>About Markdown to HTML Conversion</h2>\n                    <p>Markdown is a lightweight markup language that allows you to format text using simple syntax. This tool converts Markdown to HTML while preserving formatting and adding syntax highlighting.</p>\n                    \n                    <h3>Supported Markdown Features:</h3>\n                    <div class=\\"features-grid\\">\n                        <div class=\\"feature-item\\">\n                            <h4><i class=\\"fas fa-heading\\"></i> Headers</h4>\n                            <p>H1-H6 headers using # syntax</p>\n                            <code># Header 1<br>## Header 2</code>\n                        </div>\n                        <div class=\\"feature-item\\">\n                            <h4><i class=\\"fas fa-bold\\"></i> Text Formatting</h4>\n                            <p>Bold, italic, strikethrough text</p>\n                            <code>**bold** *italic* ~~strikethrough~~</code>\n                        </div>\n                        <div class=\\"feature-item\\">\n                            <h4><i class=\\"fas fa-list\\"></i> Lists</h4>\n                            <p>Ordered and unordered lists</p>\n                            <code>- Item 1<br>1. Numbered item</code>\n                        </div>\n                        <div class=\\"feature-item\\">\n                            <h4><i class=\\"fas fa-link\\"></i> Links & Images</h4>\n                            <p>Hyperlinks and embedded images</p>\n                            <code>[Link](url)<br>![Image](url)</code>\n                        </div>\n                        <div class=\\"feature-item\\">\n                            <h4><i class=\\"fas fa-code\\"></i> Code Blocks</h4>\n                            <p>Inline code and syntax highlighted blocks</p>\n                            <code>`inline code`<br>```javascript<br>code block<br>```</code>\n                        </div>\n                        <div class=\\"feature-item\\">\n                            <h4><i class=\\"fas fa-table\\"></i> Tables</h4>\n                            <p>GitHub Flavored Markdown tables</p>\n                            <code>\",
+    \"description\": \"Convert Markdown to HTML with live preview. Support for GitHub Flavored Markdown, tables, code highlighting, and custom styling options.\",
+    \"url\": \"/tools/markdown-to-html/\",
+    \"applicationCategory\": \"UtilityApplication\",
+    \"operatingSystem\": \"Web Browser\",
+    \"offers\": {
+        \"@type\": \"Offer\",
+        \"price\": \"0\",
+        \"priceCurrency\": \"USD\"
+    },
+    \"publisher\": {
+        \"@type\": \"Organization\",
+        \"name\": \"Free Tools Hub\"
+    }
+}
+    </script>
+    <!-- Vendor Library Loader with CDN Fallbacks -->
+    <script src="../../js/vendor-loader.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class=\"header\">
+        <nav class=\"navbar\">
+            <div class=\"container\">
+                <div class=\"nav-wrapper\">
+                    <a href=\"/\" class=\"logo\">
+                        <i class=\"fas fa-tools\"></i>
+                        <span>Free Tools Hub</span>
+                    </a>
+                    
+                    <div class=\"nav-links\">
+                        <a href=\"/\" class=\"nav-link\">Home</a>
+                        <a href=\"/tools/\" class=\"nav-link\">All Tools</a>
+                        <div class=\"dropdown\">
+                            <a href=\"#\" class=\"nav-link dropdown-toggle\">Categories <i class=\"fas fa-chevron-down\"></i></a>
+                            <div class=\"dropdown-menu\">
+                                <a href=\"/tools/text/\" class=\"dropdown-item\">Text Tools</a>
+                                <a href=\"/tools/seo/\" class=\"dropdown-item\">SEO Tools</a>
+                                <a href=\"/tools/developer/\" class=\"dropdown-item\">Developer Tools</a>
+                                <a href=\"/tools/calculator/\" class=\"dropdown-item\">Calculators</a>
+                                <a href=\"/tools/converter/\" class=\"dropdown-item\">Converters</a>
+                                <a href=\"/tools/generator/\" class=\"dropdown-item\">Generators</a>
+                            </div>
+                        </div>
+                        <a href=\"/about/\" class=\"nav-link\">About</a>
+                        <a href=\"/contact/\" class=\"nav-link\">Contact</a>
+                    </div>
+                    
+                    <button class=\"mobile-menu-btn\">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class=\"main\" role=\"main\">
+        <div class=\"container\">
+            <!-- Breadcrumb -->
+            <nav class=\"breadcrumb\">
+                <a href=\"/\">Home</a>
+                <span class=\"separator\">/</span>
+                <a href=\"/tools/\">Tools</a>
+                <span class=\"separator\">/</span>
+                <a href=\"/tools/converter/\">Converters</a>
+                <span class=\"separator\">/</span>
+                <span class=\"current\">Markdown to HTML</span>
+            </nav>
+
+            <!-- Tool Header -->
+            <div class=\"tool-header\">
+                <h1 class=\"tool-title\">
+                    <i class=\"fab fa-markdown\"></i>
+                    Markdown to HTML Converter
+                </h1>
+                <p class=\"tool-description\">
+                    Convert Markdown text to HTML with live preview. Supports GitHub Flavored Markdown, tables, code blocks, and syntax highlighting.
+                </p>
+            </div>
+
+            <!-- Tool Content -->
+            <div class=\"tool-wrapper\">
+                <div class=\"tool-container\">
+                    <!-- Settings Panel -->
+                    <div class=\"settings-panel\">
+                        <div class=\"settings-group\">
+                            <label class=\"setting-item\">
+                                <input type=\"checkbox\" id=\"enable-gfm\" checked>
+                                <span class=\"checkmark\"></span>
+                                GitHub Flavored Markdown
+                            </label>
+                            <label class=\"setting-item\">
+                                <input type=\"checkbox\" id=\"enable-tables\" checked>
+                                <span class=\"checkmark\"></span>
+                                Tables
+                            </label>
+                            <label class=\"setting-item\">
+                                <input type=\"checkbox\" id=\"enable-breaks\" checked>
+                                <span class=\"checkmark\"></span>
+                                Line Breaks
+                            </label>
+                            <label class=\"setting-item\">
+                                <input type=\"checkbox\" id=\"enable-strikethrough\" checked>
+                                <span class=\"checkmark\"></span>
+                                Strikethrough
+                            </label>
+                            <label class=\"setting-item\">
+                                <input type=\"checkbox\" id=\"enable-tasklists\" checked>
+                                <span class=\"checkmark\"></span>
+                                Task Lists
+                            </label>
+                        </div>
+                        
+                        <div class=\"settings-group\">
+                            <label for=\"theme-select\">Preview Theme:</label>
+                            <select id=\"theme-select\" class=\"form-control\">
+                                <option value=\"github\">GitHub</option>
+                                <option value=\"dark\">Dark</option>
+                                <option value=\"clean\">Clean</option>
+                                <option value=\"minimal\">Minimal</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Markdown Editor -->
+                    <div class=\"editor-container\">
+                        <div class=\"editor-panel\">
+                            <div class=\"panel-header\">
+                                <h3><i class=\"fab fa-markdown\"></i> Markdown Input</h3>
+                                <div class=\"panel-actions\">
+                                    <button id=\"clear-input-btn\" class=\"btn btn-small\">
+                                        <i class=\"fas fa-trash\"></i>
+                                        Clear
+                                    </button>
+                                    <button id=\"load-sample-btn\" class=\"btn btn-small\">
+                                        <i class=\"fas fa-file-alt\"></i>
+                                        Sample
+                                    </button>
+                                    <button id=\"upload-file-btn\" class=\"btn btn-small\">
+                                        <i class=\"fas fa-upload\"></i>
+                                        Upload
+                                    </button>
+                                    <input type=\"file\" id=\"file-input\" accept=\".md,.txt\" style=\"display: none;\">
+                                </div>
+                            </div>
+                            <textarea id=\"markdown-input\" class=\"markdown-editor\" placeholder=\"\"></textarea>
+                            <div class=\"editor-stats\">
+                                <span id=\"char-count\">0 characters</span>
+                                <span id=\"word-count\">0 words</span>
+                                <span id=\"line-count\">0 lines</span>
+                            </div>
+                        </div>
+
+                        <div class=\"preview-panel\">
+                            <div class=\"panel-header\">
+                                <h3><i class=\"fas fa-eye\"></i> HTML Preview</h3>
+                                <div class=\"panel-actions\">
+                                    <button id=\"copy-html-btn\" class=\"btn btn-small\">
+                                        <i class=\"fas fa-copy\"></i>
+                                        Copy HTML
+                                    </button>
+                                    <button id=\"download-html-btn\" class=\"btn btn-small\">
+                                        <i class=\"fas fa-download\"></i>
+                                        Download
+                                    </button>
+                                    <button id=\"toggle-view-btn\" class=\"btn btn-small\">
+                                        <i class=\"fas fa-code\"></i>
+                                        Raw HTML
+                                    </button>
+                                </div>
+                            </div>
+                            <div id=\"html-preview\" class=\"html-preview\"></div>
+                            <textarea id=\"html-output\" class=\"html-output\" readonly style=\"display: none;\"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class=\"quick-actions\">
+                        <h3>Quick Actions</h3>
+                        <div class=\"action-buttons\">
+                            <button class=\"action-btn\" data-action=\"heading\">
+                                <i class=\"fas fa-heading\"></i>
+                                <span>Add Heading</span>
+                            </button>
+                            <button class=\"action-btn\" data-action=\"bold\">
+                                <i class=\"fas fa-bold\"></i>
+                                <span>Bold</span>
+                            </button>
+                            <button class=\"action-btn\" data-action=\"italic\">
+                                <i class=\"fas fa-italic\"></i>
+                                <span>Italic</span>
+                            </button>
+                            <button class=\"action-btn\" data-action=\"link\">
+                                <i class=\"fas fa-link\"></i>
+                                <span>Link</span>
+                            </button>
+                            <button class=\"action-btn\" data-action=\"image\">
+                                <i class=\"fas fa-image\"></i>
+                                <span>Image</span>
+                            </button>
+                            <button class=\"action-btn\" data-action=\"code\">
+                                <i class=\"fas fa-code\"></i>
+                                <span>Code Block</span>
+                            </button>
+                            <button class=\"action-btn\" data-action=\"table\">
+                                <i class=\"fas fa-table\"></i>
+                                <span>Table</span>
+                            </button>
+                            <button class=\"action-btn\" data-action=\"list\">
+                                <i class=\"fas fa-list\"></i>
+                                <span>List</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool Information -->
+                <div class=\"tool-container\">
+                    <h2>About Markdown to HTML Conversion</h2>
+                    <p>Markdown is a lightweight markup language that allows you to format text using simple syntax. This tool converts Markdown to HTML while preserving formatting and adding syntax highlighting.</p>
+                    
+                    <h3>Supported Markdown Features:</h3>
+                    <div class=\"features-grid\">
+                        <div class=\"feature-item\">
+                            <h4><i class=\"fas fa-heading\"></i> Headers</h4>
+                            <p>H1-H6 headers using # syntax</p>
+                            <code># Header 1<br>## Header 2</code>
+                        </div>
+                        <div class=\"feature-item\">
+                            <h4><i class=\"fas fa-bold\"></i> Text Formatting</h4>
+                            <p>Bold, italic, strikethrough text</p>
+                            <code>**bold** *italic* ~~strikethrough~~</code>
+                        </div>
+                        <div class=\"feature-item\">
+                            <h4><i class=\"fas fa-list\"></i> Lists</h4>
+                            <p>Ordered and unordered lists</p>
+                            <code>- Item 1<br>1. Numbered item</code>
+                        </div>
+                        <div class=\"feature-item\">
+                            <h4><i class=\"fas fa-link\"></i> Links & Images</h4>
+                            <p>Hyperlinks and embedded images</p>
+                            <code>[Link](url)<br>![Image](url)</code>
+                        </div>
+                        <div class=\"feature-item\">
+                            <h4><i class=\"fas fa-code\"></i> Code Blocks</h4>
+                            <p>Inline code and syntax highlighted blocks</p>
+                            <code>`inline code`<br>```javascript<br>code block<br>```</code>
+                        </div>
+                        <div class=\"feature-item\">
+                            <h4><i class=\"fas fa-table\"></i> Tables</h4>
+                            <p>GitHub Flavored Markdown tables</p>
+                            <code>",
+            "item": "/tools/markdown-to-html/"
+        }
+    ]
+}
+    </script>
+    <!-- Vendor Library Loader with CDN Fallbacks -->
+    <script src="../../js/vendor-loader.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="/" class="logo">
+                        <i class="fas fa-tools"></i>
+                        <span>Free Tools Hub</span>
+                    </a>
+                    
+                    <div class="nav-links">
+                        <a href="/" class="nav-link">Home</a>
+                        <a href="/tools/" class="nav-link">All Tools</a>
+                        <div class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">Categories <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu">
+                                <a href="/tools/text/" class="dropdown-item">Text Tools</a>
+                                <a href="/tools/seo/" class="dropdown-item">SEO Tools</a>
+                                <a href="/tools/developer/" class="dropdown-item">Developer Tools</a>
+                                <a href="/tools/calculator/" class="dropdown-item">Calculators</a>
+                                <a href="/tools/converter/" class="dropdown-item">Converters</a>
+                                <a href="/tools/generator/" class="dropdown-item">Generators</a>
+                            </div>
+                        </div>
+                        <a href="/about/" class="nav-link">About</a>
+                        <a href="/contact/" class="nav-link">Contact</a>
+                    </div>
+                    
+                    <button class="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" role="main">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="separator">/</span>
+                <a href="/tools/">Tools</a>
+                <span class="separator">/</span>
+                <a href="/tools/converter/">Converters</a>
+                <span class="separator">/</span>
+                <span class="current">Markdown to HTML</span>
+            </nav>
+
+            <!-- Tool Header -->
+            <div class="tool-header">
+                <h1 class="tool-title">
+                    <i class="fab fa-markdown"></i>
+                    Markdown to HTML Converter
+                </h1>
+                <p class="tool-description">
+                    Convert Markdown text to HTML with live preview. Supports GitHub Flavored Markdown, tables, code blocks, and syntax highlighting.
+                </p>
+            </div>
+
+            <!-- Tool Content -->
+            <div class="tool-wrapper">
+                <div class="tool-container">
+                    <!-- Settings Panel -->
+                    <div class="settings-panel">
+                        <div class="settings-group">
+                            <label class="setting-item">
+                                <input type="checkbox" id="enable-gfm" checked>
+                                <span class="checkmark"></span>
+                                GitHub Flavored Markdown
+                            </label>
+                            <label class="setting-item">
+                                <input type="checkbox" id="enable-tables" checked>
+                                <span class="checkmark"></span>
+                                Tables
+                            </label>
+                            <label class="setting-item">
+                                <input type="checkbox" id="enable-breaks" checked>
+                                <span class="checkmark"></span>
+                                Line Breaks
+                            </label>
+                            <label class="setting-item">
+                                <input type="checkbox" id="enable-strikethrough" checked>
+                                <span class="checkmark"></span>
+                                Strikethrough
+                            </label>
+                            <label class="setting-item">
+                                <input type="checkbox" id="enable-tasklists" checked>
+                                <span class="checkmark"></span>
+                                Task Lists
+                            </label>
+                        </div>
+                        
+                        <div class="settings-group">
+                            <label for="theme-select">Preview Theme:</label>
+                            <select id="theme-select" class="form-control">
+                                <option value="github">GitHub</option>
+                                <option value="dark">Dark</option>
+                                <option value="clean">Clean</option>
+                                <option value="minimal">Minimal</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Markdown Editor -->
+                    <div class="editor-container">
+                        <div class="editor-panel">
+                            <div class="panel-header">
+                                <h3><i class="fab fa-markdown"></i> Markdown Input</h3>
+                                <div class="panel-actions">
+                                    <button id="clear-input-btn" class="btn btn-small">
+                                        <i class="fas fa-trash"></i>
+                                        Clear
+                                    </button>
+                                    <button id="load-sample-btn" class="btn btn-small">
+                                        <i class="fas fa-file-alt"></i>
+                                        Sample
+                                    </button>
+                                    <button id="upload-file-btn" class="btn btn-small">
+                                        <i class="fas fa-upload"></i>
+                                        Upload
+                                    </button>
+                                    <input type="file" id="file-input" accept=".md,.txt" style="display: none;">
+                                </div>
+                            </div>
+                            <textarea id="markdown-input" class="markdown-editor" placeholder=""></textarea>
+                            <div class="editor-stats">
+                                <span id="char-count">0 characters</span>
+                                <span id="word-count">0 words</span>
+                                <span id="line-count">0 lines</span>
+                            </div>
+                        </div>
+
+                        <div class="preview-panel">
+                            <div class="panel-header">
+                                <h3><i class="fas fa-eye"></i> HTML Preview</h3>
+                                <div class="panel-actions">
+                                    <button id="copy-html-btn" class="btn btn-small">
+                                        <i class="fas fa-copy"></i>
+                                        Copy HTML
+                                    </button>
+                                    <button id="download-html-btn" class="btn btn-small">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                    <button id="toggle-view-btn" class="btn btn-small">
+                                        <i class="fas fa-code"></i>
+                                        Raw HTML
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="html-preview" class="html-preview"></div>
+                            <textarea id="html-output" class="html-output" readonly style="display: none;"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <h3>Quick Actions</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn" data-action="heading">
+                                <i class="fas fa-heading"></i>
+                                <span>Add Heading</span>
+                            </button>
+                            <button class="action-btn" data-action="bold">
+                                <i class="fas fa-bold"></i>
+                                <span>Bold</span>
+                            </button>
+                            <button class="action-btn" data-action="italic">
+                                <i class="fas fa-italic"></i>
+                                <span>Italic</span>
+                            </button>
+                            <button class="action-btn" data-action="link">
+                                <i class="fas fa-link"></i>
+                                <span>Link</span>
+                            </button>
+                            <button class="action-btn" data-action="image">
+                                <i class="fas fa-image"></i>
+                                <span>Image</span>
+                            </button>
+                            <button class="action-btn" data-action="code">
+                                <i class="fas fa-code"></i>
+                                <span>Code Block</span>
+                            </button>
+                            <button class="action-btn" data-action="table">
+                                <i class="fas fa-table"></i>
+                                <span>Table</span>
+                            </button>
+                            <button class="action-btn" data-action="list">
+                                <i class="fas fa-list"></i>
+                                <span>List</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool Information -->
+                <div class="tool-container">
+                    <h2>About Markdown to HTML Conversion</h2>
+                    <p>Markdown is a lightweight markup language that allows you to format text using simple syntax. This tool converts Markdown to HTML while preserving formatting and adding syntax highlighting.</p>
+                    
+                    <h3>Supported Markdown Features:</h3>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <h4><i class="fas fa-heading"></i> Headers</h4>
+                            <p>H1-H6 headers using # syntax</p>
+                            <code># Header 1<br>## Header 2</code>
+                        </div>
+                        <div class="feature-item">
+                            <h4><i class="fas fa-bold"></i> Text Formatting</h4>
+                            <p>Bold, italic, strikethrough text</p>
+                            <code>**bold** *italic* ~~strikethrough~~</code>
+                        </div>
+                        <div class="feature-item">
+                            <h4><i class="fas fa-list"></i> Lists</h4>
+                            <p>Ordered and unordered lists</p>
+                            <code>- Item 1<br>1. Numbered item</code>
+                        </div>
+                        <div class="feature-item">
+                            <h4><i class="fas fa-link"></i> Links & Images</h4>
+                            <p>Hyperlinks and embedded images</p>
+                            <code>[Link](url)<br>![Image](url)</code>
+                        </div>
+                        <div class="feature-item">
+                            <h4><i class="fas fa-code"></i> Code Blocks</h4>
+                            <p>Inline code and syntax highlighted blocks</p>
+                            <code>`inline code`<br>```javascript<br>code block<br>```</code>
+                        </div>
+                        <div class="feature-item">
+                            <h4><i class="fas fa-table"></i> Tables</h4>
+                            <p>GitHub Flavored Markdown tables</p>
+                            <code>| Col1 | Col2 |<br>|------|------|<br>| A    | B    |</code>
+                        </div>
+                        <div class="feature-item">
+                            <h4><i class="fas fa-quote-right"></i> Blockquotes</h4>
+                            <p>Quoted text and citations</p>
+                            <code>> This is a quote</code>
+                        </div>
+                        <div class="feature-item">
+                            <h4><i class="fas fa-tasks"></i> Task Lists</h4>
+                            <p>Interactive checkboxes</p>
+                            <code>- [x] Done<br>- [ ] Todo</code>
+                        </div>
+                    </div>
+
+                    <h3>Features:</h3>
+                    <ul>
+                        <li>Live HTML preview with syntax highlighting</li>
+                        <li>GitHub Flavored Markdown support</li>
+                        <li>Multiple preview themes</li>
+                        <li>File upload and download</li>
+                        <li>Quick formatting actions</li>
+                        <li>Copy HTML output to clipboard</li>
+                        <li>Real-time statistics (characters, words, lines)</li>
+                        <li>Raw HTML view for developers</li>
+                    </ul>
+
+                    <h3>Use Cases:</h3>
+                    <ul>
+                        <li>Converting README files to HTML</li>
+                        <li>Blog post and article writing</li>
+                        <li>Documentation generation</li>
+                        <li>GitHub wiki page creation</li>
+                        <li>Technical writing and formatting</li>
+                        <li>Email template creation</li>
+                        <li>Static site content generation</li>
+                        <li>Learning Markdown syntax</li>
+                    </ul>
+                </div>
+
+                <!-- Related Tools -->
+                <div class="tool-container">
+                    <h2>Related Tools</h2>
+                    <div class="related-tools">
+                        <a href="/tools/html-encoder-decoder/" class="related-tool">
+                            <i class="fas fa-code"></i>
+                            HTML Encoder/Decoder
+                        </a>
+                        <a href="/tools/text-case-converter/" class="related-tool">
+                            <i class="fas fa-font"></i>
+                            Text Case Converter
+                        </a>
+                        <a href="/tools/json-formatter/" class="related-tool">
+                            <i class="fas fa-brackets-curly"></i>
+                            JSON Formatter
+                        </a>
+                        <a href="/tools/word-counter/" class="related-tool">
+                            <i class="fas fa-calculator"></i>
+                            Word Counter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Free Tools Hub</h4>
+                    <p>Your go-to destination for professional online tools and utilities. Fast, secure, and always free.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Tool Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="/tools/text/">Text Tools</a></li>
+                        <li><a href="/tools/seo/">SEO Tools</a></li>
+                        <li><a href="/tools/developer/">Developer Tools</a></li>
+                        <li><a href="/tools/calculator/">Calculators</a></li>
+                        <li><a href="/tools/converter/">Converters</a></li>
+                        <li><a href="/tools/generator/">Generators</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Popular Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="/tools/word-counter/">Word Counter</a></li>
+                        <li><a href="/tools/password-generator/">Password Generator</a></li>
+                        <li><a href="/tools/json-formatter/">JSON Formatter</a></li>
+                        <li><a href="/tools/bmi-calculator/">BMI Calculator</a></li>
+                        <li><a href="/tools/qr-code-generator/">QR Code Generator</a></li>
+                        <li><a href="/tools/meta-tag-generator/">Meta Tag Generator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy/">Privacy Policy</a></li>
+                        <li><a href="/terms/">Terms of Service</a></li>
+                        <li><a href="/sitemap.xml">Sitemap</a></li>
+                        <li><a href="/feedback/">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Free Tools Hub. All rights reserved. | Built with ❤️ for the community</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="script.js"></script>
+
+<style>
+#minimax-floating-ball {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 12px;
+  background: #222222;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  color: #F8F8F8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#minimax-floating-ball:hover {
+  transform: translateY(-2px);
+  background: #383838;
+}
+
+.minimax-ball-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.minimax-logo-wave {
+  width: 26px;
+  height: 22px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='22' viewBox='0 0 26 22' fill='none'%3E%3Cg clip-path='url(%23clip0_3442_102412)'%3E%3Cpath d='M12.8405 14.6775C12.8405 14.9897 13.0932 15.2424 13.4055 15.2424C13.7178 15.2424 13.9705 14.9897 13.9705 14.6775V2.98254C13.9705 1.88957 13.0809 1 11.9879 1C10.895 1 10.0054 1.88957 10.0054 2.98254V11.566V17.1068C10.0054 17.5773 9.62327 17.9594 9.1528 17.9594C8.68233 17.9594 8.30021 17.5773 8.30021 17.1068V8.04469C8.30021 6.95172 7.41063 6.06215 6.31767 6.06215C5.22471 6.06215 4.33513 6.95172 4.33513 8.04469V11.8855C4.33513 12.3559 3.953 12.7381 3.48254 12.7381C3.01207 12.7381 2.62994 12.3559 2.62994 11.8855V10.4936C2.62994 10.1813 2.37725 9.92861 2.06497 9.92861C1.7527 9.92861 1.5 10.1813 1.5 10.4936V11.8855C1.5 12.9784 2.38957 13.868 3.48254 13.868C4.5755 13.868 5.46508 12.9784 5.46508 11.8855V8.04469C5.46508 7.57422 5.8472 7.19209 6.31767 7.19209C6.78814 7.19209 7.17026 7.57422 7.17026 8.04469V17.1068C7.17026 18.1998 8.05984 19.0894 9.1528 19.0894C10.2458 19.0894 11.1353 18.1998 11.1353 17.1068V2.98254C11.1353 2.51207 11.5175 2.12994 11.9879 2.12994C12.4584 2.12994 12.8405 2.51207 12.8405 2.98254V14.6775Z' fill='%23F8F8F8'/%3E%3Cpath d='M23.3278 6.06215C22.2348 6.06215 21.3452 6.95172 21.3452 8.04469V15.6143C21.3452 16.0847 20.9631 16.4669 20.4926 16.4669C20.0222 16.4669 19.6401 16.0847 19.6401 15.6143V2.98254C19.6401 1.88957 18.7505 1 17.6575 1C16.5645 1 15.675 1.88957 15.675 2.98254V19.0175C15.675 19.4879 15.2928 19.8701 14.8224 19.8701C14.3519 19.8701 13.9698 19.4879 13.9698 19.0175V17.0329C13.9698 16.7206 13.7171 16.4679 13.4048 16.4679C13.0925 16.4679 12.8398 16.7206 12.8398 17.0329V19.0175C12.8398 20.1104 13.7294 21 14.8224 21C15.9153 21 16.8049 20.1104 16.8049 19.0175V2.98254C16.8049 2.51207 17.187 2.12994 17.6575 2.12994C18.128 2.12994 18.5101 2.51207 18.5101 2.98254V15.6143C18.5101 16.7072 19.3997 17.5968 20.4926 17.5968C21.5856 17.5968 22.4752 16.7072 22.4752 15.6143V8.04469C22.4752 7.57422 22.8573 7.19209 23.3278 7.19209C23.7982 7.19209 24.1804 7.57422 24.1804 8.04469V14.6775C24.1804 14.9897 24.4331 15.2424 24.7453 15.2424C25.0576 15.2424 25.3103 14.9897 25.3103 14.6775V8.04469C25.3103 6.95172 24.4207 6.06215 23.3278 6.06215Z' fill='%23F8F8F8'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_3442_102412'%3E%3Crect width='25' height='22' fill='white' transform='translate(0.5)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.minimax-ball-text {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.minimax-close-icon {
+  margin-left: 8px;
+  font-size: 16px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.minimax-close-icon:hover {
+  opacity: 1;
+}
+</style>
+<div id="minimax-floating-ball">
+  <div class="minimax-ball-content">
+    <div class="minimax-logo-wave"></div>
+    <span class="minimax-ball-text">Created by MiniMax Agent</span>
+  </div>
+  <div class="minimax-close-icon">×</div>
+</div>
+<script>
+// Initialize floating ball functionality
+function initFloatingBall() {
+  const ball = document.getElementById('minimax-floating-ball');
+  if (!ball) return;
+
+  // Initial animation
+  ball.style.opacity = '0';
+  ball.style.transform = 'translateY(20px)';
+
+  setTimeout(() => {
+    ball.style.opacity = '1';
+    ball.style.transform = 'translateY(0)';
+  }, 500);
+
+  // Handle logo click
+  const ballContent = ball.querySelector('.minimax-ball-content');
+  ballContent.addEventListener('click', function (e) {
+    e.stopPropagation();
+    window.open('https://agent.minimax.io/agent', '_blank');
+    ball.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      ball.style.transform = 'scale(1)';
+    }, 100);
+  });
+
+  // Handle close button click
+  const closeIcon = ball.querySelector('.minimax-close-icon');
+  closeIcon.addEventListener('click', function (e) {
+    e.stopPropagation();
+    ball.style.opacity = '0';
+    ball.style.transform = 'translateY(20px)';
+
+    setTimeout(() => {
+      ball.style.display = 'none';
+    }, 300);
+  });
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initFloatingBall); 
+</script>
+
+
+            <script>
+            // Common Tool Functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                // Add ARIA labels to buttons and inputs
+                const buttons = document.querySelectorAll('button');
+                buttons.forEach(button => {
+                    if (!button.getAttribute('aria-label') && button.textContent.trim()) {
+                        button.setAttribute('aria-label', button.textContent.trim());
+                    }
+                });
+                
+                // Add alt text to images missing it
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    if (!img.getAttribute('alt')) {
+                        img.setAttribute('alt', '');
+                    }
+                });
+                
+                // Disable buttons until valid input
+                const inputFields = document.querySelectorAll('input[type="text"], textarea');
+                const actionButtons = document.querySelectorAll('.btn-primary, button[onclick]');
+                
+                function checkInputs() {
+                    const hasInput = Array.from(inputFields).some(field => field.value.trim().length > 0);
+                    actionButtons.forEach(button => {
+                        if (button.textContent.includes('Copy') || 
+                            button.textContent.includes('Download') || 
+                            button.textContent.includes('Generate')) {
+                            button.disabled = !hasInput;
+                        }
+                    });
+                }
+                
+                inputFields.forEach(field => {
+                    field.addEventListener('input', checkInputs);
+                });
+                
+                // Initial check
+                checkInputs();
+                
+                // Add success/error notifications
+                window.showNotification = function(message, type = 'success') {
+                    const notification = document.createElement('div');
+                    notification.className = `notification notification-${type}`;
+                    notification.innerHTML = `
+                        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}" aria-hidden="true"></i>
+                        <span>${message}</span>
+                    `;
+                    
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: ${type === 'success' ? '#10b981' : '#ef4444'};
+                        color: white;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                        z-index: 1000;
+                        opacity: 0;
+                        transform: translateX(100%);
+                        transition: all 0.3s ease;
+                        max-width: 400px;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    `;
+                    
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '1';
+                        notification.style.transform = 'translateX(0)';
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        notification.style.transform = 'translateX(100%)';
+                        setTimeout(() => {
+                            if (notification.parentNode) {
+                                document.body.removeChild(notification);
+                            }
+                        }, 300);
+                    }, 3000);
+                };
+                
+                // Enhanced copy functionality
+                window.copyToClipboard = async function(text) {
+                    try {
+                        if (navigator.clipboard && window.isSecureContext) {
+                            await navigator.clipboard.writeText(text);
+                            showNotification('Copied to clipboard!', 'success');
+                            return true;
+                        } else {
+                            // Fallback for older browsers
+                            const textArea = document.createElement('textarea');
+                            textArea.value = text;
+                            textArea.style.position = 'fixed';
+                            textArea.style.left = '-999999px';
+                            textArea.style.top = '-999999px';
+                            document.body.appendChild(textArea);
+                            textArea.focus();
+                            textArea.select();
+                            
+                            try {
+                                document.execCommand('copy');
+                                textArea.remove();
+                                showNotification('Copied to clipboard!', 'success');
+                                return true;
+                            } catch (err) {
+                                textArea.remove();
+                                showNotification('Failed to copy to clipboard', 'error');
+                                return false;
+                            }
+                        }
+                    } catch (err) {
+                        showNotification('Failed to copy to clipboard', 'error');
+                        return false;
+                    }
+                };
+            });
+            </script>
+            
+</body>
+</html>

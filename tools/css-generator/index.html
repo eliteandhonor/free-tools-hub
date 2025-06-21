@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="canonical" href="/tools/css-generator/">
+    <meta charset="UTF-8">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <title>CSS Generator - Create CSS Code Snippets | Free Tools Hub</title>
+    <meta name="description" content="Generate CSS code for box shadows, gradients, borders, flexbox, and grid layouts. Create modern CSS with live preview and customization.">
+    <meta name="keywords" content="css generator, box shadow, gradient, border radius, css code, web development">
+    <meta name="author" content="Free Tools Hub">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/tools/css-generator/">
+    <meta property="og:title" content="CSS Generator - Create CSS Code Snippets">
+    <meta property="og:description" content="Generate CSS code for shadows, gradients, borders, animations and more.">
+    <meta property="og:image" content="/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="/tools/css-generator/">
+    <meta property="twitter:title" content="CSS Generator">
+    <meta property="twitter:description" content="Generate CSS code for shadows, gradients, borders, animations and more.">
+    <meta property="twitter:image" content="/images/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" onerror="this.onerror=null;this.href='/vendor/bootstrap/css/bootstrap.min.css'">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" onerror="this.onerror=null;this.href='/vendor/fontawesome/css/all.min.css'">
+    <link href="../../css/main.css" rel="stylesheet">
+    <link href="../../css/css-generator.css" rel="stylesheet">
+    <!-- Removed inline <style> block: all styles moved to css-generator.css -->
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CSS Generator - Create CSS Code Snippets",
+    "description": "Generate CSS code for shadows, gradients, borders, animations and more. Professional CSS generator with live preview.",
+    "url": "/tools/css-generator/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Free Tools Hub"
+    }
+}
+    </script>
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "/tools/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Tools",
+            "item": "/tools/tools/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "CSS Generator - Create CSS Code Snippets",
+            "item": "/tools/css-generator/"
+        }
+    ]
+}
+    </script>
+    <!-- Vendor Library Loader with CDN Fallbacks -->
+    <script src="../../js/vendor-loader.js"></script>
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+
+    <!-- Unified Header Navigation -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="Main navigation">
+                <a href="/" class="navbar-brand" aria-label="Free Tools Hub - Home">
+                    <i class="fas fa-tools" aria-hidden="true"></i>
+                    Free Tools Hub
+                </a>
+                
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggle" type="button" aria-expanded="false" aria-controls="navbar-nav" aria-label="Toggle navigation menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <ul class="navbar-nav" id="navbar-nav" role="menubar">
+                    <li role="none"><a href="/" class="nav-link" role="menuitem">Home</a></li>
+                    <li class="dropdown" role="none">
+                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-expanded="false" aria-haspopup="true">
+                            Categories <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-label="Categories">
+                            <li role="none"><a href="/tools/text/" class="dropdown-item" role="menuitem">Text Tools</a></li>
+                            <li role="none"><a href="/tools/seo/" class="dropdown-item" role="menuitem">SEO Tools</a></li>
+                            <li role="none"><a href="/tools/developer/" class="dropdown-item" role="menuitem">Developer Tools</a></li>
+                            <li role="none"><a href="/tools/calculator/" class="dropdown-item" role="menuitem">Calculators</a></li>
+                            <li role="none"><a href="/tools/converter/" class="dropdown-item" role="menuitem">Converters</a></li>
+                            <li role="none"><a href="/tools/generator/" class="dropdown-item" role="menuitem">Generators</a></li>
+                        </ul>
+                    </li>
+                    <li role="none"><a href="/tools/" class="nav-link" role="menuitem">All Tools</a></li>
+                    <li role="none"><a href="/about/" class="nav-link" role="menuitem">About</a></li>
+                    <li role="none"><a href="/contact/" class="nav-link" role="menuitem">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="../../">
+                <i class="fas fa-tools me-2"></i>Free Tools Hub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" title="Toggle navigation menu" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../../">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../tools/">All Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../about/">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../contact/">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">
+                <i class="fab fa-css3-alt me-3"></i>CSS Generator
+            </h1>
+            <p class="lead mb-0">Generate CSS code for shadows, gradients, borders, and animations with live preview</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Tool Tabs -->
+            <div class="tool-tabs">
+                <button class="tool-tab active" onclick="switchTab('box-shadow')" aria-label="Action button">Box Shadow</button>
+                <button class="tool-tab" onclick="switchTab('gradient')" aria-label="Action button">Gradient</button>
+                <button class="tool-tab" onclick="switchTab('border')" aria-label="Action button">Border Radius</button>
+                <button class="tool-tab" onclick="switchTab('flexbox')" aria-label="Action button">Flexbox</button>
+                <button class="tool-tab" onclick="switchTab('grid')" aria-label="Action button">CSS Grid</button>
+            </div>
+            
+            <!-- Box Shadow Tool -->
+            <div id="box-shadow" class="tool-content active">
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="mb-0"><i class="fas fa-cog me-2"></i>Box Shadow Settings</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="shadowX">Horizontal Offset:</label>
+                                        <input type="range" class="range-input" id="shadowX" min="-50" max="50" value="0" oninput="updateBoxShadow()" title="Horizontal shadow offset">
+                                        <small class="text-muted"><span id="shadowXValue">0</span>px</small>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="shadowY">Vertical Offset:</label>
+                                        <input type="range" class="range-input" id="shadowY" min="-50" max="50" value="4" oninput="updateBoxShadow()" title="Vertical shadow offset">
+                                        <small class="text-muted"><span id="shadowYValue">4</span>px</small>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="shadowBlur">Blur Radius:</label>
+                                        <input type="range" class="range-input" id="shadowBlur" min="0" max="100" value="8" oninput="updateBoxShadow()" title="Shadow blur radius">
+                                        <small class="text-muted"><span id="shadowBlurValue">8</span>px</small>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="shadowSpread">Spread Radius:</label>
+                                        <input type="range" class="range-input" id="shadowSpread" min="-50" max="50" value="0" oninput="updateBoxShadow()" title="Shadow spread radius">
+                                        <small class="text-muted"><span id="shadowSpreadValue">0</span>px</small>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="shadowColor">Shadow Color:</label>
+                                        <input type="color" class="color-input" id="shadowColor" value="#000000" oninput="updateBoxShadow()" title="Shadow color">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="shadowOpacity">Opacity:</label>
+                                        <input type="range" class="range-input" id="shadowOpacity" min="0" max="1" step="0.1" value="0.3" oninput="updateBoxShadow()" title="Shadow opacity">
+                                        <small class="text-muted"><span id="shadowOpacityValue">0.3</span></small>
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="shadowInset" onchange="updateBoxShadow()">
+                                    <label class="form-check-label" for="shadowInset">Inset Shadow</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h4 class="mb-0"><i class="fas fa-eye me-2"></i>Preview</h4>
+                                <button type="button" class="btn btn-outline-primary btn-sm" onclick="copyCSS('boxShadowCSS')" aria-label="Copy to clipboard">
+                                    <i class="fas fa-copy me-1"></i>Copy CSS
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="preview-box" id="shadowPreview">Preview</div>
+                                <div class="css-output" id="boxShadowCSS"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gradient Tool -->
+            <div id="gradient" class="tool-content">
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="mb-0"><i class="fas fa-cog me-2"></i>Gradient Settings</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label class="form-label">Gradient Type:</label>
+                                    <select class="form-select" id="gradientType" onchange="updateGradient()" title="Select gradient type" aria-label="Gradient Type">
+                                        <option value="linear">Linear</option>
+                                        <option value="radial">Radial</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Direction (degrees):</label>                                        <input type="range" class="range-input" id="gradientAngle" min="0" max="360" value="45" oninput="updateGradient()" title="Gradient angle in degrees" aria-label="Gradient angle in degrees">
+                                        <small class="text-muted"><span id="gradientAngleValue">45</span>°</small>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Color 1:</label>
+                                        <input type="color" class="color-input" id="gradientColor1" value="#ff6b6b" oninput="updateGradient()" title="First gradient color" aria-label="First gradient color">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Color 2:</label>
+                                        <input type="color" class="color-input" id="gradientColor2" value="#4ecdc4" oninput="updateGradient()" title="Second gradient color" aria-label="Second gradient color">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-outline-secondary" onclick="addGradientColor()" aria-label="Action button">
+                                    <i class="fas fa-plus me-1"></i>Add Color
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h4 class="mb-0"><i class="fas fa-eye me-2"></i>Preview</h4>
+                                <button type="button" class="btn btn-outline-primary btn-sm" onclick="copyCSS('gradientCSS')" aria-label="Copy to clipboard">
+                                    <i class="fas fa-copy me-1"></i>Copy CSS
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="preview-box" id="gradientPreview">Preview</div>
+                                <div class="css-output" id="gradientCSS"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Border Radius Tool -->
+            <div id="border" class="tool-content">
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="mb-0"><i class="fas fa-cog me-2"></i>Border Radius Settings</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Top Left:</label>
+                                        <input type="range" class="range-input" id="borderTL" min="0" max="100" value="0" oninput="updateBorderRadius()" title="Top left border radius" aria-label="Top left border radius">
+                                        <small class="text-muted"><span id="borderTLValue">0</span>px</small>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Top Right:</label>
+                                        <input type="range" class="range-input" id="borderTR" min="0" max="100" value="0" oninput="updateBorderRadius()" title="Top right border radius" aria-label="Top right border radius">
+                                        <small class="text-muted"><span id="borderTRValue">0</span>px</small>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Bottom Left:</label>
+                                        <input type="range" class="range-input" id="borderBL" min="0" max="100" value="0" oninput="updateBorderRadius()" title="Bottom left border radius" aria-label="Bottom left border radius">
+                                        <small class="text-muted"><span id="borderBLValue">0</span>px</small>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Bottom Right:</label>
+                                        <input type="range" class="range-input" id="borderBR" min="0" max="100" value="0" oninput="updateBorderRadius()" title="Bottom right border radius" aria-label="Bottom right border radius">
+                                        <small class="text-muted"><span id="borderBRValue">0</span>px</small>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-outline-secondary" onclick="setUniformRadius()" aria-label="Action button">
+                                    <i class="fas fa-link me-1"></i>Uniform
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h4 class="mb-0"><i class="fas fa-eye me-2"></i>Preview</h4>
+                                <button type="button" class="btn btn-outline-primary btn-sm" onclick="copyCSS('borderRadiusCSS')" aria-label="Copy to clipboard">
+                                    <i class="fas fa-copy me-1"></i>Copy CSS
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="preview-box" id="borderPreview">Preview</div>
+                                <div class="css-output" id="borderRadiusCSS"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Flexbox Tool -->
+            <div id="flexbox" class="tool-content">
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="mb-0"><i class="fas fa-cog me-2"></i>Flexbox Settings</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label class="form-label">Flex Direction:</label>
+                                    <select class="form-select" id="flexDirection" onchange="updateFlexbox()" title="Select flex direction" aria-label="Flex Direction">
+                                        <option value="row">Row</option>
+                                        <option value="column">Column</option>
+                                        <option value="row-reverse">Row Reverse</option>
+                                        <option value="column-reverse">Column Reverse</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Justify Content:</label>
+                                    <select class="form-select" id="justifyContent" onchange="updateFlexbox()" title="Select justify content property" aria-label="Justify Content">
+                                        <option value="flex-start">Flex Start</option>
+                                        <option value="flex-end">Flex End</option>
+                                        <option value="center">Center</option>
+                                        <option value="space-between">Space Between</option>
+                                        <option value="space-around">Space Around</option>
+                                        <option value="space-evenly">Space Evenly</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Align Items:</label>
+                                    <select class="form-select" id="alignItems" onchange="updateFlexbox()" title="Select align items property" aria-label="Align Items">
+                                        <option value="stretch">Stretch</option>
+                                        <option value="flex-start">Flex Start</option>
+                                        <option value="flex-end">Flex End</option>
+                                        <option value="center">Center</option>
+                                        <option value="baseline">Baseline</option>
+                                    </select>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="flexWrap" onchange="updateFlexbox()">
+                                    <label class="form-check-label" for="flexWrap">Flex Wrap</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h4 class="mb-0"><i class="fas fa-eye me-2"></i>Preview</h4>
+                                <button type="button" class="btn btn-outline-primary btn-sm" onclick="copyCSS('flexboxCSS')" aria-label="Copy to clipboard">
+                                    <i class="fas fa-copy me-1"></i>Copy CSS
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="preview-box" id="flexboxPreview" class="flex-container">
+                                    <div class="flex-item flex-item-1">Item 1</div>
+                                    <div class="flex-item flex-item-2">Item 2</div>
+                                    <div class="flex-item flex-item-3">Item 3</div>
+                                </div>
+                                <div class="css-output" id="flexboxCSS"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CSS Grid Tool -->
+            <div id="grid" class="tool-content">
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="mb-0"><i class="fas fa-cog me-2"></i>CSS Grid Settings</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Grid Columns:</label>
+                                        <input type="number" class="form-control" id="gridColumns" value="3" min="1" max="6" onchange="updateGrid()" title="Number of grid columns" aria-label="Number of grid columns">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Grid Rows:</label>
+                                        <input type="number" class="form-control" id="gridRows" value="2" min="1" max="4" onchange="updateGrid()" title="Number of grid rows" aria-label="Number of grid rows">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Column Gap:</label>
+                                        <input type="range" class="range-input" id="gridColumnGap" min="0" max="50" value="10" oninput="updateGrid()" title="Grid column gap" aria-label="Grid column gap">
+                                        <small class="text-muted"><span id="gridColumnGapValue">10</span>px</small>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Row Gap:</label>
+                                        <input type="range" class="range-input" id="gridRowGap" min="0" max="50" value="10" oninput="updateGrid()" title="Grid row gap" aria-label="Grid row gap">
+                                        <small class="text-muted"><span id="gridRowGapValue">10</span>px</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h4 class="mb-0"><i class="fas fa-eye me-2"></i>Preview</h4>
+                                <button type="button" class="btn btn-outline-primary btn-sm" onclick="copyCSS('gridCSS')" aria-label="Copy to clipboard">
+                                    <i class="fas fa-copy me-1"></i>Copy CSS
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="preview-box" id="gridPreview" class="grid-container"></div>
+                                <div class="css-output" id="gridCSS"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Features</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-eye fa-3x text-primary mb-3"></i>
+                        <h5>Live Preview</h5>
+                        <p>See your CSS changes in real-time with interactive preview.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                        <h5>Clean CSS Output</h5>
+                        <p>Generate clean, optimized CSS code ready for production use.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-copy fa-3x text-primary mb-3"></i>
+                        <h5>One-Click Copy</h5>
+                        <p>Copy generated CSS to clipboard with a single click.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Free Tools Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+<style>
+#minimax-floating-ball {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 12px;
+  background: #222222;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  color: #F8F8F8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#minimax-floating-ball:hover {
+  transform: translateY(-2px);
+  background: #383838;
+}
+
+.minimax-ball-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.minimax-logo-wave {
+  width: 26px;
+  height: 22px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='22' viewBox='0 0 26 22' fill='none'%3E%3Cg clip-path='url(%23clip0_3442_102412)'%3E%3Cpath d='M12.8405 14.6775C12.8405 14.9897 13.0932 15.2424 13.4055 15.2424C13.7178 15.2424 13.9705 14.9897 13.9705 14.6775V2.98254C13.9705 1.88957 13.0809 1 11.9879 1C10.895 1 10.0054 1.88957 10.0054 2.98254V11.566V17.1068C10.0054 17.5773 9.62327 17.9594 9.1528 17.9594C8.68233 17.9594 8.30021 17.5773 8.30021 17.1068V8.04469C8.30021 6.95172 7.41063 6.06215 6.31767 6.06215C5.22471 6.06215 4.33513 6.95172 4.33513 8.04469V11.8855C4.33513 12.3559 3.953 12.7381 3.48254 12.7381C3.01207 12.7381 2.62994 12.3559 2.62994 11.8855V10.4936C2.62994 10.1813 2.37725 9.92861 2.06497 9.92861C1.7527 9.92861 1.5 10.1813 1.5 10.4936V11.8855C1.5 12.9784 2.38957 13.868 3.48254 13.868C4.5755 13.868 5.46508 12.9784 5.46508 11.8855V8.04469C5.46508 7.57422 5.8472 7.19209 6.31767 7.19209C6.78814 7.19209 7.17026 7.57422 7.17026 8.04469V17.1068C7.17026 18.1998 8.05984 19.0894 9.1528 19.0894C10.2458 19.0894 11.1353 18.1998 11.1353 17.1068V2.98254C11.1353 2.51207 11.5175 2.12994 11.9879 2.12994C12.4584 2.12994 12.8405 2.51207 12.8405 2.98254V14.6775Z' fill='%23F8F8F8'/%3E%3Cpath d='M23.3278 6.06215C22.2348 6.06215 21.3452 6.95172 21.3452 8.04469V15.6143C21.3452 16.0847 20.9631 16.4669 20.4926 16.4669C20.0222 16.4669 19.6401 16.0847 19.6401 15.6143V2.98254C19.6401 1.88957 18.7505 1 17.6575 1C16.5645 1 15.675 1.88957 15.675 2.98254V19.0175C15.675 19.4879 15.2928 19.8701 14.8224 19.8701C14.3519 19.8701 13.9698 19.4879 13.9698 19.0175V17.0329C13.9698 16.7206 13.7171 16.4679 13.4048 16.4679C13.0925 16.4679 12.8398 16.7206 12.8398 17.0329V19.0175C12.8398 20.1104 13.7294 21 14.8224 21C15.9153 21 16.8049 20.1104 16.8049 19.0175V2.98254C16.8049 2.51207 17.187 2.12994 17.6575 2.12994C18.128 2.12994 18.5101 2.51207 18.5101 2.98254V15.6143C18.5101 16.7072 19.3997 17.5968 20.4926 17.5968C21.5856 17.5968 22.4752 16.7072 22.4752 15.6143V8.04469C22.4752 7.57422 22.8573 7.19209 23.3278 7.19209C23.7982 7.19209 24.1804 7.57422 24.1804 8.04469V14.6775C24.1804 14.9897 24.4331 15.2424 24.7453 15.2424C25.0576 15.2424 25.3103 14.9897 25.3103 14.6775V8.04469C25.3103 6.95172 24.4207 6.06215 23.3278 6.06215Z' fill='%23F8F8F8'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_3442_102412'%3E%3Crect width='25' height='22' fill='white' transform='translate(0.5)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.minimax-ball-text {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.minimax-close-icon {
+  margin-left: 8px;
+  font-size: 16px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.minimax-close-icon:hover {
+  opacity: 1;
+}
+</style>
+<div id="minimax-floating-ball">
+  <div class="minimax-ball-content">
+    <div class="minimax-logo-wave"></div>
+    <span class="minimax-ball-text">Created by MiniMax Agent</span>
+  </div>
+  <div class="minimax-close-icon">×</div>
+</div>
+<script>
+// Initialize floating ball functionality
+function initFloatingBall() {
+  const ball = document.getElementById('minimax-floating-ball');
+  if (!ball) return;
+
+  // Initial animation
+  ball.style.opacity = '0';
+  ball.style.transform = 'translateY(20px)';
+
+  setTimeout(() => {
+    ball.style.opacity = '1';
+    ball.style.transform = 'translateY(0)';
+  }, 500);
+
+  // Handle logo click
+  const ballContent = ball.querySelector('.minimax-ball-content');
+  ballContent.addEventListener('click', function (e) {
+    e.stopPropagation();
+    window.open('https://agent.minimax.io/agent', '_blank');
+    ball.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      ball.style.transform = 'scale(1)';
+    }, 100);
+  });
+
+  // Handle close button click
+  const closeIcon = ball.querySelector('.minimax-close-icon');
+  closeIcon.addEventListener('click', function (e) {
+    e.stopPropagation();
+    ball.style.opacity = '0';
+    ball.style.transform = 'translateY(20px)';
+
+    setTimeout(() => {
+      ball.style.display = 'none';
+    }, 300);
+  });
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initFloatingBall); 
+</script>
+
+
+            <script>
+            // Common Tool Functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                // Add ARIA labels to buttons and inputs
+                const buttons = document.querySelectorAll('button');
+                buttons.forEach(button => {
+                    if (!button.getAttribute('aria-label') && button.textContent.trim()) {
+                        button.setAttribute('aria-label', button.textContent.trim());
+                    }
+                });
+                
+                // Add alt text to images missing it
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    if (!img.getAttribute('alt')) {
+                        img.setAttribute('alt', '');
+                    }
+                });
+                
+                // Disable buttons until valid input
+                const inputFields = document.querySelectorAll('input[type="text"], textarea');
+                const actionButtons = document.querySelectorAll('.btn-primary, button[onclick]');
+                
+                function checkInputs() {
+                    const hasInput = Array.from(inputFields).some(field => field.value.trim().length > 0);
+                    actionButtons.forEach(button => {
+                        if (button.textContent.includes('Copy') || 
+                            button.textContent.includes('Download') || 
+                            button.textContent.includes('Generate')) {
+                            button.disabled = !hasInput;
+                        }
+                    });
+                }
+                
+                inputFields.forEach(field => {
+                    field.addEventListener('input', checkInputs);
+                });
+                
+                // Initial check
+                checkInputs();
+                
+                // Add success/error notifications
+                window.showNotification = function(message, type = 'success') {
+                    const notification = document.createElement('div');
+                    notification.className = `notification notification-${type}`;
+                    notification.innerHTML = `
+                        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}" aria-hidden="true"></i>
+                        <span>${message}</span>
+                    `;
+                    
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: ${type === 'success' ? '#10b981' : '#ef4444'};
+                        color: white;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                        z-index: 1000;
+                        opacity: 0;
+                        transform: translateX(100%);
+                        transition: all 0.3s ease;
+                        max-width: 400px;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    `;
+                    
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '1';
+                        notification.style.transform = 'translateX(0)';
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        notification.style.transform = 'translateX(100%)';
+                        setTimeout(() => {
+                            if (notification.parentNode) {
+                                document.body.removeChild(notification);
+                            }
+                        }, 300);
+                    }, 3000);
+                };
+                
+                // Enhanced copy functionality
+                window.copyToClipboard = async function(text) {
+                    try {
+                        if (navigator.clipboard && window.isSecureContext) {
+                            await navigator.clipboard.writeText(text);
+                            showNotification('Copied to clipboard!', 'success');
+                            return true;
+                        } else {
+                            // Fallback for older browsers
+                            const textArea = document.createElement('textarea');
+                            textArea.value = text;
+                            textArea.style.position = 'fixed';
+                            textArea.style.left = '-999999px';
+                            textArea.style.top = '-999999px';
+                            document.body.appendChild(textArea);
+                            textArea.focus();
+                            textArea.select();
+                            
+                            try {
+                                document.execCommand('copy');
+                                textArea.remove();
+                                showNotification('Copied to clipboard!', 'success');
+                                return true;
+                            } catch (err) {
+                                textArea.remove();
+                                showNotification('Failed to copy to clipboard', 'error');
+                                return false;
+                            }
+                        }
+                    } catch (err) {
+                        showNotification('Failed to copy to clipboard', 'error');
+                        return false;
+                    }
+                };
+            });
+            </script>
+            
+</body>
+</html>

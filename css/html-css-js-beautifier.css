@@ -1,0 +1,52 @@
+/* HTML/CSS/JS Beautifier Tool Page Styles (migrated from inline <style> in index.html) */
+
+.tool-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+.tab-navigation {
+    display: flex;
+    border-bottom: 2px solid #e5e7eb;
+    margin-bottom: 2rem;
+}
+.tab-button {
+    background: none;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6b7280;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+.tab-button.active {
+    color: #3b82f6;
+    border-bottom-color: #3b82f6;
+}
+.tab-button:hover {
+    color: #3b82f6;
+}
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.input-section, .output-section {
+    margin-bottom: 2rem;
+}
+.section-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #374151;
+}

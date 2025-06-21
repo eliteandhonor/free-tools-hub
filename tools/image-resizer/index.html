@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <title>Image Resizer - Resize Photos | Free Tools Hub</title>
+    <meta name="description" content="Resize and compress images online for free. Support for JPG, PNG, WebP formats. Batch processing, custom dimensions, and quality control.">
+    <meta name="keywords" content="image resizer, image compressor, resize images, compress images, image optimizer, photo resizer">
+    <meta name="author" content="Free Tools Hub">
+    <link rel="canonical" href="/tools/image-resizer/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/tools/image-resizer/">
+    <meta property="og:title" content="Image Resizer & Compressor - Free Online Tool">
+    <meta property="og:description" content="Resize and compress images online for free with our professional image resizer tool.">
+    <meta property="og:image" content="/images/image-resizer.jpg">
+    
+    <!-- X (formerly Twitter) -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="/tools/image-resizer/">
+    <meta property="twitter:title" content="Image Resizer & Compressor">
+    <meta property="twitter:description" content="Resize and compress images online for free with our professional image resizer tool.">
+    <meta property="twitter:image" content="/images/image-resizer.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" onerror="this.onerror=null;this.href='/vendor/fontawesome/css/all.min.css'">
+    <link href="../../css/main.css" rel="stylesheet">
+    
+    <!-- Tool-specific styles -->
+    <style>
+        .tool-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .tool-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .tool-header h1 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .tool-header p {
+            color: #6b7280;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .image-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .upload-panel,
+        .preview-panel {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #f1f5f9;
+        }
+        
+        .panel-header h3 {
+            color: #374151;
+            font-size: 1.25rem;
+            margin: 0;
+        }
+        
+        .file-upload-area {
+            border: 2px dashed #d1d5db;
+            border-radius: 8px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .file-upload-area.dragover {
+            border-color: #3b82f6;
+            background: #eff6ff;
+        }
+        
+        .file-upload-icon {
+            font-size: 3rem;
+            color: #9ca3af;
+            margin-bottom: 1rem;
+        }
+        
+        .file-upload-text {
+            color: #6b7280;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .file-upload-button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .file-upload-button:hover {
+            background: #2563eb;
+        }
+        
+        .options-panel {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2rem;
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .option-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .option-label {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        
+        .option-input {
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .option-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .size-inputs {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 0.5rem;
+            align-items: end;
+        }
+        
+        .size-separator {
+            padding: 0.75rem 0.5rem;
+            color: #6b7280;
+            font-weight: 600;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .quality-slider {
+            margin-top: 0.5rem;
+        }
+        
+        .slider-value {
+            text-align: center;
+            margin-top: 0.25rem;
+            font-weight: 600;
+            color: #3b82f6;
+        }
+        
+        .format-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .format-btn {
+            padding: 0.5rem;
+            border: 2px solid #e2e8f0;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .format-btn.active {
+            border-color: #3b82f6;
+            background: #eff6ff;
+            color: #3b82f6;
+        }
+        
+        .format-btn:hover {
+            border-color: #3b82f6;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .action-btn.primary {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .action-btn.primary:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+        }
+        
+        .action-btn.primary:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .action-btn.secondary {
+            background: #f3f4f6;
+            color: #374151;
+            border: 1px solid #d1d5db;
+        }
+        
+        .action-btn.secondary:hover {
+            background: #e5e7eb;
+        }
+        
+        .preview-container {
+            position: relative;
+            text-align: center;
+            min-height: 300px;
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .preview-image {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+        
+        .image-info {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 6px;
+            padding: 1rem;
+            margin-top: 1rem;
+            text-align: left;
+        }
+        
+        .image-info h4 {
+            color: #0369a1;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.5rem;
+        }
+        
+        .info-item {
+            text-align: center;
+        }
+        
+        .info-label {
+            font-size: 0.75rem;
+            color: #0c4a6e;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .info-value {
+            font-weight: 600;
+            color: #0369a1;
+        }
+        
+        .processing-spinner {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e2e8f0;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .comparison-view {
+            display: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .comparison-item {
+            text-align: center;
+        }
+        
+        .comparison-item h4 {
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        
+        .comparison-image {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        @media (max-width: 768px) {
+            .tool-container {
+                padding: 1rem;
+            }
+            
+            .tool-header h1 {
+                font-size: 2rem;
+            }
+            
+            .image-layout {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .size-inputs {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            
+            .size-separator {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Image Resizer & Compressor - Resize Images Online Free",
+    "description": "Resize and compress images online for free. Support for JPG, PNG, WebP formats. Batch processing, custom dimensions, and quality control.",
+    "url": "/tools/image-resizer/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Free Tools Hub"
+    }
+}
+    
+        // Add keyboard accessibility for file selection
+        function addKeyboardSupport() {
+            const dropZone = document.getElementById('drop-zone');
+            
+            // Make drop zone focusable
+            dropZone.setAttribute('tabindex', '0');
+            dropZone.setAttribute('role', 'button');
+            dropZone.setAttribute('aria-label', 'Click or press Enter to select image file, or drag and drop image here');
+            
+            // Add keyboard event listeners
+            dropZone.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    document.getElementById('file-input').click();
+                }
+            });
+            
+            // Add focus styles
+            dropZone.addEventListener('focus', function() {
+                this.style.borderColor = '#3b82f6';
+                this.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.1)';
+            });
+            
+            dropZone.addEventListener('blur', function() {
+                this.style.borderColor = '#d1d5db';
+                this.style.boxShadow = 'none';
+            });
+        }
+        
+        // Initialize keyboard support when DOM is ready
+        document.addEventListener('DOMContentLoaded', addKeyboardSupport);
+        
+    </script>
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "/tools/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Tools",
+            "item": "/tools/tools/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Image Resizer & Compressor - Resize Images Online Free",
+            "item": "/tools/image-resizer/"
+        }
+    ]
+}
+    
+        // Add keyboard accessibility for file selection
+        function addKeyboardSupport() {
+            const dropZone = document.getElementById('drop-zone');
+            
+            // Make drop zone focusable
+            dropZone.setAttribute('tabindex', '0');
+            dropZone.setAttribute('role', 'button');
+            dropZone.setAttribute('aria-label', 'Click or press Enter to select image file, or drag and drop image here');
+            
+            // Add keyboard event listeners
+            dropZone.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    document.getElementById('file-input').click();
+                }
+            });
+            
+            // Add focus styles
+            dropZone.addEventListener('focus', function() {
+                this.style.borderColor = '#3b82f6';
+                this.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.1)';
+            });
+            
+            dropZone.addEventListener('blur', function() {
+                this.style.borderColor = '#d1d5db';
+                this.style.boxShadow = 'none';
+            });
+        }
+        
+        // Initialize keyboard support when DOM is ready
+        document.addEventListener('DOMContentLoaded', addKeyboardSupport);
+        
+    </script>
+    <!-- Vendor Library Loader with CDN Fallbacks -->
+    <script src="../../js/vendor-loader.js">
+        // Add keyboard accessibility for file selection
+        function addKeyboardSupport() {
+            const dropZone = document.getElementById('drop-zone');
+            
+            // Make drop zone focusable
+            dropZone.setAttribute('tabindex', '0');
+            dropZone.setAttribute('role', 'button');
+            dropZone.setAttribute('aria-label', 'Click or press Enter to select image file, or drag and drop image here');
+            
+            // Add keyboard event listeners
+            dropZone.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    document.getElementById('file-input').click();
+                }
+            });
+            
+            // Add focus styles
+            dropZone.addEventListener('focus', function() {
+                this.style.borderColor = '#3b82f6';
+                this.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.1)';
+            });
+            
+            dropZone.addEventListener('blur', function() {
+                this.style.borderColor = '#d1d5db';
+                this.style.boxShadow = 'none';
+            });
+        }
+        
+        // Initialize keyboard support when DOM is ready
+        document.addEventListener('DOMContentLoaded', addKeyboardSupport);
+        
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="navbar-brand">
+                    <i class="fas fa-tools"></i>
+                    Free Tools Hub
+                </a>
+                
+                <ul class="navbar-nav">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/#categories" class="nav-link">Categories</a></li>
+                    <li><a href="/tools/" class="nav-link">All Tools</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="/tools/">Tools</a>
+            <span class="separator">/</span>
+            <a href="/tools/converter/">Converters</a>
+            <span class="separator">/</span>
+            <span class="current">Image Resizer</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="tool-container">
+        <!-- Tool Header -->
+        <div class="tool-header">
+            <h1><i class="fas fa-images"></i> Image Resizer & Compressor</h1>
+            <p>Resize and compress images online for free. Support for JPG, PNG, and WebP formats with customizable quality and dimensions.</p>
+        </div>
+
+        <!-- Options Panel -->
+        <div class="options-panel">
+            <h3><i class="fas fa-cogs"></i> Resize & Compression Options</h3>
+            <div class="options-grid">
+                <div class="option-group">
+                    <label class="option-label">Dimensions (pixels)</label>
+                    <div class="size-inputs">
+                        <input type="number" id="width-input" class="option-input" placeholder="Width" min="1" max="5000">
+                        <div class="size-separator">×</div>
+                        <input type="number" id="height-input" class="option-input" placeholder="Height" min="1" max="5000">
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="maintain-aspect" checked>
+                        <label for="maintain-aspect">Maintain aspect ratio</label>
+                    </div>
+                
+        <button type="button" class="btn btn-secondary" onclick="document.getElementById('file-input').click()" 
+                style="margin-top: 1rem;">
+            <i class="fas fa-folder-open"></i> Select Image File
+        </button>
+        
+                </div>
+                
+                <div class="option-group">
+                    <label class="option-label">Output Quality</label>
+                    <input type="range" id="quality-slider" class="option-input quality-slider" min="10" max="100" value="85">
+                    <div class="slider-value" id="quality-value">85%</div>
+                
+        <button type="button" class="btn btn-secondary" onclick="document.getElementById('file-input').click()" 
+                style="margin-top: 1rem;">
+            <i class="fas fa-folder-open"></i> Select Image File
+        </button>
+        
+                </div>
+                
+                <div class="option-group">
+                    <label class="option-label">Output Format</label>
+                    <div class="format-options">
+                        <button class="format-btn active" data-format="jpeg">JPEG</button>
+                        <button class="format-btn" data-format="png">PNG</button>
+                        <button class="format-btn" data-format="webp">WebP</button>
+                    </div>
+                
+        <button type="button" class="btn btn-secondary" onclick="document.getElementById('file-input').click()" 
+                style="margin-top: 1rem;">
+            <i class="fas fa-folder-open"></i> Select Image File
+        </button>
+        
+                </div>
+                
+                <div class="option-group">
+                    <label class="option-label">Resize Mode</label>
+                    <select id="resize-mode" class="option-input">
+                        <option value="exact">Exact dimensions</option>
+                        <option value="fit" selected>Fit within dimensions</option>
+                        <option value="fill">Fill dimensions (crop)</option>
+                        <option value="stretch">Stretch to fit</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Processing Layout -->
+        <div class="image-layout">
+            <!-- Upload Panel -->
+            <div class="upload-panel">
+                <div class="panel-header">
+                    <h3><i class="fas fa-upload"></i> Upload Image</h3>
+                </div>
+                
+                <div class="file-upload-area" id="file-upload-area">
+                    <div class="file-upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <div class="file-upload-text">Drag & drop an image here</div>
+                    <div style="margin: 0.5rem 0;">or</div>
+                    <button class="file-upload-button" onclick="document.getElementById('file-input').click()" aria-label="Action button">
+                        Browse Files
+                    </button>
+                    <input type="file" id="file-input" accept="image/*" style="display: none;" multiple>
+                    <div style="margin-top: 1rem; color: #6b7280; font-size: 0.875rem;">
+                        Supports: JPG, PNG, GIF, WebP, BMP (Max: 10MB each)
+                    </div>
+                
+        <button type="button" class="btn btn-secondary" onclick="document.getElementById('file-input').click()" 
+                style="margin-top: 1rem;">
+            <i class="fas fa-folder-open"></i> Select Image File
+        </button>
+        
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="action-btn primary" id="process-btn" onclick="processImages()" disabled aria-label="Action button">
+                        <i class="fas fa-magic"></i> Process Images
+                    </button>
+                    <button class="action-btn secondary" onclick="clearImages()" aria-label="Clear">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+                    <button class="action-btn secondary" onclick="downloadAll()" id="download-all-btn" style="display: none;" aria-label="Download">
+                        <i class="fas fa-download"></i> Download All
+                    </button>
+                </div>
+            </div>
+
+            <!-- Preview Panel -->
+            <div class="preview-panel">
+                <div class="panel-header">
+                    <h3><i class="fas fa-eye"></i> Preview</h3>
+                    <span id="image-counter" style="color: #6b7280; font-size: 0.875rem;"></span>
+                </div>
+                
+                <div class="preview-container" id="preview-container">
+                    <div style="color: #9ca3af; text-align: center;">
+                        <i class="fas fa-image" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <p>Upload images to see preview</p>
+                    </div>
+                
+        <button type="button" class="btn btn-secondary" onclick="document.getElementById('file-input').click()" 
+                style="margin-top: 1rem;">
+            <i class="fas fa-folder-open"></i> Select Image File
+        </button>
+        
+                </div>
+                
+                <div class="processing-spinner" id="processing-spinner">
+                    <div class="spinner"></div>
+                    <div>Processing images...</div>
+                
+        <button type="button" class="btn btn-secondary" onclick="document.getElementById('file-input').click()" 
+                style="margin-top: 1rem;">
+            <i class="fas fa-folder-open"></i> Select Image File
+        </button>
+        
+                </div>
+                
+                <div class="comparison-view" id="comparison-view">
+                    <div class="comparison-item">
+                        <h4>Original</h4>
+                        <img id="original-preview" class="comparison-image" alt="Original" loading="lazy">
+                        <div id="original-info" class="image-info" style="margin-top: 0.5rem; padding: 0.5rem;"></div>
+                    </div>
+                    <div class="comparison-item">
+                        <h4>Processed</h4>
+                        <img id="processed-preview" class="comparison-image" alt="Processed" loading="lazy">
+                        <div id="processed-info" class="image-info" style="margin-top: 0.5rem; padding: 0.5rem;"></div>
+                    </div>
+                
+        <button type="button" class="btn btn-secondary" onclick="document.getElementById('file-input').click()" 
+                style="margin-top: 1rem;">
+            <i class="fas fa-folder-open"></i> Select Image File
+        </button>
+        
+                </div>
+            </div>
+        </div>
+        
+        <!-- Processing Results -->
+        <div id="results-section" style="display: none;">
+            <div class="options-panel">
+                <h3><i class="fas fa-check-circle"></i> Processing Results</h3>
+                <div id="results-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Free Tools Hub</h3>
+                    <p>Professional online tools for developers, writers, and digital professionals. Fast, secure, and completely free.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Popular Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="/tools/word-counter/">Word Counter</a></li>
+                        <li><a href="/tools/json-formatter/">JSON Formatter</a></li>
+                        <li><a href="/tools/base64-encoder-decoder/">Base64 Encoder</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="/tools/text/">Text Tools</a></li>
+                        <li><a href="/tools/developer/">Developer</a></li>
+                        <li><a href="/tools/converter/">Converters</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy/">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Free Tools Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js">
+        // Add keyboard accessibility for file selection
+        function addKeyboardSupport() {
+            const dropZone = document.getElementById('drop-zone');
+            
+            // Make drop zone focusable
+            dropZone.setAttribute('tabindex', '0');
+            dropZone.setAttribute('role', 'button');
+            dropZone.setAttribute('aria-label', 'Click or press Enter to select image file, or drag and drop image here');
+            
+            // Add keyboard event listeners
+            dropZone.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    document.getElementById('file-input').click();
+                }
+            });
+            
+            // Add focus styles
+            dropZone.addEventListener('focus', function() {
+                this.style.borderColor = '#3b82f6';
+                this.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.1)';
+            });
+            
+            dropZone.addEventListener('blur', function() {
+                this.style.borderColor = '#d1d5db';
+                this.style.boxShadow = 'none';
+            });
+        }
+        
+        // Initialize keyboard support when DOM is ready
+        document.addEventListener('DOMContentLoaded', addKeyboardSupport);
+        
+    </script>
+
+<style>
+#minimax-floating-ball {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 12px;
+  background: #222222;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  color: #F8F8F8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#minimax-floating-ball:hover {
+  transform: translateY(-2px);
+  background: #383838;
+}
+
+.minimax-ball-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.minimax-logo-wave {
+  width: 26px;
+  height: 22px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='22' viewBox='0 0 26 22' fill='none'%3E%3Cg clip-path='url(%23clip0_3442_102412)'%3E%3Cpath d='M12.8405 14.6775C12.8405 14.9897 13.0932 15.2424 13.4055 15.2424C13.7178 15.2424 13.9705 14.9897 13.9705 14.6775V2.98254C13.9705 1.88957 13.0809 1 11.9879 1C10.895 1 10.0054 1.88957 10.0054 2.98254V11.566V17.1068C10.0054 17.5773 9.62327 17.9594 9.1528 17.9594C8.68233 17.9594 8.30021 17.5773 8.30021 17.1068V8.04469C8.30021 6.95172 7.41063 6.06215 6.31767 6.06215C5.22471 6.06215 4.33513 6.95172 4.33513 8.04469V11.8855C4.33513 12.3559 3.953 12.7381 3.48254 12.7381C3.01207 12.7381 2.62994 12.3559 2.62994 11.8855V10.4936C2.62994 10.1813 2.37725 9.92861 2.06497 9.92861C1.7527 9.92861 1.5 10.1813 1.5 10.4936V11.8855C1.5 12.9784 2.38957 13.868 3.48254 13.868C4.5755 13.868 5.46508 12.9784 5.46508 11.8855V8.04469C5.46508 7.57422 5.8472 7.19209 6.31767 7.19209C6.78814 7.19209 7.17026 7.57422 7.17026 8.04469V17.1068C7.17026 18.1998 8.05984 19.0894 9.1528 19.0894C10.2458 19.0894 11.1353 18.1998 11.1353 17.1068V2.98254C11.1353 2.51207 11.5175 2.12994 11.9879 2.12994C12.4584 2.12994 12.8405 2.51207 12.8405 2.98254V14.6775Z' fill='%23F8F8F8'/%3E%3Cpath d='M23.3278 6.06215C22.2348 6.06215 21.3452 6.95172 21.3452 8.04469V15.6143C21.3452 16.0847 20.9631 16.4669 20.4926 16.4669C20.0222 16.4669 19.6401 16.0847 19.6401 15.6143V2.98254C19.6401 1.88957 18.7505 1 17.6575 1C16.5645 1 15.675 1.88957 15.675 2.98254V19.0175C15.675 19.4879 15.2928 19.8701 14.8224 19.8701C14.3519 19.8701 13.9698 19.4879 13.9698 19.0175V17.0329C13.9698 16.7206 13.7171 16.4679 13.4048 16.4679C13.0925 16.4679 12.8398 16.7206 12.8398 17.0329V19.0175C12.8398 20.1104 13.7294 21 14.8224 21C15.9153 21 16.8049 20.1104 16.8049 19.0175V2.98254C16.8049 2.51207 17.187 2.12994 17.6575 2.12994C18.128 2.12994 18.5101 2.51207 18.5101 2.98254V15.6143C18.5101 16.7072 19.3997 17.5968 20.4926 17.5968C21.5856 17.5968 22.4752 16.7072 22.4752 15.6143V8.04469C22.4752 7.57422 22.8573 7.19209 23.3278 7.19209C23.7982 7.19209 24.1804 7.57422 24.1804 8.04469V14.6775C24.1804 14.9897 24.4331 15.2424 24.7453 15.2424C25.0576 15.2424 25.3103 14.9897 25.3103 14.6775V8.04469C25.3103 6.95172 24.4207 6.06215 23.3278 6.06215Z' fill='%23F8F8F8'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_3442_102412'%3E%3Crect width='25' height='22' fill='white' transform='translate(0.5)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.minimax-ball-text {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.minimax-close-icon {
+  margin-left: 8px;
+  font-size: 16px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.minimax-close-icon:hover {
+  opacity: 1;
+}
+</style>
+<div id="minimax-floating-ball">
+  <div class="minimax-ball-content">
+    <div class="minimax-logo-wave"></div>
+    <span class="minimax-ball-text">Created by MiniMax Agent</span>
+  </div>
+  <div class="minimax-close-icon">×</div>
+</div>
+<script>
+// Initialize floating ball functionality
+function initFloatingBall() {
+  const ball = document.getElementById('minimax-floating-ball');
+  if (!ball) return;
+
+  // Initial animation
+  ball.style.opacity = '0';
+  ball.style.transform = 'translateY(20px)';
+
+  setTimeout(() => {
+    ball.style.opacity = '1';
+    ball.style.transform = 'translateY(0)';
+  }, 500);
+
+  // Handle logo click
+  const ballContent = ball.querySelector('.minimax-ball-content');
+  ballContent.addEventListener('click', function (e) {
+    e.stopPropagation();
+    window.open('https://agent.minimax.io/agent', '_blank');
+    ball.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      ball.style.transform = 'scale(1)';
+    }, 100);
+  });
+
+  // Handle close button click
+  const closeIcon = ball.querySelector('.minimax-close-icon');
+  closeIcon.addEventListener('click', function (e) {
+    e.stopPropagation();
+    ball.style.opacity = '0';
+    ball.style.transform = 'translateY(20px)';
+
+    setTimeout(() => {
+      ball.style.display = 'none';
+    }, 300);
+  });
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initFloatingBall); 
+
+        // Add keyboard accessibility for file selection
+        function addKeyboardSupport() {
+            const dropZone = document.getElementById('drop-zone');
+            
+            // Make drop zone focusable
+            dropZone.setAttribute('tabindex', '0');
+            dropZone.setAttribute('role', 'button');
+            dropZone.setAttribute('aria-label', 'Click or press Enter to select image file, or drag and drop image here');
+            
+            // Add keyboard event listeners
+            dropZone.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    document.getElementById('file-input').click();
+                }
+            });
+            
+            // Add focus styles
+            dropZone.addEventListener('focus', function() {
+                this.style.borderColor = '#3b82f6';
+                this.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.1)';
+            });
+            
+            dropZone.addEventListener('blur', function() {
+                this.style.borderColor = '#d1d5db';
+                this.style.boxShadow = 'none';
+            });
+        }
+        
+        // Initialize keyboard support when DOM is ready
+        document.addEventListener('DOMContentLoaded', addKeyboardSupport);
+        
+    </script>
+
+
+            <script>
+            // Common Tool Functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                // Add ARIA labels to buttons and inputs
+                const buttons = document.querySelectorAll('button');
+                buttons.forEach(button => {
+                    if (!button.getAttribute('aria-label') && button.textContent.trim()) {
+                        button.setAttribute('aria-label', button.textContent.trim());
+                    }
+                });
+                
+                // Add alt text to images missing it
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    if (!img.getAttribute('alt')) {
+                        img.setAttribute('alt', '');
+                    }
+                });
+                
+                // Disable buttons until valid input
+                const inputFields = document.querySelectorAll('input[type="text"], textarea');
+                const actionButtons = document.querySelectorAll('.btn-primary, button[onclick]');
+                
+                function checkInputs() {
+                    const hasInput = Array.from(inputFields).some(field => field.value.trim().length > 0);
+                    actionButtons.forEach(button => {
+                        if (button.textContent.includes('Copy') || 
+                            button.textContent.includes('Download') || 
+                            button.textContent.includes('Generate')) {
+                            button.disabled = !hasInput;
+                        }
+                    });
+                }
+                
+                inputFields.forEach(field => {
+                    field.addEventListener('input', checkInputs);
+                });
+                
+                // Initial check
+                checkInputs();
+                
+                // Add success/error notifications
+                window.showNotification = function(message, type = 'success') {
+                    const notification = document.createElement('div');
+                    notification.className = `notification notification-${type}`;
+                    notification.innerHTML = `
+                        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}" aria-hidden="true"></i>
+                        <span>${message}</span>
+                    `;
+                    
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: ${type === 'success' ? '#10b981' : '#ef4444'};
+                        color: white;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                        z-index: 1000;
+                        opacity: 0;
+                        transform: translateX(100%);
+                        transition: all 0.3s ease;
+                        max-width: 400px;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    `;
+                    
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '1';
+                        notification.style.transform = 'translateX(0)';
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        notification.style.transform = 'translateX(100%)';
+                        setTimeout(() => {
+                            if (notification.parentNode) {
+                                document.body.removeChild(notification);
+                            }
+                        }, 300);
+                    }, 3000);
+                };
+                
+                // Enhanced copy functionality
+                window.copyToClipboard = async function(text) {
+                    try {
+                        if (navigator.clipboard && window.isSecureContext) {
+                            await navigator.clipboard.writeText(text);
+                            showNotification('Copied to clipboard!', 'success');
+                            return true;
+                        } else {
+                            // Fallback for older browsers
+                            const textArea = document.createElement('textarea');
+                            textArea.value = text;
+                            textArea.style.position = 'fixed';
+                            textArea.style.left = '-999999px';
+                            textArea.style.top = '-999999px';
+                            document.body.appendChild(textArea);
+                            textArea.focus();
+                            textArea.select();
+                            
+                            try {
+                                document.execCommand('copy');
+                                textArea.remove();
+                                showNotification('Copied to clipboard!', 'success');
+                                return true;
+                            } catch (err) {
+                                textArea.remove();
+                                showNotification('Failed to copy to clipboard', 'error');
+                                return false;
+                            }
+                        }
+                    } catch (err) {
+                        showNotification('Failed to copy to clipboard', 'error');
+                        return false;
+                    }
+                };
+            });
+            </script>
+            
+</body>
+</html>

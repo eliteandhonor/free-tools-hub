@@ -1,0 +1,686 @@
+{
+  "categories": {
+    "text": {
+      "name": "Text Tools",
+      "icon": "fas fa-font",
+      "color": "#3b82f6"
+    },
+    "seo": {
+      "name": "SEO Tools",
+      "icon": "fas fa-search",
+      "color": "#10b981"
+    },
+    "developer": {
+      "name": "Developer Tools",
+      "icon": "fas fa-code",
+      "color": "#8b5cf6"
+    },
+    "calculator": {
+      "name": "Calculators",
+      "icon": "fas fa-calculator",
+      "color": "#f59e0b"
+    },
+    "converter": {
+      "name": "Converters",
+      "icon": "fas fa-exchange-alt",
+      "color": "#ef4444"
+    },
+    "generator": {
+      "name": "Generators",
+      "icon": "fas fa-magic",
+      "color": "#06b6d4"
+    }
+  },
+  "tools": [
+    {
+      "id": "age-calculator",
+      "name": "Age Calculator",
+      "description": "Age Calculator - Professional online utility tool",
+      "category": "calculator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "api-key-generator",
+      "name": "Api Key Generator",
+      "description": "Api Key Generator - Professional online utility tool",
+      "category": "developer",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "avatar-generator",
+      "name": "Avatar Generator",
+      "description": "Create unique avatar images and profile pictures",
+      "category": "generator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "barcode-generator",
+      "name": "Barcode Generator",
+      "description": "Generate various types of barcodes for products and inventory",
+      "category": "generator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "base64-encoder-decoder",
+      "name": "Base64 Encoder Decoder",
+      "description": "Encode and decode Base64 strings and data",
+      "category": "developer",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "bmi-calculator",
+      "name": "Bmi Calculator",
+      "description": "Calculate Body Mass Index and health category classification",
+      "category": "calculator",
+      "features": [
+        "Imperial/Metric",
+        "Health categories",
+        "BMI classification"
+      ]
+    },
+    {
+      "id": "character-counter",
+      "name": "Character Counter",
+      "description": "Count characters, words, and analyze text statistics",
+      "category": "text",
+      "features": [
+        "Character counting",
+        "Word analysis",
+        "Text statistics"
+      ]
+    },
+    {
+      "id": "code-beautifier",
+      "name": "Code Beautifier",
+      "description": "Code Beautifier - Professional online utility tool",
+      "category": "developer",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "color-palette-generator",
+      "name": "Color Palette Generator",
+      "description": "Generate beautiful color palettes for your designs",
+      "category": "generator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "color-picker",
+      "name": "Color Picker",
+      "description": "Pick and convert colors between different formats (HEX, RGB, HSL)",
+      "category": "generator",
+      "features": [
+        "Multiple formats",
+        "Color harmony",
+        "Accessibility"
+      ]
+    },
+    {
+      "id": "css-generator",
+      "name": "Css Generator",
+      "description": "Css Generator - Professional online utility tool",
+      "category": "developer",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "css-minifier",
+      "name": "Css Minifier",
+      "description": "Css Minifier - Professional online utility tool",
+      "category": "developer",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "csv-to-json",
+      "name": "Csv To Json",
+      "description": "Csv To Json - Professional online utility tool",
+      "category": "developer",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "currency-converter",
+      "name": "Currency Converter",
+      "description": "Convert between world currencies with live exchange rates",
+      "category": "calculator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "date-format-converter",
+      "name": "Date Format Converter",
+      "description": "Date Format Converter - Professional online utility tool",
+      "category": "calculator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "email-generator",
+      "name": "Email Generator",
+      "description": "Email Generator - Professional online utility tool",
+      "category": "generator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "fake-data-generator",
+      "name": "Fake Data Generator",
+      "description": "Fake Data Generator - Professional online utility tool",
+      "category": "generator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "favicon-generator",
+      "name": "Favicon Generator",
+      "description": "Favicon Generator - Professional online utility tool",
+      "category": "generator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "gradient-generator",
+      "name": "Gradient Generator",
+      "description": "Gradient Generator - Professional online utility tool",
+      "category": "generator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "hash-generator",
+      "name": "Hash Generator",
+      "description": "Hash Generator - Professional online utility tool",
+      "category": "developer",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "hex-rgb-converter",
+      "name": "Hex Rgb Converter",
+      "description": "Hex Rgb Converter - Professional online utility tool",
+      "category": "converter",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "html-css-js-beautifier",
+      "name": "Html Css Js Beautifier",
+      "description": "Format and beautify HTML, CSS, and JavaScript code",
+      "category": "developer",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "html-encoder-decoder",
+      "name": "Html Encoder Decoder",
+      "description": "Encode and decode HTML entities and special characters",
+      "category": "developer",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "html-minifier",
+      "name": "Html Minifier",
+      "description": "Html Minifier - Professional online utility tool",
+      "category": "developer",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "icon-generator",
+      "name": "Icon Generator",
+      "description": "Icon Generator - Professional online utility tool",
+      "category": "generator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "image-placeholder-generator",
+      "name": "Image Placeholder Generator",
+      "description": "Image Placeholder Generator - Professional online utility tool",
+      "category": "generator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "image-resizer",
+      "name": "Image Resizer",
+      "description": "Image Resizer - Professional online utility tool",
+      "category": "converter",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "json-formatter",
+      "name": "Json Formatter",
+      "description": "Format, validate, and beautify JSON data with syntax highlighting",
+      "category": "developer",
+      "features": [
+        "Syntax highlighting",
+        "Validation",
+        "Minify/beautify"
+      ]
+    },
+    {
+      "id": "json-generator",
+      "name": "Json Generator",
+      "description": "Json Generator - Professional online utility tool",
+      "category": "developer",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "keyword-density-checker",
+      "name": "Keyword Density Checker",
+      "description": "Analyze keyword density and frequency in your content",
+      "category": "seo",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "logo-generator",
+      "name": "Logo Generator",
+      "description": "Logo Generator - Professional online utility tool",
+      "category": "generator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "lorem-ipsum-generator",
+      "name": "Lorem Ipsum Generator",
+      "description": "Generate Lorem Ipsum placeholder text for designs and layouts",
+      "category": "text",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "markdown-to-html",
+      "name": "Markdown To Html",
+      "description": "Markdown To Html - Professional online utility tool",
+      "category": "converter",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "meta-tag-generator",
+      "name": "Meta Tag Generator",
+      "description": "Generate HTML meta tags for better SEO and social media sharing",
+      "category": "seo",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "name-generator",
+      "name": "Name Generator",
+      "description": "Name Generator - Professional online utility tool",
+      "category": "generator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "number-base-converter",
+      "name": "Number Base Converter",
+      "description": "Number Base Converter - Professional online utility tool",
+      "category": "converter",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "password-generator",
+      "name": "Password Generator",
+      "description": "Generate secure, customizable passwords with various options",
+      "category": "generator",
+      "features": [
+        "Customizable length",
+        "Character options",
+        "Strength meter"
+      ]
+    },
+    {
+      "id": "pdf-to-text",
+      "name": "Pdf To Text",
+      "description": "Pdf To Text - Professional online utility tool",
+      "category": "converter",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "percentage-calculator",
+      "name": "Percentage Calculator",
+      "description": "Calculate percentages, ratios, and percentage changes",
+      "category": "calculator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "qr-code-generator",
+      "name": "Qr Code Generator",
+      "description": "Create QR codes for URLs, text, contact info, and more",
+      "category": "generator",
+      "features": [
+        "Multiple formats",
+        "Customization",
+        "High resolution"
+      ]
+    },
+    {
+      "id": "random-number-generator",
+      "name": "Random Number Generator",
+      "description": "Random Number Generator - Professional online utility tool",
+      "category": "generator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "robots-txt-generator",
+      "name": "Robots Txt Generator",
+      "description": "Create robots.txt files to control search engine crawling",
+      "category": "seo",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "roman-numeral-converter",
+      "name": "Roman Numeral Converter",
+      "description": "Roman Numeral Converter - Professional online utility tool",
+      "category": "calculator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "seo-analyzer",
+      "name": "Seo Analyzer",
+      "description": "Analyze webpage SEO performance and get optimization recommendations",
+      "category": "seo",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "serp-preview",
+      "name": "Serp Preview",
+      "description": "Serp Preview - Professional online utility tool",
+      "category": "seo",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "sitemap-generator",
+      "name": "Sitemap Generator",
+      "description": "Generate XML sitemaps for better search engine indexing",
+      "category": "seo",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "slug-generator",
+      "name": "Slug Generator",
+      "description": "Slug Generator - Professional online utility tool",
+      "category": "developer",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "text-case-converter",
+      "name": "Text Case Converter",
+      "description": "Convert text between different cases (uppercase, lowercase, title case)",
+      "category": "text",
+      "features": [
+        "Multiple case types",
+        "Bulk conversion",
+        "Preview"
+      ]
+    },
+    {
+      "id": "text-to-speech",
+      "name": "Text To Speech",
+      "description": "Convert text to natural-sounding speech with multiple voice options",
+      "category": "text",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "timestamp-converter",
+      "name": "Timestamp Converter",
+      "description": "Timestamp Converter - Professional online utility tool",
+      "category": "converter",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "timezone-converter",
+      "name": "Timezone Converter",
+      "description": "Convert time between different timezones worldwide",
+      "category": "converter",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "unicode-converter",
+      "name": "Unicode Converter",
+      "description": "Unicode Converter - Professional online utility tool",
+      "category": "developer",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "unit-converter",
+      "name": "Unit Converter",
+      "description": "Unit Converter - Professional online utility tool",
+      "category": "calculator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "url-encoder-decoder",
+      "name": "Url Encoder Decoder",
+      "description": "Url Encoder Decoder - Professional online utility tool",
+      "category": "developer",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "uuid-generator",
+      "name": "Uuid Generator",
+      "description": "Uuid Generator - Professional online utility tool",
+      "category": "generator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "wifi-qr-generator",
+      "name": "Wifi Qr Generator",
+      "description": "Wifi Qr Generator - Professional online utility tool",
+      "category": "generator",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "word-counter",
+      "name": "Word Counter",
+      "description": "Count words, characters, paragraphs, and calculate reading time",
+      "category": "text",
+      "features": [
+        "Word count",
+        "Character count",
+        "Reading time",
+        "Paragraph count"
+      ]
+    },
+    {
+      "id": "xml-to-json",
+      "name": "Xml To Json",
+      "description": "Xml To Json - Professional online utility tool",
+      "category": "developer",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    },
+    {
+      "id": "yaml-to-json",
+      "name": "Yaml To Json",
+      "description": "Yaml To Json - Professional online utility tool",
+      "category": "developer",
+      "features": [
+        "Easy to use",
+        "Fast processing",
+        "Free tool"
+      ]
+    }
+  ]
+}

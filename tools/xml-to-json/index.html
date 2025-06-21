@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <title>XML to JSON Converter - Tool | Free Tools Hub</title>
+    <meta name="description" content="Convert XML data to JSON format online. Free XML to JSON converter with validation, formatting options, and error handling. Perfect for developers and data processing.">
+    <meta name="keywords" content="xml to json, xml converter, json converter, data conversion, xml parser, json generator, xml validation">
+    <meta name="author" content="Free Tools Hub">
+    <link rel="canonical" href="/tools/xml-to-json/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/tools/xml-to-json/">
+    <meta property="og:title" content="XML to JSON Converter - Free Online Tool">
+    <meta property="og:description" content="Convert XML files to JSON format with our free online converter. Supports validation and formatting.">
+    <meta property="og:image" content="/images/xml-json-converter.jpg">
+    
+    <!-- X (formerly Twitter) -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="/tools/xml-to-json/">
+    <meta property="twitter:title" content="XML to JSON Converter">
+    <meta property="twitter:description" content="Convert XML files to JSON format with our free online converter.">
+    <meta property="twitter:image" content="/images/xml-json-converter.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" onerror="this.onerror=null;this.href='/vendor/fontawesome/css/all.min.css'">
+    <link href="../../css/main.css" rel="stylesheet">
+    
+    <!-- Tool-specific styles -->
+    <style>
+        .tool-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .tool-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .tool-header h1 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .tool-header p {
+            color: #6b7280;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .converter-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .input-panel,
+        .output-panel {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #f1f5f9;
+        }
+        
+        .panel-header h3 {
+            color: #374151;
+            font-size: 1.25rem;
+            margin: 0;
+        }
+        
+        .file-upload-area {
+            border: 2px dashed #d1d5db;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .file-upload-area.dragover {
+            border-color: #3b82f6;
+            background: #eff6ff;
+        }
+        
+        .file-upload-icon {
+            font-size: 2rem;
+            color: #9ca3af;
+            margin-bottom: 0.5rem;
+        }
+        
+        .file-upload-text {
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+        }
+        
+        .file-upload-button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .file-upload-button:hover {
+            background: #2563eb;
+        }
+        
+        .xml-textarea {
+            width: 100%;
+            min-height: 400px;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+        
+        .xml-textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .json-output {
+            width: 100%;
+            min-height: 400px;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            background: #f8fafc;
+            resize: vertical;
+            white-space: pre-wrap;
+        }
+        
+        .options-panel {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2rem;
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .option-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .option-label {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        
+        .option-input {
+            padding: 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 0.875rem;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .action-btn.primary {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .action-btn.primary:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+        }
+        
+        .action-btn.secondary {
+            background: #f3f4f6;
+            color: #374151;
+            border: 1px solid #d1d5db;
+        }
+        
+        .action-btn.secondary:hover {
+            background: #e5e7eb;
+        }
+        
+        .stats-panel {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+        
+        .stat-label {
+            font-size: 0.75rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .error-message {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+            border-radius: 6px;
+            padding: 0.75rem;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .success-message {
+            background: #f0fdf4;
+            color: #16a34a;
+            border: 1px solid #bbf7d0;
+            border-radius: 6px;
+            padding: 0.75rem;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .examples-section {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .example-item {
+            background: #f8fafc;
+            border-radius: 6px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .example-item:hover {
+            background: #e2e8f0;
+        }
+        
+        .example-title {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        
+        .example-preview {
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            color: #6b7280;
+        }
+        
+        @media (max-width: 768px) {
+            .tool-container {
+                padding: 1rem;
+            }
+            
+            .tool-header h1 {
+                font-size: 2rem;
+            }
+            
+            .converter-layout {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "XML to JSON Converter - Convert XML Files to JSON Format",
+    "description": "Convert XML data to JSON format online. Free XML to JSON converter with validation, formatting options, and error handling. Perfect for developers and data processing.",
+    "url": "/tools/xml-to-json/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Free Tools Hub"
+    }
+}
+    </script>
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "/tools/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Converter",
+            "item": "/tools/converter/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "XML to JSON Converter - Convert XML Files to JSON Format",
+            "item": "/tools/xml-to-json/"
+        }
+    ]
+}
+    </script>
+    <!-- Vendor Library Loader with CDN Fallbacks -->
+    <script src="../../js/vendor-loader.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="navbar-brand">
+                    <i class="fas fa-tools"></i>
+                    Free Tools Hub
+                </a>
+                
+                <ul class="navbar-nav">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/#categories" class="nav-link">Categories</a></li>
+                    <li><a href="/tools/" class="nav-link">All Tools</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="/tools/">Tools</a>
+            <span class="separator">/</span>
+            <a href="/tools/converter/">Converters</a>
+            <span class="separator">/</span>
+            <span class="current">XML to JSON</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="tool-container">
+        <!-- Tool Header -->
+        <div class="tool-header">
+            <h1><i class="fas fa-exchange-alt"></i> XML to JSON Converter</h1>
+            <p>Convert XML data to JSON format with customizable options. Upload files or paste XML data directly. Perfect for API integration and data transformation.</p>
+        </div>
+
+        <!-- Options Panel -->
+        <div class="options-panel">
+            <h3><i class="fas fa-cogs"></i> Conversion Options</h3>
+            <div class="options-grid">
+                <div class="option-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="compact-output">
+                        <label for="compact-output" class="option-label">Compact output</label>
+                    </div>
+                </div>
+                
+                <div class="option-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="preserve-attributes" checked>
+                        <label for="preserve-attributes" class="option-label">Preserve attributes</label>
+                    </div>
+                </div>
+                
+                <div class="option-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="ignore-whitespace" checked>
+                        <label for="ignore-whitespace" class="option-label">Ignore whitespace</label>
+                    </div>
+                </div>
+                
+                <div class="option-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="merge-attrs">
+                        <label for="merge-attrs" class="option-label">Merge attributes</label>
+                    </div>
+                </div>
+                
+                <div class="option-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="array-mode">
+                        <label for="array-mode" class="option-label">Array mode</label>
+                    </div>
+                </div>
+                
+                <div class="option-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="sanitize-values">
+                        <label for="sanitize-values" class="option-label">Sanitize values</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Converter Layout -->
+        <div class="converter-layout">
+            <!-- Input Panel -->
+            <div class="input-panel">
+                <div class="panel-header">
+                    <h3><i class="fas fa-upload"></i> XML Input</h3>
+                </div>
+                
+                <div class="file-upload-area" id="file-upload-area">
+                    <div class="file-upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <div class="file-upload-text">Drag & drop an XML file here</div>
+                    <div>or</div>
+                    <button class="file-upload-button" onclick="document.getElementById('file-input').click()" aria-label="Action button">
+                        Browse Files
+                    </button>
+                    <input type="file" id="file-input" accept=".xml,.txt" style="display: none;">
+                </div>
+                
+                <textarea id="xml-input" class="xml-textarea" placeholder="Or paste your XML data here...
+
+
+<?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+<root>
+    <person id=&quot;1&quot;>
+        <name>John Doe</name>
+        <age>30</age>
+        <city>New York</city>
+    </person>
+    <person id=&quot;2&quot;>
+        <name>Jane Smith</name>
+        <age>25</age>
+        <city>London</city>
+    </person>
+</root>"></textarea>
+                
+                <div class="action-buttons">
+                    <button class="action-btn primary" onclick="convertToJSON()" aria-label="Action button">
+                        <i class="fas fa-play"></i> Convert to JSON
+                    </button>
+                    <button class="action-btn secondary" onclick="clearInput()" aria-label="Clear">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+                    <button class="action-btn secondary" onclick="loadExample()" aria-label="Action button">
+                        <i class="fas fa-lightbulb"></i> Load Example
+                    </button>
+                    <button class="action-btn secondary" onclick="validateXML()" aria-label="Action button">
+                        <i class="fas fa-check-circle"></i> Validate XML
+                    </button>
+                </div>
+                
+                <div id="error-message" class="error-message"></div>
+            </div>
+
+            <!-- Output Panel -->
+            <div class="output-panel">
+                <div class="panel-header">
+                    <h3><i class="fas fa-download"></i> JSON Output</h3>
+                </div>
+                
+                <textarea id="json-output" class="json-output" readonly placeholder="JSON output will appear here..."></textarea>
+                
+                <div class="action-buttons">
+                    <button class="action-btn primary" onclick="copyJSON()" id="copy-btn" aria-label="Copy to clipboard">
+                        <i class="fas fa-copy"></i> Copy JSON
+                    </button>
+                    <button class="action-btn secondary" onclick="downloadJSON()" aria-label="Download">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                    <button class="action-btn secondary" onclick="formatJSON()" aria-label="Action button">
+                        <i class="fas fa-code"></i> Format
+                    </button>
+                    <button class="action-btn secondary" onclick="validateJSON()" aria-label="Action button">
+                        <i class="fas fa-check-circle"></i> Validate
+                    </button>
+                </div>
+                
+                <div id="success-message" class="success-message"></div>
+                
+                <div id="stats-panel" class="stats-panel">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="elements-count">0</div>
+                            <div class="stat-label">Elements</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="attributes-count">0</div>
+                            <div class="stat-label">Attributes</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="size-info">0 KB</div>
+                            <div class="stat-label">Size</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Examples Section -->
+        <div class="examples-section">
+            <h3><i class="fas fa-book"></i> Quick Examples</h3>
+            <p>Click on any example to try it:</p>
+            
+            <div class="example-item" onclick="loadExampleData('simple')">
+                <div class="example-title">Simple XML</div>
+                <div class="example-preview">&lt;book&gt;&lt;title&gt;Sample Book&lt;/title&gt;&lt;author&gt;John Doe&lt;/author&gt;&lt;/book&gt;</div>
+            </div>
+            
+            <div class="example-item" onclick="loadExampleData('attributes')">
+                <div class="example-title">XML with Attributes</div>
+                <div class="example-preview">&lt;product id="123" category="electronics"&gt;&lt;name&gt;Laptop&lt;/name&gt;&lt;/product&gt;</div>
+            </div>
+            
+            <div class="example-item" onclick="loadExampleData('nested')">
+                <div class="example-title">Nested XML</div>
+                <div class="example-preview">&lt;company&gt;&lt;department&gt;&lt;employee&gt;&lt;name&gt;Alice&lt;/name&gt;&lt;/employee&gt;&lt;/department&gt;&lt;/company&gt;</div>
+            </div>
+            
+            <div class="example-item" onclick="loadExampleData('array')">
+                <div class="example-title">XML Array</div>
+                <div class="example-preview">&lt;users&gt;&lt;user&gt;John&lt;/user&gt;&lt;user&gt;Jane&lt;/user&gt;&lt;user&gt;Bob&lt;/user&gt;&lt;/users&gt;</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Free Tools Hub</h3>
+                    <p>Professional online tools for developers, writers, and digital professionals. Fast, secure, and completely free.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Popular Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="/tools/word-counter/">Word Counter</a></li>
+                        <li><a href="/tools/json-formatter/">JSON Formatter</a></li>
+                        <li><a href="/tools/base64-encoder-decoder/">Base64 Encoder</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="/tools/text/">Text Tools</a></li>
+                        <li><a href="/tools/developer/">Developer</a></li>
+                        <li><a href="/tools/converter/">Converters</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy/">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Free Tools Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+<style>
+#minimax-floating-ball {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 12px;
+  background: #222222;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  color: #F8F8F8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#minimax-floating-ball:hover {
+  transform: translateY(-2px);
+  background: #383838;
+}
+
+.minimax-ball-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.minimax-logo-wave {
+  width: 26px;
+  height: 22px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='22' viewBox='0 0 26 22' fill='none'%3E%3Cg clip-path='url(%23clip0_3442_102412)'%3E%3Cpath d='M12.8405 14.6775C12.8405 14.9897 13.0932 15.2424 13.4055 15.2424C13.7178 15.2424 13.9705 14.9897 13.9705 14.6775V2.98254C13.9705 1.88957 13.0809 1 11.9879 1C10.895 1 10.0054 1.88957 10.0054 2.98254V11.566V17.1068C10.0054 17.5773 9.62327 17.9594 9.1528 17.9594C8.68233 17.9594 8.30021 17.5773 8.30021 17.1068V8.04469C8.30021 6.95172 7.41063 6.06215 6.31767 6.06215C5.22471 6.06215 4.33513 6.95172 4.33513 8.04469V11.8855C4.33513 12.3559 3.953 12.7381 3.48254 12.7381C3.01207 12.7381 2.62994 12.3559 2.62994 11.8855V10.4936C2.62994 10.1813 2.37725 9.92861 2.06497 9.92861C1.7527 9.92861 1.5 10.1813 1.5 10.4936V11.8855C1.5 12.9784 2.38957 13.868 3.48254 13.868C4.5755 13.868 5.46508 12.9784 5.46508 11.8855V8.04469C5.46508 7.57422 5.8472 7.19209 6.31767 7.19209C6.78814 7.19209 7.17026 7.57422 7.17026 8.04469V17.1068C7.17026 18.1998 8.05984 19.0894 9.1528 19.0894C10.2458 19.0894 11.1353 18.1998 11.1353 17.1068V2.98254C11.1353 2.51207 11.5175 2.12994 11.9879 2.12994C12.4584 2.12994 12.8405 2.51207 12.8405 2.98254V14.6775Z' fill='%23F8F8F8'/%3E%3Cpath d='M23.3278 6.06215C22.2348 6.06215 21.3452 6.95172 21.3452 8.04469V15.6143C21.3452 16.0847 20.9631 16.4669 20.4926 16.4669C20.0222 16.4669 19.6401 16.0847 19.6401 15.6143V2.98254C19.6401 1.88957 18.7505 1 17.6575 1C16.5645 1 15.675 1.88957 15.675 2.98254V19.0175C15.675 19.4879 15.2928 19.8701 14.8224 19.8701C14.3519 19.8701 13.9698 19.4879 13.9698 19.0175V17.0329C13.9698 16.7206 13.7171 16.4679 13.4048 16.4679C13.0925 16.4679 12.8398 16.7206 12.8398 17.0329V19.0175C12.8398 20.1104 13.7294 21 14.8224 21C15.9153 21 16.8049 20.1104 16.8049 19.0175V2.98254C16.8049 2.51207 17.187 2.12994 17.6575 2.12994C18.128 2.12994 18.5101 2.51207 18.5101 2.98254V15.6143C18.5101 16.7072 19.3997 17.5968 20.4926 17.5968C21.5856 17.5968 22.4752 16.7072 22.4752 15.6143V8.04469C22.4752 7.57422 22.8573 7.19209 23.3278 7.19209C23.7982 7.19209 24.1804 7.57422 24.1804 8.04469V14.6775C24.1804 14.9897 24.4331 15.2424 24.7453 15.2424C25.0576 15.2424 25.3103 14.9897 25.3103 14.6775V8.04469C25.3103 6.95172 24.4207 6.06215 23.3278 6.06215Z' fill='%23F8F8F8'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_3442_102412'%3E%3Crect width='25' height='22' fill='white' transform='translate(0.5)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.minimax-ball-text {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.minimax-close-icon {
+  margin-left: 8px;
+  font-size: 16px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.minimax-close-icon:hover {
+  opacity: 1;
+}
+</style>
+<div id="minimax-floating-ball">
+  <div class="minimax-ball-content">
+    <div class="minimax-logo-wave"></div>
+    <span class="minimax-ball-text">Created by MiniMax Agent</span>
+  </div>
+  <div class="minimax-close-icon">×</div>
+</div>
+<script>
+// Initialize floating ball functionality
+function initFloatingBall() {
+  const ball = document.getElementById('minimax-floating-ball');
+  if (!ball) return;
+
+  // Initial animation
+  ball.style.opacity = '0';
+  ball.style.transform = 'translateY(20px)';
+
+  setTimeout(() => {
+    ball.style.opacity = '1';
+    ball.style.transform = 'translateY(0)';
+  }, 500);
+
+  // Handle logo click
+  const ballContent = ball.querySelector('.minimax-ball-content');
+  ballContent.addEventListener('click', function (e) {
+    e.stopPropagation();
+    window.open('https://agent.minimax.io/agent', '_blank');
+    ball.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      ball.style.transform = 'scale(1)';
+    }, 100);
+  });
+
+  // Handle close button click
+  const closeIcon = ball.querySelector('.minimax-close-icon');
+  closeIcon.addEventListener('click', function (e) {
+    e.stopPropagation();
+    ball.style.opacity = '0';
+    ball.style.transform = 'translateY(20px)';
+
+    setTimeout(() => {
+      ball.style.display = 'none';
+    }, 300);
+  });
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initFloatingBall); 
+</script>
+
+
+            <script>
+            // Common Tool Functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                // Add ARIA labels to buttons and inputs
+                const buttons = document.querySelectorAll('button');
+                buttons.forEach(button => {
+                    if (!button.getAttribute('aria-label') && button.textContent.trim()) {
+                        button.setAttribute('aria-label', button.textContent.trim());
+                    }
+                });
+                
+                // Add alt text to images missing it
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    if (!img.getAttribute('alt')) {
+                        img.setAttribute('alt', '');
+                    }
+                });
+                
+                // Disable buttons until valid input
+                const inputFields = document.querySelectorAll('input[type="text"], textarea');
+                const actionButtons = document.querySelectorAll('.btn-primary, button[onclick]');
+                
+                function checkInputs() {
+                    const hasInput = Array.from(inputFields).some(field => field.value.trim().length > 0);
+                    actionButtons.forEach(button => {
+                        if (button.textContent.includes('Copy') || 
+                            button.textContent.includes('Download') || 
+                            button.textContent.includes('Generate')) {
+                            button.disabled = !hasInput;
+                        }
+                    });
+                }
+                
+                inputFields.forEach(field => {
+                    field.addEventListener('input', checkInputs);
+                });
+                
+                // Initial check
+                checkInputs();
+                
+                // Add success/error notifications
+                window.showNotification = function(message, type = 'success') {
+                    const notification = document.createElement('div');
+                    notification.className = `notification notification-${type}`;
+                    notification.innerHTML = `
+                        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}" aria-hidden="true"></i>
+                        <span>${message}</span>
+                    `;
+                    
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: ${type === 'success' ? '#10b981' : '#ef4444'};
+                        color: white;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                        z-index: 1000;
+                        opacity: 0;
+                        transform: translateX(100%);
+                        transition: all 0.3s ease;
+                        max-width: 400px;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    `;
+                    
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '1';
+                        notification.style.transform = 'translateX(0)';
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        notification.style.transform = 'translateX(100%)';
+                        setTimeout(() => {
+                            if (notification.parentNode) {
+                                document.body.removeChild(notification);
+                            }
+                        }, 300);
+                    }, 3000);
+                };
+                
+                // Enhanced copy functionality
+                window.copyToClipboard = async function(text) {
+                    try {
+                        if (navigator.clipboard && window.isSecureContext) {
+                            await navigator.clipboard.writeText(text);
+                            showNotification('Copied to clipboard!', 'success');
+                            return true;
+                        } else {
+                            // Fallback for older browsers
+                            const textArea = document.createElement('textarea');
+                            textArea.value = text;
+                            textArea.style.position = 'fixed';
+                            textArea.style.left = '-999999px';
+                            textArea.style.top = '-999999px';
+                            document.body.appendChild(textArea);
+                            textArea.focus();
+                            textArea.select();
+                            
+                            try {
+                                document.execCommand('copy');
+                                textArea.remove();
+                                showNotification('Copied to clipboard!', 'success');
+                                return true;
+                            } catch (err) {
+                                textArea.remove();
+                                showNotification('Failed to copy to clipboard', 'error');
+                                return false;
+                            }
+                        }
+                    } catch (err) {
+                        showNotification('Failed to copy to clipboard', 'error');
+                        return false;
+                    }
+                };
+            });
+            </script>
+            
+</body>
+</html>

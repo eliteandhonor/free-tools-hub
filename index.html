@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' cdnjs.cloudflare.com cdn.jsdelivr.net code.jquery.com; style-src 'self' 'unsafe-inline' cdnjs.cloudflare.com fonts.googleapis.com; font-src 'self' fonts.gstatic.com cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self';">
+    
+    <!-- SEO Meta Tags -->
+    <title>Free Tools Hub - 60+ Professional Online Tools & Utilities</title>
+    <meta name="description" content="Access 60+ free online tools including text analyzers, SEO utilities, calculators, converters, generators, and developer tools. Fast, secure, and always free to use.">
+    <meta name="keywords" content="free online tools, text tools, SEO tools, calculators, converters, developer tools, generators, word counter, JSON formatter, password generator">
+    <meta name="author" content="Free Tools Hub">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://zea6oz30ga.space.minimax.io/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zea6oz30ga.space.minimax.io/">
+    <meta property="og:title" content="Free Tools Hub - 60+ Professional Online Tools">
+    <meta property="og:description" content="Access 60+ free online tools including text analyzers, SEO utilities, calculators, converters, and developer tools.">
+    <meta property="og:image" content="https://zea6oz30ga.space.minimax.io/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://zea6oz30ga.space.minimax.io/">
+    <meta property="twitter:title" content="Free Tools Hub - 60+ Professional Online Tools">
+    <meta property="twitter:description" content="Access 60+ free online tools including text analyzers, SEO utilities, calculators, converters, and developer tools.">
+    <meta property="twitter:image" content="https://zea6oz30ga.space.minimax.io/images/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- DNS Prefetch for Performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    
+    <!-- Critical CSS Inline -->
+    <style>
+        /* Critical Above-the-fold CSS */
+        * { box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6; 
+            color: #374151;
+            background: #f8fafc;
+        }
+        .header { 
+            background: #ffffff; 
+            border-bottom: 1px solid #e2e8f0; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 1rem; 
+        }
+        .hero-section { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; 
+            padding: 4rem 0; 
+            text-align: center; 
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar-toggle {
+            display: none;
+        }
+        .nav-link {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        .nav-link:hover {
+            background: #f1f5f9;
+            color: #2563eb;
+        }
+        .hero-search {
+            max-width: 600px;
+            margin: 2rem auto 0;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .search-input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.9);
+        }
+        .search-button {
+            padding: 1rem 2rem;
+            background: #ffffff;
+            color: #2563eb;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .search-help {
+            position: absolute;
+            left: -10000px;
+        }
+        .search-results {
+            display: none;
+        }
+        .categories-section {
+            padding: 3rem 0;
+        }
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .category-card {
+            display: block;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s;
+        }
+        .category-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .icon-text { background-color: #3b82f6; }
+        .icon-seo { background-color: #10b981; }
+        .icon-developer { background-color: #8b5cf6; }
+        .icon-calculator { background-color: #f59e0b; }
+        .icon-converter { background-color: #ef4444; }
+        .icon-generator { background-color: #06b6d4; }
+        .category-title {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .category-desc {
+            margin: 0 0 1rem 0;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+        .category-stats {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+        .popular-tools-section {
+            padding: 3rem 0;
+            background: white;
+            margin: 2rem -1rem;
+            border-radius: 12px;
+        }
+        .popular-tools-inner {
+            padding: 0 1rem;
+        }
+        .popular-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .view-all-tools-wrapper {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .btn-view-all {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .btn-view-all:hover {
+            background: #1d4ed8;
+        }
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-section h4 {
+            margin-bottom: 1rem;
+        }
+        .footer-desc {
+            margin-bottom: 1rem;
+            color: #9ca3af;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: #fff;
+        }
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+        @media (max-width: 768px) {
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            .popular-tools-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+    <!-- CDN Resources with Fallbacks -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" crossorigin="anonymous" onerror="this.onerror=null;this.href='/vendor/fontawesome/css/all.min.css'">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" onerror="this.onerror=null;this.href='/vendor/bootstrap/css/bootstrap.min.css'">
+    <link href="css/main.css" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Free Tools Hub",
+        "url": "https://zea6oz30ga.space.minimax.io",
+        "description": "Professional online tools and utilities for text processing, SEO, development, calculations, and conversions",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Free Tools Hub",
+            "url": "https://zea6oz30ga.space.minimax.io"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://zea6oz30ga.space.minimax.io/tools/?search={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Free access to all tools"
+        }
+    }
+    </script>
+    <script>
+        // Load tools configuration
+        window.toolsConfig = {};
+        fetch('/data/tools-config.json')
+            .then(response => response.json())
+            .then(data => {
+                window.toolsConfig = data;
+            })
+            .catch(error => console.log('Tools config loading is handled by main.js'));
+    </script>
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link" title="Skip to main content">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="Main navigation">
+                <a href="/" class="navbar-brand" title="Free Tools Hub Home">
+                    <i class="fas fa-tools" aria-hidden="true"></i>
+                    Free Tools Hub
+                </a>
+                
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggle" type="button" aria-expanded="false" aria-controls="navbar-nav" aria-label="Toggle navigation menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav" id="navbar-nav">
+                        <li><a href="/" class="nav-link">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                                Categories <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-label="Categories">
+                                <li><a href="/tools/text/" class="dropdown-item">Text Tools</a></li>
+                                <li><a href="/tools/seo/" class="dropdown-item">SEO Tools</a></li>
+                                <li><a href="/tools/developer/" class="dropdown-item">Developer Tools</a></li>
+                                <li><a href="/tools/calculator/" class="dropdown-item">Calculators</a></li>
+                                <li><a href="/tools/converter/" class="dropdown-item">Converters</a></li>
+                                <li><a href="/tools/generator/" class="dropdown-item">Generators</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/tools/" class="nav-link">All Tools</a></li>
+                        <li><a href="/about/" class="nav-link">About</a></li>
+                        <li><a href="/contact/" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero-section" role="banner">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Ultimate Free Online Tools Hub</h1>
+                <p>Access 60+ professional tools for text processing, SEO optimization, development, calculations, conversions, and generation. Fast, secure, and always free.</p>
+                
+                <!-- Hero Search Bar -->
+                <div class="hero-search">
+                    <input 
+                        type="text" 
+                        id="heroSearch" onkeyup="searchToolsFromHero()" 
+                        class="search-input" 
+                        placeholder="Search for tools..." 
+                        aria-label="Search for tools"
+                        role="searchbox"
+                        aria-describedby="search-help"
+                    >
+                    <button 
+                        type="button" 
+                        id="heroSearchBtn" 
+                        class="search-button"
+                        aria-label="Search tools"
+                    >
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        Search
+                    </button>
+                </div>
+                <div id="search-help" class="search-help">
+                    Type a tool name or description and press Enter or click Search to find tools
+                </div>
+                <div id="search-results" class="search-results" aria-live="polite" aria-atomic="true"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main id="main-content" class="container" role="main">
+        <!-- Tool Categories Section -->
+        <section id="categories" class="section categories-section">
+            <h2>Tool Categories</h2>
+            <p>Choose from our comprehensive collection of tools organized by category</p>
+            <div class="categories-grid">
+                <a href="/tools/text/" class="category-card category-text" data-category="text">
+                    <div class="category-icon icon-text">
+                        <i class="fas fa-font" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="category-title">Text Tools</h3>
+                    <p class="category-desc">Text manipulation and analysis utilities for writers and content creators</p>
+                    <div class="category-stats">
+                        <span id="text-tools-count">Loading...</span>
+                        <span>Most Popular</span>
+                    </div>
+                </a>
+                <a href="/tools/seo/" class="category-card category-seo" data-category="seo">
+                    <div class="category-icon icon-seo">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="category-title">SEO Tools</h3>
+                    <p class="category-desc">Search engine optimization utilities to improve your website's ranking</p>
+                    <div class="category-stats">
+                        <span id="seo-tools-count">Loading...</span>
+                        <span>High Demand</span>
+                    </div>
+                </a>
+                <a href="/tools/developer/" class="category-card category-developer" data-category="developer">
+                    <div class="category-icon icon-developer">
+                        <i class="fas fa-code" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="category-title">Developer Tools</h3>
+                    <p class="category-desc">Essential utilities for web developers and programmers</p>
+                    <div class="category-stats">
+                        <span id="developer-tools-count">Loading...</span>
+                        <span>Developer Favorite</span>
+                    </div>
+                </a>
+                <a href="/tools/calculator/" class="category-card category-calculator" data-category="calculator">
+                    <div class="category-icon icon-calculator">
+                        <i class="fas fa-calculator" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="category-title">Calculators</h3>
+                    <p class="category-desc">Mathematical and financial calculators for everyday use</p>
+                    <div class="category-stats">
+                        <span id="calculator-tools-count">Loading...</span>
+                        <span>Essential</span>
+                    </div>
+                </a>
+                <a href="/tools/converter/" class="category-card category-converter" data-category="converter">
+                    <div class="category-icon icon-converter">
+                        <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="category-title">Converters</h3>
+                    <p class="category-desc">Convert between different formats, units, and data types</p>
+                    <div class="category-stats">
+                        <span id="converter-tools-count">Loading...</span>
+                        <span>Useful</span>
+                    </div>
+                </a>
+                <a href="/tools/generator/" class="category-card category-generator" data-category="generator">
+                    <div class="category-icon icon-generator">
+                        <i class="fas fa-magic" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="category-title">Generators</h3>
+                    <p class="category-desc">Generate passwords, QR codes, colors, and creative content</p>
+                    <div class="category-stats">
+                        <span id="generator-tools-count">Loading...</span>
+                        <span>Creative</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <!-- Popular Tools Section -->
+        <section id="popular-tools" class="section popular-tools-section">
+            <div class="popular-tools-inner">
+                <h2>Popular Tools</h2>
+                <p>Most used tools by our community</p>
+                <div class="popular-tools-grid" id="popularToolsGrid"></div>
+                <div class="view-all-tools-wrapper">
+                    <a href="/tools/" class="btn-view-all">View All Tools</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Free Tools Hub</h4>
+                    <p class="footer-desc">Professional online tools for developers, designers, and content creators. All tools are free to use.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/tools/">All Tools</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Popular Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="/tools/word-counter/">Word Counter</a></li>
+                        <li><a href="/tools/password-generator/">Password Generator</a></li>
+                        <li><a href="/tools/json-formatter/">JSON Formatter</a></li>
+                        <li><a href="/tools/qr-code-generator/">QR Code Generator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="/feedback/">Feedback</a></li>
+                        <li><a href="/privacy/">Privacy Policy</a></li>
+                        <li><a href="/terms/">Terms of Service</a></li>
+                        <li><a href="/sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Free Tools Hub. All rights reserved. | Built with ❤️ for the community</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous" onerror="this.onerror=null;this.src='/vendor/jquery/jquery-3.7.1.min.js'"></script>
+    <script src="/js/main.js"></script>
+    
+    <style>
+        .categories-section {
+            padding: 3rem 0;
+        }
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .category-card {
+            display: block;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s;
+        }
+        .category-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .icon-text { background-color: #3b82f6; }
+        .icon-seo { background-color: #10b981; }
+        .icon-developer { background-color: #8b5cf6; }
+        .icon-calculator { background-color: #f59e0b; }
+        .icon-converter { background-color: #ef4444; }
+        .icon-generator { background-color: #06b6d4; }
+        .category-title {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .category-desc {
+            margin: 0 0 1rem 0;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+        .category-stats {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+        .popular-tools-section {
+            padding: 3rem 0;
+            background: white;
+            margin: 2rem -1rem;
+            border-radius: 12px;
+        }
+        .popular-tools-inner {
+            padding: 0 1rem;
+        }
+        .popular-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .view-all-tools-wrapper {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .btn-view-all {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .btn-view-all:hover {
+            background: #1d4ed8;
+        }
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-section h4 {
+            margin-bottom: 1rem;
+        }
+        .footer-desc {
+            margin-bottom: 1rem;
+            color: #9ca3af;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: #fff;
+        }
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+        @media (max-width: 768px) {
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            .popular-tools-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

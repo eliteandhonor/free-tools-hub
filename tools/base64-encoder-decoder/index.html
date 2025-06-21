@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <title>Base64 Encoder Decoder - Text Tool | Free Tools Hub</title>
+    <meta name="description" content="Free online Base64 encoder and decoder. Encode text to Base64 or decode Base64 to text. Supports file encoding, URL-safe Base64, and bulk processing.">
+    <meta name="keywords" content="base64 encoder, base64 decoder, base64 converter, encode base64, decode base64, base64 online, file encoder">
+    <meta name="author" content="Free Tools Hub">
+    <link rel="canonical" href="/tools/base64-encoder-decoder/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="/tools/base64-encoder-decoder/">
+    <meta property="og:title" content="Free Base64 Encoder & Decoder - Encode/Decode Online">
+    <meta property="og:description" content="Encode text to Base64 or decode Base64 to text with our free online tool. Supports files and URL-safe encoding.">
+    <meta property="og:image" content="/images/base64-encoder-tool.jpg">
+    
+    <!-- X.com (Twitter) 2025 -->
+    <meta name="x:card" content="summary_large_image">
+    <meta name="x:site" content="@FreeToolsHub">
+    <meta name="x:title" content="Free Base64 Encoder & Decoder">
+    <meta name="x:description" content="Encode and decode Base64 data with support for text, files, and URL-safe encoding.">
+    <meta name="x:image" content="/images/base64-encoder-tool.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" onerror="this.onerror=null;this.href='/vendor/fontawesome/css/all.min.css'">
+    <link href="../../css/main.css" rel="stylesheet">
+    <link href="../../css/base64-encoder-decoder.css" rel="stylesheet">
+    
+    <!-- Vendor Library Loader with CDN Fallbacks -->
+    <script src="../../js/vendor-helpers.js"></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="navbar-brand">
+                    <i class="fas fa-tools"></i>
+                    Free Tools Hub
+                </a>
+                
+                <ul class="navbar-nav">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/#categories" class="nav-link">Categories</a></li>
+                    <li><a href="/tools/" class="nav-link">All Tools</a></li>
+                    <li><a href="/about/" class="nav-link">About</a></li>
+                    <li><a href="/contact/" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <button class="navbar-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Tool Header -->
+    <section class="tool-header">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/tools/">Tools</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/tools/developer/">Developer Tools</a>
+                <span class="breadcrumb-separator">/</span>
+                <span>Base64 Encoder/Decoder</span>
+            </nav>
+            
+            <h1 class="tool-title">
+                <i class="fas fa-code"></i>
+                Base64 Encoder & Decoder
+            </h1>
+            <p class="tool-description">
+                Encode text to Base64 or decode Base64 to text. Supports file encoding, URL-safe Base64, and bulk processing for developers and data conversion needs.
+            </p>
+            
+            <!-- Social Sharing -->
+            <div class="social-share">
+                <span class="social-share-label">Share this tool:</span>
+                <a href="#" class="social-btn social-btn-facebook" data-platform="facebook" aria-label="Share on Facebook" title="Share on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-btn social-btn-x" data-platform="x" aria-label="Share on X.com" title="Share on X.com">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="#" class="social-btn social-btn-linkedin" data-platform="linkedin" aria-label="Share on LinkedIn" title="Share on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-btn social-btn-whatsapp" data-platform="whatsapp" aria-label="Share on WhatsApp" title="Share on WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <div class="container container-grid">
+            
+            <!-- Tool Interface -->
+            <div class="tool-interface">
+                <!-- Tab Navigation -->
+                <div class="base64-tabs">
+                    <button class="base64-tab active" data-tab="encode">
+                        <i class="fas fa-lock"></i>
+                        Encode to Base64
+                    </button>
+                    <button class="base64-tab" data-tab="decode">
+                        <i class="fas fa-unlock"></i>
+                        Decode from Base64
+                    </button>
+                    <button class="base64-tab" data-tab="file">
+                        <i class="fas fa-file"></i>
+                        File Encoding
+                    </button>
+                </div>
+                
+                <!-- Encode Tab -->
+                <div id="encode-tab" class="tab-content active">
+                    <h2>Encode Text to Base64</h2>
+                    <p>Enter text below to convert it to Base64 encoding.</p>
+                    
+                    <div class="form-group">
+                        <label for="encode-input" class="form-label">Input Text</label>
+                        <textarea 
+                            id="encode-input" 
+                            class="base64-textarea" 
+                            placeholder="Enter text to encode..."
+                            rows="8"
+                        ></textarea>
+                    </div>
+                    
+                    <!-- Encoding Options -->
+                    <div class="encoding-options">
+                        <h4>Encoding Options</h4>
+                        <div class="option-grid">
+                            <div class="option-item">
+                                <input type="checkbox" id="url-safe-encode">
+                                <label for="url-safe-encode">URL-Safe Base64</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" id="remove-padding-encode">
+                                <label for="remove-padding-encode">Remove Padding (=)</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" id="add-linebreaks-encode">
+                                <label for="add-linebreaks-encode">Add Line Breaks (76 chars)</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button id="encode-btn" class="btn btn-primary">
+                            <i class="fas fa-lock"></i>
+                            Encode
+                        </button>
+                        <button class="btn btn-secondary clear-btn" data-target="#encode-input">
+                            <i class="fas fa-eraser"></i>
+                            Clear
+                        </button>
+                        <button class="btn btn-secondary copy-btn" data-target="#encode-output">
+                            <i class="fas fa-copy"></i>
+                            Copy Result
+                        </button>
+                        <button class="btn btn-secondary download-btn" data-target="#encode-output" data-filename="encoded.txt">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </button>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div id="encode-stats" class="base64-stats hidden">
+                        <div class="base64-stat">
+                            <div class="base64-stat-value" id="encode-input-chars">0</div>
+                            <div class="base64-stat-label">Input Characters</div>
+                        </div>
+                        <div class="base64-stat">
+                            <div class="base64-stat-value" id="encode-output-chars">0</div>
+                            <div class="base64-stat-label">Output Characters</div>
+                        </div>
+                        <div class="base64-stat">
+                            <div class="base64-stat-value" id="encode-size-increase">0%</div>
+                            <div class="base64-stat-label">Size Increase</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Output -->
+                    <div class="form-group mt-2rem">
+                        <label class="form-label">Base64 Encoded Output</label>
+                        <div id="encode-output" class="base64-output">
+                            Encoded Base64 will appear here...
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Decode Tab -->
+                <div id="decode-tab" class="tab-content">
+                    <h2>Decode Base64 to Text</h2>
+                    <p>Enter Base64 encoded data below to decode it back to text.</p>
+                    
+                    <div class="form-group">
+                        <label for="decode-input" class="form-label">Base64 Input</label>
+                        <textarea 
+                            id="decode-input" 
+                            class="base64-textarea" 
+                            placeholder="Enter Base64 encoded data..."
+                            rows="8"
+                        ></textarea>
+                    </div>
+                    
+                    <!-- Decoding Options -->
+                    <div class="encoding-options">
+                        <h4>Decoding Options</h4>
+                        <div class="option-grid">
+                            <div class="option-item">
+                                <input type="checkbox" id="url-safe-decode">
+                                <label for="url-safe-decode">URL-Safe Base64</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" id="ignore-whitespace">
+                                <label for="ignore-whitespace">Ignore Whitespace</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" id="strict-mode">
+                                <label for="strict-mode">Strict Mode</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button id="decode-btn" class="btn btn-primary">
+                            <i class="fas fa-unlock"></i>
+                            Decode
+                        </button>
+                        <button class="btn btn-secondary clear-btn" data-target="#decode-input">
+                            <i class="fas fa-eraser"></i>
+                            Clear
+                        </button>
+                        <button class="btn btn-secondary copy-btn" data-target="#decode-output">
+                            <i class="fas fa-copy"></i>
+                            Copy Result
+                        </button>
+                        <button class="btn btn-secondary download-btn" data-target="#decode-output" data-filename="decoded.txt">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </button>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div id="decode-stats" class="base64-stats hidden">
+                        <div class="base64-stat">
+                            <div class="base64-stat-value" id="decode-input-chars">0</div>
+                            <div class="base64-stat-label">Input Characters</div>
+                        </div>
+                        <div class="base64-stat">
+                            <div class="base64-stat-value" id="decode-output-chars">0</div>
+                            <div class="base64-stat-label">Output Characters</div>
+                        </div>
+                        <div class="base64-stat">
+                            <div class="base64-stat-value" id="decode-size-decrease">0%</div>
+                            <div class="base64-stat-label">Size Decrease</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Output -->
+                    <div class="form-group mt-2rem">
+                        <label class="form-label">Decoded Text Output</label>
+                        <div id="decode-output" class="base64-output">
+                            Decoded text will appear here...
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- File Tab -->
+                <div id="file-tab" class="tab-content">
+                    <h2>File Base64 Encoding</h2>
+                    <p>Upload a file to encode it to Base64 format.</p>
+                    
+                    <!-- File Drop Zone -->
+                    <div class="file-drop-zone" id="file-drop-zone">
+                        <i class="fas fa-cloud-upload-alt file-upload-icon" aria-hidden="true"></i>
+                        <div class="file-upload-label">Drop a file here or click to select</div>
+                        <div class="file-upload-note">Maximum file size: 10MB</div>
+                        <input type="file" id="file-input" class="file-upload-hidden" aria-label="Upload file for Base64 encoding/decoding" title="Upload file">
+                    </div>
+                    
+                    <!-- File Info -->
+                    <div id="file-info" class="file-info">
+                        <div class="file-upload-bar">
+                            <strong id="file-name">filename.txt</strong>
+                            <button id="remove-file" class="btn btn-sm btn-remove-file" aria-label="Remove file" title="Remove file">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="file-upload-note">
+                            <span id="file-size">0 KB</span> • <span id="file-type">text/plain</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button id="encode-file-btn" class="btn btn-primary" disabled>
+                            <i class="fas fa-file-code"></i>
+                            Encode File
+                        </button>
+                        <button class="btn btn-secondary copy-btn" data-target="#file-output">
+                            <i class="fas fa-copy"></i>
+                            Copy Base64
+                        </button>
+                        <button class="btn btn-secondary download-btn" data-target="#file-output" data-filename="file-base64.txt">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </button>
+                    </div>
+                    
+                    <!-- Output -->
+                    <div class="form-group mt-2rem">
+                        <label class="form-label">Base64 File Output</label>
+                        <div id="file-output" class="base64-output">
+                            Base64 encoded file content will appear here...
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- About This Tool -->
+                <section class="mt-3rem">
+                    <h2>About Base64 Encoding</h2>
+                    <p>Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format using 64 characters.</p>
+                    
+                    <h3>What is Base64?</h3>
+                    <ul>
+                        <li><strong>Character Set:</strong> A-Z, a-z, 0-9, +, / (and = for padding)</li>
+                        <li><strong>Purpose:</strong> Encode binary data for safe transmission over text-based protocols</li>
+                        <li><strong>Common Uses:</strong> Email attachments, embedding images in HTML/CSS, API tokens</li>
+                        <li><strong>URL-Safe Variant:</strong> Uses - and _ instead of + and / for URL compatibility</li>
+                    </ul>
+                    
+                    <h3>When to Use Base64</h3>
+                    <ul>
+                        <li><strong>Email Attachments:</strong> MIME encoding for binary files</li>
+                        <li><strong>Data URLs:</strong> Embedding images directly in web pages</li>
+                        <li><strong>API Authentication:</strong> Encoding credentials for Basic Auth</li>
+                        <li><strong>Configuration Files:</strong> Storing binary data in text-based configs</li>
+                        <li><strong>Database Storage:</strong> Storing binary data in text fields</li>
+                    </ul>
+                    
+                    <h3>Base64 Characteristics</h3>
+                    <ul>
+                        <li><strong>Size Increase:</strong> Encoded data is approximately 33% larger than original</li>
+                        <li><strong>Padding:</strong> Uses = characters to ensure output length is multiple of 4</li>
+                        <li><strong>Line Breaking:</strong> Often broken into 76-character lines for MIME compliance</li>
+                        <li><strong>Case Sensitive:</strong> Uppercase and lowercase letters have different meanings</li>
+                    </ul>
+                    
+                    <h3>Security Considerations</h3>
+                    <ul>
+                        <li>Base64 is encoding, not encryption - data is not secure</li>
+                        <li>Anyone can decode Base64 data easily</li>
+                        <li>Never use Base64 alone for protecting sensitive information</li>
+                        <li>Combine with proper encryption for security needs</li>
+                    </ul>
+                </section>
+            </div>
+            
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h4 class="sidebar-title">Related Encoding Tools</h4>
+                    <ul class="related-tools">
+                        <li><a href="/tools/url-encoder-decoder/">URL Encoder/Decoder</a></li>
+                        <li><a href="/tools/html-encoder-decoder/">HTML Encoder/Decoder</a></li>
+                        <li><a href="/tools/hex-encoder-decoder/">Hex Encoder/Decoder</a></li>
+                        <li><a href="/tools/ascii-converter/">ASCII Converter</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h4 class="sidebar-title">Developer Tools</h4>
+                    <ul class="related-tools">
+                        <li><a href="/tools/json-formatter/">JSON Formatter</a></li>
+                        <li><a href="/tools/hash-generator/">Hash Generator</a></li>
+                        <li><a href="/tools/regex-tester/">Regex Tester</a></li>
+                        <li><a href="/tools/code-beautifier/">Code Beautifier</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter Signup -->
+                <div class="newsletter-form">
+                    <h4>Developer Updates</h4>
+                    <p>Get the latest encoding tools and tips</p>
+                    <form data-track="newsletter">
+                        <input type="email" class="newsletter-input" placeholder="Your email" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+                
+                <!-- Ad Space -->
+                <div class="ad-sidebar">
+                    <p class="advertisement-text">Advertisement</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Free Tools Hub</h4>
+                    <p>Professional encoding and developer tools for data conversion needs.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Encoding Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="/tools/base64-encoder-decoder/">Base64 Encoder</a></li>
+                        <li><a href="/tools/url-encoder-decoder/">URL Encoder</a></li>
+                        <li><a href="/tools/html-encoder-decoder/">HTML Encoder</a></li>
+                        <li><a href="/tools/hash-generator/">Hash Generator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Other Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="/tools/text/">Text Tools</a></li>
+                        <li><a href="/tools/calculator/">Calculators</a></li>
+                        <li><a href="/tools/generator/">Generators</a></li>
+                        <li><a href="/tools/converter/">Converters</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy/">Privacy</a></li>
+                        <li><a href="/terms/">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Free Tools Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../js/main.js" defer onerror="this.onerror=null;this.src='/vendor/main.js'"></script>
+    <script src="script.js" defer onerror="this.onerror=null;this.src='/tools/base64-encoder-decoder/script.js'"></script>
+</body>
+</html>

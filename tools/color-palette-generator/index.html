@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="canonical" href="/tools/color-palette-generator/">
+    <meta charset="UTF-8">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <title>Color Palette Generator - Design | Free Tools Hub</title>
+    <meta name="description" content="Generate complete color palettes and schemes for design projects. Create harmonious color schemes with various color theory rules including monochromatic, analogous, complementary, triadic, and tetradic.">
+    <meta name="keywords" content="color palette generator, color scheme, color picker, design colors, complementary colors, monochromatic, analogous, triadic, tetradic">
+    <meta name="author" content="Free Tools Hub">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://free-tools-hub.com/tools/color-palette-generator/">
+    <meta property="og:title" content="Color Palette Generator - Create Professional Color Schemes">
+    <meta property="og:description" content="Generate complete color palettes and schemes for design projects with various color theory rules. Create harmonious color combinations for your next project.">
+    <meta property="og:image" content="https://free-tools-hub.com/images/og-image.jpg">
+    
+    <!-- X.com (formerly Twitter) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://free-tools-hub.com/tools/color-palette-generator/">
+    <meta name="twitter:title" content="Color Palette Generator - Create Professional Color Schemes">
+    <meta name="twitter:description" content="Generate complete color palettes and schemes for design projects with various color theory rules. Export in multiple formats.">
+    <meta name="twitter:image" content="https://free-tools-hub.com/images/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" onerror="this.onerror=null;this.href='/vendor/bootstrap/css/bootstrap.min.css'">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" onerror="this.onerror=null;this.href='/vendor/fontawesome/css/all.min.css'">
+    <link href="../../css/main.css" rel="stylesheet">
+    <link href="../../css/color-palette-generator.css" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Color Palette Generator",
+        "description": "Generate complete color palettes and schemes for design projects. Create harmonious color schemes with various color theory rules.",
+        "url": "https://free-tools-hub.com/tools/color-palette-generator/",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Free Tools Hub"
+        }
+    }
+    </script>
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://free-tools-hub.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://free-tools-hub.com/tools/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Generator",
+                "item": "https://free-tools-hub.com/tools/generator/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Color Palette Generator",
+                "item": "https://free-tools-hub.com/tools/color-palette-generator/"
+            }
+        ]
+    }
+    </script>
+    <!-- Vendor Library Loader with CDN Fallbacks -->
+    <script src="../../js/vendor-loader.js" defer></script>
+    <script src="../../js/vendor-helpers.js" defer></script>
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Unified Header Navigation -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="Main navigation">
+                <a href="/" class="navbar-brand" aria-label="Free Tools Hub - Home">
+                    <i class="fas fa-tools" aria-hidden="true"></i>
+                    Free Tools Hub
+                </a>
+                
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggle" type="button" aria-expanded="false" aria-controls="navbar-nav" aria-label="Toggle navigation menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <ul class="navbar-nav" id="navbar-nav" role="menubar">
+                    <li role="none"><a href="/" class="nav-link" role="menuitem">Home</a></li>
+                    <li class="dropdown" role="none">
+                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-expanded="false" aria-haspopup="true">
+                            Categories <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-label="Categories">
+                            <li role="none"><a href="/tools/text/" class="dropdown-item" role="menuitem">Text Tools</a></li>
+                            <li role="none"><a href="/tools/seo/" class="dropdown-item" role="menuitem">SEO Tools</a></li>
+                            <li role="none"><a href="/tools/developer/" class="dropdown-item" role="menuitem">Developer Tools</a></li>
+                            <li role="none"><a href="/tools/calculator/" class="dropdown-item" role="menuitem">Calculators</a></li>
+                            <li role="none"><a href="/tools/converter/" class="dropdown-item" role="menuitem">Converters</a></li>
+                            <li role="none"><a href="/tools/generator/" class="dropdown-item" role="menuitem" aria-current="page">Generators</a></li>
+                        </ul>
+                    </li>
+                    <li role="none"><a href="/tools/" class="nav-link" role="menuitem">All Tools</a></li>
+                    <li role="none"><a href="/about/" class="nav-link" role="menuitem">About</a></li>
+                    <li role="none"><a href="/contact/" class="nav-link" role="menuitem">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="container py-2">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/tools/">Tools</a></li>
+                <li class="breadcrumb-item"><a href="/tools/generator/">Generators</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Color Palette Generator</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">
+                <i class="fas fa-palette me-3" aria-hidden="true"></i>Color Palette Generator
+            </h1>
+            <p class="lead mb-0">Create beautiful color schemes using color theory principles</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="h4 mb-0"><i class="fas fa-cog me-2" aria-hidden="true"></i>Settings</h2>
+                        </div>
+                        <div class="card-body">
+                            <!-- Base Color -->
+                            <div class="mb-4 text-center">
+                                <label for="baseColor" class="form-label fw-bold">Base Color:</label>
+                                <div>
+                                    <input type="color" class="base-color-picker" id="baseColor" value="#3498db" title="Choose your base color" aria-label="Select base color">
+                                </div>
+                                <small class="text-muted">Click to choose your base color</small>
+                            </div>
+                            
+                            <!-- Color Harmony Type -->
+                            <div class="mb-4">
+                                <h3 class="form-label fw-bold h6">Color Harmony:</h3>
+                                <div role="radiogroup" aria-label="Color harmony options">
+                                    <div class="harmony-type active" onclick="selectHarmony('monochromatic')" id="mono" role="radio" aria-checked="true">
+                                        <strong>Monochromatic</strong>
+                                        <small class="d-block">Same hue, different shades</small>
+                                    </div>
+                                    <div class="harmony-type" onclick="selectHarmony('analogous')" id="analog" role="radio" aria-checked="false">
+                                        <strong>Analogous</strong>
+                                        <small class="d-block">Adjacent colors on wheel</small>
+                                    </div>
+                                    <div class="harmony-type" onclick="selectHarmony('complementary')" id="comp" role="radio" aria-checked="false">
+                                        <strong>Complementary</strong>
+                                        <small class="d-block">Opposite colors</small>
+                                    </div>
+                                    <div class="harmony-type" onclick="selectHarmony('triadic')" id="triad" role="radio" aria-checked="false">
+                                        <strong>Triadic</strong>
+                                        <small class="d-block">Three evenly spaced colors</small>
+                                    </div>
+                                    <div class="harmony-type" onclick="selectHarmony('tetradic')" id="tetrad" role="radio" aria-checked="false">
+                                        <strong>Tetradic</strong>
+                                        <small class="d-block">Four colors in two pairs</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Actions -->
+                            <button type="button" class="btn btn-primary w-100 mb-2" onclick="generatePalette()" aria-label="Generate new color palette">
+                                <i class="fas fa-magic me-2" aria-hidden="true"></i>Generate Palette
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary w-100" onclick="randomizeBase()" aria-label="Create random base color">
+                                <i class="fas fa-random me-2" aria-hidden="true"></i>Random Base Color
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-8">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h2 class="h4 mb-0"><i class="fas fa-palette me-2" aria-hidden="true"></i>Generated Palette</h2>
+                            <div>
+                                <button type="button" class="btn btn-outline-primary btn-sm" onclick="copyPalette()" aria-label="Copy all colors to clipboard">
+                                    <i class="fas fa-copy me-1" aria-hidden="true"></i>Copy Colors
+                                </button>
+                                <button type="button" class="btn btn-outline-success btn-sm" onclick="downloadPalette()" aria-label="Download palette as JSON file">
+                                    <i class="fas fa-download me-1" aria-hidden="true"></i>Download
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="palette-container" id="paletteContainer">
+                                <p class="text-muted">Click "Generate Palette" to create your color scheme</p>
+                            </div>
+                            
+                            <!-- Export Formats -->
+                            <div class="export-formats" id="exportSection">
+                                <h3 class="fw-bold mb-3 h6">Export Formats:</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label">CSS Variables:</label>
+                                        <div class="format-code" id="cssFormat"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">JSON:</label>
+                                        <div class="format-code" id="jsonFormat"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label">SCSS Variables:</label>
+                                        <div class="format-code" id="scssFormat"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Hex Array:</label>
+                                        <div class="format-code" id="arrayFormat"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Features</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-palette fa-3x text-primary mb-3" aria-hidden="true"></i>
+                        <h3 class="h5">Color Theory</h3>
+                        <p>Generate palettes based on proven color harmony principles.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-download fa-3x text-primary mb-3" aria-hidden="true"></i>
+                        <h3 class="h5">Multiple Formats</h3>
+                        <p>Export in CSS, SCSS, JSON, and other developer-friendly formats.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-mouse-pointer fa-3x text-primary mb-3" aria-hidden="true"></i>
+                        <h3 class="h5">Easy to Use</h3>
+                        <p>Simply pick a base color and choose your harmony type.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4" role="contentinfo">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Free Tools Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        // Hide export section initially
+        document.addEventListener('DOMContentLoaded', function() {
+            const exportSection = document.getElementById('exportSection');
+            if (exportSection) {
+                exportSection.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

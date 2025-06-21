@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker & Palette Generator - Free Tools Hub</title>
+    <meta name="description" content="Professional color picker with HEX, RGB, HSL codes. Generate color palettes, find complementary colors, and export schemes for design projects.">
+    <meta name="keywords" content="color picker, color palette, hex color, rgb color, hsl color, color generator">
+    <link rel="canonical" href="/tools/color-picker/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../vendor/fontawesome/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+    
+    <style>
+        .tool-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .color-picker-section {
+            margin-bottom: 2rem;
+        }
+        
+        .picker-main {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 2rem;
+        }
+        
+        .color-preview {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .color-display {
+            width: 150px;
+            height: 150px;
+            border-radius: 12px;
+            border: 2px solid #e5e7eb;
+            background: #3b82f6;
+            cursor: pointer;
+        }
+        
+        .color-input {
+            width: 60px;
+            height: 40px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        
+        .color-values {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .value-group {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .value-group label {
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .input-copy-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .form-control {
+            flex: 1;
+            padding: 0.5rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            font-family: monospace;
+        }
+        
+        .copy-btn {
+            padding: 0.5rem 1rem;
+            background: #6366f1;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        
+        .copy-btn:hover {
+            background: #5855eb;
+        }
+        
+        .manual-input {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 2rem;
+        }
+        
+        .input-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .input-tab {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e5e7eb;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        
+        .input-tab.active {
+            background: #6366f1;
+            color: white;
+            border-color: #6366f1;
+        }
+        
+        .input-panel {
+            display: none;
+        }
+        
+        .input-panel.active {
+            display: block;
+        }
+        
+        .rgb-inputs, .hsl-inputs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+        }
+        
+        .color-harmonies, .saved-palette {
+            margin-bottom: 2rem;
+        }
+        
+        .harmony-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .harmony-btn, .btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e5e7eb;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #6366f1;
+            color: white;
+            border-color: #6366f1;
+        }
+        
+        .btn-secondary {
+            background: #6b7280;
+            color: white;
+            border-color: #6b7280;
+        }
+        
+        .harmony-colors, .palette-colors {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .harmony-color, .palette-color {
+            height: 80px;
+            border-radius: 8px;
+            display: flex;
+            align-items: end;
+            padding: 0.5rem;
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            cursor: pointer;
+        }
+        
+        .palette-controls {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .empty-palette {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+        }
+        
+        @media (max-width: 768px) {
+            .picker-main {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .value-group {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="../../" class="logo">
+                <i class="fas fa-tools"></i> Free Tools Hub
+            </a>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../">Tools</a></li>
+                    <li class="breadcrumb-item active">Color Picker</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container" role="main">
+        <!-- Tool Header -->
+        <div class="tool-header">
+            <h1 class="tool-title">
+                <i class="fas fa-palette"></i>
+                Color Picker & Palette Generator
+            </h1>
+            <p class="tool-description">
+                Professional color picker with HEX, RGB, HSL codes. Generate color palettes and find complementary colors.
+            </p>
+        </div>
+
+        <!-- Tool Container -->
+        <div class="tool-container">
+            <!-- Color Picker -->
+            <div class="color-picker-section">
+                <h2>Color Picker</h2>
+                
+                <div class="picker-main">
+                    <div class="color-preview">
+                        <div id="color-display" class="color-display"></div>
+                        <input type="color" id="color-input" class="color-input" value="#3b82f6">
+                    </div>
+                    
+                    <div class="color-values">
+                        <div class="value-group">
+                            <label for="hex-value">HEX:</label>
+                            <div class="input-copy-group">
+                                <input type="text" id="hex-value" class="form-control" readonly>
+                                <button class="copy-btn" data-target="hex-value">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="value-group">
+                            <label for="rgb-value">RGB:</label>
+                            <div class="input-copy-group">
+                                <input type="text" id="rgb-value" class="form-control" readonly>
+                                <button class="copy-btn" data-target="rgb-value">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="value-group">
+                            <label for="hsl-value">HSL:</label>
+                            <div class="input-copy-group">
+                                <input type="text" id="hsl-value" class="form-control" readonly>
+                                <button class="copy-btn" data-target="hsl-value">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manual Input -->
+                <div class="manual-input">
+                    <h3>Enter Color Manually</h3>
+                    <div class="input-tabs">
+                        <button class="input-tab active" data-format="hex">HEX</button>
+                        <button class="input-tab" data-format="rgb">RGB</button>
+                        <button class="input-tab" data-format="hsl">HSL</button>
+                    </div>
+                    
+                    <div id="hex-input-panel" class="input-panel active">
+                        <input type="text" id="manual-hex" class="form-control" placeholder="#3b82f6" maxlength="7">
+                    </div>
+                    
+                    <div id="rgb-input-panel" class="input-panel">
+                        <div class="rgb-inputs">
+                            <input type="number" id="manual-r" class="form-control" placeholder="R" min="0" max="255">
+                            <input type="number" id="manual-g" class="form-control" placeholder="G" min="0" max="255">
+                            <input type="number" id="manual-b" class="form-control" placeholder="B" min="0" max="255">
+                        </div>
+                    </div>
+                    
+                    <div id="hsl-input-panel" class="input-panel">
+                        <div class="hsl-inputs">
+                            <input type="number" id="manual-h" class="form-control" placeholder="H" min="0" max="360">
+                            <input type="number" id="manual-s" class="form-control" placeholder="S%" min="0" max="100">
+                            <input type="number" id="manual-l" class="form-control" placeholder="L%" min="0" max="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Color Harmonies -->
+            <div class="color-harmonies">
+                <h2>Color Harmonies</h2>
+                <div class="harmony-buttons">
+                    <button class="harmony-btn" data-type="complementary">Complementary</button>
+                    <button class="harmony-btn" data-type="triadic">Triadic</button>
+                    <button class="harmony-btn" data-type="analogous">Analogous</button>
+                    <button class="harmony-btn" data-type="monochromatic">Monochromatic</button>
+                </div>
+                
+                <div id="harmony-colors" class="harmony-colors"></div>
+            </div>
+
+            <!-- Color Palette -->
+            <div class="saved-palette">
+                <h2>Color Palette</h2>
+                <div class="palette-controls">
+                    <button id="add-to-palette" class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Add Current Color
+                    </button>
+                    <button id="clear-palette" class="btn btn-secondary">
+                        <i class="fas fa-trash"></i>
+                        Clear Palette
+                    </button>
+                    <button id="export-palette" class="btn btn-secondary">
+                        <i class="fas fa-download"></i>
+                        Export Palette
+                    </button>
+                </div>
+                
+                <div id="palette-colors" class="palette-colors">
+                    <div class="empty-palette">
+                        <i class="fas fa-palette"></i>
+                        <p>No colors in palette. Add colors to create your custom palette.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Info -->
+        <div class="tool-container">
+            <h2>Features</h2>
+            <ul>
+                <li><strong>Multiple Formats:</strong> HEX, RGB, and HSL color codes</li>
+                <li><strong>Color Harmonies:</strong> Generate complementary and other color schemes</li>
+                <li><strong>Palette Builder:</strong> Create and save custom color palettes</li>
+                <li><strong>Manual Input:</strong> Enter colors in any format</li>
+                <li><strong>One-Click Copy:</strong> Copy color codes instantly</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="../../js/vendor-loader.js"></script>
+    <script>
+        class ColorPicker {
+            constructor() {
+                this.currentColor = '#3b82f6';
+                this.palette = [];
+                this.init();
+            }
+
+            init() {
+                this.bindEvents();
+                this.updateColor(this.currentColor);
+            }
+
+            bindEvents() {
+                // Main color input
+                document.getElementById('color-input').addEventListener('input', (e) => {
+                    this.updateColor(e.target.value);
+                });
+
+                // Copy buttons
+                document.querySelectorAll('.copy-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const targetId = e.target.closest('.copy-btn').dataset.target;
+                        this.copyToClipboard(targetId);
+                    });
+                });
+
+                // Manual input tabs
+                document.querySelectorAll('.input-tab').forEach(tab => {
+                    tab.addEventListener('click', (e) => {
+                        const format = e.target.dataset.format;
+                        this.switchInputTab(format);
+                    });
+                });
+
+                // Manual inputs
+                document.getElementById('manual-hex').addEventListener('input', (e) => {
+                    this.updateFromManualInput('hex', e.target.value);
+                });
+
+                ['manual-r', 'manual-g', 'manual-b'].forEach(id => {
+                    document.getElementById(id).addEventListener('input', () => {
+                        this.updateFromRGBInputs();
+                    });
+                });
+
+                ['manual-h', 'manual-s', 'manual-l'].forEach(id => {
+                    document.getElementById(id).addEventListener('input', () => {
+                        this.updateFromHSLInputs();
+                    });
+                });
+
+                // Harmony buttons
+                document.querySelectorAll('.harmony-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const type = e.target.dataset.type;
+                        this.generateHarmony(type);
+                    });
+                });
+
+                // Palette controls
+                document.getElementById('add-to-palette').addEventListener('click', () => {
+                    this.addToPalette();
+                });
+
+                document.getElementById('clear-palette').addEventListener('click', () => {
+                    this.clearPalette();
+                });
+
+                document.getElementById('export-palette').addEventListener('click', () => {
+                    this.exportPalette();
+                });
+            }
+
+            updateColor(hex) {
+                this.currentColor = hex;
+                
+                // Update color display
+                document.getElementById('color-display').style.backgroundColor = hex;
+                document.getElementById('color-input').value = hex;
+                
+                // Convert to other formats
+                const rgb = this.hexToRgb(hex);
+                const hsl = this.rgbToHsl(rgb.r, rgb.g, rgb.b);
+                
+                // Update display values
+                document.getElementById('hex-value').value = hex.toUpperCase();
+                document.getElementById('rgb-value').value = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
+                document.getElementById('hsl-value').value = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
+            }
+
+            hexToRgb(hex) {
+                const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+                return result ? {
+                    r: parseInt(result[1], 16),
+                    g: parseInt(result[2], 16),
+                    b: parseInt(result[3], 16)
+                } : null;
+            }
+
+            rgbToHsl(r, g, b) {
+                r /= 255; g /= 255; b /= 255;
+                const max = Math.max(r, g, b), min = Math.min(r, g, b);
+                let h, s, l = (max + min) / 2;
+
+                if (max === min) {
+                    h = s = 0;
+                } else {
+                    const d = max - min;
+                    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                    switch (max) {
+                        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                        case g: h = (b - r) / d + 2; break;
+                        case b: h = (r - g) / d + 4; break;
+                    }
+                    h /= 6;
+                }
+
+                return {
+                    h: Math.round(h * 360),
+                    s: Math.round(s * 100),
+                    l: Math.round(l * 100)
+                };
+            }
+
+            hslToRgb(h, s, l) {
+                h /= 360; s /= 100; l /= 100;
+                const hue2rgb = (p, q, t) => {
+                    if (t < 0) t += 1;
+                    if (t > 1) t -= 1;
+                    if (t < 1/6) return p + (q - p) * 6 * t;
+                    if (t < 1/2) return q;
+                    if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+                    return p;
+                };
+
+                let r, g, b;
+                if (s === 0) {
+                    r = g = b = l;
+                } else {
+                    const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+                    const p = 2 * l - q;
+                    r = hue2rgb(p, q, h + 1/3);
+                    g = hue2rgb(p, q, h);
+                    b = hue2rgb(p, q, h - 1/3);
+                }
+
+                return {
+                    r: Math.round(r * 255),
+                    g: Math.round(g * 255),
+                    b: Math.round(b * 255)
+                };
+            }
+
+            rgbToHex(r, g, b) {
+                return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+            }
+
+            switchInputTab(format) {
+                // Update tab states
+                document.querySelectorAll('.input-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                document.querySelector(`[data-format="${format}"]`).classList.add('active');
+
+                // Update panel states
+                document.querySelectorAll('.input-panel').forEach(panel => {
+                    panel.classList.remove('active');
+                });
+                document.getElementById(`${format}-input-panel`).classList.add('active');
+            }
+
+            updateFromManualInput(format, value) {
+                if (format === 'hex' && /^#[0-9A-Fa-f]{6}$/.test(value)) {
+                    this.updateColor(value);
+                }
+            }
+
+            updateFromRGBInputs() {
+                const r = parseInt(document.getElementById('manual-r').value) || 0;
+                const g = parseInt(document.getElementById('manual-g').value) || 0;
+                const b = parseInt(document.getElementById('manual-b').value) || 0;
+                
+                if (r >= 0 && r <= 255 && g >= 0 && g <= 255 && b >= 0 && b <= 255) {
+                    const hex = this.rgbToHex(r, g, b);
+                    this.updateColor(hex);
+                }
+            }
+
+            updateFromHSLInputs() {
+                const h = parseInt(document.getElementById('manual-h').value) || 0;
+                const s = parseInt(document.getElementById('manual-s').value) || 0;
+                const l = parseInt(document.getElementById('manual-l').value) || 0;
+                
+                if (h >= 0 && h <= 360 && s >= 0 && s <= 100 && l >= 0 && l <= 100) {
+                    const rgb = this.hslToRgb(h, s, l);
+                    const hex = this.rgbToHex(rgb.r, rgb.g, rgb.b);
+                    this.updateColor(hex);
+                }
+            }
+
+            generateHarmony(type) {
+                const rgb = this.hexToRgb(this.currentColor);
+                const hsl = this.rgbToHsl(rgb.r, rgb.g, rgb.b);
+                let colors = [];
+
+                switch (type) {
+                    case 'complementary':
+                        colors = [
+                            this.currentColor,
+                            this.rgbToHex(...Object.values(this.hslToRgb((hsl.h + 180) % 360, hsl.s, hsl.l)))
+                        ];
+                        break;
+                    case 'triadic':
+                        colors = [
+                            this.currentColor,
+                            this.rgbToHex(...Object.values(this.hslToRgb((hsl.h + 120) % 360, hsl.s, hsl.l))),
+                            this.rgbToHex(...Object.values(this.hslToRgb((hsl.h + 240) % 360, hsl.s, hsl.l)))
+                        ];
+                        break;
+                    case 'analogous':
+                        colors = [
+                            this.rgbToHex(...Object.values(this.hslToRgb((hsl.h - 30 + 360) % 360, hsl.s, hsl.l))),
+                            this.currentColor,
+                            this.rgbToHex(...Object.values(this.hslToRgb((hsl.h + 30) % 360, hsl.s, hsl.l)))
+                        ];
+                        break;
+                    case 'monochromatic':
+                        colors = [
+                            this.rgbToHex(...Object.values(this.hslToRgb(hsl.h, hsl.s, Math.max(hsl.l - 40, 0)))),
+                            this.rgbToHex(...Object.values(this.hslToRgb(hsl.h, hsl.s, Math.max(hsl.l - 20, 0)))),
+                            this.currentColor,
+                            this.rgbToHex(...Object.values(this.hslToRgb(hsl.h, hsl.s, Math.min(hsl.l + 20, 100)))),
+                            this.rgbToHex(...Object.values(this.hslToRgb(hsl.h, hsl.s, Math.min(hsl.l + 40, 100))))
+                        ];
+                        break;
+                }
+
+                this.displayHarmonyColors(colors);
+            }
+
+            displayHarmonyColors(colors) {
+                const container = document.getElementById('harmony-colors');
+                container.innerHTML = '';
+
+                colors.forEach(color => {
+                    const colorDiv = document.createElement('div');
+                    colorDiv.className = 'harmony-color';
+                    colorDiv.style.backgroundColor = color;
+                    colorDiv.textContent = color.toUpperCase();
+                    colorDiv.addEventListener('click', () => {
+                        this.updateColor(color);
+                    });
+                    container.appendChild(colorDiv);
+                });
+            }
+
+            addToPalette() {
+                if (!this.palette.includes(this.currentColor)) {
+                    this.palette.push(this.currentColor);
+                    this.updatePaletteDisplay();
+                }
+            }
+
+            clearPalette() {
+                this.palette = [];
+                this.updatePaletteDisplay();
+            }
+
+            updatePaletteDisplay() {
+                const container = document.getElementById('palette-colors');
+                
+                if (this.palette.length === 0) {
+                    container.innerHTML = `
+                        <div class="empty-palette">
+                            <i class="fas fa-palette"></i>
+                            <p>No colors in palette. Add colors to create your custom palette.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                container.innerHTML = '';
+                this.palette.forEach((color, index) => {
+                    const colorDiv = document.createElement('div');
+                    colorDiv.className = 'palette-color';
+                    colorDiv.style.backgroundColor = color;
+                    colorDiv.textContent = color.toUpperCase();
+                    colorDiv.addEventListener('click', () => {
+                        this.updateColor(color);
+                    });
+                    colorDiv.addEventListener('contextmenu', (e) => {
+                        e.preventDefault();
+                        this.palette.splice(index, 1);
+                        this.updatePaletteDisplay();
+                    });
+                    container.appendChild(colorDiv);
+                });
+            }
+
+            exportPalette() {
+                if (this.palette.length === 0) {
+                    alert('No colors in palette to export');
+                    return;
+                }
+
+                const data = {
+                    name: 'Custom Palette',
+                    colors: this.palette,
+                    created: new Date().toISOString()
+                };
+
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `color-palette-${Date.now()}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+
+            copyToClipboard(targetId) {
+                const element = document.getElementById(targetId);
+                element.select();
+                document.execCommand('copy');
+                
+                const btn = document.querySelector(`[data-target="${targetId}"]`);
+                const original = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => {
+                    btn.innerHTML = original;
+                }, 1000);
+            }
+        }
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            new ColorPicker();
+        });
+    </script>
+
+<style>
+#minimax-floating-ball {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 12px;
+  background: #222222;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  color: #F8F8F8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#minimax-floating-ball:hover {
+  transform: translateY(-2px);
+  background: #383838;
+}
+
+.minimax-ball-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.minimax-logo-wave {
+  width: 26px;
+  height: 22px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='22' viewBox='0 0 26 22' fill='none'%3E%3Cg clip-path='url(%23clip0_3442_102412)'%3E%3Cpath d='M12.8405 14.6775C12.8405 14.9897 13.0932 15.2424 13.4055 15.2424C13.7178 15.2424 13.9705 14.9897 13.9705 14.6775V2.98254C13.9705 1.88957 13.0809 1 11.9879 1C10.895 1 10.0054 1.88957 10.0054 2.98254V11.566V17.1068C10.0054 17.5773 9.62327 17.9594 9.1528 17.9594C8.68233 17.9594 8.30021 17.5773 8.30021 17.1068V8.04469C8.30021 6.95172 7.41063 6.06215 6.31767 6.06215C5.22471 6.06215 4.33513 6.95172 4.33513 8.04469V11.8855C4.33513 12.3559 3.953 12.7381 3.48254 12.7381C3.01207 12.7381 2.62994 12.3559 2.62994 11.8855V10.4936C2.62994 10.1813 2.37725 9.92861 2.06497 9.92861C1.7527 9.92861 1.5 10.1813 1.5 10.4936V11.8855C1.5 12.9784 2.38957 13.868 3.48254 13.868C4.5755 13.868 5.46508 12.9784 5.46508 11.8855V8.04469C5.46508 7.57422 5.8472 7.19209 6.31767 7.19209C6.78814 7.19209 7.17026 7.57422 7.17026 8.04469V17.1068C7.17026 18.1998 8.05984 19.0894 9.1528 19.0894C10.2458 19.0894 11.1353 18.1998 11.1353 17.1068V2.98254C11.1353 2.51207 11.5175 2.12994 11.9879 2.12994C12.4584 2.12994 12.8405 2.51207 12.8405 2.98254V14.6775Z' fill='%23F8F8F8'/%3E%3Cpath d='M23.3278 6.06215C22.2348 6.06215 21.3452 6.95172 21.3452 8.04469V15.6143C21.3452 16.0847 20.9631 16.4669 20.4926 16.4669C20.0222 16.4669 19.6401 16.0847 19.6401 15.6143V2.98254C19.6401 1.88957 18.7505 1 17.6575 1C16.5645 1 15.675 1.88957 15.675 2.98254V19.0175C15.675 19.4879 15.2928 19.8701 14.8224 19.8701C14.3519 19.8701 13.9698 19.4879 13.9698 19.0175V17.0329C13.9698 16.7206 13.7171 16.4679 13.4048 16.4679C13.0925 16.4679 12.8398 16.7206 12.8398 17.0329V19.0175C12.8398 20.1104 13.7294 21 14.8224 21C15.9153 21 16.8049 20.1104 16.8049 19.0175V2.98254C16.8049 2.51207 17.187 2.12994 17.6575 2.12994C18.128 2.12994 18.5101 2.51207 18.5101 2.98254V15.6143C18.5101 16.7072 19.3997 17.5968 20.4926 17.5968C21.5856 17.5968 22.4752 16.7072 22.4752 15.6143V8.04469C22.4752 7.57422 22.8573 7.19209 23.3278 7.19209C23.7982 7.19209 24.1804 7.57422 24.1804 8.04469V14.6775C24.1804 14.9897 24.4331 15.2424 24.7453 15.2424C25.0576 15.2424 25.3103 14.9897 25.3103 14.6775V8.04469C25.3103 6.95172 24.4207 6.06215 23.3278 6.06215Z' fill='%23F8F8F8'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_3442_102412'%3E%3Crect width='25' height='22' fill='white' transform='translate(0.5)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.minimax-ball-text {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.minimax-close-icon {
+  margin-left: 8px;
+  font-size: 16px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.minimax-close-icon:hover {
+  opacity: 1;
+}
+</style>
+<div id="minimax-floating-ball">
+  <div class="minimax-ball-content">
+    <div class="minimax-logo-wave"></div>
+    <span class="minimax-ball-text">Created by MiniMax Agent</span>
+  </div>
+  <div class="minimax-close-icon">×</div>
+</div>
+<script>
+// Initialize floating ball functionality
+function initFloatingBall() {
+  const ball = document.getElementById('minimax-floating-ball');
+  if (!ball) return;
+
+  // Initial animation
+  ball.style.opacity = '0';
+  ball.style.transform = 'translateY(20px)';
+
+  setTimeout(() => {
+    ball.style.opacity = '1';
+    ball.style.transform = 'translateY(0)';
+  }, 500);
+
+  // Handle logo click
+  const ballContent = ball.querySelector('.minimax-ball-content');
+  ballContent.addEventListener('click', function (e) {
+    e.stopPropagation();
+    window.open('https://agent.minimax.io/agent', '_blank');
+    ball.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      ball.style.transform = 'scale(1)';
+    }, 100);
+  });
+
+  // Handle close button click
+  const closeIcon = ball.querySelector('.minimax-close-icon');
+  closeIcon.addEventListener('click', function (e) {
+    e.stopPropagation();
+    ball.style.opacity = '0';
+    ball.style.transform = 'translateY(20px)';
+
+    setTimeout(() => {
+      ball.style.display = 'none';
+    }, 300);
+  });
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initFloatingBall); 
+</script>
+
+
+            <script>
+            // Common Tool Functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                // Add ARIA labels to buttons and inputs
+                const buttons = document.querySelectorAll('button');
+                buttons.forEach(button => {
+                    if (!button.getAttribute('aria-label') && button.textContent.trim()) {
+                        button.setAttribute('aria-label', button.textContent.trim());
+                    }
+                });
+                
+                // Add alt text to images missing it
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    if (!img.getAttribute('alt')) {
+                        img.setAttribute('alt', '');
+                    }
+                });
+                
+                // Disable buttons until valid input
+                const inputFields = document.querySelectorAll('input[type="text"], textarea');
+                const actionButtons = document.querySelectorAll('.btn-primary, button[onclick]');
+                
+                function checkInputs() {
+                    const hasInput = Array.from(inputFields).some(field => field.value.trim().length > 0);
+                    actionButtons.forEach(button => {
+                        if (button.textContent.includes('Copy') || 
+                            button.textContent.includes('Download') || 
+                            button.textContent.includes('Generate')) {
+                            button.disabled = !hasInput;
+                        }
+                    });
+                }
+                
+                inputFields.forEach(field => {
+                    field.addEventListener('input', checkInputs);
+                });
+                
+                // Initial check
+                checkInputs();
+                
+                // Add success/error notifications
+                window.showNotification = function(message, type = 'success') {
+                    const notification = document.createElement('div');
+                    notification.className = `notification notification-${type}`;
+                    notification.innerHTML = `
+                        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}" aria-hidden="true"></i>
+                        <span>${message}</span>
+                    `;
+                    
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: ${type === 'success' ? '#10b981' : '#ef4444'};
+                        color: white;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                        z-index: 1000;
+                        opacity: 0;
+                        transform: translateX(100%);
+                        transition: all 0.3s ease;
+                        max-width: 400px;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    `;
+                    
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '1';
+                        notification.style.transform = 'translateX(0)';
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        notification.style.transform = 'translateX(100%)';
+                        setTimeout(() => {
+                            if (notification.parentNode) {
+                                document.body.removeChild(notification);
+                            }
+                        }, 300);
+                    }, 3000);
+                };
+                
+                // Enhanced copy functionality
+                window.copyToClipboard = async function(text) {
+                    try {
+                        if (navigator.clipboard && window.isSecureContext) {
+                            await navigator.clipboard.writeText(text);
+                            showNotification('Copied to clipboard!', 'success');
+                            return true;
+                        } else {
+                            // Fallback for older browsers
+                            const textArea = document.createElement('textarea');
+                            textArea.value = text;
+                            textArea.style.position = 'fixed';
+                            textArea.style.left = '-999999px';
+                            textArea.style.top = '-999999px';
+                            document.body.appendChild(textArea);
+                            textArea.focus();
+                            textArea.select();
+                            
+                            try {
+                                document.execCommand('copy');
+                                textArea.remove();
+                                showNotification('Copied to clipboard!', 'success');
+                                return true;
+                            } catch (err) {
+                                textArea.remove();
+                                showNotification('Failed to copy to clipboard', 'error');
+                                return false;
+                            }
+                        }
+                    } catch (err) {
+                        showNotification('Failed to copy to clipboard', 'error');
+                        return false;
+                    }
+                };
+            });
+            </script>
+            
+</body>
+</html>

@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <title>Free Age Calculator | Free Tools Hub</title>
+    <meta name="description" content="Free online age calculator. Calculate your exact age in years, months, days, hours, minutes. Birthday countdown, zodiac sign, life stats, and more features.">
+    <meta name="keywords" content="age calculator, calculate age, how old am I, age in days, birthday calculator, exact age, age counter, zodiac calculator">
+    <meta name="author" content="Free Tools Hub">
+    <link rel="canonical" href="/tools/age-calculator/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="/tools/age-calculator/">
+    <meta property="og:title" content="Free Age Calculator - Calculate Your Exact Age Online">
+    <meta property="og:description" content="Calculate your exact age in years, months, days, hours with birthday countdown and zodiac sign information.">
+    <meta property="og:image" content="/images/age-calculator-tool.jpg">
+    
+    <!-- X.com (Twitter) 2025 -->
+    <meta name="x:card" content="summary_large_image">
+    <meta name="x:site" content="@FreeToolsHub">
+    <meta name="x:title" content="Free Age Calculator">
+    <meta name="x:description" content="Calculate your exact age with detailed breakdown and birthday countdown features.">
+    <meta name="x:image" content="/images/age-calculator-tool.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" onerror="this.onerror=null;this.href='/vendor/fontawesome/css/all.min.css'">
+    <link href="../../css/main.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/age-calculator.css" rel="stylesheet">
+    
+    <!-- Vendor Library Loader with CDN Fallbacks -->
+    <script src="../../js/vendor-helpers.js"></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="navbar-brand">
+                    <i class="fas fa-tools"></i>
+                    Free Tools Hub
+                </a>
+                
+                <ul class="navbar-nav">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/#categories" class="nav-link">Categories</a></li>
+                    <li><a href="/tools/" class="nav-link">All Tools</a></li>
+                    <li><a href="/about/" class="nav-link">About</a></li>
+                    <li><a href="/contact/" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <button class="navbar-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Tool Header -->
+    <section class="tool-header">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/tools/">Tools</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/tools/calculator/">Calculators</a>
+                <span class="breadcrumb-separator">/</span>
+                <span>Age Calculator</span>
+            </nav>
+            
+            <h1 class="tool-title">
+                <i class="fas fa-birthday-cake"></i>
+                Age Calculator
+            </h1>
+            <p class="tool-description">
+                Calculate your exact age in years, months, days, hours, and minutes. Get birthday countdown, zodiac sign, life milestones, and interesting age facts.
+            </p>
+            
+            <!-- Social Sharing -->
+            <div class="social-share">
+                <span class="social-share-label">Share this tool:</span>
+                <a href="#" class="social-btn social-btn-facebook" data-platform="facebook" aria-label="Share on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-btn social-btn-x" data-platform="x" aria-label="Share on X.com">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="#" class="social-btn social-btn-linkedin" data-platform="linkedin" aria-label="Share on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-btn social-btn-whatsapp" data-platform="whatsapp" aria-label="Share on WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <div class="container container-grid">
+            
+            <!-- Tool Interface -->
+            <div class="tool-interface">
+                <!-- Age Input Section -->
+                <div class="age-input-section">
+                    <h2 class="age-input-title">
+                        <i class="fas fa-calendar-alt"></i>
+                        Enter Your Birth Date
+                    </h2>
+                    <p class="age-input-subtitle">
+                        Select your birth date to calculate your exact age and get detailed insights
+                    </p>
+                    
+                    <div class="age-input-grid">
+                        <div class="age-input-group">
+                            <label for="birth-year" class="age-input-label">Year</label>
+                            <input type="number" id="birth-year" class="age-input" placeholder="1990" min="1900" max="2030" aria-required="true">
+                        </div>
+                        <div class="age-input-group">
+                            <label for="birth-month" class="age-input-label">Month</label>
+                            <select id="birth-month" class="age-input" aria-required="true">
+                                <option value="">Month</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+                        <div class="age-input-group">
+                            <label for="birth-day" class="age-input-label">Day</label>
+                            <input type="number" id="birth-day" class="age-input" placeholder="15" min="1" max="31" aria-required="true">
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Date Options -->
+                    <div class="quick-dates">
+                        <button class="quick-date-btn" onclick="AgeCalculator.setToday()" aria-label="Set date to today">Today</button>
+                        <button class="quick-date-btn" onclick="AgeCalculator.setDate(2000, 1, 1)" aria-label="Set date to Y2K (2000)">Y2K (2000)</button>
+                        <button class="quick-date-btn" onclick="AgeCalculator.setDate(1990, 1, 1)" aria-label="Set date to 90s Kid">90s Kid</button>
+                        <button class="quick-date-btn" onclick="AgeCalculator.setDate(1980, 1, 1)" aria-label="Set date to 80s Kid">80s Kid</button>
+                        <button class="quick-date-btn" onclick="AgeCalculator.setDate(2010, 1, 1)" aria-label="Set date to Gen Z (2010)">Gen Z (2010)</button>
+                    </div>
+                    
+                    <div class="age-input-actions">
+                        <button id="calculate-age" class="btn btn-primary" aria-label="Calculate my age">
+                            <i class="fas fa-calculator"></i>
+                            Calculate My Age
+                        </button>
+                        <button id="clear-date" class="btn btn-secondary" aria-label="Clear date selection">
+                            <i class="fas fa-eraser"></i>
+                            Clear
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Age Results -->
+                <div id="age-results" class="age-results">
+                    <!-- Age Summary -->
+                    <div class="age-summary">
+                        <div class="age-main" id="age-main">25 Years Old</div>
+                        <div class="age-subtitle" id="age-subtitle">Born on January 15, 1998</div>
+                        <div class="age-description" id="age-description">
+                            You have been alive for an amazing journey of life!
+                        </div>
+                    </div>
+                    
+                    <!-- Detailed Age Breakdown -->
+                    <h3 class="age-section-title"><i class="fas fa-chart-bar"></i> Detailed Age Breakdown</h3>
+                    <div class="age-detailed">
+                        <div class="age-stat">
+                            <div class="stat-value" id="total-years">0</div>
+                            <div class="stat-label">Years</div>
+                            <div class="stat-description">Complete years lived</div>
+                        </div>
+                        
+                        <div class="age-stat">
+                            <div class="stat-value" id="total-months">0</div>
+                            <div class="stat-label">Months</div>
+                            <div class="stat-description">Total months lived</div>
+                        </div>
+                        
+                        <div class="age-stat">
+                            <div class="stat-value" id="total-weeks">0</div>
+                            <div class="stat-label">Weeks</div>
+                            <div class="stat-description">Total weeks lived</div>
+                        </div>
+                        
+                        <div class="age-stat">
+                            <div class="stat-value" id="total-days">0</div>
+                            <div class="stat-label">Days</div>
+                            <div class="stat-description">Total days lived</div>
+                        </div>
+                        
+                        <div class="age-stat">
+                            <div class="stat-value" id="total-hours">0</div>
+                            <div class="stat-label">Hours</div>
+                            <div class="stat-description">Total hours lived</div>
+                        </div>
+                        
+                        <div class="age-stat">
+                            <div class="stat-value" id="total-minutes">0</div>
+                            <div class="stat-label">Minutes</div>
+                            <div class="stat-description">Total minutes lived</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Birthday Countdown -->
+                <div id="birthday-countdown" class="birthday-countdown">
+                    <div class="countdown-title" id="countdown-title">
+                        <i class="fas fa-gift"></i>
+                        Time Until Your Next Birthday
+                    </div>
+                    <div class="countdown-timer">
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="days-left">0</div>
+                            <div class="countdown-label">Days</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="hours-left">0</div>
+                            <div class="countdown-label">Hours</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="minutes-left">0</div>
+                            <div class="countdown-label">Minutes</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="seconds-left">0</div>
+                            <div class="countdown-label">Seconds</div>
+                        </div>
+                    </div>
+                    <div id="birthday-message" class="birthday-message">
+                        Your next birthday will be amazing!
+                    </div>
+                </div>
+                
+                <!-- Zodiac Section -->
+                <div id="zodiac-section" class="zodiac-section">
+                    <h3 class="zodiac-title"><i class="fas fa-star"></i> Your Zodiac Sign</h3>
+                    <div class="zodiac-icon" id="zodiac-icon">♈</div>
+                    <div class="zodiac-name" id="zodiac-name">Aries</div>
+                    <div class="zodiac-dates" id="zodiac-dates">March 21 - April 19</div>
+                    <div class="zodiac-traits" id="zodiac-traits">
+                        <strong>Traits:</strong> Energetic, bold, and confident
+                    </div>
+                </div>
+                
+                <!-- Life Milestones -->
+                <div id="life-milestones" class="life-milestones">
+                    <h3 class="milestones-title"><i class="fas fa-trophy"></i> Life Milestones</h3>
+                    <p>Track your life's important milestones and achievements:</p>
+                    <div class="milestone-grid" id="milestones-container">
+                        <!-- Milestones will be populated here -->
+                    </div>
+                </div>
+                
+                <!-- Age Facts -->
+                <div id="age-facts" class="age-facts">
+                    <h3 class="facts-title"><i class="fas fa-lightbulb"></i> Interesting Age Facts</h3>
+                    <div class="facts-grid" id="facts-container">
+                        <!-- Facts will be populated here -->
+                    </div>
+                </div>
+                
+                <!-- About This Tool -->
+                <section class="about-tool">
+                    <h2>About the Age Calculator</h2>
+                    <p>Calculate your exact age with precision and discover interesting insights about your life journey.</p>
+                    
+                    <h3>Features</h3>
+                    <ul>
+                        <li><strong>Exact Age Calculation:</strong> Get your age in years, months, days, hours, and minutes</li>
+                        <li><strong>Birthday Countdown:</strong> Real-time countdown to your next birthday</li>
+                        <li><strong>Zodiac Sign:</strong> Discover your astrological sign and traits</li>
+                        <li><strong>Life Milestones:</strong> Track important life achievements</li>
+                        <li><strong>Age Statistics:</strong> Interesting facts about your age</li>
+                        <li><strong>Multiple Formats:</strong> View your age in different time units</li>
+                    </ul>
+                    
+                    <h3>How Age is Calculated</h3>
+                    <p>Our age calculator uses precise date arithmetic to determine your exact age:</p>
+                    <ul>
+                        <li>Years: Complete years since birth</li>
+                        <li>Months: Total months lived including partial months</li>
+                        <li>Days: Total days from birth date to current date</li>
+                        <li>Hours: Days multiplied by 24 hours</li>
+                        <li>Minutes: Hours multiplied by 60 minutes</li>
+                    </ul>
+                    
+                    <h3>Zodiac Signs</h3>
+                    <ul>
+                        <li><strong>Aries:</strong> March 21 - April 19</li>
+                        <li><strong>Taurus:</strong> April 20 - May 20</li>
+                        <li><strong>Gemini:</strong> May 21 - June 20</li>
+                        <li><strong>Cancer:</strong> June 21 - July 22</li>
+                        <li><strong>Leo:</strong> July 23 - August 22</li>
+                        <li><strong>Virgo:</strong> August 23 - September 22</li>
+                        <li><strong>Libra:</strong> September 23 - October 22</li>
+                        <li><strong>Scorpio:</strong> October 23 - November 21</li>
+                        <li><strong>Sagittarius:</strong> November 22 - December 21</li>
+                        <li><strong>Capricorn:</strong> December 22 - January 19</li>
+                        <li><strong>Aquarius:</strong> January 20 - February 18</li>
+                        <li><strong>Pisces:</strong> February 19 - March 20</li>
+                    </ul>
+                    
+                    <h3>Privacy & Security</h3>
+                    <ul>
+                        <li>All calculations are performed locally in your browser</li>
+                        <li>No personal data is stored or transmitted</li>
+                        <li>Your birth date information remains private</li>
+                        <li>No registration or personal information required</li>
+                    </ul>
+                </section>
+            </div>
+            
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h4 class="sidebar-title">Related Calculators</h4>
+                    <ul class="related-tools">
+                        <li><a href="/tools/bmi-calculator/">BMI Calculator</a></li>
+                        <li><a href="/tools/percentage-calculator/">Percentage Calculator</a></li>
+                        <li><a href="/tools/date-calculator/">Date Calculator</a></li>
+                        <li><a href="/tools/retirement-calculator/">Retirement Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h4 class="sidebar-title">Popular Tools</h4>
+                    <ul class="related-tools">
+                        <li><a href="/tools/word-counter/">Word Counter</a></li>
+                        <li><a href="/tools/password-generator/">Password Generator</a></li>
+                        <li><a href="/tools/qr-code-generator/">QR Code Generator</a></li>
+                        <li><a href="/tools/json-formatter/">JSON Formatter</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter Signup -->
+                <div class="newsletter-form">
+                    <h4>Birthday Reminders</h4>
+                    <p>Get fun age facts and birthday tips</p>
+                    <form data-track="newsletter">
+                        <input type="email" class="newsletter-input" placeholder="Your email" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+                
+                <!-- Ad Space -->
+                <div class="ad-sidebar">
+                    <p class="advertisement-text">Advertisement</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Free Tools Hub</h4>
+                    <p>Professional calculators and life tools for personal insights.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Life Calculators</h4>
+                    <ul class="footer-links">
+                        <li><a href="/tools/age-calculator/">Age Calculator</a></li>
+                        <li><a href="/tools/bmi-calculator/">BMI Calculator</a></li>
+                        <li><a href="/tools/retirement-calculator/">Retirement Calculator</a></li>
+                        <li><a href="/tools/pregnancy-calculator/">Pregnancy Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Other Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="/tools/text/">Text Tools</a></li>
+                        <li><a href="/tools/developer/">Developer Tools</a></li>
+                        <li><a href="/tools/generator/">Generators</a></li>
+                        <li><a href="/tools/converter/">Converters</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy/">Privacy</a></li>
+                        <li><a href="/terms/">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Free Tools Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../js/main.js" defer onerror="this.onerror=null;this.src='/vendor/main.js'"></script>
+    <script src="script.js" defer onerror="this.onerror=null;this.src='/tools/age-calculator/script.js'"></script>
+
+<style>
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  padding: 8px 16px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Age Calculator Specific Styles */
+.age-input-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    color: white;
+    margin: 2rem 0;
+}
+    
+.age-input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+    
+.age-input-group {
+    text-align: center;
+}
+    
+.age-input-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+    
+.age-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.125rem;
+    text-align: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+    
+.age-input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.15);
+}
+    
+.age-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+    
+.age-results {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    display: none;
+}
+    
+.age-results.show {
+    display: block;
+}
+    
+.age-summary {
+    text-align: center;
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+    
+.age-main {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+    
+.age-subtitle {
+    font-size: 1.125rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+}
+    
+.age-detailed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+    
+.age-stat {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+    
+.age-stat:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+    
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+    
+.stat-label {
+    font-size: 0.875rem;
+    color: #64748b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+    
+.stat-description {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: 0.25rem;
+}
+    
+.birthday-countdown {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+    color: white;
+}
+    
+.countdown-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+    
+.countdown-timer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+    
+.countdown-item {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 1rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+.countdown-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+    
+.countdown-label {
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+    
+.zodiac-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    color: white;
+    text-align: center;
+}
+    
+.zodiac-icon {
+    font-size: 4rem;
+    margin: 1rem 0;
+    opacity: 0.9;
+}
+    
+.zodiac-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+    
+.zodiac-dates {
+    font-size: 0.875rem;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+}
+    
+.zodiac-traits {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+    
+.life-milestones {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+    
+.milestone-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+    
+.milestone-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+    
+.milestone-item.achieved {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+}
+    
+.milestone-item.upcoming {
+    background: #fef3c7;
+    border-color: #fcd34d;
+}
+    
+.milestone-age {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+    
+.milestone-name {
+    font-size: 0.875rem;
+    color: #374151;
+}
+    
+.age-facts {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+    
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+    
+.fact-item {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid #e0f2fe;
+}
+    
+.fact-icon {
+    color: #0284c7;
+    margin-right: 0.5rem;
+}
+    
+.quick-dates {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+    
+.quick-date-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+}
+    
+.quick-date-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+    
+@media (max-width: 768px) {
+    .age-input-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .age-main {
+        font-size: 2rem;
+    }
+    
+    .countdown-timer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+</style>
+<div id="minimax-floating-ball">
+  <div class="minimax-ball-content">
+    <div class="minimax-logo-wave"></div>
+    <span class="minimax-ball-text">Created by MiniMax Agent</span>
+  </div>
+  <div class="minimax-close-icon">×</div>
+</div>
+<script>
+// Initialize floating ball functionality
+function initFloatingBall() {
+  const ball = document.getElementById('minimax-floating-ball');
+  if (!ball) return;
+
+  // Initial animation
+  ball.style.opacity = '0';
+  ball.style.transform = 'translateY(20px)';
+
+  setTimeout(() => {
+    ball.style.opacity = '1';
+    ball.style.transform = 'translateY(0)';
+  }, 500);
+
+  // Handle logo click
+  const ballContent = ball.querySelector('.minimax-ball-content');
+  ballContent.addEventListener('click', function (e) {
+    e.stopPropagation();
+    window.open('https://agent.minimax.io/agent', '_blank');
+    ball.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      ball.style.transform = 'scale(1)';
+    }, 100);
+  });
+
+  // Handle close button click
+  const closeIcon = ball.querySelector('.minimax-close-icon');
+  closeIcon.addEventListener('click', function (e) {
+    e.stopPropagation();
+    ball.style.opacity = '0';
+    ball.style.transform = 'translateY(20px)';
+
+    setTimeout(() => {
+      ball.style.display = 'none';
+    }, 300);
+  });
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initFloatingBall); 
+</script>
+
+
+            <script>
+            // Common Tool Functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                // Add ARIA labels to buttons and inputs
+                const buttons = document.querySelectorAll('button');
+                buttons.forEach(button => {
+                    if (!button.getAttribute('aria-label') && button.textContent.trim()) {
+                        button.setAttribute('aria-label', button.textContent.trim());
+                    }
+                });
+                
+                // Add alt text to images missing it
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    if (!img.getAttribute('alt')) {
+                        img.setAttribute('alt', '');
+                    }
+                });
+                
+                // Disable buttons until valid input
+                const inputFields = document.querySelectorAll('input[type="text"], textarea');
+                const actionButtons = document.querySelectorAll('.btn-primary, button[onclick]');
+                
+                function checkInputs() {
+                    const hasInput = Array.from(inputFields).some(field => field.value.trim().length > 0);
+                    actionButtons.forEach(button => {
+                        if (button.textContent.includes('Copy') || 
+                            button.textContent.includes('Download') || 
+                            button.textContent.includes('Generate')) {
+                            button.disabled = !hasInput;
+                        }
+                    });
+                }
+                
+                inputFields.forEach(field => {
+                    field.addEventListener('input', checkInputs);
+                });
+                
+                // Initial check
+                checkInputs();
+                
+                // Add success/error notifications
+                window.showNotification = function(message, type = 'success') {
+                    const notification = document.createElement('div');
+                    notification.className = `notification notification-${type}`;
+                    notification.innerHTML = `
+                        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}" aria-hidden="true"></i>
+                        <span>${message}</span>
+                    `;
+                    
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: ${type === 'success' ? '#10b981' : '#ef4444'};
+                        color: white;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                        z-index: 1000;
+                        opacity: 0;
+                        transform: translateX(100%);
+                        transition: all 0.3s ease;
+                        max-width: 400px;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    `;
+                    
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '1';
+                        notification.style.transform = 'translateX(0)';
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        notification.style.transform = 'translateX(100%)';
+                        setTimeout(() => {
+                            if (notification.parentNode) {
+                                document.body.removeChild(notification);
+                            }
+                        }, 300);
+                    }, 3000);
+                };
+                
+                // Enhanced copy functionality
+                window.copyToClipboard = async function(text) {
+                    try {
+                        if (navigator.clipboard && window.isSecureContext) {
+                            await navigator.clipboard.writeText(text);
+                            showNotification('Copied to clipboard!', 'success');
+                            return true;
+                        } else {
+                            // Fallback for older browsers
+                            const textArea = document.createElement('textarea');
+                            textArea.value = text;
+                            textArea.style.position = 'fixed';
+                            textArea.style.left = '-999999px';
+                            textArea.style.top = '-999999px';
+                            document.body.appendChild(textArea);
+                            textArea.focus();
+                            textArea.select();
+                            
+                            try {
+                                document.execCommand('copy');
+                                textArea.remove();
+                                showNotification('Copied to clipboard!', 'success');
+                                return true;
+                            } catch (err) {
+                                textArea.remove();
+                                showNotification('Failed to copy to clipboard', 'error');
+                                return false;
+                            }
+                        }
+                    } catch (err) {
+                        showNotification('Failed to copy to clipboard', 'error');
+                        return false;
+                    }
+                };
+            });
+            </script>
+            
+</body>
+</html>

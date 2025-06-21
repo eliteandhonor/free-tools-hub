@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <title>Free BMI Calculator | Free Tools Hub</title>
+    <meta name="description" content="Free BMI calculator to calculate your Body Mass Index and health status. Enter height and weight to get BMI category, health range, and fitness recommendations.">
+    <meta name="keywords" content="bmi calculator, body mass index, bmi chart, health calculator, weight calculator, obesity calculator, fitness calculator">
+    <meta name="author" content="Free Tools Hub">
+    <link rel="canonical" href="/tools/bmi-calculator/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="/tools/bmi-calculator/">
+    <meta property="og:title" content="Free BMI Calculator - Calculate Body Mass Index Online">
+    <meta property="og:description" content="Calculate your BMI and get personalized health insights. Free, accurate, and includes BMI chart with health recommendations.">
+    <meta property="og:image" content="/images/bmi-calculator-tool.jpg">
+    
+    <!-- X.com (Twitter) 2025 -->
+    <meta name="x:card" content="summary_large_image">
+    <meta name="x:site" content="@FreeToolsHub">
+    <meta name="x:title" content="Free BMI Calculator">
+    <meta name="x:description" content="Calculate your BMI and get health insights with our free Body Mass Index calculator.">
+    <meta name="x:image" content="/images/bmi-calculator-tool.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" onerror="this.onerror=null;this.href='/vendor/fontawesome/css/all.min.css'">
+    <link href="../../css/main.css" rel="stylesheet">
+    <link href="../../css/bmi-calculator.css" rel="stylesheet">
+    
+    <!-- Vendor Library Loader with CDN Fallbacks -->
+    <script src="../../js/vendor-helpers.js"></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="navbar-brand">
+                    <i class="fas fa-tools"></i>
+                    Free Tools Hub
+                </a>
+                
+                <ul class="navbar-nav">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/#categories" class="nav-link">Categories</a></li>
+                    <li><a href="/tools/" class="nav-link">All Tools</a></li>
+                    <li><a href="/about/" class="nav-link">About</a></li>
+                    <li><a href="/contact/" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <button class="navbar-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Tool Header -->
+    <section class="tool-header">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/tools/">Tools</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/tools/calculator/">Calculators</a>
+                <span class="breadcrumb-separator">/</span>
+                <span>BMI Calculator</span>
+            </nav>
+            
+            <h1 class="tool-title">
+                <i class="fas fa-weight"></i>
+                BMI Calculator
+            </h1>
+            <p class="tool-description">
+                Calculate your Body Mass Index (BMI) and discover your health category. Get personalized recommendations and health insights based on your BMI score.
+            </p>
+            
+            <!-- Social Sharing -->
+            <div class="social-share">
+                <span class="social-share-label">Share this tool:</span>
+                <a href="#" class="social-btn social-btn-facebook" data-platform="facebook" title="Share on Facebook" aria-label="Share on Facebook">
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="social-btn social-btn-x" data-platform="x" title="Share on X.com" aria-label="Share on X.com">
+                    <i class="fab fa-x-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="social-btn social-btn-linkedin" data-platform="linkedin" title="Share on LinkedIn" aria-label="Share on LinkedIn">
+                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="social-btn social-btn-whatsapp" data-platform="whatsapp" title="Share on WhatsApp" aria-label="Share on WhatsApp">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <div class="container tool-container">
+            
+            <!-- Tool Interface -->
+            <div class="tool-interface">
+                <!-- BMI Input Section -->
+                <div class="bmi-input-section">
+                    <h2>Calculate Your BMI</h2>
+                    <p>Enter your height and weight to calculate your Body Mass Index.</p>
+                    
+                    <!-- Unit Toggle -->
+                    <div class="unit-toggle">
+                        <button class="unit-option active" data-unit="metric">
+                            Metric (kg, cm)
+                        </button>
+                        <button class="unit-option" data-unit="imperial">
+                            Imperial (lbs, ft/in)
+                        </button>
+                    </div>
+                    
+                    <!-- BMI Inputs: ensure all labels are unique and associated -->
+                    <div class="bmi-inputs">
+                        <!-- Height Input -->
+                        <div class="input-group">
+                            <label for="height-metric-input" id="height-label">Height</label>
+                            <div class="input-with-unit" id="height-metric">
+                                <input type="number" id="height-metric-input" placeholder="170" min="50" max="250" step="0.1" aria-labelledby="height-label">
+                                <span class="unit-label">cm</span>
+                            </div>
+                            <div class="height-inputs" id="height-imperial">
+                                <div class="input-with-unit flex-grow">
+                                    <input type="number" id="height-feet" placeholder="5" min="3" max="8" step="1" aria-label="Height in feet">
+                                    <span class="unit-label">ft</span>
+                                </div>
+                                <div class="input-with-unit flex-grow">
+                                    <input type="number" id="height-inches" placeholder="8" min="0" max="11" step="1" aria-label="Height in inches">
+                                    <span class="unit-label">in</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Weight Input -->
+                        <div class="input-group">
+                            <label for="weight" id="weight-label">Weight</label>
+                            <div class="input-with-unit">
+                                <input type="number" id="weight" placeholder="70" min="20" max="300" step="0.1" aria-labelledby="weight-label">
+                                <span class="unit-label" id="weight-unit">kg</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Calculate Button -->
+                    <div class="btn-group">
+                        <button id="calculate-bmi" class="btn btn-primary" aria-label="Calculate BMI">
+                            <i class="fas fa-calculator"></i>
+                            Calculate BMI
+                        </button>
+                        <button id="clear-bmi" class="btn btn-secondary" aria-label="Clear">
+                            <i class="fas fa-eraser"></i>
+                            Clear
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- BMI Result: ensure aria-live and role are present -->
+                <div id="bmi-result" class="bmi-result" role="alert" aria-live="polite" tabindex="-1">
+                    <h3>Your BMI Result</h3>
+                    <div class="bmi-value" id="bmi-value">0.0</div>
+                    <div class="bmi-category" id="bmi-category">Category</div>
+                    
+                    <!-- BMI Gauge -->
+                    <div class="bmi-visual">
+                        <div class="bmi-gauge">
+                            <div class="bmi-needle" id="bmi-needle"></div>
+                        </div>
+                        <div class="gauge-labels">
+                            <span>Underweight</span>
+                            <span>Normal</span>
+                            <span>Overweight</span>
+                            <span>Obese</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Health Recommendations -->
+                    <div id="health-recommendations" class="health-recommendations">
+                        <div class="recommendation-title">
+                            <i class="fas fa-lightbulb"></i>
+                            Health Recommendations
+                        </div>
+                        <ul class="health-tips" id="health-tips">
+                            <!-- Dynamic content -->
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- BMI Chart -->
+                <div class="bmi-chart">
+                    <h3>BMI Categories</h3>
+                    <p>Understanding your BMI category helps you make informed health decisions.</p>
+                    
+                    <div class="bmi-ranges">
+                        <div class="bmi-range" data-category="underweight">
+                            <div class="range-color underweight"></div>
+                            <div class="range-info">
+                                <div class="range-title">Underweight</div>
+                                <div class="range-values">BMI below 18.5</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bmi-range" data-category="normal">
+                            <div class="range-color normal"></div>
+                            <div class="range-info">
+                                <div class="range-title">Normal Weight</div>
+                                <div class="range-values">BMI 18.5 - 24.9</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bmi-range" data-category="overweight">
+                            <div class="range-color overweight"></div>
+                            <div class="range-info">
+                                <div class="range-title">Overweight</div>
+                                <div class="range-values">BMI 25.0 - 29.9</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bmi-range" data-category="obese">
+                            <div class="range-color obese"></div>
+                            <div class="range-info">
+                                <div class="range-title">Obese</div>
+                                <div class="range-values">BMI 30.0 and above</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- About This Tool -->
+                <section class="bmi-about-section">
+                    <h2>About BMI Calculator</h2>
+                    <p>Body Mass Index (BMI) is a simple calculation using a person's height and weight to categorize them into health-related weight ranges.</p>
+                    
+                    <h3>How BMI is Calculated</h3>
+                    <ul>
+                        <li><strong>Metric:</strong> BMI = weight (kg) ÷ height (m)²</li>
+                        <li><strong>Imperial:</strong> BMI = (weight (lbs) ÷ height (inches)²) × 703</li>
+                    </ul>
+                    
+                    <h3>BMI Limitations</h3>
+                    <ul>
+                        <li>Does not distinguish between muscle and fat mass</li>
+                        <li>May not be accurate for athletes with high muscle mass</li>
+                        <li>Age and gender are not considered in the calculation</li>
+                        <li>Different ethnic groups may have different health risks at the same BMI</li>
+                        <li>Not suitable for pregnant women, children, or elderly</li>
+                    </ul>
+                    
+                    <h3>When to Consult a Healthcare Professional</h3>
+                    <ul>
+                        <li>If your BMI indicates you are underweight or obese</li>
+                        <li>Before starting any weight loss or gain program</li>
+                        <li>If you have concerns about your weight and health</li>
+                        <li>For personalized nutrition and exercise advice</li>
+                        <li>If you have underlying health conditions</li>
+                    </ul>
+                    
+                    <h3>Healthy Lifestyle Tips</h3>
+                    <ul>
+                        <li>Maintain a balanced diet rich in fruits and vegetables</li>
+                        <li>Engage in regular physical activity (150+ minutes per week)</li>
+                        <li>Stay hydrated and limit processed foods</li>
+                        <li>Get adequate sleep (7-9 hours per night)</li>
+                        <li>Manage stress through healthy coping strategies</li>
+                        <li>Regular health check-ups and monitoring</li>
+                    </ul>
+                </section>
+            </div>
+            
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h4 class="sidebar-title">Related Health Tools</h4>
+                    <ul class="related-tools">
+                        <li><a href="/tools/age-calculator/">Age Calculator</a></li>
+                        <li><a href="/tools/percentage-calculator/">Percentage Calculator</a></li>
+                        <li><a href="/tools/calorie-calculator/">Calorie Calculator</a></li>
+                        <li><a href="/tools/bmi-for-children/">Children's BMI</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h4 class="sidebar-title">Popular Calculators</h4>
+                    <ul class="related-tools">
+                        <li><a href="/tools/percentage-calculator/">Percentage Calculator</a></li>
+                        <li><a href="/tools/age-calculator/">Age Calculator</a></li>
+                        <li><a href="/tools/tip-calculator/">Tip Calculator</a></li>
+                        <li><a href="/tools/loan-calculator/">Loan Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter Signup -->
+                <div class="newsletter-form">
+                    <h4>Health Tips</h4>
+                    <p>Get wellness tips and health insights</p>
+                    <form data-track="newsletter">
+                        <input type="email" class="newsletter-input" placeholder="Your email" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+                
+                <!-- Ad Space -->
+                <div class="ad-sidebar">
+                    <p class="ad-text">Advertisement</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Free Tools Hub</h4>
+                    <p>Professional health and fitness calculators for wellness monitoring.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Health Calculators</h4>
+                    <ul class="footer-links">
+                        <li><a href="/tools/bmi-calculator/">BMI Calculator</a></li>
+                        <li><a href="/tools/age-calculator/">Age Calculator</a></li>
+                        <li><a href="/tools/calorie-calculator/">Calorie Calculator</a></li>
+                        <li><a href="/tools/body-fat-calculator/">Body Fat Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Other Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="/tools/text/">Text Tools</a></li>
+                        <li><a href="/tools/developer/">Developer Tools</a></li>
+                        <li><a href="/tools/generator/">Generators</a></li>
+                        <li><a href="/tools/converter/">Converters</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy/">Privacy</a></li>
+                        <li><a href="/terms/">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Free Tools Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../js/main.js" defer onerror="this.onerror=null;this.src='/vendor/main.js'"></script>
+    <script src="script.js" defer onerror="this.onerror=null;this.src='/tools/bmi-calculator/script.js'"></script>
+</body>
+</html>

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <title>Developer Tools - Code Utilities | Free Tools Hub</title>
+    <meta name="description" content="Free online developer tools including JSON formatter, code beautifier, Base64 encoder, URL encoder, and more. Essential utilities for web developers and programmers.">
+    <meta name="keywords" content="developer tools, programming tools, code formatter, json validator, base64 encoder, url encoder, developer utilities">
+    <meta name="author" content="Free Tools Hub">
+    <link rel="canonical" href="/tools/developer/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/tools/developer/">
+    <meta property="og:title" content="Free Developer Tools - Online Programming Utilities">
+    <meta property="og:description" content="Essential developer tools including JSON formatter, code validators, encoders, and more. Free online utilities for web developers.">
+    <meta property="og:image" content="/images/developer-tools.jpg">
+    
+    <!-- X -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="/tools/developer/">
+    <meta property="twitter:title" content="Free Developer Tools - Programming Utilities">
+    <meta property="twitter:description" content="Essential developer tools including JSON formatter, code validators, encoders, and more.">
+    <meta property="twitter:image" content="/images/developer-tools.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" onerror="this.onerror=null;this.href='/vendor/fontawesome/css/all.min.css'">
+    <link href="../../css/main.css" rel="stylesheet">
+    <link href="../../css/developer.css" rel="stylesheet">
+    
+    <!-- Schema.org markup for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Developer Tools",
+        "description": "Free online developer tools for programming and web development",
+        "url": "/tools/developer/",
+        "hasPart": [
+            {
+                "@type": "WebApplication",
+                "name": "JSON Formatter",
+                "url": "/tools/json-formatter/"
+            },
+            {
+                "@type": "WebApplication", 
+                "name": "Base64 Encoder/Decoder",
+                "url": "/tools/base64-encoder-decoder/"
+            },
+            {
+                "@type": "WebApplication",
+                "name": "URL Encoder/Decoder", 
+                "url": "/tools/url-encoder-decoder/"
+            }
+        ]
+    }
+    </script>
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "/tools/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Tools",
+            "item": "/tools/tools/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Developer Tools - Free Online Development Utilities",
+            "item": "/tools/developer/"
+        }
+    ]
+}
+    </script>
+    <!-- Vendor Library Loader with CDN Fallbacks -->
+    <script src="../../js/vendor-loader.js"></script>
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+
+    <!-- Unified Header Navigation -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="Main navigation">
+                <a href="/" class="navbar-brand" aria-label="Free Tools Hub - Home">
+                    <i class="fas fa-tools" aria-hidden="true"></i>
+                    Free Tools Hub
+                </a>
+                
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggle" type="button" aria-expanded="false" aria-controls="navbar-nav" aria-label="Toggle navigation menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <ul class="navbar-nav" id="navbar-nav" role="menubar">
+                    <li role="none"><a href="/" class="nav-link" role="menuitem">Home</a></li>
+                    <li class="dropdown" role="none">
+                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-expanded="false" aria-haspopup="true">
+                            Categories <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-label="Categories">
+                            <li role="none"><a href="/tools/text/" class="dropdown-item" role="menuitem">Text Tools</a></li>
+                            <li role="none"><a href="/tools/seo/" class="dropdown-item" role="menuitem">SEO Tools</a></li>
+                            <li role="none"><a href="/tools/developer/" class="dropdown-item" role="menuitem">Developer Tools</a></li>
+                            <li role="none"><a href="/tools/calculator/" class="dropdown-item" role="menuitem">Calculators</a></li>
+                            <li role="none"><a href="/tools/converter/" class="dropdown-item" role="menuitem">Converters</a></li>
+                            <li role="none"><a href="/tools/generator/" class="dropdown-item" role="menuitem">Generators</a></li>
+                        </ul>
+                    </li>
+                    <li role="none"><a href="/tools/" class="nav-link" role="menuitem">All Tools</a></li>
+                    <li role="none"><a href="/about/" class="nav-link" role="menuitem">About</a></li>
+                    <li role="none"><a href="/contact/" class="nav-link" role="menuitem">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../" class="navbar-brand">
+                <i class="fas fa-tools"></i>
+                Free Tools Hub
+            </a>
+            <div class="navbar-menu">
+                <a href="../../" class="navbar-item">Home</a>
+                <div class="navbar-dropdown">
+                    <a href="#" class="navbar-item dropdown-trigger">Categories <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="../text/" class="dropdown-item">Text Tools</a>
+                        <a href="../seo/" class="dropdown-item">SEO Tools</a>
+                        <a href="../developer/" class="dropdown-item active">Developer Tools</a>
+                        <a href="../calculator/" class="dropdown-item">Calculators</a>
+                        <a href="../converter/" class="dropdown-item">Converters</a>
+                        <a href="../generator/" class="dropdown-item">Generators</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="../../">Home</a>
+            <span class="separator">/</span>
+            <span class="current">Developer Tools</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" role="main">
+        <div class="container">
+            <!-- Page Header -->
+            <header class="page-header">
+                <div class="header-content">
+                    <div class="header-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="header-text">
+                        <h1>Developer Tools</h1>
+                        <p class="header-description">
+                            Essential free online tools for web developers and programmers. Format code, validate data, encode/decode content, and streamline your development workflow.
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Tools Grid -->
+            <section class="tools-section">
+                <div class="tools-grid">
+                    <!-- JSON Formatter -->
+                    <div class="tool-card featured">
+                        <div class="tool-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="tool-content">
+                            <h3 class="tool-title">
+                                <a href="../json-formatter/">JSON Formatter & Validator</a>
+                            </h3>
+                            <p class="tool-description">
+                                Format, validate, and minify JSON data with syntax highlighting and error detection. Essential for API development and debugging.
+                            </p>
+                            <div class="tool-features">
+                                <span class="feature-tag">Format</span>
+                                <span class="feature-tag">Validate</span>
+                                <span class="feature-tag">Minify</span>
+                                <span class="feature-tag">Syntax Highlighting</span>
+                            </div>
+                            <div class="tool-stats">
+                                <span class="popularity">
+                                    <i class="fas fa-fire"></i>
+                                    Very Popular
+                                </span>
+                                <span class="searches">40K+ monthly searches</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Base64 Encoder/Decoder -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="tool-content">
+                            <h3 class="tool-title">
+                                <a href="../base64-encoder-decoder/">Base64 Encoder/Decoder</a>
+                            </h3>
+                            <p class="tool-description">
+                                Encode and decode Base64 data. Perfect for encoding images, files, or text for web transmission and API integration.
+                            </p>
+                            <div class="tool-features">
+                                <span class="feature-tag">Encode</span>
+                                <span class="feature-tag">Decode</span>
+                                <span class="feature-tag">File Support</span>
+                                <span class="feature-tag">URL Safe</span>
+                            </div>
+                            <div class="tool-stats">
+                                <span class="popularity">
+                                    <i class="fas fa-star"></i>
+                                    Popular
+                                </span>
+                                <span class="searches">25K+ monthly searches</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- URL Encoder/Decoder -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <div class="tool-content">
+                            <h3 class="tool-title">
+                                <a href="../url-encoder-decoder/">URL Encoder/Decoder</a>
+                            </h3>
+                            <p class="tool-description">
+                                Encode and decode URLs and query parameters. Essential for handling special characters in web URLs and API endpoints.
+                            </p>
+                            <div class="tool-features">
+                                <span class="feature-tag">URL Encode</span>
+                                <span class="feature-tag">URL Decode</span>
+                                <span class="feature-tag">Component Encoding</span>
+                                <span class="feature-tag">Batch Processing</span>
+                            </div>
+                            <div class="tool-stats">
+                                <span class="popularity">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    Growing
+                                </span>
+                                <span class="searches">15K+ monthly searches</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hash Generator -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-hashtag"></i>
+                        </div>
+                        <div class="tool-content">
+                            <h3 class="tool-title">
+                                <a href="../hash-generator/">Hash Generator (MD5, SHA)</a>
+                            </h3>
+                            <p class="tool-description">
+                                Generate MD5, SHA-1, SHA-256, and other hash values for text and files. Perfect for data integrity verification and security.
+                            </p>
+                            <div class="tool-features">
+                                <span class="feature-tag">MD5</span>
+                                <span class="feature-tag">SHA-1</span>
+                                <span class="feature-tag">SHA-256</span>
+                                <span class="feature-tag">File Hashing</span>
+                            </div>
+                            <div class="tool-stats">
+                                <span class="popularity">
+                                    <i class="fas fa-chart-line"></i>
+                                    Trending
+                                </span>
+                                <span class="searches">12K+ monthly searches</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Code Beautifier -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <div class="tool-content">
+                            <h3 class="tool-title">
+                                <a href="../code-beautifier/">HTML/CSS/JS Beautifier</a>
+                            </h3>
+                            <p class="tool-description">
+                                Format and beautify HTML, CSS, and JavaScript code with proper indentation, syntax highlighting, and structure optimization.
+                            </p>
+                            <div class="tool-features">
+                                <span class="feature-tag">HTML Format</span>
+                                <span class="feature-tag">CSS Format</span>
+                                <span class="feature-tag">JS Format</span>
+                                <span class="feature-tag">JSON Format</span>
+                            </div>
+                            <div class="tool-stats">
+                                <span class="popularity">
+                                    <i class="fas fa-star"></i>
+                                    Popular
+                                </span>
+                                <span class="searches">18K+ monthly searches</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HTML Minifier -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-compress-alt"></i>
+                        </div>
+                        <div class="tool-content">
+                            <h3 class="tool-title">
+                                <a href="../html-minifier/">HTML Minifier</a>
+                            </h3>
+                            <p class="tool-description">
+                                Minify and beautify HTML code by removing unnecessary whitespace, comments, and optimizing structure for better performance.
+                            </p>
+                            <div class="tool-features">
+                                <span class="feature-tag">Minify</span>
+                                <span class="feature-tag">Beautify</span>
+                                <span class="feature-tag">File Upload</span>
+                                <span class="feature-tag">Statistics</span>
+                            </div>
+                            <div class="tool-stats">
+                                <span class="popularity">
+                                    <i class="fas fa-tools"></i>
+                                    Essential
+                                </span>
+                                <span class="searches">8K+ monthly searches</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category Info -->
+            <section class="category-info">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>
+                            <i class="fas fa-rocket"></i>
+                            Why Use Our Developer Tools?
+                        </h3>
+                        <ul>
+                            <li>✅ <strong>Fast & Reliable:</strong> Process your code and data instantly</li>
+                            <li>✅ <strong>Privacy First:</strong> All processing happens in your browser</li>
+                            <li>✅ <strong>No Limits:</strong> Use our tools as much as you need, completely free</li>
+                            <li>✅ <strong>Mobile Friendly:</strong> Works perfectly on all devices</li>
+                            <li>✅ <strong>Always Updated:</strong> Latest standards and best practices</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>
+                            <i class="fas fa-users"></i>
+                            Perfect For
+                        </h3>
+                        <ul>
+                            <li>🔧 <strong>Web Developers:</strong> Frontend and backend development</li>
+                            <li>💻 <strong>Software Engineers:</strong> API development and testing</li>
+                            <li>🎨 <strong>UI/UX Designers:</strong> Working with data and code</li>
+                            <li>📱 <strong>Mobile Developers:</strong> App development and debugging</li>
+                            <li>🎓 <strong>Students:</strong> Learning programming and web development</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Categories -->
+            <section class="related-categories">
+                <h2>Explore Other Tool Categories</h2>
+                <div class="categories-grid">
+                    <a href="../text/" class="category-card">
+                        <i class="fas fa-font"></i>
+                        <h4>Text Tools</h4>
+                        <p>Word counters, case converters, and text analyzers</p>
+                    </a>
+                    <a href="../seo/" class="category-card">
+                        <i class="fas fa-search"></i>
+                        <h4>SEO Tools</h4>
+                        <p>Meta tag generators, SEO analyzers, and optimization tools</p>
+                    </a>
+                    <a href="../generator/" class="category-card">
+                        <i class="fas fa-magic"></i>
+                        <h4>Generators</h4>
+                        <p>Password, QR code, and random data generators</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Free Tools Hub</h3>
+                    <p>Professional online tools for developers, writers, and digital professionals. Always free, always reliable.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Popular Tools</h4>
+                    <ul>
+                        <li><a href="../word-counter/">Word Counter</a></li>
+                        <li><a href="../json-formatter/">JSON Formatter</a></li>
+                        <li><a href="../password-generator/">Password Generator</a></li>
+                        <li><a href="../qr-code-generator/">QR Code Generator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="../text/">Text Tools</a></li>
+                        <li><a href="../developer/">Developer Tools</a></li>
+                        <li><a href="../calculator/">Calculators</a></li>
+                        <li><a href="../generator/">Generators</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="../../about/">About</a></li>
+                        <li><a href="../../contact/">Contact</a></li>
+                        <li><a href="../../privacy/">Privacy Policy</a></li>
+                        <li><a href="../../terms/">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Free Tools Hub. All rights reserved. | Made with ❤️ for developers and creators worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+        
+        // Track category page view
+        gtag('event', 'page_view', {
+            'page_title': 'Developer Tools Category',
+            'page_category': 'Developer Tools'
+        });
+    </script>
+
+<div id="minimax-floating-ball">
+  <div class="minimax-ball-content">
+    <div class="minimax-logo-wave"></div>
+    <span class="minimax-ball-text">Created by MiniMax Agent</span>
+  </div>
+  <div class="minimax-close-icon">×</div>
+</div>
+<script>
+// Initialize floating ball functionality
+function initFloatingBall() {
+  const ball = document.getElementById('minimax-floating-ball');
+  if (!ball) return;
+
+  // Initial animation
+  ball.style.opacity = '0';
+  ball.style.transform = 'translateY(20px)';
+
+  setTimeout(() => {
+    ball.style.opacity = '1';
+    ball.style.transform = 'translateY(0)';
+  }, 500);
+
+  // Handle logo click
+  const ballContent = ball.querySelector('.minimax-ball-content');
+  ballContent.addEventListener('click', function (e) {
+    e.stopPropagation();
+    window.open('https://agent.minimax.io/agent', '_blank');
+    ball.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      ball.style.transform = 'scale(1)';
+    }, 100);
+  });
+
+  // Handle close button click
+  const closeIcon = ball.querySelector('.minimax-close-icon');
+  closeIcon.addEventListener('click', function (e) {
+    e.stopPropagation();
+    ball.style.opacity = '0';
+    ball.style.transform = 'translateY(20px)';
+
+    setTimeout(() => {
+      ball.style.display = 'none';
+    }, 300);
+  });
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initFloatingBall); 
+</script>
+
+
+            <script>
+            // Common Tool Functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                // Add ARIA labels to buttons and inputs
+                const buttons = document.querySelectorAll('button');
+                buttons.forEach(button => {
+                    if (!button.getAttribute('aria-label') && button.textContent.trim()) {
+                        button.setAttribute('aria-label', button.textContent.trim());
+                    }
+                });
+                
+                // Add alt text to images missing it
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    if (!img.getAttribute('alt')) {
+                        img.setAttribute('alt', '');
+                    }
+                });
+                
+                // Disable buttons until valid input
+                const inputFields = document.querySelectorAll('input[type="text"], textarea');
+                const actionButtons = document.querySelectorAll('.btn-primary, button[onclick]');
+                
+                function checkInputs() {
+                    const hasInput = Array.from(inputFields).some(field => field.value.trim().length > 0);
+                    actionButtons.forEach(button => {
+                        if (button.textContent.includes('Copy') || 
+                            button.textContent.includes('Download') || 
+                            button.textContent.includes('Generate')) {
+                            button.disabled = !hasInput;
+                        }
+                    });
+                }
+                
+                inputFields.forEach(field => {
+                    field.addEventListener('input', checkInputs);
+                });
+                
+                // Initial check
+                checkInputs();
+                
+                // Add success/error notifications
+                window.showNotification = function(message, type = 'success') {
+                    const notification = document.createElement('div');
+                    notification.className = `notification notification-${type}`;
+                    notification.innerHTML = `
+                        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}" aria-hidden="true"></i>
+                        <span>${message}</span>
+                    `;
+                    
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: ${type === 'success' ? '#10b981' : '#ef4444'};
+                        color: white;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                        z-index: 1000;
+                        opacity: 0;
+                        transform: translateX(100%);
+                        transition: all 0.3s ease;
+                        max-width: 400px;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    `;
+                    
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '1';
+                        notification.style.transform = 'translateX(0)';
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        notification.style.transform = 'translateX(100%)';
+                        setTimeout(() => {
+                            if (notification.parentNode) {
+                                document.body.removeChild(notification);
+                            }
+                        }, 300);
+                    }, 3000);
+                };
+                
+                // Enhanced copy functionality
+                window.copyToClipboard = async function(text) {
+                    try {
+                        if (navigator.clipboard && window.isSecureContext) {
+                            await navigator.clipboard.writeText(text);
+                            showNotification('Copied to clipboard!', 'success');
+                            return true;
+                        } else {
+                            // Fallback for older browsers
+                            const textArea = document.createElement('textarea');
+                            textArea.value = text;
+                            textArea.style.position = 'fixed';
+                            textArea.style.left = '-999999px';
+                            textArea.style.top = '-999999px';
+                            document.body.appendChild(textArea);
+                            textArea.focus();
+                            textArea.select();
+                            
+                            try {
+                                document.execCommand('copy');
+                                textArea.remove();
+                                showNotification('Copied to clipboard!', 'success');
+                                return true;
+                            } catch (err) {
+                                textArea.remove();
+                                showNotification('Failed to copy to clipboard', 'error');
+                                return false;
+                            }
+                        }
+                    } catch (err) {
+                        showNotification('Failed to copy to clipboard', 'error');
+                        return false;
+                    }
+                };
+            });
+            </script>
+            
+</body>
+</html>

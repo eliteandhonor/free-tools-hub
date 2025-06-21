@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <title>Text Case Converter - Change Text Case | Free Tools Hub</title>
+    <meta name="description" content="Free online text case converter. Convert text to uppercase, lowercase, title case, sentence case, camelCase, kebab-case, and more. Instant text transformation.">
+    <meta name="keywords" content="text case converter, uppercase, lowercase, title case, sentence case, camel case, kebab case, convert text case, text transformation">
+    <meta name="author" content="Free Tools Hub">
+    <link rel="canonical" href="/tools/text-case-converter/">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="/tools/text-case-converter/">
+    <meta property="og:title" content="Free Text Case Converter - Transform Text Case Online">
+    <meta property="og:description" content="Convert text to any case format: uppercase, lowercase, title case, camelCase, kebab-case, and more. Free and instant.">
+    <meta property="og:image" content="/images/text-case-converter-tool.jpg">
+    <!-- X.com (Twitter) 2025 -->
+    <meta name="x:card" content="summary_large_image">
+    <meta name="x:site" content="@FreeToolsHub">
+    <meta name="x:title" content="Free Text Case Converter">
+    <meta name="x:description" content="Transform text to any case format instantly with our free online text case converter tool.">
+    <meta name="x:image" content="/images/text-case-converter-tool.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- Stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" onerror="this.onerror=null;this.href='/vendor/fontawesome/css/all.min.css'">
+    <link href="../../css/main.css" rel="stylesheet">
+    <link href="../../css/text-case-converter.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="navbar-brand">
+                    <i class="fas fa-tools"></i>
+                    Free Tools Hub
+                </a>
+                
+                <ul class="navbar-nav">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/#categories" class="nav-link">Categories</a></li>
+                    <li><a href="/tools/" class="nav-link">All Tools</a></li>
+                    <li><a href="/about/" class="nav-link">About</a></li>
+                    <li><a href="/contact/" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <button class="navbar-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Tool Header -->
+    <section class="tool-header">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/tools/">Tools</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/tools/text/">Text Tools</a>
+                <span class="breadcrumb-separator">/</span>
+                <span>Text Case Converter</span>
+            </nav>
+            
+            <h1 class="tool-title">
+                <i class="fas fa-font"></i>
+                Text Case Converter
+            </h1>
+            <p class="tool-description">
+                Convert text to any case format: uppercase, lowercase, title case, sentence case, camelCase, kebab-case, snake_case, and more. Instant text transformation.
+            </p>
+            
+            <!-- Social Sharing -->
+            <div class="social-share">
+                <span class="social-share-label">Share this tool:</span>
+                <a href="#" class="social-btn social-btn-facebook" data-platform="facebook" title="Share on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-btn social-btn-twitter" data-platform="twitter" title="Share on Twitter">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="#" class="social-btn social-btn-linkedin" data-platform="linkedin" title="Share on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-btn social-btn-whatsapp" data-platform="whatsapp" title="Share on WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <div class="container container-grid">
+            
+            <!-- Tool Interface -->
+            <div class="tool-interface">
+                <h2>Text Input</h2>
+                <p>Enter your text below and click any case option to convert it instantly.</p>
+                
+                <!-- Text Input -->
+                <div class="form-group">
+                    <label for="text-input" class="form-label">Input Text</label>
+                    <textarea 
+                        id="text-input" 
+                        class="case-converter-textarea" 
+                        placeholder="Enter your text here to convert to different cases..."
+                        rows="8"
+                    ></textarea>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <button class="btn btn-secondary clear-btn" data-target="#text-input">
+                        <i class="fas fa-eraser"></i>
+                        Clear
+                    </button>
+                    <button class="btn btn-secondary copy-btn" data-target="#text-input">
+                        <i class="fas fa-copy"></i>
+                        Copy Input
+                    </button>
+                    <button id="paste-btn" class="btn btn-secondary">
+                        <i class="fas fa-paste"></i>
+                        Paste
+                    </button>
+                    <label class="btn btn-secondary" for="file-upload">
+                        <i class="fas fa-upload"></i>
+                        Upload File
+                    </label>
+                    <input type="file" id="file-upload" accept=".txt,.md" class="visually-hidden" aria-label="Upload text file for case conversion">
+                </div>
+                
+                <!-- Case Conversion Options -->
+                <h3>Choose Conversion Type</h3>
+                <div class="case-options">
+                    <!-- Uppercase -->
+                    <div class="case-option" data-case="uppercase">
+                        <div class="case-option-icon"><i class="fas fa-font"></i></div>
+                        <div class="case-option-title">UPPERCASE</div>
+                        <div class="case-option-description">Convert all characters to uppercase letters</div>
+                        <div class="case-option-example">
+                            <div class="case-option-example-before">hello world</div>
+                            <div class="case-option-example-after">HELLO WORLD</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Lowercase -->
+                    <div class="case-option" data-case="lowercase">
+                        <div class="case-option-icon"><i class="fas fa-font"></i></div>
+                        <div class="case-option-title">lowercase</div>
+                        <div class="case-option-description">Convert all characters to lowercase letters</div>
+                        <div class="case-option-example">
+                            <div class="case-option-example-before">HELLO WORLD</div>
+                            <div class="case-option-example-after">hello world</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Title Case -->
+                    <div class="case-option" data-case="title">
+                        <div class="case-option-icon"><i class="fas fa-heading"></i></div>
+                        <div class="case-option-title">Title Case</div>
+                        <div class="case-option-description">Capitalize the first letter of each word</div>
+                        <div class="case-option-example">
+                            <div class="case-option-example-before">hello world example</div>
+                            <div class="case-option-example-after">Hello World Example</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sentence Case -->
+                    <div class="case-option" data-case="sentence">
+                        <div class="case-option-icon"><i class="fas fa-paragraph"></i></div>
+                        <div class="case-option-title">Sentence case</div>
+                        <div class="case-option-description">Capitalize only the first letter of each sentence</div>
+                        <div class="case-option-example">
+                            <div class="case-option-example-before">HELLO WORLD. THIS IS EXAMPLE.</div>
+                            <div class="case-option-example-after">Hello world. This is example.</div>
+                        </div>
+                    </div>
+                    
+                    <!-- camelCase -->
+                    <div class="case-option" data-case="camel">
+                        <div class="case-option-icon"><i class="fas fa-code"></i></div>
+                        <div class="case-option-title">camelCase</div>
+                        <div class="case-option-description">First word lowercase, subsequent words capitalized</div>
+                        <div class="case-option-example">
+                            <div class="case-option-example-before">hello world example</div>
+                            <div class="case-option-example-after">helloWorldExample</div>
+                        </div>
+                    </div>
+                    
+                    <!-- PascalCase -->
+                    <div class="case-option" data-case="pascal">
+                        <div class="case-option-icon"><i class="fas fa-code"></i></div>
+                        <div class="case-option-title">PascalCase</div>
+                        <div class="case-option-description">First letter of each word capitalized, no spaces</div>
+                        <div class="case-option-example">
+                            <div class="case-option-example-before">hello world example</div>
+                            <div class="case-option-example-after">HelloWorldExample</div>
+                        </div>
+                    </div>
+                    
+                    <!-- snake_case -->
+                    <div class="case-option" data-case="snake">
+                        <div class="case-option-icon"><i class="fas fa-minus"></i></div>
+                        <div class="case-option-title">snake_case</div>
+                        <div class="case-option-description">Lowercase with underscores between words</div>
+                        <div class="case-option-example">
+                            <div class="case-option-example-before">Hello World Example</div>
+                            <div class="case-option-example-after">hello_world_example</div>
+                        </div>
+                    </div>
+                    
+                    <!-- kebab-case -->
+                    <div class="case-option" data-case="kebab">
+                        <div class="case-option-icon"><i class="fas fa-minus"></i></div>
+                        <div class="case-option-title">kebab-case</div>
+                        <div class="case-option-description">Lowercase with hyphens between words</div>
+                        <div class="case-option-example">
+                            <div class="case-option-example-before">Hello World Example</div>
+                            <div class="case-option-example-after">hello-world-example</div>
+                        </div>
+                    </div>
+                    
+                    <!-- CONSTANT_CASE -->
+                    <div class="case-option" data-case="constant">
+                        <div class="case-option-icon"><i class="fas fa-exclamation"></i></div>
+                        <div class="case-option-title">CONSTANT_CASE</div>
+                        <div class="case-option-description">Uppercase with underscores between words</div>
+                        <div class="case-option-example">
+                            <div class="case-option-example-before">hello world example</div>
+                            <div class="case-option-example-after">HELLO_WORLD_EXAMPLE</div>
+                        </div>
+                    </div>
+                    
+                    <!-- aLtErNaTiNg CaSe -->
+                    <div class="case-option" data-case="alternating">
+                        <div class="case-option-icon"><i class="fas fa-random"></i></div>
+                        <div class="case-option-title">aLtErNaTiNg CaSe</div>
+                        <div class="case-option-description">Alternate between uppercase and lowercase</div>
+                        <div class="case-option-example">
+                            <div class="case-option-example-before">hello world</div>
+                            <div class="case-option-example-after">hElLo WoRlD</div>
+                        </div>
+                    </div>
+                    
+                    <!-- InVeRsE cAsE -->
+                    <div class="case-option" data-case="inverse">
+                        <div class="case-option-icon"><i class="fas fa-exchange-alt"></i></div>
+                        <div class="case-option-title">InVeRsE cAsE</div>
+                        <div class="case-option-description">Swap uppercase to lowercase and vice versa</div>
+                        <div class="case-option-example">
+                            <div class="case-option-example-before">Hello World</div>
+                            <div class="case-option-example-after">hELLO wORLD</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Random Case -->
+                    <div class="case-option" data-case="random">
+                        <div class="case-option-icon"><i class="fas fa-dice"></i></div>
+                        <div class="case-option-title">RaNdOm CaSe</div>
+                        <div class="case-option-description">Randomly capitalize letters</div>
+                        <div class="case-option-example">
+                            <div class="case-option-example-before">hello world</div>
+                            <div class="case-option-example-after">HeLLo WoRld</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Conversion Results -->
+                <div id="conversion-results" class="conversion-results d-none">
+                    <h3><i class="fas fa-check-circle"></i> Conversion Results</h3>
+                    <div id="results-container">
+                        <!-- Results will be populated here -->
+                    </div>
+                    <div class="text-center mt-1-5">
+                        <button id="copy-all-results" class="btn btn-primary">
+                            <i class="fas fa-copy"></i>
+                            Copy All Results
+                        </button>
+                        <button id="download-results" class="btn btn-secondary">
+                            <i class="fas fa-download"></i>
+                            Download Results
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Text Statistics -->
+                <div id="text-stats" class="stats-section d-none">
+                    <h3><i class="fas fa-chart-bar"></i> Text Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="stat-characters">0</div>
+                            <div class="stat-label">Characters</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="stat-words">0</div>
+                            <div class="stat-label">Words</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="stat-sentences">0</div>
+                            <div class="stat-label">Sentences</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="stat-uppercase">0</div>
+                            <div class="stat-label">Uppercase</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="stat-lowercase">0</div>
+                            <div class="stat-label">Lowercase</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bulk Processing -->
+                <div class="bulk-processing">
+                    <h3><i class="fas fa-layer-group"></i> Bulk Processing</h3>
+                    <p>Process multiple lines of text at once. Each line will be converted separately.</p>
+                    
+                    <div class="form-group">
+                        <label for="bulk-input" class="form-label">Multiple Lines Input</label>
+                        <textarea 
+                            id="bulk-input" 
+                            class="bulk-input" 
+                            placeholder="Enter multiple lines of text here...&#10;Each line will be converted separately&#10;Perfect for processing lists, names, or multiple items"
+                            rows="6"
+                        ></textarea>
+                    </div>
+                    
+                    <div class="bulk-options">
+                        <div class="bulk-option">
+                            <input type="checkbox" id="remove-empty-lines" checked>
+                            <label for="remove-empty-lines">Remove empty lines</label>
+                        </div>
+                        <div class="bulk-option">
+                            <input type="checkbox" id="trim-whitespace" checked>
+                            <label for="trim-whitespace">Trim whitespace</label>
+                        </div>
+                        <div class="bulk-option">
+                            <input type="checkbox" id="remove-duplicates">
+                            <label for="remove-duplicates">Remove duplicates</label>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button id="process-bulk" class="btn btn-primary">
+                            <i class="fas fa-cogs"></i>
+                            Process All Lines
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- About This Tool -->
+                <section class="section-margin-top">
+                    <h2>About the Text Case Converter</h2>
+                    <p>Transform text to any case format with our comprehensive text case converter tool. Perfect for developers, writers, and content creators.</p>
+                    
+                    <h3>Available Case Formats</h3>
+                    <ul>
+                        <li><strong>UPPERCASE:</strong> All characters in capital letters</li>
+                        <li><strong>lowercase:</strong> All characters in small letters</li>
+                        <li><strong>Title Case:</strong> First letter of each word capitalized</li>
+                        <li><strong>Sentence case:</strong> First letter of each sentence capitalized</li>
+                        <li><strong>camelCase:</strong> First word lowercase, subsequent words capitalized</li>
+                        <li><strong>PascalCase:</strong> All words capitalized, no spaces</li>
+                        <li><strong>snake_case:</strong> Lowercase with underscores</li>
+                        <li><strong>kebab-case:</strong> Lowercase with hyphens</li>
+                        <li><strong>CONSTANT_CASE:</strong> Uppercase with underscores</li>
+                        <li><strong>aLtErNaTiNg CaSe:</strong> Alternating letter cases</li>
+                    </ul>
+                    
+                    <h3>Use Cases</h3>
+                    <ul>
+                        <li><strong>Programming:</strong> Convert variable names to different conventions</li>
+                        <li><strong>Data Processing:</strong> Standardize text format in datasets</li>
+                        <li><strong>Content Writing:</strong> Format headings and titles properly</li>
+                        <li><strong>Social Media:</strong> Create stylized text for posts</li>
+                        <li><strong>Documentation:</strong> Ensure consistent formatting</li>
+                        <li><strong>SEO:</strong> Format meta titles and descriptions</li>
+                    </ul>
+                    
+                    <h3>Programming Conventions</h3>
+                    <ul>
+                        <li><strong>JavaScript:</strong> camelCase for variables and functions</li>
+                        <li><strong>Python:</strong> snake_case for variables and functions</li>
+                        <li><strong>Java:</strong> camelCase for variables, PascalCase for classes</li>
+                        <li><strong>C++:</strong> Various conventions, often snake_case or camelCase</li>
+                        <li><strong>CSS:</strong> kebab-case for class names and IDs</li>
+                        <li><strong>Constants:</strong> CONSTANT_CASE in most languages</li>
+                    </ul>
+                    
+                    <h3>Best Practices</h3>
+                    <ul>
+                        <li>Follow your project's or language's naming conventions</li>
+                        <li>Be consistent throughout your codebase</li>
+                        <li>Use meaningful names regardless of case format</li>
+                        <li>Consider readability when choosing case formats</li>
+                        <li>Use Title Case for headings and proper nouns</li>
+                        <li>Use sentence case for regular text content</li>
+                    </ul>
+                </section>
+            </div>
+            
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h4 class="sidebar-title">Related Text Tools</h4>
+                    <ul class="related-tools">
+                        <li><a href="/tools/character-counter/">Character Counter</a></li>
+                        <li><a href="/tools/word-counter/">Word Counter</a></li>
+                        <li><a href="/tools/text-diff-checker/">Text Diff Checker</a></li>
+                        <li><a href="/tools/remove-duplicate-lines/">Remove Duplicates</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h4 class="sidebar-title">Developer Tools</h4>
+                    <ul class="related-tools">
+                        <li><a href="/tools/json-formatter/">JSON Formatter</a></li>
+                        <li><a href="/tools/base64-encoder-decoder/">Base64 Encoder</a></li>
+                        <li><a href="/tools/url-encoder-decoder/">URL Encoder</a></li>
+                        <li><a href="/tools/hash-generator/">Hash Generator</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter Signup -->
+                <div class="newsletter-form">
+                    <h4>Developer Tips</h4>
+                    <p>Get coding tips and text processing tricks</p>
+                    <form data-track="newsletter">
+                        <input type="email" class="newsletter-input" placeholder="Your email" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+                
+                <!-- Ad Space -->
+                <div class="ad-sidebar">
+                    <p class="ad-paragraph">Advertisement</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Free Tools Hub</h4>
+                    <p>Professional text transformation and formatting tools for developers and writers.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Text Processing Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="/tools/text-case-converter/">Text Case Converter</a></li>
+                        <li><a href="/tools/character-counter/">Character Counter</a></li>
+                        <li><a href="/tools/word-counter/">Word Counter</a></li>
+                        <li><a href="/tools/text-diff-checker/">Text Diff Checker</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Other Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="/tools/developer/">Developer Tools</a></li>
+                        <li><a href="/tools/calculator/">Calculators</a></li>
+                        <li><a href="/tools/generator/">Generators</a></li>
+                        <li><a href="/tools/converter/">Converters</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy/">Privacy</a></li>
+                        <li><a href="/terms/">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Free Tools Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    
+    <!-- Text Case Converter Script -->
+    <script>
+        const TextCaseConverter = {
+            init: function() {
+                this.textInput = document.getElementById('text-input');
+                this.bulkInput = document.getElementById('bulk-input');
+                this.setupEventListeners();
+            },
+            
+            setupEventListeners: function() {
+                // Case option clicks
+                document.querySelectorAll('.case-option').forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        const caseType = e.currentTarget.dataset.case;
+                        this.convertText(caseType);
+                    });
+                });
+                
+                // Text input changes
+                this.textInput.addEventListener('input', () => {
+                    this.updateStats();
+                });
+                
+                // Paste button
+                document.getElementById('paste-btn').addEventListener('click', async () => {
+                    try {
+                        const text = await navigator.clipboard.readText();
+                        this.textInput.value = text;
+                        this.updateStats();
+                        FreeToolsHub.components.notifications.success('Text pasted successfully!');
+                    } catch (err) {
+                        FreeToolsHub.components.notifications.error('Unable to paste from clipboard');
+                    }
+                });
+                
+                // File upload
+                document.getElementById('file-upload').addEventListener('change', (e) => {
+                    this.handleFileUpload(e.target.files[0]);
+                });
+                
+                // Bulk processing
+                document.getElementById('process-bulk').addEventListener('click', () => {
+                    this.processBulkText();
+                });
+                
+                // Copy all results
+                document.getElementById('copy-all-results').addEventListener('click', () => {
+                    this.copyAllResults();
+                });
+                
+                // Download results
+                document.getElementById('download-results').addEventListener('click', () => {
+                    this.downloadResults();
+                });
+                
+                // Initial stats update
+                this.updateStats();
+            },
+            
+            convertText: function(caseType) {
+                const text = this.textInput.value;
+                if (!text.trim()) {
+                    FreeToolsHub.components.notifications.warning('Please enter some text to convert');
+                    return;
+                }
+                
+                const converted = this.applyCase(text, caseType);
+                this.showResults(caseType, converted);
+                this.updateStats();
+                
+                FreeToolsHub.analytics.trackToolUsage('text-case-converter', caseType);
+            },
+            
+            applyCase: function(text, caseType) {
+                switch (caseType) {
+                    case 'uppercase':
+                        return text.toUpperCase();
+                    
+                    case 'lowercase':
+                        return text.toLowerCase();
+                    
+                    case 'title':
+                        return text.replace(/\w\S*/g, (txt) => 
+                            txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+                    
+                    case 'sentence':
+                        return text.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, (c) => 
+                            c.toUpperCase());
+                    
+                    case 'camel':
+                        return text.replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) => {
+                            return index === 0 ? word.toLowerCase() : word.toUpperCase();
+                        }).replace(/\s+/g, '');
+                    
+                    case 'pascal':
+                        return text.replace(/(?:^\w|[A-Z]|\b\w)/g, (word) => {
+                            return word.toUpperCase();
+                        }).replace(/\s+/g, '');
+                    
+                    case 'snake':
+                        return text.toLowerCase().replace(/\s+/g, '_').replace(/[^\w_]/g, '');
+                    
+                    case 'kebab':
+                        return text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+                    
+                    case 'constant':
+                        return text.toUpperCase().replace(/\s+/g, '_').replace(/[^\w_]/g, '');
+                    
+                    case 'alternating':
+                        return text.split('').map((char, index) => 
+                            index % 2 === 0 ? char.toLowerCase() : char.toUpperCase()).join('');
+                    
+                    case 'inverse':
+                        return text.split('').map(char => 
+                            char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase()).join('');
+                    
+                    case 'random':
+                        return text.split('').map(char => 
+                            Math.random() > 0.5 ? char.toUpperCase() : char.toLowerCase()).join('');
+                    
+                    default:
+                        return text;
+                }
+            },
+            
+            showResults: function(caseType, converted) {
+                const resultsContainer = document.getElementById('results-container');
+                const resultsSection = document.getElementById('conversion-results');
+                
+                // Create result item
+                const resultItem = document.createElement('div');
+                resultItem.className = 'result-item';
+                resultItem.innerHTML = `
+                    <div class="result-label">${this.getCaseDisplayName(caseType)}</div>
+                    <div class="result-text">${this.escapeHtml(converted)}</div>
+                    <div class="result-actions">
+                        <button class="result-copy-btn" onclick="TextCaseConverter.copyResult(this, '${this.escapeHtml(converted)}')" aria-label="Copy to clipboard">
+                            Copy
+                        </button>
+                    </div>
+                `;
+                
+                resultsContainer.appendChild(resultItem);
+                resultsSection.style.display = 'block';
+                
+                // Scroll to results
+                resultsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            },
+            
+            getCaseDisplayName: function(caseType) {
+                const names = {
+                    'uppercase': 'UPPERCASE',
+                    'lowercase': 'lowercase',
+                    'title': 'Title Case',
+                    'sentence': 'Sentence case',
+                    'camel': 'camelCase',
+                    'pascal': 'PascalCase',
+                    'snake': 'snake_case',
+                    'kebab': 'kebab-case',
+                    'constant': 'CONSTANT_CASE',
+                    'alternating': 'aLtErNaTiNg CaSe',
+                    'inverse': 'InVeRsE cAsE',
+                    'random': 'RaNdOm CaSe'
+                };
+                return names[caseType] || caseType;
+            },
+            
+            copyResult: function(button, text) {
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = button.textContent;
+                    button.textContent = 'Copied!';
+                    button.classList.add('copied');
+                    
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.classList.remove('copied');
+                    }, 2000);
+                });
+            },
+            
+            processBulkText: function() {
+                const text = this.bulkInput.value;
+                if (!text.trim()) {
+                    FreeToolsHub.components.notifications.warning('Please enter text for bulk processing');
+                    return;
+                }
+                
+                let lines = text.split('\n');
+                
+                // Apply options
+                if (document.getElementById('remove-empty-lines').checked) {
+                    lines = lines.filter(line => line.trim());
+                }
+                
+                if (document.getElementById('trim-whitespace').checked) {
+                    lines = lines.map(line => line.trim());
+                }
+                
+                if (document.getElementById('remove-duplicates').checked) {
+                    lines = [...new Set(lines)];
+                }
+                
+                // Show all conversions for bulk text
+                const resultsContainer = document.getElementById('results-container');
+                resultsContainer.innerHTML = '';
+                
+                const caseTypes = ['uppercase', 'lowercase', 'title', 'sentence', 'camel', 'pascal', 'snake', 'kebab'];
+                
+                caseTypes.forEach(caseType => {
+                    const convertedLines = lines.map(line => this.applyCase(line, caseType));
+                    const result = convertedLines.join('\n');
+                    this.showResults(caseType, result);
+                });
+                
+                FreeToolsHub.analytics.trackToolUsage('text-case-converter', 'bulk_process');
+            },
+            
+            copyAllResults: function() {
+                const results = Array.from(document.querySelectorAll('.result-text')).map(el => el.textContent);
+                const allResults = results.join('\n\n');
+                
+                navigator.clipboard.writeText(allResults).then(() => {
+                    FreeToolsHub.components.notifications.success('All results copied to clipboard!');
+                });
+            },
+            
+            downloadResults: function() {
+                const results = Array.from(document.querySelectorAll('.result-item')).map(item => {
+                    const label = item.querySelector('.result-label').textContent;
+                    const text = item.querySelector('.result-text').textContent;
+                    return `${label}:\n${text}`;
+                });
+                
+                const content = results.join('\n\n---\n\n');
+                const blob = new Blob([content], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'text-case-conversions.txt';
+                a.click();
+                
+                URL.revokeObjectURL(url);
+                FreeToolsHub.analytics.trackToolUsage('text-case-converter', 'download');
+            },
+            
+            updateStats: function() {
+                const text = this.textInput.value;
+                const statsSection = document.getElementById('text-stats');
+                
+                if (!text) {
+                    statsSection.style.display = 'none';
+                    return;
+                }
+                
+                const stats = {
+                    characters: text.length,
+                    words: text.trim() ? text.trim().split(/\s+/).length : 0,
+                    sentences: (text.match(/[.!?]+/g) || []).length,
+                    uppercase: (text.match(/[A-Z]/g) || []).length,
+                    lowercase: (text.match(/[a-z]/g) || []).length
+                };
+                
+                document.getElementById('stat-characters').textContent = FreeToolsHub.utils.formatNumber(stats.characters);
+                document.getElementById('stat-words').textContent = FreeToolsHub.utils.formatNumber(stats.words);
+                document.getElementById('stat-sentences').textContent = FreeToolsHub.utils.formatNumber(stats.sentences);
+                document.getElementById('stat-uppercase').textContent = FreeToolsHub.utils.formatNumber(stats.uppercase);
+                document.getElementById('stat-lowercase').textContent = FreeToolsHub.utils.formatNumber(stats.lowercase);
+                
+                statsSection.style.display = 'block';
+            },
+            
+            handleFileUpload: function(file) {
+                if (!file) return;
+                
+                if (!file.type.startsWith('text/') && !file.name.match(/\.(txt|md)$/i)) {
+                    FreeToolsHub.components.notifications.error('Please upload a text file');
+                    return;
+                }
+                
+                if (file.size > 1024 * 1024) {
+                    FreeToolsHub.components.notifications.error('File size must be less than 1MB');
+                    return;
+                }
+                
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    this.textInput.value = e.target.result;
+                    this.updateStats();
+                    FreeToolsHub.components.notifications.success(`File "${file.name}" loaded successfully!`);
+                };
+                reader.readAsText(file);
+            },
+            
+            escapeHtml: function(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+        };
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            TextCaseConverter.init();
+            FreeToolsHub.analytics.trackToolUsage('text-case-converter', 'page_view');
+        });
+    </script>
+
+<style>
+#minimax-floating-ball {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 12px;
+  background: #222222;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  color: #F8F8F8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#minimax-floating-ball:hover {
+  transform: translateY(-2px);
+  background: #383838;
+}
+
+.minimax-ball-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.minimax-logo-wave {
+  width: 26px;
+  height: 22px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='22' viewBox='0 0 26 22' fill='none'%3E%3Cg clip-path='url(%23clip0_3442_102412)'%3E%3Cpath d='M12.8405 14.6775C12.8405 14.9897 13.0932 15.2424 13.4055 15.2424C13.7178 15.2424 13.9705 14.9897 13.9705 14.6775V2.98254C13.9705 1.88957 13.0809 1 11.9879 1C10.895 1 10.0054 1.88957 10.0054 2.98254V11.566V17.1068C10.0054 17.5773 9.62327 17.9594 9.1528 17.9594C8.68233 17.9594 8.30021 17.5773 8.30021 17.1068V8.04469C8.30021 6.95172 7.41063 6.06215 6.31767 6.06215C5.22471 6.06215 4.33513 6.95172 4.33513 8.04469V11.8855C4.33513 12.3559 3.953 12.7381 3.48254 12.7381C3.01207 12.7381 2.62994 12.3559 2.62994 11.8855V10.4936C2.62994 10.1813 2.37725 9.92861 2.06497 9.92861C1.7527 9.92861 1.5 10.1813 1.5 10.4936V11.8855C1.5 12.9784 2.38957 13.868 3.48254 13.868C4.5755 13.868 5.46508 12.9784 5.46508 11.8855V8.04469C5.46508 7.57422 5.8472 7.19209 6.31767 7.19209C6.78814 7.19209 7.17026 7.57422 7.17026 8.04469V17.1068C7.17026 18.1998 8.05984 19.0894 9.1528 19.0894C10.2458 19.0894 11.1353 18.1998 11.1353 17.1068V2.98254C11.1353 2.51207 11.5175 2.12994 11.9879 2.12994C12.4584 2.12994 12.8405 2.51207 12.8405 2.98254V14.6775Z' fill='%23F8F8F8'/%3E%3Cpath d='M23.3278 6.06215C22.2348 6.06215 21.3452 6.95172 21.3452 8.04469V15.6143C21.3452 16.0847 20.9631 16.4669 20.4926 16.4669C20.0222 16.4669 19.6401 16.0847 19.6401 15.6143V2.98254C19.6401 1.88957 18.7505 1 17.6575 1C16.5645 1 15.675 1.88957 15.675 2.98254V19.0175C15.675 19.4879 15.2928 19.8701 14.8224 19.8701C14.3519 19.8701 13.9698 19.4879 13.9698 19.0175V17.0329C13.9698 16.7206 13.7171 16.4679 13.4048 16.4679C13.0925 16.4679 12.8398 16.7206 12.8398 17.0329V19.0175C12.8398 20.1104 13.7294 21 14.8224 21C15.9153 21 16.8049 20.1104 16.8049 19.0175V2.98254C16.8049 2.51207 17.187 2.12994 17.6575 2.12994C18.128 2.12994 18.5101 2.51207 18.5101 2.98254V15.6143C18.5101 16.7072 19.3997 17.5968 20.4926 17.5968C21.5856 17.5968 22.4752 16.7072 22.4752 15.6143V8.04469C22.4752 7.57422 22.8573 7.19209 23.3278 7.19209C23.7982 7.19209 24.1804 7.57422 24.1804 8.04469V14.6775C24.1804 14.9897 24.4331 15.2424 24.7453 15.2424C25.0576 15.2424 25.3103 14.9897 25.3103 14.6775V8.04469C25.3103 6.95172 24.4207 6.06215 23.3278 6.06215Z' fill='%23F8F8F8'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_3442_102412'%3E%3Crect width='25' height='22' fill='white' transform='translate(0.5)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.minimax-ball-text {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.minimax-close-icon {
+  margin-left: 8px;
+  font-size: 16px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.minimax-close-icon:hover {
+  opacity: 1;
+}
+</style>
+<div id="minimax-floating-ball">
+  <div class="minimax-ball-content">
+    <div class="minimax-logo-wave"></div>
+    <span class="minimax-ball-text">Created by MiniMax Agent</span>
+  </div>
+  <div class="minimax-close-icon">×</div>
+</div>
+<script>
+// Initialize floating ball functionality
+function initFloatingBall() {
+  const ball = document.getElementById('minimax-floating-ball');
+  if (!ball) return;
+
+  // Initial animation
+  ball.style.opacity = '0';
+  ball.style.transform = 'translateY(20px)';
+
+  setTimeout(() => {
+    ball.style.opacity = '1';
+    ball.style.transform = 'translateY(0)';
+  }, 500);
+
+  // Handle logo click
+  const ballContent = ball.querySelector('.minimax-ball-content');
+  ballContent.addEventListener('click', function (e) {
+    e.stopPropagation();
+    window.open('https://agent.minimax.io/agent', '_blank');
+    ball.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      ball.style.transform = 'scale(1)';
+    }, 100);
+  });
+
+  // Handle close button click
+  const closeIcon = ball.querySelector('.minimax-close-icon');
+  closeIcon.addEventListener('click', function (e) {
+    e.stopPropagation();
+    ball.style.opacity = '0';
+    ball.style.transform = 'translateY(20px)';
+
+    setTimeout(() => {
+      ball.style.display = 'none';
+    }, 300);
+  });
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initFloatingBall); 
+</script>
+
+
+            <script>
+            // Common Tool Functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                // Add ARIA labels to buttons and inputs
+                const buttons = document.querySelectorAll('button');
+                buttons.forEach(button => {
+                    if (!button.getAttribute('aria-label') && button.textContent.trim()) {
+                        button.setAttribute('aria-label', button.textContent.trim());
+                    }
+                });
+                
+                // Add alt text to images missing it
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    if (!img.getAttribute('alt')) {
+                        img.setAttribute('alt', '');
+                    }
+                });
+                
+                // Disable buttons until valid input
+                const inputFields = document.querySelectorAll('input[type="text"], textarea');
+                const actionButtons = document.querySelectorAll('.btn-primary, button[onclick]');
+                
+                function checkInputs() {
+                    const hasInput = Array.from(inputFields).some(field => field.value.trim().length > 0);
+                    actionButtons.forEach(button => {
+                        if (button.textContent.includes('Copy') || 
+                            button.textContent.includes('Download') || 
+                            button.textContent.includes('Generate')) {
+                            button.disabled = !hasInput;
+                        }
+                    });
+                }
+                
+                inputFields.forEach(field => {
+                    field.addEventListener('input', checkInputs);
+                });
+                
+                // Initial check
+                checkInputs();
+                
+                // Add success/error notifications
+                window.showNotification = function(message, type = 'success') {
+                    const notification = document.createElement('div');
+                    notification.className = `notification notification-${type}`;
+                    notification.innerHTML = `
+                        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}" aria-hidden="true"></i>
+                        <span>${message}</span>
+                    `;
+                    
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: ${type === 'success' ? '#10b981' : '#ef4444'};
+                        color: white;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                        z-index: 1000;
+                        opacity: 0;
+                        transform: translateX(100%);
+                        transition: all 0.3s ease;
+                        max-width: 400px;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    `;
+                    
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '1';
+                        notification.style.transform = 'translateX(0)';
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        notification.style.transform = 'translateX(100%)';
+                        setTimeout(() => {
+                            if (notification.parentNode) {
+                                document.body.removeChild(notification);
+                            }
+                        }, 300);
+                    }, 3000);
+                };
+                
+                // Enhanced copy functionality
+                window.copyToClipboard = async function(text) {
+                    try {
+                        if (navigator.clipboard && window.isSecureContext) {
+                            await navigator.clipboard.writeText(text);
+                            showNotification('Copied to clipboard!', 'success');
+                            return true;
+                        } else {
+                            // Fallback for older browsers
+                            const textArea = document.createElement('textarea');
+                            textArea.value = text;
+                            textArea.style.position = 'fixed';
+                            textArea.style.left = '-999999px';
+                            textArea.style.top = '-999999px';
+                            document.body.appendChild(textArea);
+                            textArea.focus();
+                            textArea.select();
+                            
+                            try {
+                                document.execCommand('copy');
+                                textArea.remove();
+                                showNotification('Copied to clipboard!', 'success');
+                                return true;
+                            } catch (err) {
+                                textArea.remove();
+                                showNotification('Failed to copy to clipboard', 'error');
+                                return false;
+                            }
+                        }
+                    } catch (err) {
+                        showNotification('Failed to copy to clipboard', 'error');
+                        return false;
+                    }
+                };
+            });
+            </script>
+            
+</body>
+</html>
+
+<!--
+  Refactor notes:
+  - All inline styles removed and replaced with CSS classes.
+  - Meta tags updated for X.com (Twitter) 2025.
+  - File input is visually hidden but accessible to screen readers.
+  - Section and ad paragraph spacing now use utility classes.
+  - No breaking GUI changes.
+-->

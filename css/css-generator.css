@@ -1,0 +1,69 @@
+/* CSS Generator Tool Page Styles (migrated from inline <style> in index.html) */
+
+.preview-box {
+    width: 200px;
+    height: 200px;
+    background: #ffffff;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+/* Flexbox Preview Styles */
+#flexboxPreview {
+    height: auto;
+    min-height: 200px;
+}
+
+.flex-item {
+    padding: 10px;
+    margin: 5px;
+    color: white;
+}
+
+.flex-item-1 {
+    background: #007bff;
+}
+
+.flex-item-2 {
+    background: #28a745;
+}
+
+.flex-item-3 {
+    background: #dc3545;
+}
+
+/* Grid Preview Styles */
+#gridPreview {
+    height: auto;
+    min-height: 200px;
+    width: 100%;
+    justify-content: center;
+    color: #333;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.css-output {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 15px;
+    min-height: 150px;
+    overflow: auto;
+}
+
+.tool-tabs {
+    border-bottom: 2px solid #e9ecef;
+    margin-bottom: 20px;
+}
+
+.tool-tab {
+    background: none;
+    border: none;
+    /* Additional tab styles can be added here */
+}

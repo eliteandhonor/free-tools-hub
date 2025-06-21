@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unicode Converter - Free Tools Hub</title>
+    <meta name="description" content="Convert text to Unicode and Unicode to text. Get character information, Unicode escape sequences, and more.">
+    <meta name="keywords" content="unicode converter, text to unicode, unicode to text, character info, escape sequences">
+    <link rel="canonical" href="/tools/unicode-converter/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../vendor/fontawesome/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+    
+    <style>
+        .tool-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .tab-navigation {
+            display: flex;
+            border-bottom: 2px solid #e5e7eb;
+            margin-bottom: 2rem;
+        }
+        
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #6b7280;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-button.active {
+            color: #3b82f6;
+            border-bottom-color: #3b82f6;
+        }
+        
+        .tab-button:hover {
+            color: #3b82f6;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .input-group, .output-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .input-textarea, .output-textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+        
+        .input-textarea:focus, .output-textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+        
+        .output-textarea {
+            background-color: #f9fafb;
+        }
+        
+        .format-options {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .format-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .format-option input[type="radio"] {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+        
+        .convert-button {
+            width: 100%;
+            padding: 1rem;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 1.5rem 0;
+        }
+        
+        .convert-button:hover {
+            background: #2563eb;
+        }
+        
+        .copy-button {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .copy-button:hover {
+            background: #059669;
+        }
+        
+        .character-info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .character-info-table th,
+        .character-info-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .character-info-table th {
+            background-color: #f9fafb;
+            font-weight: 600;
+        }
+        
+        .char-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="../../" class="logo">
+                <i class="fas fa-tools"></i> Free Tools Hub
+            </a>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../">Tools</a></li>
+                    <li class="breadcrumb-item active">Unicode Converter</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container" role="main">
+        <!-- Tool Header -->
+        <div class="tool-header">
+            <h1 class="tool-title">
+                <i class="fas fa-font"></i>
+                Unicode Converter
+            </h1>
+            <p class="tool-description">
+                Convert text to Unicode escape sequences and vice versa. Get detailed character information including Unicode properties.
+            </p>
+        </div>
+
+        <!-- Tool Container -->
+        <div class="tool-container">
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <button class="tab-button active" data-tab="text-to-unicode">Text to Unicode</button>
+                <button class="tab-button" data-tab="unicode-to-text">Unicode to Text</button>
+                <button class="tab-button" data-tab="character-info">Character Info</button>
+            </div>
+
+            <!-- Text to Unicode Tab -->
+            <div class="tab-content active" id="text-to-unicode">
+                <div class="input-group">
+                    <label class="input-label">Enter Text:</label>
+                    <textarea id="text-input" class="input-textarea" placeholder="Enter text to convert to Unicode..."></textarea>
+                </div>
+
+                <div class="format-options">
+                    <div class="format-option">
+                        <input type="radio" id="format-escape" name="unicode-format" value="escape" checked>
+                        <label for="format-escape">Escape Sequence (\u0048)</label>
+                    </div>
+                    <div class="format-option">
+                        <input type="radio" id="format-codepoint" name="unicode-format" value="codepoint">
+                        <label for="format-codepoint">Code Point (U+0048)</label>
+                    </div>
+                    <div class="format-option">
+                        <input type="radio" id="format-decimal" name="unicode-format" value="decimal">
+                        <label for="format-decimal">Decimal (72)</label>
+                    </div>
+                    <div class="format-option">
+                        <input type="radio" id="format-hex" name="unicode-format" value="hex">
+                        <label for="format-hex">Hexadecimal (0x48)</label>
+                    </div>
+                </div>
+
+                <button class="convert-button" onclick="convertToUnicode()">
+                    <i class="fas fa-arrow-right"></i>
+                    Convert to Unicode
+                </button>
+
+                <div class="output-group">
+                    <label class="input-label">Unicode Output:</label>
+                    <textarea id="unicode-output" class="output-textarea" readonly placeholder="Unicode representation will appear here..."></textarea>
+                    <button class="copy-button" onclick="copyToClipboard('unicode-output')">
+                        <i class="fas fa-copy"></i>
+                        Copy
+                    </button>
+                </div>
+            </div>
+
+            <!-- Unicode to Text Tab -->
+            <div class="tab-content" id="unicode-to-text">
+                <div class="input-group">
+                    <label class="input-label">Enter Unicode:</label>
+                    <textarea id="unicode-input" class="input-textarea" placeholder="Enter Unicode escape sequences (e.g., \u0048\u0065\u006C\u006C\u006F)..."></textarea>
+                </div>
+
+                <button class="convert-button" onclick="convertToText()">
+                    <i class="fas fa-arrow-left"></i>
+                    Convert to Text
+                </button>
+
+                <div class="output-group">
+                    <label class="input-label">Text Output:</label>
+                    <textarea id="text-output" class="output-textarea" readonly placeholder="Converted text will appear here..."></textarea>
+                    <button class="copy-button" onclick="copyToClipboard('text-output')">
+                        <i class="fas fa-copy"></i>
+                        Copy
+                    </button>
+                </div>
+            </div>
+
+            <!-- Character Info Tab -->
+            <div class="tab-content" id="character-info">
+                <div class="input-group">
+                    <label class="input-label">Enter Character:</label>
+                    <input type="text" id="char-input" class="char-input" placeholder="A" maxlength="2">
+                </div>
+
+                <button class="convert-button" onclick="getCharacterInfo()">
+                    <i class="fas fa-info-circle"></i>
+                    Get Character Info
+                </button>
+
+                <div class="output-group">
+                    <label class="input-label">Character Information:</label>
+                    <table class="character-info-table" id="char-info-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody id="char-info-body">
+                            <tr>
+                                <td colspan="2" style="text-align: center; color: #6b7280;">
+                                    Enter a character to see detailed information
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Free Tools Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../js/vendor-loader.js"></script>
+    
+    <script>
+        class UnicodeConverter {
+            constructor() {
+                this.initializeTabs();
+            }
+
+            initializeTabs() {
+                const tabButtons = document.querySelectorAll('.tab-button');
+                const tabContents = document.querySelectorAll('.tab-content');
+
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const targetTab = button.dataset.tab;
+
+                        // Remove active class from all buttons and contents
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        tabContents.forEach(content => content.classList.remove('active'));
+
+                        // Add active class to clicked button and target content
+                        button.classList.add('active');
+                        document.getElementById(targetTab).classList.add('active');
+                    });
+                });
+            }
+
+            convertToUnicode() {
+                const textInput = document.getElementById('text-input');
+                const unicodeOutput = document.getElementById('unicode-output');
+                const format = document.querySelector('input[name="unicode-format"]:checked').value;
+
+                const text = textInput.value;
+                if (!text) {
+                    unicodeOutput.value = '';
+                    return;
+                }
+
+                let result = '';
+                for (let i = 0; i < text.length; i++) {
+                    const char = text[i];
+                    const codePoint = char.codePointAt(0);
+
+                    switch (format) {
+                        case 'escape':
+                            if (codePoint > 0xFFFF) {
+                                // Surrogate pairs for characters above U+FFFF
+                                const high = Math.floor((codePoint - 0x10000) / 0x400) + 0xD800;
+                                const low = ((codePoint - 0x10000) % 0x400) + 0xDC00;
+                                result += `\\u${high.toString(16).toUpperCase().padStart(4, '0')}\\u${low.toString(16).toUpperCase().padStart(4, '0')}`;
+                            } else {
+                                result += `\\u${codePoint.toString(16).toUpperCase().padStart(4, '0')}`;
+                            }
+                            break;
+                        case 'codepoint':
+                            result += `U+${codePoint.toString(16).toUpperCase().padStart(4, '0')} `;
+                            break;
+                        case 'decimal':
+                            result += `${codePoint} `;
+                            break;
+                        case 'hex':
+                            result += `0x${codePoint.toString(16).toUpperCase()} `;
+                            break;
+                    }
+
+                    // Skip next character if it's part of surrogate pair
+                    if (codePoint > 0xFFFF) {
+                        i++;
+                    }
+                }
+
+                unicodeOutput.value = result.trim();
+            }
+
+            convertToText() {
+                const unicodeInput = document.getElementById('unicode-input');
+                const textOutput = document.getElementById('text-output');
+
+                const unicodeStr = unicodeInput.value;
+                
+                if (!unicodeStr) {
+                    textOutput.value = '';
+                    return;
+                }
+
+                try {
+                    let result = '';
+                    
+                    // Handle \uXXXX format escape sequences
+                    if (unicodeStr.includes('\\u')) {
+                        result = unicodeStr.replace(/\\u([0-9A-Fa-f]{4})/g, (match, hex) => {
+                            return String.fromCharCode(parseInt(hex, 16));
+                        });
+                    }
+                    // Handle U+XXXX format
+                    else if (unicodeStr.includes('U+')) {
+                        result = unicodeStr.replace(/U\+([0-9A-Fa-f]+)/g, (match, hex) => {
+                            return String.fromCodePoint(parseInt(hex, 16));
+                        });
+                    }
+                    // Handle 0xXX format  
+                    else if (unicodeStr.includes('0x')) {
+                        result = unicodeStr.replace(/0x([0-9A-Fa-f]+)/g, (match, hex) => {
+                            return String.fromCodePoint(parseInt(hex, 16));
+                        });
+                    }
+                    // Handle decimal numbers (space or comma separated)
+                    else if (/^\s*\d+(\s*[,\s]\s*\d+)*\s*$/.test(unicodeStr)) {
+                        const numbers = unicodeStr.split(/[,\s]+/).filter(n => n.trim() !== '');
+                        result = numbers.map(num => {
+                            const codePoint = parseInt(num.trim(), 10);
+                            if (codePoint >= 0 && codePoint <= 1114111) {
+                                return String.fromCodePoint(codePoint);
+                            }
+                            return num;
+                        }).join('');
+                    }
+                    else {
+                        result = 'Error: Unrecognized Unicode format';
+                    }
+                    textOutput.value = result;
+                } catch (error) {
+                    textOutput.value = 'Error: Invalid Unicode format';
+                }
+            }
+
+            getCharacterInfo() {
+                const charInput = document.getElementById('char-input');
+                const charInfoBody = document.getElementById('char-info-body');
+
+                const char = charInput.value;
+                if (!char) {
+                    charInfoBody.innerHTML = '<tr><td colspan="2" style="text-align: center; color: #6b7280;">Enter a character to see detailed information</td></tr>';
+                    return;
+                }
+
+                const firstChar = char[0];
+                const codePoint = firstChar.codePointAt(0);
+                const category = this.getUnicodeCategory(codePoint);
+
+                const info = [
+                    ['Character', firstChar],
+                    ['Unicode Escape', `\\\\u${codePoint.toString(16).toUpperCase().padStart(4, '0')}`],
+                    ['Code Point', `U+${codePoint.toString(16).toUpperCase().padStart(4, '0')}`],
+                    ['Decimal', codePoint.toString()],
+                    ['Hexadecimal', `0x${codePoint.toString(16).toUpperCase()}`],
+                    ['HTML Entity', `&#${codePoint};`],
+                    ['HTML Hex Entity', `&#x${codePoint.toString(16).toUpperCase()};`],
+                    ['Category', category],
+                    ['Block', this.getUnicodeBlock(codePoint)]
+                ];
+
+                charInfoBody.innerHTML = info.map(([property, value]) => 
+                    `<tr><td style="font-weight: 500;">${property}</td><td style="font-family: 'Courier New', monospace;">${value}</td></tr>`
+                ).join('');
+            }
+
+            getUnicodeCategory(codePoint) {
+                // Basic Unicode category detection
+                if (codePoint >= 0x0030 && codePoint <= 0x0039) return 'Number, Decimal Digit';
+                if (codePoint >= 0x0041 && codePoint <= 0x005A) return 'Letter, Uppercase';
+                if (codePoint >= 0x0061 && codePoint <= 0x007A) return 'Letter, Lowercase';
+                if (codePoint >= 0x0020 && codePoint <= 0x002F) return 'Punctuation';
+                if (codePoint >= 0x0000 && codePoint <= 0x001F) return 'Control';
+                if (codePoint >= 0x0080 && codePoint <= 0x009F) return 'Control';
+                return 'Other';
+            }
+
+            getUnicodeBlock(codePoint) {
+                // Basic Unicode block detection
+                if (codePoint >= 0x0000 && codePoint <= 0x007F) return 'Basic Latin';
+                if (codePoint >= 0x0080 && codePoint <= 0x00FF) return 'Latin-1 Supplement';
+                if (codePoint >= 0x0100 && codePoint <= 0x017F) return 'Latin Extended-A';
+                if (codePoint >= 0x0180 && codePoint <= 0x024F) return 'Latin Extended-B';
+                if (codePoint >= 0x0250 && codePoint <= 0x02AF) return 'IPA Extensions';
+                if (codePoint >= 0x02B0 && codePoint <= 0x02FF) return 'Spacing Modifier Letters';
+                if (codePoint >= 0x0300 && codePoint <= 0x036F) return 'Combining Diacritical Marks';
+                if (codePoint >= 0x0370 && codePoint <= 0x03FF) return 'Greek and Coptic';
+                if (codePoint >= 0x0400 && codePoint <= 0x04FF) return 'Cyrillic';
+                return 'Other Block';
+            }
+        }
+
+        // Global functions
+        function convertToUnicode() {
+            window.unicodeConverter.convertToUnicode();
+        }
+
+        function convertToText() {
+            window.unicodeConverter.convertToText();
+        }
+
+        function getCharacterInfo() {
+            window.unicodeConverter.getCharacterInfo();
+        }
+
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            element.select();
+            element.setSelectionRange(0, 99999); // For mobile devices
+            
+            try {
+                document.execCommand('copy');
+                
+                // Show feedback
+                const button = event.target.closest('.copy-button');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                button.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = '';
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+            }
+        }
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            window.unicodeConverter = new UnicodeConverter();
+        });
+    </script>
+
+<style>
+#minimax-floating-ball {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 12px;
+  background: #222222;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  color: #F8F8F8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#minimax-floating-ball:hover {
+  transform: translateY(-2px);
+  background: #383838;
+}
+
+.minimax-ball-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.minimax-logo-wave {
+  width: 26px;
+  height: 22px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='22' viewBox='0 0 26 22' fill='none'%3E%3Cg clip-path='url(%23clip0_3442_102412)'%3E%3Cpath d='M12.8405 14.6775C12.8405 14.9897 13.0932 15.2424 13.4055 15.2424C13.7178 15.2424 13.9705 14.9897 13.9705 14.6775V2.98254C13.9705 1.88957 13.0809 1 11.9879 1C10.895 1 10.0054 1.88957 10.0054 2.98254V11.566V17.1068C10.0054 17.5773 9.62327 17.9594 9.1528 17.9594C8.68233 17.9594 8.30021 17.5773 8.30021 17.1068V8.04469C8.30021 6.95172 7.41063 6.06215 6.31767 6.06215C5.22471 6.06215 4.33513 6.95172 4.33513 8.04469V11.8855C4.33513 12.3559 3.953 12.7381 3.48254 12.7381C3.01207 12.7381 2.62994 12.3559 2.62994 11.8855V10.4936C2.62994 10.1813 2.37725 9.92861 2.06497 9.92861C1.7527 9.92861 1.5 10.1813 1.5 10.4936V11.8855C1.5 12.9784 2.38957 13.868 3.48254 13.868C4.5755 13.868 5.46508 12.9784 5.46508 11.8855V8.04469C5.46508 7.57422 5.8472 7.19209 6.31767 7.19209C6.78814 7.19209 7.17026 7.57422 7.17026 8.04469V17.1068C7.17026 18.1998 8.05984 19.0894 9.1528 19.0894C10.2458 19.0894 11.1353 18.1998 11.1353 17.1068V2.98254C11.1353 2.51207 11.5175 2.12994 11.9879 2.12994C12.4584 2.12994 12.8405 2.51207 12.8405 2.98254V14.6775Z' fill='%23F8F8F8'/%3E%3Cpath d='M23.3278 6.06215C22.2348 6.06215 21.3452 6.95172 21.3452 8.04469V15.6143C21.3452 16.0847 20.9631 16.4669 20.4926 16.4669C20.0222 16.4669 19.6401 16.0847 19.6401 15.6143V2.98254C19.6401 1.88957 18.7505 1 17.6575 1C16.5645 1 15.675 1.88957 15.675 2.98254V19.0175C15.675 19.4879 15.2928 19.8701 14.8224 19.8701C14.3519 19.8701 13.9698 19.4879 13.9698 19.0175V17.0329C13.9698 16.7206 13.7171 16.4679 13.4048 16.4679C13.0925 16.4679 12.8398 16.7206 12.8398 17.0329V19.0175C12.8398 20.1104 13.7294 21 14.8224 21C15.9153 21 16.8049 20.1104 16.8049 19.0175V2.98254C16.8049 2.51207 17.187 2.12994 17.6575 2.12994C18.128 2.12994 18.5101 2.51207 18.5101 2.98254V15.6143C18.5101 16.7072 19.3997 17.5968 20.4926 17.5968C21.5856 17.5968 22.4752 16.7072 22.4752 15.6143V8.04469C22.4752 7.57422 22.8573 7.19209 23.3278 7.19209C23.7982 7.19209 24.1804 7.57422 24.1804 8.04469V14.6775C24.1804 14.9897 24.4331 15.2424 24.7453 15.2424C25.0576 15.2424 25.3103 14.9897 25.3103 14.6775V8.04469C25.3103 6.95172 24.4207 6.06215 23.3278 6.06215Z' fill='%23F8F8F8'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_3442_102412'%3E%3Crect width='25' height='22' fill='white' transform='translate(0.5)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.minimax-ball-text {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.minimax-close-icon {
+  margin-left: 8px;
+  font-size: 16px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.minimax-close-icon:hover {
+  opacity: 1;
+}
+</style>
+<div id="minimax-floating-ball">
+  <div class="minimax-ball-content">
+    <div class="minimax-logo-wave"></div>
+    <span class="minimax-ball-text">Created by MiniMax Agent</span>
+  </div>
+  <div class="minimax-close-icon">×</div>
+</div>
+<script>
+// Initialize floating ball functionality
+function initFloatingBall() {
+  const ball = document.getElementById('minimax-floating-ball');
+  if (!ball) return;
+
+  // Initial animation
+  ball.style.opacity = '0';
+  ball.style.transform = 'translateY(20px)';
+
+  setTimeout(() => {
+    ball.style.opacity = '1';
+    ball.style.transform = 'translateY(0)';
+  }, 500);
+
+  // Handle logo click
+  const ballContent = ball.querySelector('.minimax-ball-content');
+  ballContent.addEventListener('click', function (e) {
+    e.stopPropagation();
+    window.open('https://agent.minimax.io/agent', '_blank');
+    ball.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      ball.style.transform = 'scale(1)';
+    }, 100);
+  });
+
+  // Handle close button click
+  const closeIcon = ball.querySelector('.minimax-close-icon');
+  closeIcon.addEventListener('click', function (e) {
+    e.stopPropagation();
+    ball.style.opacity = '0';
+    ball.style.transform = 'translateY(20px)';
+
+    setTimeout(() => {
+      ball.style.display = 'none';
+    }, 300);
+  });
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initFloatingBall); 
+</script>
+
+
+            <script>
+            // Common Tool Functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                // Add ARIA labels to buttons and inputs
+                const buttons = document.querySelectorAll('button');
+                buttons.forEach(button => {
+                    if (!button.getAttribute('aria-label') && button.textContent.trim()) {
+                        button.setAttribute('aria-label', button.textContent.trim());
+                    }
+                });
+                
+                // Add alt text to images missing it
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    if (!img.getAttribute('alt')) {
+                        img.setAttribute('alt', '');
+                    }
+                });
+                
+                // Disable buttons until valid input
+                const inputFields = document.querySelectorAll('input[type="text"], textarea');
+                const actionButtons = document.querySelectorAll('.btn-primary, button[onclick]');
+                
+                function checkInputs() {
+                    const hasInput = Array.from(inputFields).some(field => field.value.trim().length > 0);
+                    actionButtons.forEach(button => {
+                        if (button.textContent.includes('Copy') || 
+                            button.textContent.includes('Download') || 
+                            button.textContent.includes('Generate')) {
+                            button.disabled = !hasInput;
+                        }
+                    });
+                }
+                
+                inputFields.forEach(field => {
+                    field.addEventListener('input', checkInputs);
+                });
+                
+                // Initial check
+                checkInputs();
+                
+                // Add success/error notifications
+                window.showNotification = function(message, type = 'success') {
+                    const notification = document.createElement('div');
+                    notification.className = `notification notification-${type}`;
+                    notification.innerHTML = `
+                        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}" aria-hidden="true"></i>
+                        <span>${message}</span>
+                    `;
+                    
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: ${type === 'success' ? '#10b981' : '#ef4444'};
+                        color: white;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                        z-index: 1000;
+                        opacity: 0;
+                        transform: translateX(100%);
+                        transition: all 0.3s ease;
+                        max-width: 400px;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    `;
+                    
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '1';
+                        notification.style.transform = 'translateX(0)';
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        notification.style.transform = 'translateX(100%)';
+                        setTimeout(() => {
+                            if (notification.parentNode) {
+                                document.body.removeChild(notification);
+                            }
+                        }, 300);
+                    }, 3000);
+                };
+                
+                // Enhanced copy functionality
+                window.copyToClipboard = async function(text) {
+                    try {
+                        if (navigator.clipboard && window.isSecureContext) {
+                            await navigator.clipboard.writeText(text);
+                            showNotification('Copied to clipboard!', 'success');
+                            return true;
+                        } else {
+                            // Fallback for older browsers
+                            const textArea = document.createElement('textarea');
+                            textArea.value = text;
+                            textArea.style.position = 'fixed';
+                            textArea.style.left = '-999999px';
+                            textArea.style.top = '-999999px';
+                            document.body.appendChild(textArea);
+                            textArea.focus();
+                            textArea.select();
+                            
+                            try {
+                                document.execCommand('copy');
+                                textArea.remove();
+                                showNotification('Copied to clipboard!', 'success');
+                                return true;
+                            } catch (err) {
+                                textArea.remove();
+                                showNotification('Failed to copy to clipboard', 'error');
+                                return false;
+                            }
+                        }
+                    } catch (err) {
+                        showNotification('Failed to copy to clipboard', 'error');
+                        return false;
+                    }
+                };
+            });
+            </script>
+            
+</body>
+</html>

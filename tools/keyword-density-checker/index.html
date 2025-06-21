@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword Density Checker - Free Tools Hub</title>
+    <meta name="description" content="Analyze keyword density in your content. Check keyword frequency, density percentage, and optimize your content for SEO.">
+    <meta name="keywords" content="keyword density checker, keyword analysis, seo content analysis, keyword frequency">
+    <link rel="canonical" href="/tools/keyword-density-checker/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../vendor/fontawesome/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+    
+    <style>
+        .tool-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .input-section {
+            margin-bottom: 2rem;
+        }
+        
+        .input-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .content-textarea {
+            width: 100%;
+            min-height: 300px;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            line-height: 1.6;
+            resize: vertical;
+        }
+        
+        .content-textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+        
+        .url-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .url-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+        
+        .button-row {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #2563eb;
+        }
+        
+        .btn-secondary {
+            background: #6b7280;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+        
+        .tab-navigation {
+            display: flex;
+            border-bottom: 2px solid #e5e7eb;
+            margin-bottom: 2rem;
+        }
+        
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #6b7280;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-button.active {
+            color: #3b82f6;
+            border-bottom-color: #3b82f6;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .results-section {
+            display: none;
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #374151;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+        
+        .keyword-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        .keyword-table th,
+        .keyword-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .keyword-table th {
+            background: #f9fafb;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .density-bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 0.25rem;
+        }
+        
+        .density-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981, #3b82f6);
+            transition: width 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .button-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="../../" class="logo">
+                <i class="fas fa-tools"></i> Free Tools Hub
+            </a>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../">Tools</a></li>
+                    <li class="breadcrumb-item active">Keyword Density Checker</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container" role="main">
+        <!-- Tool Header -->
+        <div class="tool-header">
+            <h1 class="tool-title">
+                <i class="fas fa-search"></i>
+                Keyword Density Checker
+            </h1>
+            <p class="tool-description">
+                Analyze keyword density in your content. Check keyword frequency, density percentage, and optimize your content for better SEO performance.
+            </p>
+        </div>
+
+        <!-- Tool Container -->
+        <div class="tool-container">
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <button class="tab-button active" data-tab="text-analysis">Text Analysis</button>
+                <button class="tab-button" data-tab="url-analysis">URL Analysis</button>
+            </div>
+
+            <!-- Text Analysis Tab -->
+            <div class="tab-content active" id="text-analysis">
+                <div class="input-section">
+                    <label class="input-label">Enter your content:</label>
+                    <textarea id="contentText" class="content-textarea" placeholder="Paste your content here to analyze keyword density..."></textarea>
+                </div>
+
+                <div class="button-row">
+                    <button class="btn btn-primary" onclick="analyzeText()">
+                        <i class="fas fa-chart-bar"></i> Analyze Keywords
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearText()">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+                </div>
+            </div>
+
+            <!-- URL Analysis Tab -->
+            <div class="tab-content" id="url-analysis">
+                <div class="input-section">
+                    <label class="input-label">Enter website URL:</label>
+                    <input type="url" id="websiteUrl" class="url-input" placeholder="https://example.com">
+                </div>
+
+                <div class="button-row">
+                    <button class="btn btn-primary" onclick="analyzeURL()">
+                        <i class="fas fa-globe"></i> Analyze URL
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearURL()">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection">
+                <h3>Keyword Density Analysis Results</h3>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalWords">0</div>
+                        <div class="stat-label">Total Words</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="uniqueWords">0</div>
+                        <div class="stat-label">Unique Words</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="topKeyword">-</div>
+                        <div class="stat-label">Top Keyword</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="topDensity">0%</div>
+                        <div class="stat-label">Highest Density</div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Keyword Density Table</h4>
+                    <table class="keyword-table">
+                        <thead>
+                            <tr>
+                                <th>Keyword</th>
+                                <th>Count</th>
+                                <th>Density</th>
+                                <th>Density Bar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="keywordTableBody">
+                            <tr>
+                                <td colspan="4" style="text-align: center; color: #6b7280; padding: 2rem;">
+                                    Enter content to see keyword analysis
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Free Tools Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../js/vendor-loader.js"></script>
+    
+    <script>
+        class KeywordDensityChecker {
+            constructor() {
+                this.initializeTabs();
+                this.stopWords = new Set([
+                    'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from',
+                    'has', 'he', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the',
+                    'to', 'was', 'will', 'with', 'would', 'have', 'had', 'been', 'this',
+                    'but', 'not', 'or', 'can', 'could', 'should', 'may', 'might',
+                    'i', 'you', 'we', 'they', 'she', 'him', 'her', 'us', 'them'
+                ]);
+            }
+            
+            initializeTabs() {
+                const tabButtons = document.querySelectorAll('.tab-button');
+                const tabContents = document.querySelectorAll('.tab-content');
+
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const targetTab = button.dataset.tab;
+
+                        // Remove active class from all buttons and contents
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        tabContents.forEach(content => content.classList.remove('active'));
+
+                        // Add active class to clicked button and target content
+                        button.classList.add('active');
+                        document.getElementById(targetTab).classList.add('active');
+                    });
+                });
+            }
+            
+            analyzeText() {
+                const content = document.getElementById('contentText').value.trim();
+                
+                if (!content) {
+                    alert('Please enter some content to analyze');
+                    return;
+                }
+                
+                const analysis = this.performKeywordAnalysis(content);
+                this.displayResults(analysis);
+            }
+            
+            async analyzeURL() {
+                const url = document.getElementById('websiteUrl').value.trim();
+                
+                if (!url) {
+                    alert('Please enter a valid URL');
+                    return;
+                }
+                
+                try {
+                    // Note: This would require a CORS proxy or server-side implementation
+                    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+                    const response = await fetch(proxyUrl);
+                    const data = await response.json();
+                    const htmlContent = data.contents;
+                    
+                    // Extract text content from HTML
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(htmlContent, 'text/html');
+                    const textContent = doc.body ? doc.body.innerText : '';
+                    
+                    if (!textContent.trim()) {
+                        alert('Unable to extract text content from the webpage');
+                        return;
+                    }
+                    
+                    const analysis = this.performKeywordAnalysis(textContent);
+                    this.displayResults(analysis);
+                    
+                } catch (error) {
+                    alert('Unable to analyze URL. This may be due to CORS restrictions or the website being unavailable.');
+                }
+            }
+            
+            performKeywordAnalysis(content) {
+                // Clean and normalize the content
+                const cleanContent = content.toLowerCase().replace(/[^a-zA-Z0-9\s]/g, ' ');
+                const words = cleanContent.split(/\s+/).filter(word => word.length > 2);
+                
+                // Filter out stop words
+                const meaningfulWords = words.filter(word => !this.stopWords.has(word));
+                
+                // Count word frequencies
+                const wordCount = {};
+                meaningfulWords.forEach(word => {
+                    wordCount[word] = (wordCount[word] || 0) + 1;
+                });
+                
+                // Calculate densities
+                const totalWords = words.length;
+                const uniqueWords = Object.keys(wordCount).length;
+                
+                // Sort words by frequency
+                const sortedWords = Object.entries(wordCount)
+                    .sort(([,a], [,b]) => b - a)
+                    .slice(0, 20); // Top 20 keywords
+                
+                const keywordData = sortedWords.map(([word, count]) => ({
+                    keyword: word,
+                    count: count,
+                    density: ((count / totalWords) * 100).toFixed(2)
+                }));
+                
+                return {
+                    totalWords,
+                    uniqueWords,
+                    keywords: keywordData,
+                    topKeyword: keywordData[0]?.keyword || 'None',
+                    topDensity: keywordData[0]?.density || '0'
+                };
+            }
+            
+            displayResults(analysis) {
+                // Update stats
+                document.getElementById('totalWords').textContent = analysis.totalWords.toLocaleString();
+                document.getElementById('uniqueWords').textContent = analysis.uniqueWords.toLocaleString();
+                document.getElementById('topKeyword').textContent = analysis.topKeyword;
+                document.getElementById('topDensity').textContent = analysis.topDensity + '%';
+                
+                // Update keyword table
+                const tableBody = document.getElementById('keywordTableBody');
+                tableBody.innerHTML = '';
+                
+                if (analysis.keywords.length === 0) {
+                    tableBody.innerHTML = `
+                        <tr>
+                            <td colspan="4" style="text-align: center; color: #6b7280; padding: 2rem;">
+                                No meaningful keywords found
+                            </td>
+                        </tr>
+                    `;
+                } else {
+                    analysis.keywords.forEach(keyword => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td style="font-weight: 500;">${keyword.keyword}</td>
+                            <td>${keyword.count}</td>
+                            <td>${keyword.density}%</td>
+                            <td>
+                                <div class="density-bar">
+                                    <div class="density-fill" style="width: ${Math.min(keyword.density * 10, 100)}%"></div>
+                                </div>
+                            </td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+                }
+                
+                // Show results
+                document.getElementById('resultsSection').style.display = 'block';
+            }
+        }
+        
+        // Global functions
+        function analyzeText() {
+            window.keywordChecker.analyzeText();
+        }
+        
+        function analyzeURL() {
+            window.keywordChecker.analyzeURL();
+        }
+        
+        function clearText() {
+            document.getElementById('contentText').value = '';
+            document.getElementById('resultsSection').style.display = 'none';
+        }
+        
+        function clearURL() {
+            document.getElementById('websiteUrl').value = '';
+            document.getElementById('resultsSection').style.display = 'none';
+        }
+        
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            window.keywordChecker = new KeywordDensityChecker();
+        });
+    </script>
+
+<style>
+#minimax-floating-ball {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 12px;
+  background: #222222;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  color: #F8F8F8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#minimax-floating-ball:hover {
+  transform: translateY(-2px);
+  background: #383838;
+}
+
+.minimax-ball-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.minimax-logo-wave {
+  width: 26px;
+  height: 22px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='22' viewBox='0 0 26 22' fill='none'%3E%3Cg clip-path='url(%23clip0_3442_102412)'%3E%3Cpath d='M12.8405 14.6775C12.8405 14.9897 13.0932 15.2424 13.4055 15.2424C13.7178 15.2424 13.9705 14.9897 13.9705 14.6775V2.98254C13.9705 1.88957 13.0809 1 11.9879 1C10.895 1 10.0054 1.88957 10.0054 2.98254V11.566V17.1068C10.0054 17.5773 9.62327 17.9594 9.1528 17.9594C8.68233 17.9594 8.30021 17.5773 8.30021 17.1068V8.04469C8.30021 6.95172 7.41063 6.06215 6.31767 6.06215C5.22471 6.06215 4.33513 6.95172 4.33513 8.04469V11.8855C4.33513 12.3559 3.953 12.7381 3.48254 12.7381C3.01207 12.7381 2.62994 12.3559 2.62994 11.8855V10.4936C2.62994 10.1813 2.37725 9.92861 2.06497 9.92861C1.7527 9.92861 1.5 10.1813 1.5 10.4936V11.8855C1.5 12.9784 2.38957 13.868 3.48254 13.868C4.5755 13.868 5.46508 12.9784 5.46508 11.8855V8.04469C5.46508 7.57422 5.8472 7.19209 6.31767 7.19209C6.78814 7.19209 7.17026 7.57422 7.17026 8.04469V17.1068C7.17026 18.1998 8.05984 19.0894 9.1528 19.0894C10.2458 19.0894 11.1353 18.1998 11.1353 17.1068V2.98254C11.1353 2.51207 11.5175 2.12994 11.9879 2.12994C12.4584 2.12994 12.8405 2.51207 12.8405 2.98254V14.6775Z' fill='%23F8F8F8'/%3E%3Cpath d='M23.3278 6.06215C22.2348 6.06215 21.3452 6.95172 21.3452 8.04469V15.6143C21.3452 16.0847 20.9631 16.4669 20.4926 16.4669C20.0222 16.4669 19.6401 16.0847 19.6401 15.6143V2.98254C19.6401 1.88957 18.7505 1 17.6575 1C16.5645 1 15.675 1.88957 15.675 2.98254V19.0175C15.675 19.4879 15.2928 19.8701 14.8224 19.8701C14.3519 19.8701 13.9698 19.4879 13.9698 19.0175V17.0329C13.9698 16.7206 13.7171 16.4679 13.4048 16.4679C13.0925 16.4679 12.8398 16.7206 12.8398 17.0329V19.0175C12.8398 20.1104 13.7294 21 14.8224 21C15.9153 21 16.8049 20.1104 16.8049 19.0175V2.98254C16.8049 2.51207 17.187 2.12994 17.6575 2.12994C18.128 2.12994 18.5101 2.51207 18.5101 2.98254V15.6143C18.5101 16.7072 19.3997 17.5968 20.4926 17.5968C21.5856 17.5968 22.4752 16.7072 22.4752 15.6143V8.04469C22.4752 7.57422 22.8573 7.19209 23.3278 7.19209C23.7982 7.19209 24.1804 7.57422 24.1804 8.04469V14.6775C24.1804 14.9897 24.4331 15.2424 24.7453 15.2424C25.0576 15.2424 25.3103 14.9897 25.3103 14.6775V8.04469C25.3103 6.95172 24.4207 6.06215 23.3278 6.06215Z' fill='%23F8F8F8'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_3442_102412'%3E%3Crect width='25' height='22' fill='white' transform='translate(0.5)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.minimax-ball-text {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.minimax-close-icon {
+  margin-left: 8px;
+  font-size: 16px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.minimax-close-icon:hover {
+  opacity: 1;
+}
+</style>
+<div id="minimax-floating-ball">
+  <div class="minimax-ball-content">
+    <div class="minimax-logo-wave"></div>
+    <span class="minimax-ball-text">Created by MiniMax Agent</span>
+  </div>
+  <div class="minimax-close-icon">×</div>
+</div>
+<script>
+// Initialize floating ball functionality
+function initFloatingBall() {
+  const ball = document.getElementById('minimax-floating-ball');
+  if (!ball) return;
+
+  // Initial animation
+  ball.style.opacity = '0';
+  ball.style.transform = 'translateY(20px)';
+
+  setTimeout(() => {
+    ball.style.opacity = '1';
+    ball.style.transform = 'translateY(0)';
+  }, 500);
+
+  // Handle logo click
+  const ballContent = ball.querySelector('.minimax-ball-content');
+  ballContent.addEventListener('click', function (e) {
+    e.stopPropagation();
+    window.open('https://agent.minimax.io/agent', '_blank');
+    ball.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      ball.style.transform = 'scale(1)';
+    }, 100);
+  });
+
+  // Handle close button click
+  const closeIcon = ball.querySelector('.minimax-close-icon');
+  closeIcon.addEventListener('click', function (e) {
+    e.stopPropagation();
+    ball.style.opacity = '0';
+    ball.style.transform = 'translateY(20px)';
+
+    setTimeout(() => {
+      ball.style.display = 'none';
+    }, 300);
+  });
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initFloatingBall); 
+</script>
+
+
+            <script>
+            // Common Tool Functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                // Add ARIA labels to buttons and inputs
+                const buttons = document.querySelectorAll('button');
+                buttons.forEach(button => {
+                    if (!button.getAttribute('aria-label') && button.textContent.trim()) {
+                        button.setAttribute('aria-label', button.textContent.trim());
+                    }
+                });
+                
+                // Add alt text to images missing it
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    if (!img.getAttribute('alt')) {
+                        img.setAttribute('alt', '');
+                    }
+                });
+                
+                // Disable buttons until valid input
+                const inputFields = document.querySelectorAll('input[type="text"], textarea');
+                const actionButtons = document.querySelectorAll('.btn-primary, button[onclick]');
+                
+                function checkInputs() {
+                    const hasInput = Array.from(inputFields).some(field => field.value.trim().length > 0);
+                    actionButtons.forEach(button => {
+                        if (button.textContent.includes('Copy') || 
+                            button.textContent.includes('Download') || 
+                            button.textContent.includes('Generate')) {
+                            button.disabled = !hasInput;
+                        }
+                    });
+                }
+                
+                inputFields.forEach(field => {
+                    field.addEventListener('input', checkInputs);
+                });
+                
+                // Initial check
+                checkInputs();
+                
+                // Add success/error notifications
+                window.showNotification = function(message, type = 'success') {
+                    const notification = document.createElement('div');
+                    notification.className = `notification notification-${type}`;
+                    notification.innerHTML = `
+                        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}" aria-hidden="true"></i>
+                        <span>${message}</span>
+                    `;
+                    
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: ${type === 'success' ? '#10b981' : '#ef4444'};
+                        color: white;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                        z-index: 1000;
+                        opacity: 0;
+                        transform: translateX(100%);
+                        transition: all 0.3s ease;
+                        max-width: 400px;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    `;
+                    
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '1';
+                        notification.style.transform = 'translateX(0)';
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        notification.style.transform = 'translateX(100%)';
+                        setTimeout(() => {
+                            if (notification.parentNode) {
+                                document.body.removeChild(notification);
+                            }
+                        }, 300);
+                    }, 3000);
+                };
+                
+                // Enhanced copy functionality
+                window.copyToClipboard = async function(text) {
+                    try {
+                        if (navigator.clipboard && window.isSecureContext) {
+                            await navigator.clipboard.writeText(text);
+                            showNotification('Copied to clipboard!', 'success');
+                            return true;
+                        } else {
+                            // Fallback for older browsers
+                            const textArea = document.createElement('textarea');
+                            textArea.value = text;
+                            textArea.style.position = 'fixed';
+                            textArea.style.left = '-999999px';
+                            textArea.style.top = '-999999px';
+                            document.body.appendChild(textArea);
+                            textArea.focus();
+                            textArea.select();
+                            
+                            try {
+                                document.execCommand('copy');
+                                textArea.remove();
+                                showNotification('Copied to clipboard!', 'success');
+                                return true;
+                            } catch (err) {
+                                textArea.remove();
+                                showNotification('Failed to copy to clipboard', 'error');
+                                return false;
+                            }
+                        }
+                    } catch (err) {
+                        showNotification('Failed to copy to clipboard', 'error');
+                        return false;
+                    }
+                };
+            });
+            </script>
+            
+</body>
+</html>

@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <title>Percentage Calculator - Quick Math Tool | Free Tools Hub</title>
+    <meta name="description" content="Calculate percentages, increases, decreases, and ratios with our percentage calculator. Solve percentage problems quickly and accurately.">
+    <meta name="keywords" content="percentage calculator, calculate percentage, percentage increase, percentage decrease, percent change, percentage formula">
+    <meta name="author" content="Free Tools Hub">
+    <link rel="canonical" href="/tools/percentage-calculator/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="/tools/percentage-calculator/">
+    <meta property="og:title" content="Free Percentage Calculator - Calculate Percentages Online">
+    <meta property="og:description" content="Calculate percentages, percentage increase, decrease, and change with our free online percentage calculator. Instant results and explanations.">
+    <meta property="og:image" content="/images/percentage-calculator-tool.jpg">
+    
+    <!-- X -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="/tools/percentage-calculator/">
+    <meta property="twitter:title" content="Free Percentage Calculator">
+    <meta property="twitter:description" content="Calculate percentages, increases, decreases, and changes with detailed explanations and formulas.">
+    <meta property="twitter:image" content="/images/percentage-calculator-tool.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" onerror="this.onerror=null;this.href='/vendor/fontawesome/css/all.min.css'">
+    <link href="../../css/main.css" rel="stylesheet">
+    
+    <!-- Additional styles for percentage calculator -->
+    <style>
+        .calculator-tabs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .calculator-tab {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .calculator-tab:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .calculator-tab.active {
+            border-color: var(--primary-color);
+            background: #eff6ff;
+        }
+        
+        .tab-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .tab-title {
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+        
+        .tab-description {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .calculator-content {
+            display: none;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .calculator-content.active {
+            display: block;
+        }
+        
+        .calc-input-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .calc-input-group {
+            position: relative;
+        }
+        
+        .calc-input-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+        
+        .calc-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1.125rem;
+            text-align: center;
+            transition: border-color 0.3s ease;
+        }
+        
+        .calc-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .calc-input.error {
+            border-color: #ef4444;
+        }
+        
+        .input-suffix {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6b7280;
+            font-weight: 500;
+            pointer-events: none;
+            margin-top: 1.25rem;
+        }
+        
+        .calc-result {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            color: white;
+            display: none;
+        }
+        
+        .calc-result.show {
+            display: block;
+        }
+        
+        .result-main {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            line-height: 1.2;
+        }
+        
+        .result-explanation {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .result-formula {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            backdrop-filter: blur(10px);
+        }
+        
+        .formula-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .formula-equation {
+            font-size: 1.125rem;
+        }
+        
+        .examples-section {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .example-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid #e5e7eb;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .example-item:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .example-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .example-description {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+        
+        .example-calculation {
+            font-family: 'Courier New', monospace;
+            background: #f3f4f6;
+            border-radius: 4px;
+            padding: 0.5rem;
+            font-size: 0.875rem;
+            color: #374151;
+        }
+        
+        .quick-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+        
+        .history-section {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            display: none;
+        }
+        
+        .history-section.show {
+            display: block;
+        }
+        
+        .history-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #dcfce7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .history-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .history-calculation {
+            font-family: 'Courier New', monospace;
+            color: #374151;
+        }
+        
+        .history-result {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .history-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .history-btn {
+            background: transparent;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        
+        .history-btn:hover {
+            background: #f3f4f6;
+        }
+        
+        @media (max-width: 768px) {
+            .calculator-tabs {
+                grid-template-columns: 1fr;
+            }
+            
+            .calc-input-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .result-main {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Percentage Calculator Tool",
+        "url": "/tools/percentage-calculator/",
+        "description": "Free online percentage calculator for various percentage calculations",
+        "applicationCategory": "CalculatorApplication",
+        "operatingSystem": "Any",
+        "permissions": "browser",
+        "isAccessibleForFree": true,
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "Free Tools Hub",
+            "url": ""
+        },
+        "featureList": [
+            "Basic percentage calculations",
+            "Percentage increase calculations",
+            "Percentage decrease calculations",
+            "Percentage change calculations",
+            "Percentage of total calculations",
+            "Calculation history tracking"
+        ]
+    }
+    </script>
+    <!-- Vendor Library Loader with CDN Fallbacks -->
+    <script src="../../js/vendor-loader.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="navbar-brand">
+                    <i class="fas fa-tools"></i>
+                    Free Tools Hub
+                </a>
+                
+                <ul class="navbar-nav">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/#categories" class="nav-link">Categories</a></li>
+                    <li><a href="/tools/" class="nav-link">All Tools</a></li>
+                    <li><a href="/about/" class="nav-link">About</a></li>
+                    <li><a href="/contact/" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <button class="navbar-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Tool Header -->
+    <section class="tool-header">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/tools/">Tools</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/tools/calculator/">Calculators</a>
+                <span class="breadcrumb-separator">/</span>
+                <span>Percentage Calculator</span>
+            </nav>
+            
+            <h1 class="tool-title">
+                <i class="fas fa-percentage"></i>
+                Percentage Calculator
+            </h1>
+            <p class="tool-description">
+                Calculate percentages, percentage increase, decrease, change, and more with our comprehensive percentage calculator. Get instant results with detailed explanations.
+            </p>
+            
+            <!-- Social Sharing -->
+            <div class="social-share">
+                <span class="social-share-label">Share this tool:</span>
+                <a href="#" class="social-btn social-btn-facebook" data-platform="facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-btn social-btn-twitter" data-platform="twitter">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="#" class="social-btn social-btn-linkedin" data-platform="linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-btn social-btn-whatsapp" data-platform="whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <div class="container" style="display: grid; grid-template-columns: 1fr 300px; gap: 2rem; align-items: start;">
+            
+            <!-- Tool Interface -->
+            <div class="tool-interface">
+                <h2>Choose Calculation Type</h2>
+                <p>Select the type of percentage calculation you need:</p>
+                
+                <!-- Calculator Type Tabs -->
+                <div class="calculator-tabs">
+                    <div class="calculator-tab active" data-calc="basic">
+                        <div class="tab-icon"><i class="fas fa-percentage"></i></div>
+                        <div class="tab-title">Basic Percentage</div>
+                        <div class="tab-description">What is X% of Y?</div>
+                    </div>
+                    
+                    <div class="calculator-tab" data-calc="of-total">
+                        <div class="tab-icon"><i class="fas fa-chart-pie"></i></div>
+                        <div class="tab-title">Percentage of Total</div>
+                        <div class="tab-description">X is what % of Y?</div>
+                    </div>
+                    
+                    <div class="calculator-tab" data-calc="increase">
+                        <div class="tab-icon"><i class="fas fa-arrow-up"></i></div>
+                        <div class="tab-title">Percentage Increase</div>
+                        <div class="tab-description">% increase from X to Y</div>
+                    </div>
+                    
+                    <div class="calculator-tab" data-calc="decrease">
+                        <div class="tab-icon"><i class="fas fa-arrow-down"></i></div>
+                        <div class="tab-title">Percentage Decrease</div>
+                        <div class="tab-description">% decrease from X to Y</div>
+                    </div>
+                    
+                    <div class="calculator-tab" data-calc="change">
+                        <div class="tab-icon"><i class="fas fa-exchange-alt"></i></div>
+                        <div class="tab-title">Percentage Change</div>
+                        <div class="tab-description">% change from X to Y</div>
+                    </div>
+                    
+                    <div class="calculator-tab" data-calc="tip">
+                        <div class="tab-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                        <div class="tab-title">Tip Calculator</div>
+                        <div class="tab-description">Calculate tip and total</div>
+                    </div>
+                </div>
+                
+                <!-- Basic Percentage Calculator -->
+                <div id="basic-calc" class="calculator-content active">
+                    <h3><i class="fas fa-percentage"></i> Basic Percentage Calculator</h3>
+                    <p>Calculate what percentage of a number equals another number.</p>
+                    
+                    <div class="calc-input-grid">
+                        <div class="calc-input-group">
+                            <label for="basic-percent" class="calc-input-label">Percentage</label>
+                            <input type="number" id="basic-percent" class="calc-input" placeholder="25" step="any">
+                            <span class="input-suffix">%</span>
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="basic-of-value" class="calc-input-label">Of Value</label>
+                            <input type="number" id="basic-of-value" class="calc-input" placeholder="200" step="any">
+                        </div>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <button class="btn btn-primary" onclick="PercentageCalculator.calculateBasic()" aria-label="Action button">
+                            <i class="fas fa-calculator"></i>
+                            Calculate
+                        </button>
+                        <button class="btn btn-secondary" onclick="PercentageCalculator.clearInputs('basic')" aria-label="Clear">
+                            <i class="fas fa-eraser"></i>
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <div id="basic-result" class="calc-result">
+                        <div class="result-main" id="basic-result-value">50</div>
+                        <div class="result-explanation" id="basic-result-text">25% of 200 is 50</div>
+                        <div class="result-formula">
+                            <div class="formula-title">Formula:</div>
+                            <div class="formula-equation" id="basic-formula">Result = (25 / 100) × 200 = 50</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Percentage of Total Calculator -->
+                <div id="of-total-calc" class="calculator-content">
+                    <h3><i class="fas fa-chart-pie"></i> Percentage of Total Calculator</h3>
+                    <p>Find what percentage one number is of another number.</p>
+                    
+                    <div class="calc-input-grid">
+                        <div class="calc-input-group">
+                            <label for="part-value" class="calc-input-label">Part Value</label>
+                            <input type="number" id="part-value" class="calc-input" placeholder="50" step="any">
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="total-value" class="calc-input-label">Total Value</label>
+                            <input type="number" id="total-value" class="calc-input" placeholder="200" step="any">
+                        </div>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <button class="btn btn-primary" onclick="PercentageCalculator.calculateOfTotal()" aria-label="Action button">
+                            <i class="fas fa-calculator"></i>
+                            Calculate
+                        </button>
+                        <button class="btn btn-secondary" onclick="PercentageCalculator.clearInputs('of-total')" aria-label="Clear">
+                            <i class="fas fa-eraser"></i>
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <div id="of-total-result" class="calc-result">
+                        <div class="result-main" id="of-total-result-value">25%</div>
+                        <div class="result-explanation" id="of-total-result-text">50 is 25% of 200</div>
+                        <div class="result-formula">
+                            <div class="formula-title">Formula:</div>
+                            <div class="formula-equation" id="of-total-formula">Percentage = (50 / 200) × 100 = 25%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Percentage Increase Calculator -->
+                <div id="increase-calc" class="calculator-content">
+                    <h3><i class="fas fa-arrow-up"></i> Percentage Increase Calculator</h3>
+                    <p>Calculate the percentage increase from one value to another.</p>
+                    
+                    <div class="calc-input-grid">
+                        <div class="calc-input-group">
+                            <label for="increase-old" class="calc-input-label">Original Value</label>
+                            <input type="number" id="increase-old" class="calc-input" placeholder="100" step="any">
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="increase-new" class="calc-input-label">New Value</label>
+                            <input type="number" id="increase-new" class="calc-input" placeholder="125" step="any">
+                        </div>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <button class="btn btn-primary" onclick="PercentageCalculator.calculateIncrease()" aria-label="Action button">
+                            <i class="fas fa-calculator"></i>
+                            Calculate
+                        </button>
+                        <button class="btn btn-secondary" onclick="PercentageCalculator.clearInputs('increase')" aria-label="Clear">
+                            <i class="fas fa-eraser"></i>
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <div id="increase-result" class="calc-result">
+                        <div class="result-main" id="increase-result-value">25%</div>
+                        <div class="result-explanation" id="increase-result-text">25% increase from 100 to 125</div>
+                        <div class="result-formula">
+                            <div class="formula-title">Formula:</div>
+                            <div class="formula-equation" id="increase-formula">Increase = ((125 - 100) / 100) × 100 = 25%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Percentage Decrease Calculator -->
+                <div id="decrease-calc" class="calculator-content">
+                    <h3><i class="fas fa-arrow-down"></i> Percentage Decrease Calculator</h3>
+                    <p>Calculate the percentage decrease from one value to another.</p>
+                    
+                    <div class="calc-input-grid">
+                        <div class="calc-input-group">
+                            <label for="decrease-old" class="calc-input-label">Original Value</label>
+                            <input type="number" id="decrease-old" class="calc-input" placeholder="100" step="any">
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="decrease-new" class="calc-input-label">New Value</label>
+                            <input type="number" id="decrease-new" class="calc-input" placeholder="75" step="any">
+                        </div>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <button class="btn btn-primary" onclick="PercentageCalculator.calculateDecrease()" aria-label="Action button">
+                            <i class="fas fa-calculator"></i>
+                            Calculate
+                        </button>
+                        <button class="btn btn-secondary" onclick="PercentageCalculator.clearInputs('decrease')" aria-label="Clear">
+                            <i class="fas fa-eraser"></i>
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <div id="decrease-result" class="calc-result">
+                        <div class="result-main" id="decrease-result-value">25%</div>
+                        <div class="result-explanation" id="decrease-result-text">25% decrease from 100 to 75</div>
+                        <div class="result-formula">
+                            <div class="formula-title">Formula:</div>
+                            <div class="formula-equation" id="decrease-formula">Decrease = ((100 - 75) / 100) × 100 = 25%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Percentage Change Calculator -->
+                <div id="change-calc" class="calculator-content">
+                    <h3><i class="fas fa-exchange-alt"></i> Percentage Change Calculator</h3>
+                    <p>Calculate the percentage change (positive or negative) between two values.</p>
+                    
+                    <div class="calc-input-grid">
+                        <div class="calc-input-group">
+                            <label for="change-old" class="calc-input-label">Original Value</label>
+                            <input type="number" id="change-old" class="calc-input" placeholder="100" step="any">
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="change-new" class="calc-input-label">New Value</label>
+                            <input type="number" id="change-new" class="calc-input" placeholder="120" step="any">
+                        </div>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <button class="btn btn-primary" onclick="PercentageCalculator.calculateChange()" aria-label="Action button">
+                            <i class="fas fa-calculator"></i>
+                            Calculate
+                        </button>
+                        <button class="btn btn-secondary" onclick="PercentageCalculator.clearInputs('change')" aria-label="Clear">
+                            <i class="fas fa-eraser"></i>
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <div id="change-result" class="calc-result">
+                        <div class="result-main" id="change-result-value">20%</div>
+                        <div class="result-explanation" id="change-result-text">20% increase from 100 to 120</div>
+                        <div class="result-formula">
+                            <div class="formula-title">Formula:</div>
+                            <div class="formula-equation" id="change-formula">Change = ((120 - 100) / 100) × 100 = +20%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tip Calculator -->
+                <div id="tip-calc" class="calculator-content">
+                    <h3><i class="fas fa-hand-holding-usd"></i> Tip Calculator</h3>
+                    <p>Calculate tip amount and total bill including tip.</p>
+                    
+                    <div class="calc-input-grid">
+                        <div class="calc-input-group">
+                            <label for="bill-amount" class="calc-input-label">Bill Amount</label>
+                            <input type="number" id="bill-amount" class="calc-input" placeholder="50.00" step="0.01" min="0">
+                            <span class="input-suffix">$</span>
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="tip-percent" class="calc-input-label">Tip Percentage</label>
+                            <input type="number" id="tip-percent" class="calc-input" placeholder="15" step="any" min="0" max="100">
+                            <span class="input-suffix">%</span>
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="people-count" class="calc-input-label">Number of People</label>
+                            <input type="number" id="people-count" class="calc-input" placeholder="1" min="1" value="1">
+                        </div>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <button class="btn btn-primary" onclick="PercentageCalculator.calculateTip()" aria-label="Action button">
+                            <i class="fas fa-calculator"></i>
+                            Calculate
+                        </button>
+                        <button class="btn btn-secondary" onclick="PercentageCalculator.clearInputs('tip')" aria-label="Clear">
+                            <i class="fas fa-eraser"></i>
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <div id="tip-result" class="calc-result">
+                        <div class="result-main" id="tip-result-value">$57.50</div>
+                        <div class="result-explanation" id="tip-result-text">Total including 15% tip ($7.50)</div>
+                        <div class="result-formula">
+                            <div class="formula-title">Breakdown:</div>
+                            <div class="formula-equation" id="tip-formula">Bill: $50.00 + Tip: $7.50 = Total: $57.50</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Examples Section -->
+                <div class="examples-section">
+                    <h3><i class="fas fa-lightbulb"></i> Common Examples</h3>
+                    <p>Click on any example to auto-fill the calculator:</p>
+                    
+                    <div class="examples-grid">
+                        <div class="example-item" onclick="PercentageCalculator.loadExample('discount')">
+                            <div class="example-title">Shopping Discount</div>
+                            <div class="example-description">Calculate savings on a $80 item with 25% off</div>
+                            <div class="example-calculation">25% of $80 = $20 savings</div>
+                        </div>
+                        
+                        <div class="example-item" onclick="PercentageCalculator.loadExample('tax')">
+                            <div class="example-title">Sales Tax</div>
+                            <div class="example-description">Add 8.5% sales tax to a $120 purchase</div>
+                            <div class="example-calculation">8.5% of $120 = $10.20 tax</div>
+                        </div>
+                        
+                        <div class="example-item" onclick="PercentageCalculator.loadExample('grade')">
+                            <div class="example-title">Test Score</div>
+                            <div class="example-description">Calculate percentage: 85 out of 100 points</div>
+                            <div class="example-calculation">85 is 85% of 100</div>
+                        </div>
+                        
+                        <div class="example-item" onclick="PercentageCalculator.loadExample('salary')">
+                            <div class="example-title">Salary Increase</div>
+                            <div class="example-description">5% raise on $60,000 annual salary</div>
+                            <div class="example-calculation">5% of $60,000 = $3,000 increase</div>
+                        </div>
+                        
+                        <div class="example-item" onclick="PercentageCalculator.loadExample('investment')">
+                            <div class="example-title">Investment Growth</div>
+                            <div class="example-description">Stock value grew from $100 to $125</div>
+                            <div class="example-calculation">25% increase from $100 to $125</div>
+                        </div>
+                        
+                        <div class="example-item" onclick="PercentageCalculator.loadExample('restaurant')">
+                            <div class="example-title">Restaurant Bill</div>
+                            <div class="example-description">18% tip on a $85.50 dinner bill</div>
+                            <div class="example-calculation">18% tip = $15.39 + bill = $100.89</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Calculation History -->
+                <div id="history-section" class="history-section">
+                    <h3><i class="fas fa-history"></i> Calculation History</h3>
+                    <p>Your recent calculations:</p>
+                    <div id="history-container">
+                        <!-- History items will be added here -->
+                    </div>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <button class="btn btn-secondary" onclick="PercentageCalculator.clearHistory()" aria-label="Clear">
+                            <i class="fas fa-trash"></i>
+                            Clear History
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- About This Tool -->
+                <section style="margin-top: 3rem;">
+                    <h2>About the Percentage Calculator</h2>
+                    <p>Our comprehensive percentage calculator handles all common percentage calculations with detailed explanations and formulas.</p>
+                    
+                    <h3>Types of Calculations</h3>
+                    <ul>
+                        <li><strong>Basic Percentage:</strong> Find what percentage of a number equals another (e.g., 25% of 200)</li>
+                        <li><strong>Percentage of Total:</strong> Find what percentage one number is of another (e.g., 50 is what % of 200)</li>
+                        <li><strong>Percentage Increase:</strong> Calculate the percentage increase between two values</li>
+                        <li><strong>Percentage Decrease:</strong> Calculate the percentage decrease between two values</li>
+                        <li><strong>Percentage Change:</strong> Calculate any change (positive or negative) between values</li>
+                        <li><strong>Tip Calculator:</strong> Calculate tips and total bills for restaurants</li>
+                    </ul>
+                    
+                    <h3>Common Use Cases</h3>
+                    <ul>
+                        <li><strong>Shopping:</strong> Calculate discounts, sales tax, and savings</li>
+                        <li><strong>Finance:</strong> Investment returns, interest rates, loan calculations</li>
+                        <li><strong>Business:</strong> Profit margins, growth rates, market share</li>
+                        <li><strong>Education:</strong> Test scores, grade calculations, academic performance</li>
+                        <li><strong>Health:</strong> BMI changes, diet progress, fitness improvements</li>
+                        <li><strong>Real Estate:</strong> Price changes, commission calculations, market analysis</li>
+                    </ul>
+                    
+                    <h3>Percentage Formulas</h3>
+                    <ul>
+                        <li><strong>Basic Percentage:</strong> (Percentage / 100) × Total Value</li>
+                        <li><strong>Percentage of Total:</strong> (Part Value / Total Value) × 100</li>
+                        <li><strong>Percentage Change:</strong> ((New Value - Old Value) / Old Value) × 100</li>
+                        <li><strong>Percentage Increase:</strong> ((New Value - Old Value) / Old Value) × 100</li>
+                        <li><strong>Percentage Decrease:</strong> ((Old Value - New Value) / Old Value) × 100</li>
+                    </ul>
+                    
+                    <h3>Tips for Using Percentages</h3>
+                    <ul>
+                        <li>Always identify what you're looking for: the part, whole, or percentage</li>
+                        <li>Double-check your calculations, especially with financial matters</li>
+                        <li>Remember that percentage increase and decrease are not symmetrical</li>
+                        <li>Use our calculator to avoid common percentage calculation errors</li>
+                        <li>Save calculations to history for future reference</li>
+                    </ul>
+                </section>
+            </div>
+            
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h4 class="sidebar-title">Related Calculators</h4>
+                    <ul class="related-tools">
+                        <li><a href="/tools/bmi-calculator/">BMI Calculator</a></li>
+                        <li><a href="/tools/age-calculator/">Age Calculator</a></li>
+                        <li><a href="/tools/tip-calculator/">Tip Calculator</a></li>
+                        <li><a href="/tools/loan-calculator/">Loan Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h4 class="sidebar-title">Math Tools</h4>
+                    <ul class="related-tools">
+                        <li><a href="/tools/fraction-calculator/">Fraction Calculator</a></li>
+                        <li><a href="/tools/decimal-converter/">Decimal Converter</a></li>
+                        <li><a href="/tools/ratio-calculator/">Ratio Calculator</a></li>
+                        <li><a href="/tools/unit-converter/">Unit Converter</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter Signup -->
+                <div class="newsletter-form">
+                    <h4>Math & Finance Tips</h4>
+                    <p>Get calculation tips and financial insights</p>
+                    <form data-track="newsletter">
+                        <input type="email" class="newsletter-input" placeholder="Your email" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+                
+                <!-- Ad Space -->
+                <div class="ad-sidebar">
+                    <p style="color: #666; font-size: 0.875rem; text-align: center; padding: 2rem;">Advertisement</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Free Tools Hub</h4>
+                    <p>Professional calculators and math tools for everyday calculations.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Math Calculators</h4>
+                    <ul class="footer-links">
+                        <li><a href="/tools/percentage-calculator/">Percentage Calculator</a></li>
+                        <li><a href="/tools/fraction-calculator/">Fraction Calculator</a></li>
+                        <li><a href="/tools/ratio-calculator/">Ratio Calculator</a></li>
+                        <li><a href="/tools/unit-converter/">Unit Converter</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Other Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="/tools/text/">Text Tools</a></li>
+                        <li><a href="/tools/developer/">Developer Tools</a></li>
+                        <li><a href="/tools/generator/">Generators</a></li>
+                        <li><a href="/tools/converter/">Converters</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy/">Privacy</a></li>
+                        <li><a href="/terms/">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Free Tools Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    
+    <!-- Percentage Calculator Script -->
+    <script>
+        const PercentageCalculator = {
+            init: function() {
+                this.currentCalculator = 'basic';
+                this.history = JSON.parse(localStorage.getItem('percentageHistory') || '[]');
+                this.setupEventListeners();
+                this.displayHistory();
+            },
+            
+            setupEventListeners: function() {
+                // Calculator tab switching
+                document.querySelectorAll('.calculator-tab').forEach(tab => {
+                    tab.addEventListener('click', (e) => {
+                        this.switchCalculator(e.currentTarget.dataset.calc);
+                    });
+                });
+                
+                // Real-time calculation on input change
+                document.addEventListener('input', (e) => {
+                    if (e.target.classList.contains('calc-input')) {
+                        // Auto-calculate if all required fields are filled
+                        setTimeout(() => {
+                            this.autoCalculate();
+                        }, 500);
+                    }
+                });
+            },
+            
+            switchCalculator: function(calcType) {
+                // Update active tab
+                document.querySelectorAll('.calculator-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                document.querySelector(`[data-calc="${calcType}"]`).classList.add('active');
+                
+                // Update active content
+                document.querySelectorAll('.calculator-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(`${calcType}-calc`).classList.add('active');
+                
+                this.currentCalculator = calcType;
+                this.hideAllResults();
+            },
+            
+            autoCalculate: function() {
+                switch (this.currentCalculator) {
+                    case 'basic':
+                        if (this.hasValidInputs(['basic-percent', 'basic-of-value'])) {
+                            this.calculateBasic();
+                        }
+                        break;
+                    case 'of-total':
+                        if (this.hasValidInputs(['part-value', 'total-value'])) {
+                            this.calculateOfTotal();
+                        }
+                        break;
+                    case 'increase':
+                        if (this.hasValidInputs(['increase-old', 'increase-new'])) {
+                            this.calculateIncrease();
+                        }
+                        break;
+                    case 'decrease':
+                        if (this.hasValidInputs(['decrease-old', 'decrease-new'])) {
+                            this.calculateDecrease();
+                        }
+                        break;
+                    case 'change':
+                        if (this.hasValidInputs(['change-old', 'change-new'])) {
+                            this.calculateChange();
+                        }
+                        break;
+                    case 'tip':
+                        if (this.hasValidInputs(['bill-amount', 'tip-percent'])) {
+                            this.calculateTip();
+                        }
+                        break;
+                }
+            },
+            
+            hasValidInputs: function(inputIds) {
+                return inputIds.every(id => {
+                    const value = document.getElementById(id).value;
+                    return value !== '' && !isNaN(parseFloat(value));
+                });
+            },
+            
+            calculateBasic: function() {
+                const percent = parseFloat(document.getElementById('basic-percent').value);
+                const ofValue = parseFloat(document.getElementById('basic-of-value').value);
+                
+                if (isNaN(percent) || isNaN(ofValue)) {
+                    FreeToolsHub.components.notifications.warning('Please enter valid numbers');
+                    return;
+                }
+                
+                const result = (percent / 100) * ofValue;
+                
+                document.getElementById('basic-result-value').textContent = FreeToolsHub.utils.formatNumber(result, 2);
+                document.getElementById('basic-result-text').textContent = 
+                    `${percent}% of ${FreeToolsHub.utils.formatNumber(ofValue)} is ${FreeToolsHub.utils.formatNumber(result, 2)}`;
+                document.getElementById('basic-formula').textContent = 
+                    `Result = (${percent} / 100) × ${ofValue} = ${FreeToolsHub.utils.formatNumber(result, 2)}`;
+                
+                document.getElementById('basic-result').classList.add('show');
+                
+                this.addToHistory(`${percent}% of ${ofValue}`, FreeToolsHub.utils.formatNumber(result, 2));
+                FreeToolsHub.analytics.trackToolUsage('percentage-calculator', 'basic');
+            },
+            
+            calculateOfTotal: function() {
+                const partValue = parseFloat(document.getElementById('part-value').value);
+                const totalValue = parseFloat(document.getElementById('total-value').value);
+                
+                if (isNaN(partValue) || isNaN(totalValue) || totalValue === 0) {
+                    FreeToolsHub.components.notifications.warning('Please enter valid numbers (total cannot be zero)');
+                    return;
+                }
+                
+                const result = (partValue / totalValue) * 100;
+                
+                document.getElementById('of-total-result-value').textContent = `${FreeToolsHub.utils.formatNumber(result, 2)}%`;
+                document.getElementById('of-total-result-text').textContent = 
+                    `${FreeToolsHub.utils.formatNumber(partValue)} is ${FreeToolsHub.utils.formatNumber(result, 2)}% of ${FreeToolsHub.utils.formatNumber(totalValue)}`;
+                document.getElementById('of-total-formula').textContent = 
+                    `Percentage = (${partValue} / ${totalValue}) × 100 = ${FreeToolsHub.utils.formatNumber(result, 2)}%`;
+                
+                document.getElementById('of-total-result').classList.add('show');
+                
+                this.addToHistory(`${partValue} is what % of ${totalValue}`, `${FreeToolsHub.utils.formatNumber(result, 2)}%`);
+                FreeToolsHub.analytics.trackToolUsage('percentage-calculator', 'of-total');
+            },
+            
+            calculateIncrease: function() {
+                const oldValue = parseFloat(document.getElementById('increase-old').value);
+                const newValue = parseFloat(document.getElementById('increase-new').value);
+                
+                if (isNaN(oldValue) || isNaN(newValue) || oldValue === 0) {
+                    FreeToolsHub.components.notifications.warning('Please enter valid numbers (original value cannot be zero)');
+                    return;
+                }
+                
+                if (newValue <= oldValue) {
+                    FreeToolsHub.components.notifications.warning('New value must be greater than original value for increase calculation');
+                    return;
+                }
+                
+                const result = ((newValue - oldValue) / oldValue) * 100;
+                
+                document.getElementById('increase-result-value').textContent = `${FreeToolsHub.utils.formatNumber(result, 2)}%`;
+                document.getElementById('increase-result-text').textContent = 
+                    `${FreeToolsHub.utils.formatNumber(result, 2)}% increase from ${FreeToolsHub.utils.formatNumber(oldValue)} to ${FreeToolsHub.utils.formatNumber(newValue)}`;
+                document.getElementById('increase-formula').textContent = 
+                    `Increase = ((${newValue} - ${oldValue}) / ${oldValue}) × 100 = ${FreeToolsHub.utils.formatNumber(result, 2)}%`;
+                
+                document.getElementById('increase-result').classList.add('show');
+                
+                this.addToHistory(`Increase from ${oldValue} to ${newValue}`, `+${FreeToolsHub.utils.formatNumber(result, 2)}%`);
+                FreeToolsHub.analytics.trackToolUsage('percentage-calculator', 'increase');
+            },
+            
+            calculateDecrease: function() {
+                const oldValue = parseFloat(document.getElementById('decrease-old').value);
+                const newValue = parseFloat(document.getElementById('decrease-new').value);
+                
+                if (isNaN(oldValue) || isNaN(newValue) || oldValue === 0) {
+                    FreeToolsHub.components.notifications.warning('Please enter valid numbers (original value cannot be zero)');
+                    return;
+                }
+                
+                if (newValue >= oldValue) {
+                    FreeToolsHub.components.notifications.warning('New value must be less than original value for decrease calculation');
+                    return;
+                }
+                
+                const result = ((oldValue - newValue) / oldValue) * 100;
+                
+                document.getElementById('decrease-result-value').textContent = `${FreeToolsHub.utils.formatNumber(result, 2)}%`;
+                document.getElementById('decrease-result-text').textContent = 
+                    `${FreeToolsHub.utils.formatNumber(result, 2)}% decrease from ${FreeToolsHub.utils.formatNumber(oldValue)} to ${FreeToolsHub.utils.formatNumber(newValue)}`;
+                document.getElementById('decrease-formula').textContent = 
+                    `Decrease = ((${oldValue} - ${newValue}) / ${oldValue}) × 100 = ${FreeToolsHub.utils.formatNumber(result, 2)}%`;
+                
+                document.getElementById('decrease-result').classList.add('show');
+                
+                this.addToHistory(`Decrease from ${oldValue} to ${newValue}`, `-${FreeToolsHub.utils.formatNumber(result, 2)}%`);
+                FreeToolsHub.analytics.trackToolUsage('percentage-calculator', 'decrease');
+            },
+            
+            calculateChange: function() {
+                const oldValue = parseFloat(document.getElementById('change-old').value);
+                const newValue = parseFloat(document.getElementById('change-new').value);
+                
+                if (isNaN(oldValue) || isNaN(newValue) || oldValue === 0) {
+                    FreeToolsHub.components.notifications.warning('Please enter valid numbers (original value cannot be zero)');
+                    return;
+                }
+                
+                const result = ((newValue - oldValue) / oldValue) * 100;
+                const changeType = result >= 0 ? 'increase' : 'decrease';
+                const changeText = result >= 0 ? 'increase' : 'decrease';
+                
+                document.getElementById('change-result-value').textContent = 
+                    `${result >= 0 ? '+' : ''}${FreeToolsHub.utils.formatNumber(result, 2)}%`;
+                document.getElementById('change-result-text').textContent = 
+                    `${FreeToolsHub.utils.formatNumber(Math.abs(result), 2)}% ${changeText} from ${FreeToolsHub.utils.formatNumber(oldValue)} to ${FreeToolsHub.utils.formatNumber(newValue)}`;
+                document.getElementById('change-formula').textContent = 
+                    `Change = ((${newValue} - ${oldValue}) / ${oldValue}) × 100 = ${result >= 0 ? '+' : ''}${FreeToolsHub.utils.formatNumber(result, 2)}%`;
+                
+                document.getElementById('change-result').classList.add('show');
+                
+                this.addToHistory(`Change from ${oldValue} to ${newValue}`, `${result >= 0 ? '+' : ''}${FreeToolsHub.utils.formatNumber(result, 2)}%`);
+                FreeToolsHub.analytics.trackToolUsage('percentage-calculator', 'change');
+            },
+            
+            calculateTip: function() {
+                const billAmount = parseFloat(document.getElementById('bill-amount').value);
+                const tipPercent = parseFloat(document.getElementById('tip-percent').value);
+                const peopleCount = parseInt(document.getElementById('people-count').value) || 1;
+                
+                if (isNaN(billAmount) || isNaN(tipPercent) || billAmount <= 0 || tipPercent < 0) {
+                    FreeToolsHub.components.notifications.warning('Please enter valid positive numbers');
+                    return;
+                }
+                
+                const tipAmount = (tipPercent / 100) * billAmount;
+                const totalAmount = billAmount + tipAmount;
+                const perPerson = totalAmount / peopleCount;
+                
+                document.getElementById('tip-result-value').textContent = `$${FreeToolsHub.utils.formatNumber(totalAmount, 2)}`;
+                document.getElementById('tip-result-text').textContent = 
+                    `Total including ${tipPercent}% tip ($${FreeToolsHub.utils.formatNumber(tipAmount, 2)})${peopleCount > 1 ? ` - $${FreeToolsHub.utils.formatNumber(perPerson, 2)} per person` : ''}`;
+                document.getElementById('tip-formula').textContent = 
+                    `Bill: $${FreeToolsHub.utils.formatNumber(billAmount, 2)} + Tip: $${FreeToolsHub.utils.formatNumber(tipAmount, 2)} = Total: $${FreeToolsHub.utils.formatNumber(totalAmount, 2)}`;
+                
+                document.getElementById('tip-result').classList.add('show');
+                
+                this.addToHistory(`${tipPercent}% tip on $${billAmount}`, `$${FreeToolsHub.utils.formatNumber(totalAmount, 2)} total`);
+                FreeToolsHub.analytics.trackToolUsage('percentage-calculator', 'tip');
+            },
+            
+            load function(exampleType) {
+                this.hideAllResults();
+                
+                switch (exampleType) {
+                    case 'discount':
+                        this.switchCalculator('basic');
+                        document.getElementById('basic-percent').value = '25';
+                        document.getElementById('basic-of-value').value = '80';
+                        setTimeout(() => this.calculateBasic(), 100);
+                        break;
+                    case 'tax':
+                        this.switchCalculator('basic');
+                        document.getElementById('basic-percent').value = '8.5';
+                        document.getElementById('basic-of-value').value = '120';
+                        setTimeout(() => this.calculateBasic(), 100);
+                        break;
+                    case 'grade':
+                        this.switchCalculator('of-total');
+                        document.getElementById('part-value').value = '85';
+                        document.getElementById('total-value').value = '100';
+                        setTimeout(() => this.calculateOfTotal(), 100);
+                        break;
+                    case 'salary':
+                        this.switchCalculator('basic');
+                        document.getElementById('basic-percent').value = '5';
+                        document.getElementById('basic-of-value').value = '60000';
+                        setTimeout(() => this.calculateBasic(), 100);
+                        break;
+                    case 'investment':
+                        this.switchCalculator('increase');
+                        document.getElementById('increase-old').value = '100';
+                        document.getElementById('increase-new').value = '125';
+                        setTimeout(() => this.calculateIncrease(), 100);
+                        break;
+                    case 'restaurant':
+                        this.switchCalculator('tip');
+                        document.getElementById('bill-amount').value = '85.50';
+                        document.getElementById('tip-percent').value = '18';
+                        document.getElementById('people-count').value = '1';
+                        setTimeout(() => this.calculateTip(), 100);
+                        break;
+                }
+            },
+            
+            clearInputs: function(calcType) {
+                const inputs = document.querySelectorAll(`#${calcType}-calc .calc-input`);
+                inputs.forEach(input => {
+                    input.value = '';
+                    input.classList.remove('error');
+                });
+                
+                // Hide result for this calculator
+                const result = document.getElementById(`${calcType}-result`);
+                if (result) {
+                    result.classList.remove('show');
+                }
+            },
+            
+            hideAllResults: function() {
+                document.querySelectorAll('.calc-result').forEach(result => {
+                    result.classList.remove('show');
+                });
+            },
+            
+            addToHistory: function(calculation, result) {
+                const historyItem = {
+                    calculation: calculation,
+                    result: result,
+                    timestamp: new Date().toLocaleString()
+                };
+                
+                this.history.unshift(historyItem);
+                if (this.history.length > 10) {
+                    this.history = this.history.slice(0, 10);
+                }
+                
+                localStorage.setItem('percentageHistory', JSON.stringify(this.history));
+                this.displayHistory();
+            },
+            
+            displayHistory: function() {
+                const container = document.getElementById('history-container');
+                const section = document.getElementById('history-section');
+                
+                if (this.history.length === 0) {
+                    section.classList.remove('show');
+                    return;
+                }
+                
+                container.innerHTML = '';
+                this.history.forEach((item, index) => {
+                    const historyItem = document.createElement('div');
+                    historyItem.className = 'history-item';
+                    historyItem.innerHTML = `
+                        <div>
+                            <div class="history-calculation">${item.calculation}</div>
+                            <div style="font-size: 0.75rem; color: #6b7280;">${item.timestamp}</div>
+                        </div>
+                        <div class="history-result">${item.result}</div>
+                        <div class="history-actions">
+                            <button class="history-btn" onclick="PercentageCalculator.removeFromHistory(${index})" aria-label="Action button">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    `;
+                    container.appendChild(historyItem);
+                });
+                
+                section.classList.add('show');
+            },
+            
+            removeFromHistory: function(index) {
+                this.history.splice(index, 1);
+                localStorage.setItem('percentageHistory', JSON.stringify(this.history));
+                this.displayHistory();
+            },
+            
+            clearHistory: function() {
+                this.history = [];
+                localStorage.removeItem('percentageHistory');
+                this.displayHistory();
+                FreeToolsHub.components.notifications.success('History cleared');
+            }
+        };
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            PercentageCalculator.init();
+            FreeToolsHub.analytics.trackToolUsage('percentage-calculator', 'page_view');
+        });
+    </script>
+
+<style>
+#minimax-floating-ball {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 12px;
+  background: #222222;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  color: #F8F8F8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#minimax-floating-ball:hover {
+  transform: translateY(-2px);
+  background: #383838;
+}
+
+.minimax-ball-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.minimax-logo-wave {
+  width: 26px;
+  height: 22px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='22' viewBox='0 0 26 22' fill='none'%3E%3Cg clip-path='url(%23clip0_3442_102412)'%3E%3Cpath d='M12.8405 14.6775C12.8405 14.9897 13.0932 15.2424 13.4055 15.2424C13.7178 15.2424 13.9705 14.9897 13.9705 14.6775V2.98254C13.9705 1.88957 13.0809 1 11.9879 1C10.895 1 10.0054 1.88957 10.0054 2.98254V11.566V17.1068C10.0054 17.5773 9.62327 17.9594 9.1528 17.9594C8.68233 17.9594 8.30021 17.5773 8.30021 17.1068V8.04469C8.30021 6.95172 7.41063 6.06215 6.31767 6.06215C5.22471 6.06215 4.33513 6.95172 4.33513 8.04469V11.8855C4.33513 12.3559 3.953 12.7381 3.48254 12.7381C3.01207 12.7381 2.62994 12.3559 2.62994 11.8855V10.4936C2.62994 10.1813 2.37725 9.92861 2.06497 9.92861C1.7527 9.92861 1.5 10.1813 1.5 10.4936V11.8855C1.5 12.9784 2.38957 13.868 3.48254 13.868C4.5755 13.868 5.46508 12.9784 5.46508 11.8855V8.04469C5.46508 7.57422 5.8472 7.19209 6.31767 7.19209C6.78814 7.19209 7.17026 7.57422 7.17026 8.04469V17.1068C7.17026 18.1998 8.05984 19.0894 9.1528 19.0894C10.2458 19.0894 11.1353 18.1998 11.1353 17.1068V2.98254C11.1353 2.51207 11.5175 2.12994 11.9879 2.12994C12.4584 2.12994 12.8405 2.51207 12.8405 2.98254V14.6775Z' fill='%23F8F8F8'/%3E%3Cpath d='M23.3278 6.06215C22.2348 6.06215 21.3452 6.95172 21.3452 8.04469V15.6143C21.3452 16.0847 20.9631 16.4669 20.4926 16.4669C20.0222 16.4669 19.6401 16.0847 19.6401 15.6143V2.98254C19.6401 1.88957 18.7505 1 17.6575 1C16.5645 1 15.675 1.88957 15.675 2.98254V19.0175C15.675 19.4879 15.2928 19.8701 14.8224 19.8701C14.3519 19.8701 13.9698 19.4879 13.9698 19.0175V17.0329C13.9698 16.7206 13.7171 16.4679 13.4048 16.4679C13.0925 16.4679 12.8398 16.7206 12.8398 17.0329V19.0175C12.8398 20.1104 13.7294 21 14.8224 21C15.9153 21 16.8049 20.1104 16.8049 19.0175V2.98254C16.8049 2.51207 17.187 2.12994 17.6575 2.12994C18.128 2.12994 18.5101 2.51207 18.5101 2.98254V15.6143C18.5101 16.7072 19.3997 17.5968 20.4926 17.5968C21.5856 17.5968 22.4752 16.7072 22.4752 15.6143V8.04469C22.4752 7.57422 22.8573 7.19209 23.3278 7.19209C23.7982 7.19209 24.1804 7.57422 24.1804 8.04469V14.6775C24.1804 14.9897 24.4331 15.2424 24.7453 15.2424C25.0576 15.2424 25.3103 14.9897 25.3103 14.6775V8.04469C25.3103 6.95172 24.4207 6.06215 23.3278 6.06215Z' fill='%23F8F8F8'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_3442_102412'%3E%3Crect width='25' height='22' fill='white' transform='translate(0.5)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.minimax-ball-text {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.minimax-close-icon {
+  margin-left: 8px;
+  font-size: 16px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.minimax-close-icon:hover {
+  opacity: 1;
+}
+</style>
+<div id="minimax-floating-ball">
+  <div class="minimax-ball-content">
+    <div class="minimax-logo-wave"></div>
+    <span class="minimax-ball-text">Created by MiniMax Agent</span>
+  </div>
+  <div class="minimax-close-icon">×</div>
+</div>
+<script>
+// Initialize floating ball functionality
+function initFloatingBall() {
+  const ball = document.getElementById('minimax-floating-ball');
+  if (!ball) return;
+
+  // Initial animation
+  ball.style.opacity = '0';
+  ball.style.transform = 'translateY(20px)';
+
+  setTimeout(() => {
+    ball.style.opacity = '1';
+    ball.style.transform = 'translateY(0)';
+  }, 500);
+
+  // Handle logo click
+  const ballContent = ball.querySelector('.minimax-ball-content');
+  ballContent.addEventListener('click', function (e) {
+    e.stopPropagation();
+    window.open('https://agent.minimax.io/agent', '_blank');
+    ball.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      ball.style.transform = 'scale(1)';
+    }, 100);
+  });
+
+  // Handle close button click
+  const closeIcon = ball.querySelector('.minimax-close-icon');
+  closeIcon.addEventListener('click', function (e) {
+    e.stopPropagation();
+    ball.style.opacity = '0';
+    ball.style.transform = 'translateY(20px)';
+
+    setTimeout(() => {
+      ball.style.display = 'none';
+    }, 300);
+  });
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initFloatingBall); 
+</script>
+
+
+            <script>
+            // Common Tool Functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                // Add ARIA labels to buttons and inputs
+                const buttons = document.querySelectorAll('button');
+                buttons.forEach(button => {
+                    if (!button.getAttribute('aria-label') && button.textContent.trim()) {
+                        button.setAttribute('aria-label', button.textContent.trim());
+                    }
+                });
+                
+                // Add alt text to images missing it
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    if (!img.getAttribute('alt')) {
+                        img.setAttribute('alt', '');
+                    }
+                });
+                
+                // Disable buttons until valid input
+                const inputFields = document.querySelectorAll('input[type="text"], textarea');
+                const actionButtons = document.querySelectorAll('.btn-primary, button[onclick]');
+                
+                function checkInputs() {
+                    const hasInput = Array.from(inputFields).some(field => field.value.trim().length > 0);
+                    actionButtons.forEach(button => {
+                        if (button.textContent.includes('Copy') || 
+                            button.textContent.includes('Download') || 
+                            button.textContent.includes('Generate')) {
+                            button.disabled = !hasInput;
+                        }
+                    });
+                }
+                
+                inputFields.forEach(field => {
+                    field.addEventListener('input', checkInputs);
+                });
+                
+                // Initial check
+                checkInputs();
+                
+                // Add success/error notifications
+                window.showNotification = function(message, type = 'success') {
+                    const notification = document.createElement('div');
+                    notification.className = `notification notification-${type}`;
+                    notification.innerHTML = `
+                        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}" aria-hidden="true"></i>
+                        <span>${message}</span>
+                    `;
+                    
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: ${type === 'success' ? '#10b981' : '#ef4444'};
+                        color: white;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                        z-index: 1000;
+                        opacity: 0;
+                        transform: translateX(100%);
+                        transition: all 0.3s ease;
+                        max-width: 400px;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    `;
+                    
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '1';
+                        notification.style.transform = 'translateX(0)';
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        notification.style.transform = 'translateX(100%)';
+                        setTimeout(() => {
+                            if (notification.parentNode) {
+                                document.body.removeChild(notification);
+                            }
+                        }, 300);
+                    }, 3000);
+                };
+                
+                // Enhanced copy functionality
+                window.copyToClipboard = async function(text) {
+                    try {
+                        if (navigator.clipboard && window.isSecureContext) {
+                            await navigator.clipboard.writeText(text);
+                            showNotification('Copied to clipboard!', 'success');
+                            return true;
+                        } else {
+                            // Fallback for older browsers
+                            const textArea = document.createElement('textarea');
+                            textArea.value = text;
+                            textArea.style.position = 'fixed';
+                            textArea.style.left = '-999999px';
+                            textArea.style.top = '-999999px';
+                            document.body.appendChild(textArea);
+                            textArea.focus();
+                            textArea.select();
+                            
+                            try {
+                                document.execCommand('copy');
+                                textArea.remove();
+                                showNotification('Copied to clipboard!', 'success');
+                                return true;
+                            } catch (err) {
+                                textArea.remove();
+                                showNotification('Failed to copy to clipboard', 'error');
+                                return false;
+                            }
+                        }
+                    } catch (err) {
+                        showNotification('Failed to copy to clipboard', 'error');
+                        return false;
+                    }
+                };
+            });
+            </script>
+            
+</body>
+</html>

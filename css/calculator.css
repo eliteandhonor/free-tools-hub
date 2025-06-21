@@ -1,0 +1,322 @@
+/* Calculator Tools Category Page - Custom Styles (moved from inline)
+   Accessibility, utility, and button classes for 2025 best practices. */
+
+/* --- Layout and container styles --- */
+.category-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+}
+.category-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.category-description {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+.tool-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.tool-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    color: inherit;
+}
+.tool-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+}
+.tool-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+.tool-description {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+.tool-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.tool-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+    font-size: 0.875rem;
+    color: #374151;
+}
+.tool-features i {
+    color: #f59e0b;
+    width: 16px;
+}
+.stats-section {
+    background: #fffbeb;
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.stat-item {
+    padding: 1rem;
+}
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f59e0b;
+    margin-bottom: 0.5rem;
+}
+.stat-label {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* About Section */
+.about-section {
+    margin: 4rem 0;
+}
+.about-section .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.about-section .about-img {
+    text-align: center;
+}
+.about-section .about-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.about-section .about-list {
+    list-style: none;
+    padding: 0;
+}
+.about-section .about-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.about-section .about-list i {
+    color: #f59e0b;
+}
+
+.popular-use-cases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+.popular-use-cases .use-case-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+.popular-use-cases h4 {
+    color: #f59e0b;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.popular-use-cases p {
+    color: #6b7280;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+/* Breadcrumb Navigation */
+.tool-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.98rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.breadcrumb-separator {
+    color: rgba(255,255,255,0.6);
+    margin: 0 0.25rem;
+}
+.tool-breadcrumb a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.tool-breadcrumb a:hover {
+    color: #fff;
+}
+.tool-breadcrumb span {
+    color: #fff;
+}
+
+/* Floating Ball Styles (MiniMax Agent) */
+#minimax-floating-ball {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 12px;
+  background: #222222;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  color: #F8F8F8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  z-index: 9999;
+  transition: all 0.3s cubic-bezier(.4,0,.2,1);
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  outline: none;
+}
+#minimax-floating-ball.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+#minimax-floating-ball.active {
+  box-shadow: 0 0 0 4px #f59e0b33;
+  transform: scale(0.97);
+}
+#minimax-floating-ball:focus {
+  outline: 2px solid #f59e0b;
+}
+#minimax-floating-ball:hover {
+  background: #383838;
+}
+.minimax-ball-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.minimax-logo-wave {
+  width: 26px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.minimax-ball-text {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.minimax-close-icon {
+  margin-left: 8px;
+  font-size: 16px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  outline: none;
+}
+.minimax-close-icon:hover, .minimax-close-icon:focus {
+  opacity: 1;
+  background: #444;
+}
+
+/* Notification Styles (Accessible) */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #10b981;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s cubic-bezier(.4,0,.2,1);
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+.notification-success {
+    background: #10b981;
+}
+.notification-error {
+    background: #ef4444;
+}
+.notification[role="status"] {
+    outline: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .category-title {
+        font-size: 2rem;
+    }
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-section .about-grid {
+        grid-template-columns: 1fr;
+    }
+    #minimax-floating-ball {
+        bottom: 12px;
+        right: 12px;
+        padding: 8px 10px;
+    }
+    .notification {
+        top: 12px;
+        right: 12px;
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+    }
+}
+
+/*
+  Refactor notes:
+  - Floating ball and notification styles are now fully class-based.
+  - .show and .active classes enable animation and accessibility.
+  - Notification is accessible with role and aria-live.
+*/

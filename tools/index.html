@@ -1,0 +1,3048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <title>All Free Online Tools | Free Tools Hub</title>
+    <meta name="description" content="Complete collection of free online tools including text tools, calculators, generators, converters, and developer utilities. All tools in one place.">
+    <meta name="keywords" content="free online tools, all tools, web tools, text tools, calculators, generators, converters, developer tools">
+    <meta name="author" content="Free Tools Hub">
+    <link rel="canonical" href="/tools/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/tools/">
+    <meta property="og:title" content="All Free Online Tools - Complete Collection">
+    <meta property="og:description" content="Complete collection of free online tools for text processing, calculations, generation, conversion, and development.">
+    <meta property="og:image" content="/images/all-tools.jpg">
+    
+    <!-- X.com (formerly Twitter) meta tags for 2025 -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="/tools/">
+    <meta property="twitter:title" content="All Free Online Tools">
+    <meta property="twitter:description" content="Complete collection of free online tools for all your needs.">
+    <meta property="twitter:image" content="/images/all-tools.jpg">
+    <!-- Note: As of 2025, Twitter is now X.com. All 'twitter:' meta tags are for X.com social sharing. -->
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" onerror="this.onerror=null;this.href='/vendor/fontawesome/css/all.min.css'">
+    <link href="../css/main.css" rel="stylesheet">
+    
+    <!-- Additional styles for all tools page -->
+    <style>
+        .tools-search {
+            background: #f8fafc;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: white;
+        }
+        
+        .search-button {
+            padding: 0.75rem 1.5rem;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .search-button:hover {
+            background: #0056b3;
+        }
+        
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-tab {
+            padding: 0.5rem 1rem;
+            background: #f8fafc;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+        }
+        
+        .filter-tab.active {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        
+        .filter-tab:hover {
+            background: #e5e7eb;
+        }
+        
+        .filter-tab.active:hover {
+            background: #0056b3;
+        }
+        
+        .category-count {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.125rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .results-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+        
+        .showing-count {
+            color: #6b7280;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .sort-options {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .sort-label {
+            color: #6b7280;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .sort-select {
+            padding: 0.25rem 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            background: white;
+            color: #374151;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-left: auto;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .tool-item {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .tool-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tool-item-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .tool-icon {
+            width: 40px;
+            height: 40px;
+            background: #f3f4f6;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-size: 1.25rem;
+        }
+        
+        .tool-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #111827;
+            margin: 0;
+        }
+        
+        .tool-description {
+            color: #6b7280;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        
+        .tool-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tool-feature {
+            background: #e5e7eb;
+            color: #374151;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .category-section {
+            margin-bottom: 3rem;
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin: 0;
+        }
+        
+        .category-count-badge {
+            background: #e5e7eb;
+            color: #374151;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+            color: #6b7280;
+        }
+        
+        #minimax-floating-ball {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            z-index: 9999;
+        }
+        
+        .minimax-floating-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+        }
+        
+        .minimax-floating-dot {
+            width: 20px;
+            height: 20px;
+            border: 2px solid white;
+            border-radius: 50%;
+            position: relative;
+            margin-bottom: 2px;
+        }
+        
+        .minimax-floating-dot-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        .minimax-floating-label {
+            font-size: 8px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1;
+        }
+        
+        .minimax-floating-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            background: #ff4757;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .category-icon.text-tools { background-color: #007bff; }
+        .category-icon.converter { background-color: #20c997; }
+        .category-icon.calculator { background-color: #dc3545; }
+        .category-icon.seo { background-color: #10b981; }
+        .category-icon.developer { background-color: #8b5cf6; }
+        .category-icon.generator { background-color: #dc3545; }
+        .category-icon.default { background-color: #f3f4f6; }
+    </style>
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+
+    <!-- Unified Header Navigation -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="Main navigation">
+                <a href="/" class="navbar-brand" aria-label="Free Tools Hub - Home">
+                    <i class="fas fa-tools" aria-hidden="true"></i>
+                    Free Tools Hub
+                </a>
+                
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggle" type="button" aria-expanded="false" aria-controls="navbar-nav" aria-label="Toggle navigation menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <ul class="navbar-nav" id="navbar-nav" role="menubar">
+                    <li role="none"><a href="/" class="nav-link" role="menuitem">Home</a></li>
+                    <li class="dropdown" role="none">
+                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-expanded="false" aria-haspopup="true">
+                            Categories <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-label="Categories">
+                            <li role="none"><a href="/tools/text/" class="dropdown-item" role="menuitem">Text Tools</a></li>
+                            <li role="none"><a href="/tools/seo/" class="dropdown-item" role="menuitem">SEO Tools</a></li>
+                            <li role="none"><a href="/tools/developer/" class="dropdown-item" role="menuitem">Developer Tools</a></li>
+                            <li role="none"><a href="/tools/calculator/" class="dropdown-item" role="menuitem">Calculators</a></li>
+                            <li role="none"><a href="/tools/converter/" class="dropdown-item" role="menuitem">Converters</a></li>
+                            <li role="none"><a href="/tools/generator/" class="dropdown-item" role="menuitem">Generators</a></li>
+                        </ul>
+                    </li>
+                    <li role="none"><a href="/tools/" class="nav-link" role="menuitem">All Tools</a></li>
+                    <li role="none"><a href="/about/" class="nav-link" role="menuitem">About</a></li>
+                    <li role="none"><a href="/contact/" class="nav-link" role="menuitem">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="logo-breadcrumb-wrapper">
+                <a href="../" class="logo">
+                    <i class="fas fa-tools"></i> Free Tools Hub
+                </a>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../">Home</a></li>
+                        <li class="breadcrumb-item active">All Tools</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+
+    <!-- Search Section -->
+    <section class="tools-search">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search tools..." id="searchInput">
+                <button class="search-button" onclick="performSearch()">
+                    <i class="fas fa-search"></i>
+                    Search
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <div class="container">
+        <div class="filter-tabs">
+            <div class="filter-tab active" data-category="all">
+                <i class="fas fa-th"></i>
+                All Tools
+                <span class="category-count">57</span>
+            </div>
+            <div class="filter-tab" data-category="text">
+                <i class="fas fa-font"></i>
+                Text Tools
+                <span class="category-count">18</span>
+            </div>
+            <div class="filter-tab" data-category="seo">
+                <i class="fas fa-search"></i>
+                SEO Tools
+                <span class="category-count">5</span>
+            </div>
+            <div class="filter-tab" data-category="developer">
+                <i class="fas fa-code"></i>
+                Developer Tools
+                <span class="category-count">14</span>
+            </div>
+            <div class="filter-tab" data-category="calculator">
+                <i class="fas fa-calculator"></i>
+                Calculators
+                <span class="category-count">6</span>
+            </div>
+            <div class="filter-tab" data-category="converter">
+                <i class="fas fa-exchange-alt"></i>
+                Converters
+                <span class="category-count">6</span>
+            </div>
+            <div class="filter-tab" data-category="generator">
+                <i class="fas fa-magic"></i>
+                Generators
+                <span class="category-count">8</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container" role="main">
+        <!-- Results Info -->
+        <div class="results-info">
+            <div class="showing-count">
+                Showing <span id="resultsCount">57</span> tools
+            </div>
+            <div class="sort-options">
+                <span class="sort-label">Sort by:</span>
+                <label for="sortSelect" class="visually-hidden">Sort tools by</label>
+                <select class="sort-select" id="sortSelect" onchange="sortTools()">
+                    <option value="name">Name</option>
+                    <option value="popularity">Popularity</option>
+                    <option value="category">Category</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Tools by Category -->
+        <div id="toolsContainer">
+            <div class="category-section" data-category="text">
+                <div class="category-header">
+                    <div class="category-icon text-tools">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <h2 class="category-title">Text Tools</h2>
+                    <span class="category-count-badge">18 tools</span>
+                </div>
+                
+                
+            <!-- Tools Grid -->
+            <div class="tools-grid" id="tools-grid">
+                
+                <!-- Text Tools -->
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3><a href="/tools/api-key-generator/">API Key Generator</a></h3>
+                    <p>Generate secure API keys for your applications</p>
+                    <div class="tool-tags">
+                        <span class="tag">Security</span>
+                        <span class="tag">Development</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-sort-numeric-up"></i>
+                    </div>
+                    <h3><a href="/tools/character-counter/">Character Counter</a></h3>
+                    <p>Count characters, words, sentences, and paragraphs</p>
+                    <div class="tool-tags">
+                        <span class="tag">Text</span>
+                        <span class="tag">Analysis</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3><a href="/tools/date-format-converter/">Date Format Converter</a></h3>
+                    <p>Convert dates between different formats</p>
+                    <div class="tool-tags">
+                        <span class="tag">Date</span>
+                        <span class="tag">Format</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3><a href="/tools/favicon-generator/">Favicon Generator</a></h3>
+                    <p>Generate favicons from images or text</p>
+                    <div class="tool-tags">
+                        <span class="tag">Icon</span>
+                        <span class="tag">Web</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3><a href="/tools/html-encoder-decoder/">HTML Encoder/Decoder</a></h3>
+                    <p>Encode and decode HTML entities safely</p>
+                    <div class="tool-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">Encoding</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-icons"></i>
+                    </div>
+                    <h3><a href="/tools/icon-generator/">Icon Generator</a></h3>
+                    <p>Create custom icons and graphics</p>
+                    <div class="tool-tags">
+                        <span class="tag">Icon</span>
+                        <span class="tag">Design</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3><a href="/tools/image-placeholder-generator/">Image Placeholder Generator</a></h3>
+                    <p>Generate placeholder images for development</p>
+                    <div class="tool-tags">
+                        <span class="tag">Image</span>
+                        <span class="tag">Development</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-trademark"></i>
+                    </div>
+                    <h3><a href="/tools/logo-generator/">Logo Generator</a></h3>
+                    <p>Create simple logos and brand graphics</p>
+                    <div class="tool-tags">
+                        <span class="tag">Logo</span>
+                        <span class="tag">Branding</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-paragraph"></i>
+                    </div>
+                    <h3><a href="/tools/lorem-ipsum-generator/">Lorem Ipsum Generator</a></h3>
+                    <p>Generate placeholder text for designs</p>
+                    <div class="tool-tags">
+                        <span class="tag">Text</span>
+                        <span class="tag">Placeholder</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3><a href="/tools/name-generator/">Name Generator</a></h3>
+                    <p>Generate random names for various purposes</p>
+                    <div class="tool-tags">
+                        <span class="tag">Name</span>
+                        <span class="tag">Random</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3><a href="/tools/pdf-to-text/">PDF to Text Converter</a></h3>
+                    <p>Extract text content from PDF files</p>
+                    <div class="tool-tags">
+                        <span class="tag">PDF</span>
+                        <span class="tag">Extraction</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3><a href="/tools/slug-generator/">Slug Generator</a></h3>
+                    <p>Generate SEO-friendly URL slugs from text</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">URL</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <h3><a href="/tools/text-case-converter/">Text Case Converter</a></h3>
+                    <p>Convert text between different cases</p>
+                    <div class="tool-tags">
+                        <span class="tag">Text</span>
+                        <span class="tag">Case</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <h3><a href="/tools/text-to-speech/">Text to Speech</a></h3>
+                    <p>Convert text to speech with natural voices</p>
+                    <div class="tool-tags">
+                        <span class="tag">Audio</span>
+                        <span class="tag">TTS</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3><a href="/tools/timezone-converter/">Timezone Converter</a></h3>
+                    <p>Convert time between different timezones</p>
+                    <div class="tool-tags">
+                        <span class="tag">Time</span>
+                        <span class="tag">Timezone</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3><a href="/tools/unicode-converter/">Unicode Converter</a></h3>
+                    <p>Convert text to Unicode and back</p>
+                    <div class="tool-tags">
+                        <span class="tag">Unicode</span>
+                        <span class="tag">Encoding</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3><a href="/tools/wifi-qr-generator/">Wi-Fi QR Generator</a></h3>
+                    <p>Generate QR codes for Wi-Fi networks</p>
+                    <div class="tool-tags">
+                        <span class="tag">QR</span>
+                        <span class="tag">WiFi</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-spell-check"></i>
+                    </div>
+                    <h3><a href="/tools/word-counter/">Word Counter</a></h3>
+                    <p>Count words, characters, and analyze text</p>
+                    <div class="tool-tags">
+                        <span class="tag">Text</span>
+                        <span class="tag">Count</span>
+                    </div>
+                </div>
+                
+                <!-- SEO Tools -->
+                <div class="tool-card" data-category="seo">
+                    <div class="tool-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3><a href="/tools/keyword-density-checker/">Keyword Density Checker</a></h3>
+                    <p>Analyze keyword density in your content</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Keywords</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="seo">
+                    <div class="tool-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3><a href="/tools/meta-tag-generator/">Meta Tag Generator</a></h3>
+                    <p>Generate SEO meta tags for your website</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Meta Tags</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="seo">
+                    <div class="tool-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3><a href="/tools/robots-txt-generator/">Robots.txt Generator</a></h3>
+                    <p>Generate robots.txt files for search engines</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Robots</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="seo">
+                    <div class="tool-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3><a href="/tools/serp-preview-tool/">SERP Preview Tool</a></h3>
+                    <p>Preview how your page appears in search results</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">SERP</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="seo">
+                    <div class="tool-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3><a href="/tools/xml-sitemap-generator/">XML Sitemap Generator</a></h3>
+                    <p>Generate XML sitemaps for your website</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Sitemap</span>
+                    </div>
+                </div>
+                
+                <!-- Developer Tools -->
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3><a href="/tools/base64-encoder-decoder/">Base64 Encoder/Decoder</a></h3>
+                    <p>Encode and decode Base64 strings</p>
+                    <div class="tool-tags">
+                        <span class="tag">Encoding</span>
+                        <span class="tag">Base64</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3><a href="/tools/css-generator/">CSS Generator</a></h3>
+                    <p>Generate CSS code for common styles</p>
+                    <div class="tool-tags">
+                        <span class="tag">CSS</span>
+                        <span class="tag">Generator</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-compress-alt"></i>
+                    </div>
+                    <h3><a href="/tools/css-minifier/">CSS Minifier</a></h3>
+                    <p>Minify CSS code by removing whitespace</p>
+                    <div class="tool-tags">
+                        <span class="tag">CSS</span>
+                        <span class="tag">Minify</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-table"></i>
+                    </div>
+                    <h3><a href="/tools/csv-to-json/">CSV to JSON Converter</a></h3>
+                    <p>Convert CSV data to JSON format</p>
+                    <div class="tool-tags">
+                        <span class="tag">CSV</span>
+                        <span class="tag">JSON</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-fill-drip"></i>
+                    </div>
+                    <h3><a href="/tools/gradient-generator/">Gradient Generator</a></h3>
+                    <p>Create CSS gradients with visual editor</p>
+                    <div class="tool-tags">
+                        <span class="tag">CSS</span>
+                        <span class="tag">Gradient</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-compress"></i>
+                    </div>
+                    <h3><a href="/tools/html-minifier/">HTML Minifier</a></h3>
+                    <p>Minify HTML code by removing whitespace</p>
+                    <div class="tool-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">Minify</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3><a href="/tools/html-css-js-beautifier/">HTML/CSS/JS Beautifier</a></h3>
+                    <p>Format and beautify HTML, CSS, and JavaScript</p>
+                    <div class="tool-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3><a href="/tools/hex-rgb-converter/">Hex to RGB Converter</a></h3>
+                    <p>Convert colors between Hex and RGB formats</p>
+                    <div class="tool-tags">
+                        <span class="tag">Color</span>
+                        <span class="tag">Hex</span>
+                        <span class="tag">RGB</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-brackets-curly"></i>
+                    </div>
+                    <h3><a href="/tools/json-formatter/">JSON Formatter</a></h3>
+                    <p>Format and validate JSON data</p>
+                    <div class="tool-tags">
+                        <span class="tag">JSON</span>
+                        <span class="tag">Format</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3><a href="/tools/json-generator/">JSON Generator</a></h3>
+                    <p>Generate sample JSON data</p>
+                    <div class="tool-tags">
+                        <span class="tag">JSON</span>
+                        <span class="tag">Generator</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fab fa-markdown"></i>
+                    </div>
+                    <h3><a href="/tools/markdown-to-html/">Markdown to HTML</a></h3>
+                    <p>Convert Markdown text to HTML</p>
+                    <div class="tool-tags">
+                        <span class="tag">Markdown</span>
+                        <span class="tag">HTML</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3><a href="/tools/url-encoder-decoder/">URL Encoder/Decoder</a></h3>
+                    <p>Encode and decode URLs safely</p>
+                    <div class="tool-tags">
+                        <span class="tag">URL</span>
+                        <span class="tag">Encoding</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3><a href="/tools/xml-to-json/">XML to JSON Converter</a></h3>
+                    <p>Convert XML data to JSON format</p>
+                    <div class="tool-tags">
+                        <span class="tag">XML</span>
+                        <span class="tag">JSON</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3><a href="/tools/yaml-to-json/">YAML to JSON Converter</a></h3>
+                    <p>Convert YAML data to JSON format</p>
+                    <div class="tool-tags">
+                        <span class="tag">YAML</span>
+                        <span class="tag">JSON</span>
+                    </div>
+                </div>
+                
+                <!-- Calculators -->
+                <div class="tool-card" data-category="calculator">
+                    <div class="tool-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3><a href="/tools/age-calculator/">Age Calculator</a></h3>
+                    <p>Calculate exact age in years, months, and days</p>
+                    <div class="tool-tags">
+                        <span class="tag">Age</span>
+                        <span class="tag">Date</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="calculator">
+                    <div class="tool-icon">
+                        <i class="fas fa-weight"></i>
+                    </div>
+                    <h3><a href="/tools/bmi-calculator/">BMI Calculator</a></h3>
+                    <p>Calculate Body Mass Index and health status</p>
+                    <div class="tool-tags">
+                        <span class="tag">Health</span>
+                        <span class="tag">BMI</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="calculator">
+                    <div class="tool-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3><a href="/tools/percentage-calculator/">Percentage Calculator</a></h3>
+                    <p>Calculate percentages, increases, and decreases</p>
+                    <div class="tool-tags">
+                        <span class="tag">Math</span>
+                        <span class="tag">Percentage</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="calculator">
+                    <div class="tool-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3><a href="/tools/timestamp-converter/">Timestamp Converter</a></h3>
+                    <p>Convert between Unix timestamps and dates</p>
+                    <div class="tool-tags">
+                        <span class="tag">Time</span>
+                        <span class="tag">Unix</span>
+                    </div>
+                </div>
+                
+                <!-- Converters -->
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3><a href="/tools/color-picker/">Color Picker & Palette Generator</a></h3>
+                    <p>Pick colors and create custom color palettes</p>
+                    <div class="tool-tags">
+                        <span class="tag">Color</span>
+                        <span class="tag">Picker</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3><a href="/tools/currency-converter/">Currency Converter</a></h3>
+                    <p>Convert between different currencies</p>
+                    <div class="tool-tags">
+                        <span class="tag">Currency</span>
+                        <span class="tag">Money</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <h3><a href="/tools/image-resizer/">Image Resizer</a></h3>
+                    <p>Resize images to specific dimensions</p>
+                    <div class="tool-tags">
+                        <span class="tag">Image</span>
+                        <span class="tag">Resize</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3><a href="/tools/number-base-converter/">Number Base Converter</a></h3>
+                    <p>Convert numbers between different bases</p>
+                    <div class="tool-tags">
+                        <span class="tag">Number</span>
+                        <span class="tag">Base</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <h3><a href="/tools/roman-numeral-converter/">Roman Numeral Converter</a></h3>
+                    <p>Convert between numbers and Roman numerals</p>
+                    <div class="tool-tags">
+                        <span class="tag">Roman</span>
+                        <span class="tag">Numbers</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3><a href="/tools/unit-converter/">Unit Converter</a></h3>
+                    <p>Convert between different units of measurement</p>
+                    <div class="tool-tags">
+                        <span class="tag">Units</span>
+                        <span class="tag">Measurement</span>
+                    </div>
+                </div>
+                
+                <!-- Generators -->
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3><a href="/tools/avatar-generator/">Avatar Generator</a></h3>
+                    <p>Generate custom avatars from names and initials</p>
+                    <div class="tool-tags">
+                        <span class="tag">Avatar</span>
+                        <span class="tag">Profile</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-barcode"></i>
+                    </div>
+                    <h3><a href="/tools/barcode-generator/">Barcode Generator</a></h3>
+                    <p>Generate various types of barcodes</p>
+                    <div class="tool-tags">
+                        <span class="tag">Barcode</span>
+                        <span class="tag">QR</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3><a href="/tools/color-palette-generator/">Color Palette Generator</a></h3>
+                    <p>Generate beautiful color palettes for design</p>
+                    <div class="tool-tags">
+                        <span class="tag">Color</span>
+                        <span class="tag">Palette</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3><a href="/tools/email-generator/">Email Generator</a></h3>
+                    <p>Generate temporary email addresses</p>
+                    <div class="tool-tags">
+                        <span class="tag">Email</span>
+                        <span class="tag">Temporary</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3><a href="/tools/fake-data-generator/">Fake Data Generator</a></h3>
+                    <p>Generate fake data for testing purposes</p>
+                    <div class="tool-tags">
+                        <span class="tag">Data</span>
+                        <span class="tag">Testing</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3><a href="/tools/hash-generator/">Hash Generator</a></h3>
+                    <p>Generate MD5, SHA1, SHA256 hashes</p>
+                    <div class="tool-tags">
+                        <span class="tag">Hash</span>
+                        <span class="tag">Crypto</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3><a href="/tools/password-generator/">Password Generator</a></h3>
+                    <p>Generate secure passwords with custom options</p>
+                    <div class="tool-tags">
+                        <span class="tag">Password</span>
+                        <span class="tag">Security</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3><a href="/tools/qr-code-generator/">QR Code Generator</a></h3>
+                    <p>Generate QR codes with contact card support</p>
+                    <div class="tool-tags">
+                        <span class="tag">QR</span>
+                        <span class="tag">Code</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-dice"></i>
+                    </div>
+                    <h3><a href="/tools/random-number-generator/">Random Number Generator</a></h3>
+                    <p>Generate random numbers with custom ranges</p>
+                    <div class="tool-tags">
+                        <span class="tag">Random</span>
+                        <span class="tag">Number</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-id-badge"></i>
+                    </div>
+                    <h3><a href="/tools/uuid-generator/">UUID Generator</a></h3>
+                    <p>Generate RFC-compliant UUIDs</p>
+                    <div class="tool-tags">
+                        <span class="tag">UUID</span>
+                        <span class="tag">Identifier</span>
+                    </div>
+                </div>
+                
+            </div>
+    
+        </div>
+            <div class="category-section" data-category="converter">
+                <div class="category-header">
+                    <div class="category-icon converter">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h2 class="category-title">Converters</h2>
+                    <span class="category-count-badge">6 tools</span>
+                </div>
+                
+                
+            <!-- Tools Grid -->
+            <div class="tools-grid" id="tools-grid">
+                
+                <!-- Text Tools -->
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3><a href="/tools/api-key-generator/">API Key Generator</a></h3>
+                    <p>Generate secure API keys for your applications</p>
+                    <div class="tool-tags">
+                        <span class="tag">Security</span>
+                        <span class="tag">Development</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-sort-numeric-up"></i>
+                    </div>
+                    <h3><a href="/tools/character-counter/">Character Counter</a></h3>
+                    <p>Count characters, words, sentences, and paragraphs</p>
+                    <div class="tool-tags">
+                        <span class="tag">Text</span>
+                        <span class="tag">Analysis</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3><a href="/tools/date-format-converter/">Date Format Converter</a></h3>
+                    <p>Convert dates between different formats</p>
+                    <div class="tool-tags">
+                        <span class="tag">Date</span>
+                        <span class="tag">Format</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3><a href="/tools/favicon-generator/">Favicon Generator</a></h3>
+                    <p>Generate favicons from images or text</p>
+                    <div class="tool-tags">
+                        <span class="tag">Icon</span>
+                        <span class="tag">Web</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3><a href="/tools/html-encoder-decoder/">HTML Encoder/Decoder</a></h3>
+                    <p>Encode and decode HTML entities safely</p>
+                    <div class="tool-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">Encoding</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-icons"></i>
+                    </div>
+                    <h3><a href="/tools/icon-generator/">Icon Generator</a></h3>
+                    <p>Create custom icons and graphics</p>
+                    <div class="tool-tags">
+                        <span class="tag">Icon</span>
+                        <span class="tag">Design</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3><a href="/tools/image-placeholder-generator/">Image Placeholder Generator</a></h3>
+                    <p>Generate placeholder images for development</p>
+                    <div class="tool-tags">
+                        <span class="tag">Image</span>
+                        <span class="tag">Development</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-trademark"></i>
+                    </div>
+                    <h3><a href="/tools/logo-generator/">Logo Generator</a></h3>
+                    <p>Create simple logos and brand graphics</p>
+                    <div class="tool-tags">
+                        <span class="tag">Logo</span>
+                        <span class="tag">Branding</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-paragraph"></i>
+                    </div>
+                    <h3><a href="/tools/lorem-ipsum-generator/">Lorem Ipsum Generator</a></h3>
+                    <p>Generate placeholder text for designs</p>
+                    <div class="tool-tags">
+                        <span class="tag">Text</span>
+                        <span class="tag">Placeholder</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3><a href="/tools/name-generator/">Name Generator</a></h3>
+                    <p>Generate random names for various purposes</p>
+                    <div class="tool-tags">
+                        <span class="tag">Name</span>
+                        <span class="tag">Random</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3><a href="/tools/pdf-to-text/">PDF to Text Converter</a></h3>
+                    <p>Extract text content from PDF files</p>
+                    <div class="tool-tags">
+                        <span class="tag">PDF</span>
+                        <span class="tag">Extraction</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3><a href="/tools/slug-generator/">Slug Generator</a></h3>
+                    <p>Generate SEO-friendly URL slugs from text</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">URL</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <h3><a href="/tools/text-case-converter/">Text Case Converter</a></h3>
+                    <p>Convert text between different cases</p>
+                    <div class="tool-tags">
+                        <span class="tag">Text</span>
+                        <span class="tag">Case</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <h3><a href="/tools/text-to-speech/">Text to Speech</a></h3>
+                    <p>Convert text to speech with natural voices</p>
+                    <div class="tool-tags">
+                        <span class="tag">Audio</span>
+                        <span class="tag">TTS</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3><a href="/tools/timezone-converter/">Timezone Converter</a></h3>
+                    <p>Convert time between different timezones</p>
+                    <div class="tool-tags">
+                        <span class="tag">Time</span>
+                        <span class="tag">Timezone</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3><a href="/tools/unicode-converter/">Unicode Converter</a></h3>
+                    <p>Convert text to Unicode and back</p>
+                    <div class="tool-tags">
+                        <span class="tag">Unicode</span>
+                        <span class="tag">Encoding</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3><a href="/tools/wifi-qr-generator/">Wi-Fi QR Generator</a></h3>
+                    <p>Generate QR codes for Wi-Fi networks</p>
+                    <div class="tool-tags">
+                        <span class="tag">QR</span>
+                        <span class="tag">WiFi</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-spell-check"></i>
+                    </div>
+                    <h3><a href="/tools/word-counter/">Word Counter</a></h3>
+                    <p>Count words, characters, and analyze text</p>
+                    <div class="tool-tags">
+                        <span class="tag">Text</span>
+                        <span class="tag">Count</span>
+                    </div>
+                </div>
+                
+                <!-- SEO Tools -->
+                <div class="tool-card" data-category="seo">
+                    <div class="tool-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3><a href="/tools/keyword-density-checker/">Keyword Density Checker</a></h3>
+                    <p>Analyze keyword density in your content</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Keywords</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="seo">
+                    <div class="tool-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3><a href="/tools/meta-tag-generator/">Meta Tag Generator</a></h3>
+                    <p>Generate SEO meta tags for your website</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Meta Tags</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="seo">
+                    <div class="tool-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3><a href="/tools/robots-txt-generator/">Robots.txt Generator</a></h3>
+                    <p>Generate robots.txt files for search engines</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Robots</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="seo">
+                    <div class="tool-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3><a href="/tools/serp-preview-tool/">SERP Preview Tool</a></h3>
+                    <p>Preview how your page appears in search results</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">SERP</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="seo">
+                    <div class="tool-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3><a href="/tools/xml-sitemap-generator/">XML Sitemap Generator</a></h3>
+                    <p>Generate XML sitemaps for your website</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Sitemap</span>
+                    </div>
+                </div>
+                
+                <!-- Developer Tools -->
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3><a href="/tools/base64-encoder-decoder/">Base64 Encoder/Decoder</a></h3>
+                    <p>Encode and decode Base64 strings</p>
+                    <div class="tool-tags">
+                        <span class="tag">Encoding</span>
+                        <span class="tag">Base64</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3><a href="/tools/css-generator/">CSS Generator</a></h3>
+                    <p>Generate CSS code for common styles</p>
+                    <div class="tool-tags">
+                        <span class="tag">CSS</span>
+                        <span class="tag">Generator</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-compress-alt"></i>
+                    </div>
+                    <h3><a href="/tools/css-minifier/">CSS Minifier</a></h3>
+                    <p>Minify CSS code by removing whitespace</p>
+                    <div class="tool-tags">
+                        <span class="tag">CSS</span>
+                        <span class="tag">Minify</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-table"></i>
+                    </div>
+                    <h3><a href="/tools/csv-to-json/">CSV to JSON Converter</a></h3>
+                    <p>Convert CSV data to JSON format</p>
+                    <div class="tool-tags">
+                        <span class="tag">CSV</span>
+                        <span class="tag">JSON</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-fill-drip"></i>
+                    </div>
+                    <h3><a href="/tools/gradient-generator/">Gradient Generator</a></h3>
+                    <p>Create CSS gradients with visual editor</p>
+                    <div class="tool-tags">
+                        <span class="tag">CSS</span>
+                        <span class="tag">Gradient</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-compress"></i>
+                    </div>
+                    <h3><a href="/tools/html-minifier/">HTML Minifier</a></h3>
+                    <p>Minify HTML code by removing whitespace</p>
+                    <div class="tool-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">Minify</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3><a href="/tools/html-css-js-beautifier/">HTML/CSS/JS Beautifier</a></h3>
+                    <p>Format and beautify HTML, CSS, and JavaScript</p>
+                    <div class="tool-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3><a href="/tools/hex-rgb-converter/">Hex to RGB Converter</a></h3>
+                    <p>Convert colors between Hex and RGB formats</p>
+                    <div class="tool-tags">
+                        <span class="tag">Color</span>
+                        <span class="tag">Hex</span>
+                        <span class="tag">RGB</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-brackets-curly"></i>
+                    </div>
+                    <h3><a href="/tools/json-formatter/">JSON Formatter</a></h3>
+                    <p>Format and validate JSON data</p>
+                    <div class="tool-tags">
+                        <span class="tag">JSON</span>
+                        <span class="tag">Format</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3><a href="/tools/json-generator/">JSON Generator</a></h3>
+                    <p>Generate sample JSON data</p>
+                    <div class="tool-tags">
+                        <span class="tag">JSON</span>
+                        <span class="tag">Generator</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fab fa-markdown"></i>
+                    </div>
+                    <h3><a href="/tools/markdown-to-html/">Markdown to HTML</a></h3>
+                    <p>Convert Markdown text to HTML</p>
+                    <div class="tool-tags">
+                        <span class="tag">Markdown</span>
+                        <span class="tag">HTML</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3><a href="/tools/url-encoder-decoder/">URL Encoder/Decoder</a></h3>
+                    <p>Encode and decode URLs safely</p>
+                    <div class="tool-tags">
+                        <span class="tag">URL</span>
+                        <span class="tag">Encoding</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3><a href="/tools/xml-to-json/">XML to JSON Converter</a></h3>
+                    <p>Convert XML data to JSON format</p>
+                    <div class="tool-tags">
+                        <span class="tag">XML</span>
+                        <span class="tag">JSON</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3><a href="/tools/yaml-to-json/">YAML to JSON Converter</a></h3>
+                    <p>Convert YAML data to JSON format</p>
+                    <div class="tool-tags">
+                        <span class="tag">YAML</span>
+                        <span class="tag">JSON</span>
+                    </div>
+                </div>
+                
+                <!-- Calculators -->
+                <div class="tool-card" data-category="calculator">
+                    <div class="tool-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3><a href="/tools/age-calculator/">Age Calculator</a></h3>
+                    <p>Calculate exact age in years, months, and days</p>
+                    <div class="tool-tags">
+                        <span class="tag">Age</span>
+                        <span class="tag">Date</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="calculator">
+                    <div class="tool-icon">
+                        <i class="fas fa-weight"></i>
+                    </div>
+                    <h3><a href="/tools/bmi-calculator/">BMI Calculator</a></h3>
+                    <p>Calculate Body Mass Index and health status</p>
+                    <div class="tool-tags">
+                        <span class="tag">Health</span>
+                        <span class="tag">BMI</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="calculator">
+                    <div class="tool-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3><a href="/tools/percentage-calculator/">Percentage Calculator</a></h3>
+                    <p>Calculate percentages, increases, and decreases</p>
+                    <div class="tool-tags">
+                        <span class="tag">Math</span>
+                        <span class="tag">Percentage</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="calculator">
+                    <div class="tool-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3><a href="/tools/timestamp-converter/">Timestamp Converter</a></h3>
+                    <p>Convert between Unix timestamps and dates</p>
+                    <div class="tool-tags">
+                        <span class="tag">Time</span>
+                        <span class="tag">Unix</span>
+                    </div>
+                </div>
+                
+                <!-- Converters -->
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3><a href="/tools/color-picker/">Color Picker & Palette Generator</a></h3>
+                    <p>Pick colors and create custom color palettes</p>
+                    <div class="tool-tags">
+                        <span class="tag">Color</span>
+                        <span class="tag">Picker</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3><a href="/tools/currency-converter/">Currency Converter</a></h3>
+                    <p>Convert between different currencies</p>
+                    <div class="tool-tags">
+                        <span class="tag">Currency</span>
+                        <span class="tag">Money</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <h3><a href="/tools/image-resizer/">Image Resizer</a></h3>
+                    <p>Resize images to specific dimensions</p>
+                    <div class="tool-tags">
+                        <span class="tag">Image</span>
+                        <span class="tag">Resize</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3><a href="/tools/number-base-converter/">Number Base Converter</a></h3>
+                    <p>Convert numbers between different bases</p>
+                    <div class="tool-tags">
+                        <span class="tag">Number</span>
+                        <span class="tag">Base</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <h3><a href="/tools/roman-numeral-converter/">Roman Numeral Converter</a></h3>
+                    <p>Convert between numbers and Roman numerals</p>
+                    <div class="tool-tags">
+                        <span class="tag">Roman</span>
+                        <span class="tag">Numbers</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3><a href="/tools/unit-converter/">Unit Converter</a></h3>
+                    <p>Convert between different units of measurement</p>
+                    <div class="tool-tags">
+                        <span class="tag">Units</span>
+                        <span class="tag">Measurement</span>
+                    </div>
+                </div>
+                
+                <!-- Generators -->
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3><a href="/tools/avatar-generator/">Avatar Generator</a></h3>
+                    <p>Generate custom avatars from names and initials</p>
+                    <div class="tool-tags">
+                        <span class="tag">Avatar</span>
+                        <span class="tag">Profile</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-barcode"></i>
+                    </div>
+                    <h3><a href="/tools/barcode-generator/">Barcode Generator</a></h3>
+                    <p>Generate various types of barcodes</p>
+                    <div class="tool-tags">
+                        <span class="tag">Barcode</span>
+                        <span class="tag">QR</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3><a href="/tools/color-palette-generator/">Color Palette Generator</a></h3>
+                    <p>Generate beautiful color palettes for design</p>
+                    <div class="tool-tags">
+                        <span class="tag">Color</span>
+                        <span class="tag">Palette</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3><a href="/tools/email-generator/">Email Generator</a></h3>
+                    <p>Generate temporary email addresses</p>
+                    <div class="tool-tags">
+                        <span class="tag">Email</span>
+                        <span class="tag">Temporary</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3><a href="/tools/fake-data-generator/">Fake Data Generator</a></h3>
+                    <p>Generate fake data for testing purposes</p>
+                    <div class="tool-tags">
+                        <span class="tag">Data</span>
+                        <span class="tag">Testing</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3><a href="/tools/hash-generator/">Hash Generator</a></h3>
+                    <p>Generate MD5, SHA1, SHA256 hashes</p>
+                    <div class="tool-tags">
+                        <span class="tag">Hash</span>
+                        <span class="tag">Crypto</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3><a href="/tools/password-generator/">Password Generator</a></h3>
+                    <p>Generate secure passwords with custom options</p>
+                    <div class="tool-tags">
+                        <span class="tag">Password</span>
+                        <span class="tag">Security</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3><a href="/tools/qr-code-generator/">QR Code Generator</a></h3>
+                    <p>Generate QR codes with contact card support</p>
+                    <div class="tool-tags">
+                        <span class="tag">QR</span>
+                        <span class="tag">Code</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-dice"></i>
+                    </div>
+                    <h3><a href="/tools/random-number-generator/">Random Number Generator</a></h3>
+                    <p>Generate random numbers with custom ranges</p>
+                    <div class="tool-tags">
+                        <span class="tag">Random</span>
+                        <span class="tag">Number</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-id-badge"></i>
+                    </div>
+                    <h3><a href="/tools/uuid-generator/">UUID Generator</a></h3>
+                    <p>Generate RFC-compliant UUIDs</p>
+                    <div class="tool-tags">
+                        <span class="tag">UUID</span>
+                        <span class="tag">Identifier</span>
+                    </div>
+                </div>
+                
+            </div>
+    
+        </div>
+            <div class="category-section" data-category="generator">
+                <div class="category-header">
+                    <div class="category-icon generator">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h2 class="category-title">Generators</h2>
+                    <span class="category-count-badge">8 tools</span>
+                </div>
+                
+                
+            <!-- Tools Grid -->
+            <div class="tools-grid" id="tools-grid">
+                
+                <!-- Text Tools -->
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3><a href="/tools/api-key-generator/">API Key Generator</a></h3>
+                    <p>Generate secure API keys for your applications</p>
+                    <div class="tool-tags">
+                        <span class="tag">Security</span>
+                        <span class="tag">Development</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-sort-numeric-up"></i>
+                    </div>
+                    <h3><a href="/tools/character-counter/">Character Counter</a></h3>
+                    <p>Count characters, words, sentences, and paragraphs</p>
+                    <div class="tool-tags">
+                        <span class="tag">Text</span>
+                        <span class="tag">Analysis</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3><a href="/tools/date-format-converter/">Date Format Converter</a></h3>
+                    <p>Convert dates between different formats</p>
+                    <div class="tool-tags">
+                        <span class="tag">Date</span>
+                        <span class="tag">Format</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3><a href="/tools/favicon-generator/">Favicon Generator</a></h3>
+                    <p>Generate favicons from images or text</p>
+                    <div class="tool-tags">
+                        <span class="tag">Icon</span>
+                        <span class="tag">Web</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3><a href="/tools/html-encoder-decoder/">HTML Encoder/Decoder</a></h3>
+                    <p>Encode and decode HTML entities safely</p>
+                    <div class="tool-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">Encoding</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-icons"></i>
+                    </div>
+                    <h3><a href="/tools/icon-generator/">Icon Generator</a></h3>
+                    <p>Create custom icons and graphics</p>
+                    <div class="tool-tags">
+                        <span class="tag">Icon</span>
+                        <span class="tag">Design</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3><a href="/tools/image-placeholder-generator/">Image Placeholder Generator</a></h3>
+                    <p>Generate placeholder images for development</p>
+                    <div class="tool-tags">
+                        <span class="tag">Image</span>
+                        <span class="tag">Development</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-trademark"></i>
+                    </div>
+                    <h3><a href="/tools/logo-generator/">Logo Generator</a></h3>
+                    <p>Create simple logos and brand graphics</p>
+                    <div class="tool-tags">
+                        <span class="tag">Logo</span>
+                        <span class="tag">Branding</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-paragraph"></i>
+                    </div>
+                    <h3><a href="/tools/lorem-ipsum-generator/">Lorem Ipsum Generator</a></h3>
+                    <p>Generate placeholder text for designs</p>
+                    <div class="tool-tags">
+                        <span class="tag">Text</span>
+                        <span class="tag">Placeholder</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3><a href="/tools/name-generator/">Name Generator</a></h3>
+                    <p>Generate random names for various purposes</p>
+                    <div class="tool-tags">
+                        <span class="tag">Name</span>
+                        <span class="tag">Random</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3><a href="/tools/pdf-to-text/">PDF to Text Converter</a></h3>
+                    <p>Extract text content from PDF files</p>
+                    <div class="tool-tags">
+                        <span class="tag">PDF</span>
+                        <span class="tag">Extraction</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3><a href="/tools/slug-generator/">Slug Generator</a></h3>
+                    <p>Generate SEO-friendly URL slugs from text</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">URL</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <h3><a href="/tools/text-case-converter/">Text Case Converter</a></h3>
+                    <p>Convert text between different cases</p>
+                    <div class="tool-tags">
+                        <span class="tag">Text</span>
+                        <span class="tag">Case</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <h3><a href="/tools/text-to-speech/">Text to Speech</a></h3>
+                    <p>Convert text to speech with natural voices</p>
+                    <div class="tool-tags">
+                        <span class="tag">Audio</span>
+                        <span class="tag">TTS</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3><a href="/tools/timezone-converter/">Timezone Converter</a></h3>
+                    <p>Convert time between different timezones</p>
+                    <div class="tool-tags">
+                        <span class="tag">Time</span>
+                        <span class="tag">Timezone</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3><a href="/tools/unicode-converter/">Unicode Converter</a></h3>
+                    <p>Convert text to Unicode and back</p>
+                    <div class="tool-tags">
+                        <span class="tag">Unicode</span>
+                        <span class="tag">Encoding</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3><a href="/tools/wifi-qr-generator/">Wi-Fi QR Generator</a></h3>
+                    <p>Generate QR codes for Wi-Fi networks</p>
+                    <div class="tool-tags">
+                        <span class="tag">QR</span>
+                        <span class="tag">WiFi</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="text">
+                    <div class="tool-icon">
+                        <i class="fas fa-spell-check"></i>
+                    </div>
+                    <h3><a href="/tools/word-counter/">Word Counter</a></h3>
+                    <p>Count words, characters, and analyze text</p>
+                    <div class="tool-tags">
+                        <span class="tag">Text</span>
+                        <span class="tag">Count</span>
+                    </div>
+                </div>
+                
+                <!-- SEO Tools -->
+                <div class="tool-card" data-category="seo">
+                    <div class="tool-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3><a href="/tools/keyword-density-checker/">Keyword Density Checker</a></h3>
+                    <p>Analyze keyword density in your content</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Keywords</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="seo">
+                    <div class="tool-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3><a href="/tools/meta-tag-generator/">Meta Tag Generator</a></h3>
+                    <p>Generate SEO meta tags for your website</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Meta Tags</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="seo">
+                    <div class="tool-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3><a href="/tools/robots-txt-generator/">Robots.txt Generator</a></h3>
+                    <p>Generate robots.txt files for search engines</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Robots</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="seo">
+                    <div class="tool-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3><a href="/tools/serp-preview-tool/">SERP Preview Tool</a></h3>
+                    <p>Preview how your page appears in search results</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">SERP</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="seo">
+                    <div class="tool-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3><a href="/tools/xml-sitemap-generator/">XML Sitemap Generator</a></h3>
+                    <p>Generate XML sitemaps for your website</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Sitemap</span>
+                    </div>
+                </div>
+                
+                <!-- Developer Tools -->
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3><a href="/tools/base64-encoder-decoder/">Base64 Encoder/Decoder</a></h3>
+                    <p>Encode and decode Base64 strings</p>
+                    <div class="tool-tags">
+                        <span class="tag">Encoding</span>
+                        <span class="tag">Base64</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3><a href="/tools/css-generator/">CSS Generator</a></h3>
+                    <p>Generate CSS code for common styles</p>
+                    <div class="tool-tags">
+                        <span class="tag">CSS</span>
+                        <span class="tag">Generator</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-compress-alt"></i>
+                    </div>
+                    <h3><a href="/tools/css-minifier/">CSS Minifier</a></h3>
+                    <p>Minify CSS code by removing whitespace</p>
+                    <div class="tool-tags">
+                        <span class="tag">CSS</span>
+                        <span class="tag">Minify</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-table"></i>
+                    </div>
+                    <h3><a href="/tools/csv-to-json/">CSV to JSON Converter</a></h3>
+                    <p>Convert CSV data to JSON format</p>
+                    <div class="tool-tags">
+                        <span class="tag">CSV</span>
+                        <span class="tag">JSON</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-fill-drip"></i>
+                    </div>
+                    <h3><a href="/tools/gradient-generator/">Gradient Generator</a></h3>
+                    <p>Create CSS gradients with visual editor</p>
+                    <div class="tool-tags">
+                        <span class="tag">CSS</span>
+                        <span class="tag">Gradient</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-compress"></i>
+                    </div>
+                    <h3><a href="/tools/html-minifier/">HTML Minifier</a></h3>
+                    <p>Minify HTML code by removing whitespace</p>
+                    <div class="tool-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">Minify</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3><a href="/tools/html-css-js-beautifier/">HTML/CSS/JS Beautifier</a></h3>
+                    <p>Format and beautify HTML, CSS, and JavaScript</p>
+                    <div class="tool-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3><a href="/tools/hex-rgb-converter/">Hex to RGB Converter</a></h3>
+                    <p>Convert colors between Hex and RGB formats</p>
+                    <div class="tool-tags">
+                        <span class="tag">Color</span>
+                        <span class="tag">Hex</span>
+                        <span class="tag">RGB</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-brackets-curly"></i>
+                    </div>
+                    <h3><a href="/tools/json-formatter/">JSON Formatter</a></h3>
+                    <p>Format and validate JSON data</p>
+                    <div class="tool-tags">
+                        <span class="tag">JSON</span>
+                        <span class="tag">Format</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3><a href="/tools/json-generator/">JSON Generator</a></h3>
+                    <p>Generate sample JSON data</p>
+                    <div class="tool-tags">
+                        <span class="tag">JSON</span>
+                        <span class="tag">Generator</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fab fa-markdown"></i>
+                    </div>
+                    <h3><a href="/tools/markdown-to-html/">Markdown to HTML</a></h3>
+                    <p>Convert Markdown text to HTML</p>
+                    <div class="tool-tags">
+                        <span class="tag">Markdown</span>
+                        <span class="tag">HTML</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3><a href="/tools/url-encoder-decoder/">URL Encoder/Decoder</a></h3>
+                    <p>Encode and decode URLs safely</p>
+                    <div class="tool-tags">
+                        <span class="tag">URL</span>
+                        <span class="tag">Encoding</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3><a href="/tools/xml-to-json/">XML to JSON Converter</a></h3>
+                    <p>Convert XML data to JSON format</p>
+                    <div class="tool-tags">
+                        <span class="tag">XML</span>
+                        <span class="tag">JSON</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="developer">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3><a href="/tools/yaml-to-json/">YAML to JSON Converter</a></h3>
+                    <p>Convert YAML data to JSON format</p>
+                    <div class="tool-tags">
+                        <span class="tag">YAML</span>
+                        <span class="tag">JSON</span>
+                    </div>
+                </div>
+                
+                <!-- Calculators -->
+                <div class="tool-card" data-category="calculator">
+                    <div class="tool-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3><a href="/tools/age-calculator/">Age Calculator</a></h3>
+                    <p>Calculate exact age in years, months, and days</p>
+                    <div class="tool-tags">
+                        <span class="tag">Age</span>
+                        <span class="tag">Date</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="calculator">
+                    <div class="tool-icon">
+                        <i class="fas fa-weight"></i>
+                    </div>
+                    <h3><a href="/tools/bmi-calculator/">BMI Calculator</a></h3>
+                    <p>Calculate Body Mass Index and health status</p>
+                    <div class="tool-tags">
+                        <span class="tag">Health</span>
+                        <span class="tag">BMI</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="calculator">
+                    <div class="tool-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3><a href="/tools/percentage-calculator/">Percentage Calculator</a></h3>
+                    <p>Calculate percentages, increases, and decreases</p>
+                    <div class="tool-tags">
+                        <span class="tag">Math</span>
+                        <span class="tag">Percentage</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="calculator">
+                    <div class="tool-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3><a href="/tools/timestamp-converter/">Timestamp Converter</a></h3>
+                    <p>Convert between Unix timestamps and dates</p>
+                    <div class="tool-tags">
+                        <span class="tag">Time</span>
+                        <span class="tag">Unix</span>
+                    </div>
+                </div>
+                
+                <!-- Converters -->
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3><a href="/tools/color-picker/">Color Picker & Palette Generator</a></h3>
+                    <p>Pick colors and create custom color palettes</p>
+                    <div class="tool-tags">
+                        <span class="tag">Color</span>
+                        <span class="tag">Picker</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3><a href="/tools/currency-converter/">Currency Converter</a></h3>
+                    <p>Convert between different currencies</p>
+                    <div class="tool-tags">
+                        <span class="tag">Currency</span>
+                        <span class="tag">Money</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <h3><a href="/tools/image-resizer/">Image Resizer</a></h3>
+                    <p>Resize images to specific dimensions</p>
+                    <div class="tool-tags">
+                        <span class="tag">Image</span>
+                        <span class="tag">Resize</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3><a href="/tools/number-base-converter/">Number Base Converter</a></h3>
+                    <p>Convert numbers between different bases</p>
+                    <div class="tool-tags">
+                        <span class="tag">Number</span>
+                        <span class="tag">Base</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <h3><a href="/tools/roman-numeral-converter/">Roman Numeral Converter</a></h3>
+                    <p>Convert between numbers and Roman numerals</p>
+                    <div class="tool-tags">
+                        <span class="tag">Roman</span>
+                        <span class="tag">Numbers</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3><a href="/tools/unit-converter/">Unit Converter</a></h3>
+                    <p>Convert between different units of measurement</p>
+                    <div class="tool-tags">
+                        <span class="tag">Units</span>
+                        <span class="tag">Measurement</span>
+                    </div>
+                </div>
+                
+                <!-- Generators -->
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3><a href="/tools/avatar-generator/">Avatar Generator</a></h3>
+                    <p>Generate custom avatars from names and initials</p>
+                    <div class="tool-tags">
+                        <span class="tag">Avatar</span>
+                        <span class="tag">Profile</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-barcode"></i>
+                    </div>
+                    <h3><a href="/tools/barcode-generator/">Barcode Generator</a></h3>
+                    <p>Generate various types of barcodes</p>
+                    <div class="tool-tags">
+                        <span class="tag">Barcode</span>
+                        <span class="tag">QR</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3><a href="/tools/color-palette-generator/">Color Palette Generator</a></h3>
+                    <p>Generate beautiful color palettes for design</p>
+                    <div class="tool-tags">
+                        <span class="tag">Color</span>
+                        <span class="tag">Palette</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3><a href="/tools/email-generator/">Email Generator</a></h3>
+                    <p>Generate temporary email addresses</p>
+                    <div class="tool-tags">
+                        <span class="tag">Email</span>
+                        <span class="tag">Temporary</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3><a href="/tools/fake-data-generator/">Fake Data Generator</a></h3>
+                    <p>Generate fake data for testing purposes</p>
+                    <div class="tool-tags">
+                        <span class="tag">Data</span>
+                        <span class="tag">Testing</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3><a href="/tools/hash-generator/">Hash Generator</a></h3>
+                    <p>Generate MD5, SHA1, SHA256 hashes</p>
+                    <div class="tool-tags">
+                        <span class="tag">Hash</span>
+                        <span class="tag">Crypto</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3><a href="/tools/password-generator/">Password Generator</a></h3>
+                    <p>Generate secure passwords with custom options</p>
+                    <div class="tool-tags">
+                        <span class="tag">Password</span>
+                        <span class="tag">Security</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3><a href="/tools/qr-code-generator/">QR Code Generator</a></h3>
+                    <p>Generate QR codes with contact card support</p>
+                    <div class="tool-tags">
+                        <span class="tag">QR</span>
+                        <span class="tag">Code</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-dice"></i>
+                    </div>
+                    <h3><a href="/tools/random-number-generator/">Random Number Generator</a></h3>
+                    <p>Generate random numbers with custom ranges</p>
+                    <div class="tool-tags">
+                        <span class="tag">Random</span>
+                        <span class="tag">Number</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card" data-category="generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-id-badge"></i>
+                    </div>
+                    <h3><a href="/tools/uuid-generator/">UUID Generator</a></h3>
+                    <p>Generate RFC-compliant UUIDs</p>
+                    <div class="tool-tags">
+                        <span class="tag">UUID</span>
+                        <span class="tag">Identifier</span>
+                    </div>
+                </div>
+                
+            </div>
+    
+        </div>
+        </div>
+
+        <!-- No Results -->
+        <div class="no-results" id="noResults">
+            <div class="no-results-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <h3>No tools found</h3>
+            <p>Try adjusting your search terms or browse by category.</p>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        let allTools = document.querySelectorAll('.tool-item');
+        let currentFilter = 'all';
+        
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            filterTools(searchTerm, currentFilter);
+        }
+        
+        function filterByCategory(category) {
+            currentFilter = category;
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            filterTools(searchTerm, category);
+            
+            // Update active tab
+            document.querySelectorAll('.filter-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector(`[data-category="${category}"]`).classList.add('active');
+        }
+        
+        function filterTools(searchTerm = '', category = 'all') {
+            let visibleCount = 0;
+            let visibleCategories = new Set();
+            
+            allTools.forEach(tool => {
+                const toolCategory = tool.getAttribute('data-category');
+                const toolSearch = tool.getAttribute('data-search');
+                
+                const matchesSearch = !searchTerm || toolSearch.includes(searchTerm);
+                const matchesCategory = category === 'all' || toolCategory === category;
+                
+                if (matchesSearch && matchesCategory) {
+                    tool.style.display = 'block';
+                    visibleCount++;
+                    visibleCategories.add(toolCategory);
+                } else {
+                    tool.style.display = 'none';
+                }
+            });
+            
+            // Show/hide category sections
+            document.querySelectorAll('.category-section').forEach(section => {
+                const sectionCategory = section.getAttribute('data-category');
+                if (category === 'all') {
+                    section.style.display = visibleCategories.has(sectionCategory) ? 'block' : 'none';
+                } else {
+                    section.style.display = sectionCategory === category ? 'block' : 'none';
+                }
+            });
+            
+            // Update results count
+            document.getElementById('resultsCount').textContent = visibleCount;
+            
+            // Show/hide no results
+            const noResults = document.getElementById('noResults');
+            const toolsContainer = document.getElementById('toolsContainer');
+            if (visibleCount === 0) {
+                noResults.style.display = 'block';
+                toolsContainer.style.display = 'none';
+            } else {
+                noResults.style.display = 'none';
+                toolsContainer.style.display = 'block';
+            }
+        }
+        
+        function sortTools() {
+            const sortBy = document.getElementById('sortSelect').value;
+            const container = document.getElementById('toolsContainer');
+            
+            document.querySelectorAll('.category-section').forEach(categorySection => {
+                const toolsGrid = categorySection.querySelector('.tools-grid');
+                const tools = Array.from(toolsGrid.querySelectorAll('.tool-item'));
+                
+                tools.sort((a, b) => {
+                    switch (sortBy) {
+                        case 'name':
+                            return a.getAttribute('data-name').localeCompare(b.getAttribute('data-name'));
+                        case 'popularity':
+                            return parseInt(b.getAttribute('data-popularity')) - parseInt(a.getAttribute('data-popularity'));
+                        case 'category':
+                            return a.getAttribute('data-category').localeCompare(b.getAttribute('data-category'));
+                        default:
+                            return 0;
+                    }
+                });
+                
+                tools.forEach(tool => toolsGrid.appendChild(tool));
+            });
+        }
+        
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', performSearch);
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        // Filter tab click handlers
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+                filterByCategory(category);
+            });
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            filterTools('', 'all');
+        });
+    </script>
+
+    <!-- MiniMax Floating Ball -->
+    <div id="minimax-floating-ball">
+        <div class="minimax-floating-content">
+            <div class="minimax-floating-dot">
+                <div class="minimax-floating-dot-inner"></div>
+            </div>
+            <span class="minimax-floating-label">MiniMax</span>
+        </div>
+        <div class="minimax-floating-badge">×</div>
+    </div>
+
+    <style>
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        #minimax-floating-ball:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6);
+        }
+    </style>
+
+    <script>
+        // Initialize floating ball functionality
+        function initFloatingBall() {
+            const ball = document.getElementById('minimax-floating-ball');
+            if (!ball) return;
+
+            // Initial animation
+            ball.style.opacity = '0';
+            ball.style.transform = 'translateY(20px)';
+
+            setTimeout(() => {
+                ball.style.opacity = '1';
+                ball.style.transform = 'translateY(0)';
+            }, 500);
+
+            // Handle logo click
+            ball.addEventListener('click', function (e) {
+                if (e.target.textContent === '×') return;
+                e.stopPropagation();
+                window.open('https://agent.minimax.io/agent', '_blank');
+                ball.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    ball.style.transform = 'scale(1)';
+                }, 100);
+            });
+
+            // Handle close button click
+            const closeIcon = ball.querySelector('div[style*="background: #ff4757"]');
+            closeIcon.addEventListener('click', function (e) {
+                e.stopPropagation();
+                ball.style.opacity = '0';
+                ball.style.transform = 'translateY(20px)';
+
+                setTimeout(() => {
+                    ball.style.display = 'none';
+                }, 300);
+            });
+        }
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', initFloatingBall);
+    </script>
+
+
+        <script>
+        // Enhanced Tools Catalog Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const toolsContainer = document.getElementById('toolsContainer');
+            const resultsCount = document.getElementById('resultsCount');
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            
+            // Initialize search with debouncing
+            if (searchInput) {
+                searchInput.addEventListener('input', debounce(function(e) {
+                    performSearch(e.target.value);
+                }, 300));
+                
+                // Add ARIA attributes
+                searchInput.setAttribute('aria-label', 'Search tools');
+                searchInput.setAttribute('role', 'searchbox');
+                searchInput.setAttribute('aria-describedby', 'search-description');
+            }
+            
+            // Initialize filter tabs
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const category = this.dataset.category;
+                    setActiveTab(this);
+                    filterTools(category);
+                });
+                
+                // Add keyboard support
+                tab.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+            
+            function performSearch(query) {
+                if (!FreeToolsHub?.components?.toolsDisplay) {
+                    showEmptyState('Search functionality is loading...', 'info');
+                    return;
+                }
+                
+                const normalizedQuery = query.toLowerCase().trim();
+                
+                if (!normalizedQuery) {
+                    FreeToolsHub.components.toolsDisplay.displayTools();
+                    return;
+                }
+                
+                const filteredTools = FreeToolsHub.components.toolsDisplay.allTools.filter(tool => 
+                    tool.name.toLowerCase().includes(normalizedQuery) ||
+                    tool.description.toLowerCase().includes(normalizedQuery) ||
+                    tool.category.toLowerCase().includes(normalizedQuery) ||
+                    (tool.features && tool.features.some(feature => 
+                        feature.toLowerCase().includes(normalizedQuery)
+                    ))
+                );
+                
+                if (filteredTools.length === 0) {
+                    showEmptyState(`No tools found for "${query}"`, 'no-results', query);
+                } else {
+                    displayFilteredTools(filteredTools);
+                    updateResultsCount(filteredTools.length);
+                }
+            }
+            
+            function filterTools(category) {
+                if (!FreeToolsHub?.components?.toolsDisplay) {
+                    showEmptyState('Tools are loading...', 'info');
+                    return;
+                }
+                
+                FreeToolsHub.components.toolsDisplay.setFilter(category);
+            }
+            
+            function setActiveTab(activeTab) {
+                filterTabs.forEach(tab => tab.classList.remove('active'));
+                activeTab.classList.add('active');
+            }
+            
+            function showEmptyState(message, type = 'no-results', query = '') {
+                const emptyStateHTML = `
+                    <div class="empty-state ${type}">
+                        <div class="empty-state-icon">
+                            <i class="fas fa-${type === 'no-results' ? 'search' : 'info-circle'}"></i>
+                        </div>
+                        <h3 class="empty-state-title">${message}</h3>
+                        <div class="empty-state-content">
+                            ${type === 'no-results' && query ? 
+                                `<p>Try searching for:</p>
+                                <ul class="suggestions">
+                                    <li><button type="button" onclick="searchSuggestion('text')" class="suggestion-btn">Text Tools</button></li>
+                                    <li><button type="button" onclick="searchSuggestion('calculator')" class="suggestion-btn">Calculators</button></li>
+                                    <li><button type="button" onclick="searchSuggestion('converter')" class="suggestion-btn">Converters</button></li>
+                                    <li><button type="button" onclick="searchSuggestion('generator')" class="suggestion-btn">Generators</button></li>
+                                </ul>
+                                <p><button type="button" onclick="clearSearch()" class="btn btn-primary">View All Tools</button></p>` :
+                                '<p>Please wait while we load the tools...</p>'
+                            }
+                        </div>
+                    </div>
+                `;
+                
+                if (toolsContainer) {
+                    toolsContainer.innerHTML = emptyStateHTML;
+                }
+                
+                updateResultsCount(0);
+            }
+            
+            function displayFilteredTools(tools) {
+                if (!toolsContainer) return;
+                
+                const toolsHTML = tools.map(tool => `
+                    <div class="tool-card" data-category="${tool.category}">
+                        <div class="tool-icon">
+                            <i class="${getToolIcon(tool.category)}" aria-hidden="true"></i>
+                        </div>
+                        <div class="tool-content">
+                            <h3 class="tool-name">${tool.name}</h3>
+                            <p class="tool-description">${tool.description}</p>
+                            ${tool.features ? `
+                                <div class="tool-features">
+                                    ${tool.features.map(feature => `<span class="tool-feature">${feature}</span>`).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                        <div class="tool-actions">
+                            <a href="/tools/${tool.id}/" class="tool-btn-primary" aria-label="Use ${tool.name} tool">
+                                Use Tool
+                            </a>
+                        </div>
+                    </div>
+                `).join('');
+                
+                toolsContainer.innerHTML = toolsHTML;
+            }
+            
+            function updateResultsCount(count) {
+                if (resultsCount) {
+                    resultsCount.textContent = count;
+                }
+            }
+            
+            function getToolIcon(category) {
+                const icons = {
+                    'text': 'fas fa-font',
+                    'seo': 'fas fa-search',
+                    'developer': 'fas fa-code',
+                    'calculator': 'fas fa-calculator',
+                    'converter': 'fas fa-exchange-alt',
+                    'generator': 'fas fa-magic'
+                };
+                return icons[category] || 'fas fa-tools';
+            }
+            
+            // Global helper functions
+            window.searchSuggestion = function(query) {
+                if (searchInput) {
+                    searchInput.value = query;
+                    performSearch(query);
+                }
+            };
+            
+            window.clearSearch = function() {
+                if (searchInput) {
+                    searchInput.value = '';
+                    if (FreeToolsHub?.components?.toolsDisplay) {
+                        FreeToolsHub.components.toolsDisplay.displayTools();
+                    }
+                }
+            };
+            
+            // Debounce function
+            function debounce(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            }
+        });
+        </script>
+        
+        <style>
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #6b7280;
+        }
+        
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+        
+        .empty-state-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 1rem;
+        }
+        
+        .suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        
+        .suggestion-btn {
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .suggestion-btn:hover {
+            background: #e5e7eb;
+            color: #2563eb;
+        }
+        </style>
+        
+</body>
+</html>

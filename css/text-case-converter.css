@@ -1,0 +1,57 @@
+/* Text Case Converter Tool - Custom Styles (moved from inline)
+   Accessibility, utility, and button classes for 2025 best practices. */
+
+/* Utility: Grid container for main layout */
+.container-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    align-items: start;
+}
+@media (max-width: 900px) {
+    .container-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Utility: Visually hidden but accessible (for file input) */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+/* Utility: Section margin top */
+.section-margin-top {
+    margin-top: 3rem !important;
+}
+
+/* Utility: Ad paragraph styling */
+.ad-paragraph {
+    color: #666;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Utility: Centered text */
+.text-center {
+    text-align: center !important;
+}
+
+/* Utility: Margin top */
+.mt-1-5 {
+    margin-top: 1.5rem !important;
+}
+
+/* Utility: Hide (for display: none) */
+.d-none {
+    display: none !important;
+}
+
+/* ...add more as needed for text case converter tool... */

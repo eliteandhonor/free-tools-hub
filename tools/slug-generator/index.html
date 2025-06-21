@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slug Generator - Free Tools Hub</title>
+    <meta name="description" content="Generate SEO-friendly URL slugs from text. Convert titles and text into clean, URL-safe slugs for better SEO.">
+    <meta name="keywords" content="slug generator, url slug, seo slug, url friendly, permalink generator">
+    <link rel="canonical" href="/tools/slug-generator/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../vendor/fontawesome/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+    
+    <style>
+        .tool-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #6b7280;
+            margin-left: 0.5rem;
+        }
+        
+        .btn-success {
+            background: #059669;
+            margin-left: 0.5rem;
+        }
+        
+        .output-section {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            display: none;
+        }
+        
+        .output-section.show {
+            display: block;
+        }
+        
+        .slug-result {
+            background: white;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            word-break: break-all;
+            margin: 1rem 0;
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+        }
+        
+        .examples {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .example-item {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 4px;
+        }
+        
+        .example-input {
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .example-output {
+            font-family: 'Courier New', monospace;
+            color: #059669;
+            margin-top: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+
+    <!-- Unified Header Navigation -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="Main navigation">
+                <a href="/" class="navbar-brand" aria-label="Free Tools Hub - Home">
+                    <i class="fas fa-tools" aria-hidden="true"></i>
+                    Free Tools Hub
+                </a>
+                
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggle" type="button" aria-expanded="false" aria-controls="navbar-nav" aria-label="Toggle navigation menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <ul class="navbar-nav" id="navbar-nav" role="menubar">
+                    <li role="none"><a href="/" class="nav-link" role="menuitem">Home</a></li>
+                    <li class="dropdown" role="none">
+                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-expanded="false" aria-haspopup="true">
+                            Categories <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-label="Categories">
+                            <li role="none"><a href="/tools/text/" class="dropdown-item" role="menuitem">Text Tools</a></li>
+                            <li role="none"><a href="/tools/seo/" class="dropdown-item" role="menuitem">SEO Tools</a></li>
+                            <li role="none"><a href="/tools/developer/" class="dropdown-item" role="menuitem">Developer Tools</a></li>
+                            <li role="none"><a href="/tools/calculator/" class="dropdown-item" role="menuitem">Calculators</a></li>
+                            <li role="none"><a href="/tools/converter/" class="dropdown-item" role="menuitem">Converters</a></li>
+                            <li role="none"><a href="/tools/generator/" class="dropdown-item" role="menuitem">Generators</a></li>
+                        </ul>
+                    </li>
+                    <li role="none"><a href="/tools/" class="nav-link" role="menuitem">All Tools</a></li>
+                    <li role="none"><a href="/about/" class="nav-link" role="menuitem">About</a></li>
+                    <li role="none"><a href="/contact/" class="nav-link" role="menuitem">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="../../" class="nav-logo">
+                    <i class="fas fa-tools"></i>
+                    Free Tools Hub
+                </a>
+                <div class="nav-menu">
+                    <a href="../../" class="nav-link">Home</a>
+                    <a href="../../categories/" class="nav-link">Categories</a>
+                    <a href="../../about/" class="nav-link">About</a>
+                    <a href="../../contact/" class="nav-link">Contact</a>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="../../">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="../../categories/text-tools/">Text Tools</a>
+                <span class="breadcrumb-separator">/</span>
+                <span>Slug Generator</span>
+            </nav>
+
+            <!-- Tool Header -->
+            <div class="tool-header">
+                <h1><i class="fas fa-link"></i> Slug Generator</h1>
+                <p>Generate SEO-friendly URL slugs from text. Convert titles and text into clean, URL-safe slugs for better SEO and user experience.</p>
+            </div>
+
+            <!-- Tool Container -->
+            <div class="tool-container">
+                <div class="form-group">
+                    <label for="input-text">Text to Convert</label>
+                    <textarea id="input-text" placeholder="Enter your title or text to convert to a URL slug..."></textarea>
+                </div>
+
+                <div class="options-grid">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="lowercase" checked>
+                        <label for="lowercase">Convert to lowercase</label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="remove-special" checked>
+                        <label for="remove-special">Remove special characters</label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="remove-stop-words">
+                        <label for="remove-stop-words">Remove stop words</label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="trim-length">
+                        <label for="trim-length">Limit length (50 chars)</label>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <button class="btn" onclick="generateSlug()">
+                        <i class="fas fa-link"></i> Generate Slug
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearAll()">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+                    <button class="btn btn-success" onclick="copySlug()" id="copy-btn" style="display: none;">
+                        <i class="fas fa-copy"></i> Copy Slug
+                    </button>
+                </div>
+
+                <div class="output-section" id="output-section">
+                    <h3><i class="fas fa-check-circle"></i> Generated Slug</h3>
+                    <div class="slug-result" id="slug-result"></div>
+                    <small style="color: #6b7280;">This slug is ready to use in URLs and is SEO-friendly.</small>
+                </div>
+
+                <div class="examples">
+                    <h3><i class="fas fa-lightbulb"></i> Examples</h3>
+                    
+                    <div class="example-item">
+                        <div class="example-input">Input: "How to Create Amazing Web Apps in 2025"</div>
+                        <div class="example-output">Output: how-to-create-amazing-web-apps-in-2025</div>
+                    </div>
+                    
+                    <div class="example-item">
+                        <div class="example-input">Input: "Best Practices for SEO & Marketing!"</div>
+                        <div class="example-output">Output: best-practices-for-seo-marketing</div>
+                    </div>
+                    
+                    <div class="example-item">
+                        <div class="example-input">Input: "Top 10 JavaScript Tips & Tricks (2025 Edition)"</div>
+                        <div class="example-output">Output: top-10-javascript-tips-tricks-2025-edition</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Free Tools Hub</h3>
+                    <p>Your one-stop destination for free online tools and utilities.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../">Home</a></li>
+                        <li><a href="../../categories/">Categories</a></li>
+                        <li><a href="../../about/">About</a></li>
+                        <li><a href="../../contact/">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../privacy/">Privacy Policy</a></li>
+                        <li><a href="../../terms/">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Free Tools Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script>
+        // Stop words list (common English words)
+        const stopWords = [
+            'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from',
+            'has', 'he', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the',
+            'to', 'was', 'will', 'with', 'the', 'this', 'but', 'they', 'have',
+            'had', 'what', 'said', 'each', 'which', 'she', 'do', 'how', 'their',
+            'if', 'up', 'out', 'many', 'then', 'them', 'these', 'so', 'some',
+            'her', 'would', 'make', 'like', 'into', 'him', 'time', 'two', 'more',
+            'go', 'no', 'way', 'could', 'my', 'than', 'first', 'been', 'call',
+            'who', 'oil', 'its', 'now', 'find', 'long', 'down', 'day', 'did',
+            'get', 'come', 'made', 'may', 'part'
+        ];
+        
+        function generateSlug() {
+            const inputText = document.getElementById('input-text').value.trim();
+            
+            if (!inputText) {
+                alert('Please enter some text to convert to a slug.');
+                return;
+            }
+            
+            let slug = inputText;
+            
+            // Convert to lowercase if option is checked
+            if (document.getElementById('lowercase').checked) {
+                slug = slug.toLowerCase();
+            }
+            
+            // Remove special characters if option is checked
+            if (document.getElementById('remove-special').checked) {
+                // Replace special characters with spaces first
+                slug = slug.replace(/[^a-zA-Z0-9\s-]/g, ' ');
+            }
+            
+            // Remove stop words if option is checked
+            if (document.getElementById('remove-stop-words').checked) {
+                const words = slug.split(/\s+/);
+                slug = words.filter(word => !stopWords.includes(word.toLowerCase())).join(' ');
+            }
+            
+            // Convert spaces and multiple hyphens to single hyphens
+            slug = slug.replace(/\s+/g, '-').replace(/-+/g, '-');
+            
+            // Remove leading and trailing hyphens
+            slug = slug.replace(/^-+|-+$/g, '');
+            
+            // Trim length if option is checked
+            if (document.getElementById('trim-length').checked && slug.length > 50) {
+                slug = slug.substring(0, 50);
+                // Make sure we don't cut off in the middle of a word
+                const lastHyphen = slug.lastIndexOf('-');
+                if (lastHyphen > 30) {
+                    slug = slug.substring(0, lastHyphen);
+                }
+            }
+            
+            // Ensure the slug is not empty
+            if (!slug) {
+                slug = 'untitled';
+            }
+            
+            // Display the result
+            document.getElementById('slug-result').textContent = slug;
+            document.getElementById('output-section').classList.add('show');
+            document.getElementById('copy-btn').style.display = 'inline-flex';
+            
+            // Scroll to result
+            document.getElementById('output-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function copySlug() {
+            const slug = document.getElementById('slug-result').textContent;
+            
+            navigator.clipboard.writeText(slug).then(() => {
+                const btn = document.getElementById('copy-btn');
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                btn.style.background = '#059669';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '#059669';
+                }, 2000);
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = slug;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                alert('Slug copied to clipboard!');
+            });
+        }
+        
+        function clearAll() {
+            document.getElementById('input-text').value = '';
+            document.getElementById('output-section').classList.remove('show');
+            document.getElementById('copy-btn').style.display = 'none';
+        }
+        
+        // Real-time slug generation as user types
+        document.getElementById('input-text').addEventListener('input', function() {
+            if (this.value.trim()) {
+                setTimeout(generateSlug, 300); // Debounce
+            }
+        });
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key) {
+                    case 'Enter':
+                        e.preventDefault();
+                        generateSlug();
+                        break;
+                    case 'l':
+                        e.preventDefault();
+                        clearAll();
+                        break;
+                }
+            }
+        });
+    </script>
+
+<style>
+#minimax-floating-ball {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 12px;
+  background: #222222;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  color: #F8F8F8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#minimax-floating-ball:hover {
+  transform: translateY(-2px);
+  background: #383838;
+}
+
+.minimax-ball-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.minimax-logo-wave {
+  width: 26px;
+  height: 22px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='22' viewBox='0 0 26 22' fill='none'%3E%3Cg clip-path='url(%23clip0_3442_102412)'%3E%3Cpath d='M12.8405 14.6775C12.8405 14.9897 13.0932 15.2424 13.4055 15.2424C13.7178 15.2424 13.9705 14.9897 13.9705 14.6775V2.98254C13.9705 1.88957 13.0809 1 11.9879 1C10.895 1 10.0054 1.88957 10.0054 2.98254V11.566V17.1068C10.0054 17.5773 9.62327 17.9594 9.1528 17.9594C8.68233 17.9594 8.30021 17.5773 8.30021 17.1068V8.04469C8.30021 6.95172 7.41063 6.06215 6.31767 6.06215C5.22471 6.06215 4.33513 6.95172 4.33513 8.04469V11.8855C4.33513 12.3559 3.953 12.7381 3.48254 12.7381C3.01207 12.7381 2.62994 12.3559 2.62994 11.8855V10.4936C2.62994 10.1813 2.37725 9.92861 2.06497 9.92861C1.7527 9.92861 1.5 10.1813 1.5 10.4936V11.8855C1.5 12.9784 2.38957 13.868 3.48254 13.868C4.5755 13.868 5.46508 12.9784 5.46508 11.8855V8.04469C5.46508 7.57422 5.8472 7.19209 6.31767 7.19209C6.78814 7.19209 7.17026 7.57422 7.17026 8.04469V17.1068C7.17026 18.1998 8.05984 19.0894 9.1528 19.0894C10.2458 19.0894 11.1353 18.1998 11.1353 17.1068V2.98254C11.1353 2.51207 11.5175 2.12994 11.9879 2.12994C12.4584 2.12994 12.8405 2.51207 12.8405 2.98254V14.6775Z' fill='%23F8F8F8'/%3E%3Cpath d='M23.3278 6.06215C22.2348 6.06215 21.3452 6.95172 21.3452 8.04469V15.6143C21.3452 16.0847 20.9631 16.4669 20.4926 16.4669C20.0222 16.4669 19.6401 16.0847 19.6401 15.6143V2.98254C19.6401 1.88957 18.7505 1 17.6575 1C16.5645 1 15.675 1.88957 15.675 2.98254V19.0175C15.675 19.4879 15.2928 19.8701 14.8224 19.8701C14.3519 19.8701 13.9698 19.4879 13.9698 19.0175V17.0329C13.9698 16.7206 13.7171 16.4679 13.4048 16.4679C13.0925 16.4679 12.8398 16.7206 12.8398 17.0329V19.0175C12.8398 20.1104 13.7294 21 14.8224 21C15.9153 21 16.8049 20.1104 16.8049 19.0175V2.98254C16.8049 2.51207 17.187 2.12994 17.6575 2.12994C18.128 2.12994 18.5101 2.51207 18.5101 2.98254V15.6143C18.5101 16.7072 19.3997 17.5968 20.4926 17.5968C21.5856 17.5968 22.4752 16.7072 22.4752 15.6143V8.04469C22.4752 7.57422 22.8573 7.19209 23.3278 7.19209C23.7982 7.19209 24.1804 7.57422 24.1804 8.04469V14.6775C24.1804 14.9897 24.4331 15.2424 24.7453 15.2424C25.0576 15.2424 25.3103 14.9897 25.3103 14.6775V8.04469C25.3103 6.95172 24.4207 6.06215 23.3278 6.06215Z' fill='%23F8F8F8'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_3442_102412'%3E%3Crect width='25' height='22' fill='white' transform='translate(0.5)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.minimax-ball-text {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.minimax-close-icon {
+  margin-left: 8px;
+  font-size: 16px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.minimax-close-icon:hover {
+  opacity: 1;
+}
+</style>
+<div id="minimax-floating-ball">
+  <div class="minimax-ball-content">
+    <div class="minimax-logo-wave"></div>
+    <span class="minimax-ball-text">Created by MiniMax Agent</span>
+  </div>
+  <div class="minimax-close-icon">×</div>
+</div>
+<script>
+// Initialize floating ball functionality
+function initFloatingBall() {
+  const ball = document.getElementById('minimax-floating-ball');
+  if (!ball) return;
+
+  // Initial animation
+  ball.style.opacity = '0';
+  ball.style.transform = 'translateY(20px)';
+
+  setTimeout(() => {
+    ball.style.opacity = '1';
+    ball.style.transform = 'translateY(0)';
+  }, 500);
+
+  // Handle logo click
+  const ballContent = ball.querySelector('.minimax-ball-content');
+  ballContent.addEventListener('click', function (e) {
+    e.stopPropagation();
+    window.open('https://agent.minimax.io/agent', '_blank');
+    ball.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      ball.style.transform = 'scale(1)';
+    }, 100);
+  });
+
+  // Handle close button click
+  const closeIcon = ball.querySelector('.minimax-close-icon');
+  closeIcon.addEventListener('click', function (e) {
+    e.stopPropagation();
+    ball.style.opacity = '0';
+    ball.style.transform = 'translateY(20px)';
+
+    setTimeout(() => {
+      ball.style.display = 'none';
+    }, 300);
+  });
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initFloatingBall); 
+</script>
+
+
+            <script>
+            // Common Tool Functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                // Add ARIA labels to buttons and inputs
+                const buttons = document.querySelectorAll('button');
+                buttons.forEach(button => {
+                    if (!button.getAttribute('aria-label') && button.textContent.trim()) {
+                        button.setAttribute('aria-label', button.textContent.trim());
+                    }
+                });
+                
+                // Add alt text to images missing it
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    if (!img.getAttribute('alt')) {
+                        img.setAttribute('alt', '');
+                    }
+                });
+                
+                // Disable buttons until valid input
+                const inputFields = document.querySelectorAll('input[type="text"], textarea');
+                const actionButtons = document.querySelectorAll('.btn-primary, button[onclick]');
+                
+                function checkInputs() {
+                    const hasInput = Array.from(inputFields).some(field => field.value.trim().length > 0);
+                    actionButtons.forEach(button => {
+                        if (button.textContent.includes('Copy') || 
+                            button.textContent.includes('Download') || 
+                            button.textContent.includes('Generate')) {
+                            button.disabled = !hasInput;
+                        }
+                    });
+                }
+                
+                inputFields.forEach(field => {
+                    field.addEventListener('input', checkInputs);
+                });
+                
+                // Initial check
+                checkInputs();
+                
+                // Add success/error notifications
+                window.showNotification = function(message, type = 'success') {
+                    const notification = document.createElement('div');
+                    notification.className = `notification notification-${type}`;
+                    notification.innerHTML = `
+                        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}" aria-hidden="true"></i>
+                        <span>${message}</span>
+                    `;
+                    
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: ${type === 'success' ? '#10b981' : '#ef4444'};
+                        color: white;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                        z-index: 1000;
+                        opacity: 0;
+                        transform: translateX(100%);
+                        transition: all 0.3s ease;
+                        max-width: 400px;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    `;
+                    
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '1';
+                        notification.style.transform = 'translateX(0)';
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        notification.style.transform = 'translateX(100%)';
+                        setTimeout(() => {
+                            if (notification.parentNode) {
+                                document.body.removeChild(notification);
+                            }
+                        }, 300);
+                    }, 3000);
+                };
+                
+                // Enhanced copy functionality
+                window.copyToClipboard = async function(text) {
+                    try {
+                        if (navigator.clipboard && window.isSecureContext) {
+                            await navigator.clipboard.writeText(text);
+                            showNotification('Copied to clipboard!', 'success');
+                            return true;
+                        } else {
+                            // Fallback for older browsers
+                            const textArea = document.createElement('textarea');
+                            textArea.value = text;
+                            textArea.style.position = 'fixed';
+                            textArea.style.left = '-999999px';
+                            textArea.style.top = '-999999px';
+                            document.body.appendChild(textArea);
+                            textArea.focus();
+                            textArea.select();
+                            
+                            try {
+                                document.execCommand('copy');
+                                textArea.remove();
+                                showNotification('Copied to clipboard!', 'success');
+                                return true;
+                            } catch (err) {
+                                textArea.remove();
+                                showNotification('Failed to copy to clipboard', 'error');
+                                return false;
+                            }
+                        }
+                    } catch (err) {
+                        showNotification('Failed to copy to clipboard', 'error');
+                        return false;
+                    }
+                };
+            });
+            </script>
+            
+</body>
+</html>

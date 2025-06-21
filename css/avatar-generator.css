@@ -1,0 +1,69 @@
+/* Avatar Generator Tool - Custom Styles (moved from inline) */
+
+.avatar-preview {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 72px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Color Preset Gradients */
+.color-preset.gradient-1 { background: linear-gradient(135deg, #667eea, #764ba2); }
+.color-preset.gradient-2 { background: linear-gradient(135deg, #f093fb, #f5576c); }
+.color-preset.gradient-3 { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+.color-preset.gradient-4 { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+.color-preset.gradient-5 { background: linear-gradient(135deg, #fa709a, #fee140); }
+.color-preset.gradient-6 { background: linear-gradient(135deg, #a8edea, #fed6e3); }
+.color-preset.gradient-7 { background: linear-gradient(135deg, #ff9a9e, #fecfef); }
+.color-preset.gradient-8 { background: linear-gradient(135deg, #ffecd2, #fcb69f); }
+
+.color-preset {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+    display: inline-block;
+}
+.color-preset.active {
+    border-color: #000;
+}
+
+.style-option {
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s;
+}
+.style-option.active {
+    border-color: #007bff;
+    background: #007bff;
+    color: #fff;
+}
+
+/* Canvas preview styles */
+.avatar-canvas {
+    border-radius: 50%;
+    border: 1px solid #dee2e6;
+}
+.avatar-canvas.size-64 { width: 64px; height: 64px; }
+.avatar-canvas.size-128 { width: 128px; height: 128px; }
+.avatar-canvas.size-256 { width: 256px; height: 256px; max-width: 100px; max-height: 100px; }
+
+/* Focus styles for accessibility */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}

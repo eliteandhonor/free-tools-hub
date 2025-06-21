@@ -1,0 +1,138 @@
+/* Style.css - Compatibility import for main.css */
+@import url('main.css');
+
+/* Additional responsive and accessibility styles */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #2563eb;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    z-index: 9999;
+    font-weight: 500;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+/* Enhanced category cards */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.category-card {
+    display: block;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.category-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.category-card p {
+    margin: 0 0 1rem 0;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+.category-stats {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: #9ca3af;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.section-description {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.125rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Tools grid */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Mobile responsive improvements */
+@media (max-width: 768px) {
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .category-card {
+        padding: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-search {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .search-input {
+        width: 100%;
+    }
+    
+    .search-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.hidden {
+    display: none !important;
+}

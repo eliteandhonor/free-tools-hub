@@ -1,0 +1,214 @@
+/* Character Counter Tool - Custom Styles (moved from inline)
+   Accessibility, utility, and button classes for 2025 best practices. */
+
+.counter-textarea {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: #fafafa;
+    min-height: 300px;
+    width: 100%;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+.counter-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    background: white;
+}
+.counter-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+.counter-stat {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.counter-stat:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+.stat-label {
+    font-size: 0.875rem;
+    color: #64748b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.stat-description {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: 0.25rem;
+}
+.social-limits {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    color: white;
+    margin: 2rem 0;
+}
+.social-limits h3 {
+    color: white;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.social-platform {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+.social-platform:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+.social-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+.social-name {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+}
+.social-limit {
+    font-size: 0.875rem;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+.social-count {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+.social-remaining {
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+.over-limit {
+    color: #fef3c7 !important;
+    background: rgba(239, 68, 68, 0.2) !important;
+    border-color: rgba(239, 68, 68, 0.4) !important;
+}
+.near-limit {
+    color: #fef3c7 !important;
+    background: rgba(245, 158, 11, 0.2) !important;
+    border-color: rgba(245, 158, 11, 0.4) !important;
+}
+.reading-time-section {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+.reading-time-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.reading-time-item {
+    text-align: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #dcfce7;
+}
+.reading-time-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #059669;
+}
+.reading-time-label {
+    font-size: 0.875rem;
+    color: #065f46;
+    margin-top: 0.25rem;
+}
+.text-analysis {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+.analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.analysis-item {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #f1f5f9;
+    border-radius: 8px;
+}
+
+/* Utility: Grid container for main layout */
+.container-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    align-items: start;
+}
+@media (max-width: 900px) {
+    .container-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Utility: Visually hidden but accessible (for file input) */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+/* Utility: Section margin top */
+.section-margin-top {
+    margin-top: 3rem !important;
+}
+
+/* Utility: Ad paragraph styling */
+.ad-paragraph {
+    color: #666;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 2rem;
+}
