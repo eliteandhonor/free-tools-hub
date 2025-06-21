@@ -63,7 +63,9 @@ The Word Counter tool now guards optional UI elements before wiring events.
 Listeners for goal inputs, undo/redo, and keyword-density toggles are only
 registered when the corresponding elements exist. Updates to goal progress or
 keyword density are likewise skipped if their elements are missing. These
-safeguards prevent console errors when the feature markup is omitted.
+safeguards prevent console errors when the feature markup is omitted. The
+copy statistics button handler now checks for `.copy-stats-btn` before
+registering its event listener to avoid errors when the button is absent.
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
