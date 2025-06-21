@@ -33,6 +33,7 @@ The verification script may show "missing tools" due to:
 - All critical issues resolved
 - All high-priority issues addressed
 - CDN with vendor fallbacks implemented
+- Verified vendor fallback for `main.js` works after adding copy to `vendor/main.js`
 - Responsive design working
 - Accessibility features added
 - SEO optimization complete
