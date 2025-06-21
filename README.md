@@ -17,3 +17,7 @@ bash project-doctor.sh
 ```
 
 The script runs linters, tests, and other verifications. Review the output for warnings.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
