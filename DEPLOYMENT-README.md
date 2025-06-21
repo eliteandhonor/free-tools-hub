@@ -22,6 +22,7 @@
    # Update placeholders in index.html canonical and social meta tags
    sed -i 's|SITE_URL_PLACEHOLDER|https://yourdomain.com|g' index.html
    ```
+   The repository uses `SITE_URL_PLACEHOLDER` in `sitemap.xml`. Run this command after each build to insert your production domain.
 
 3. **Web Server Configuration**
    
