@@ -33,14 +33,14 @@ class WordCounter {
         });
 
         // Action buttons
-        document.getElementById('clear-btn').addEventListener('click', () => this.clearText());
-        document.getElementById('copy-btn').addEventListener('click', () => this.copyText());
-        document.getElementById('copy-stats-btn').addEventListener('click', () => this.copyStats());
-        document.getElementById('download-btn').addEventListener('click', () => this.downloadText());
+        document.querySelector('.clear-btn').addEventListener('click', () => this.clearText());
+        document.querySelector('.copy-btn').addEventListener('click', () => this.copyText());
+        document.querySelector('.copy-stats-btn').addEventListener('click', () => this.copyStats());
+        document.querySelector('.download-btn').addEventListener('click', () => this.downloadText());
 
         // File upload
         document.getElementById('file-input').addEventListener('change', (e) => this.handleFileUpload(e));
-        document.getElementById('upload-btn').addEventListener('click', () => document.getElementById('file-input').click());
+        document.querySelector('.upload-btn')?.addEventListener('click', () => document.getElementById('file-input').click());
 
         // Settings toggles
         document.getElementById('include-spaces').addEventListener('change', (e) => {
