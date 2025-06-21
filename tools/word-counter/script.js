@@ -287,8 +287,11 @@ class WordCounter {
         // Average reading speed: 200-250 words per minute
         const wordsPerMinute = 225;
         const minutes = wordCount / wordsPerMinute;
-        
-        if (minutes < 1) {
+
+        // Show "0 min" when there is no text
+        if (wordCount === 0) {
+            return '0 min';
+        } else if (minutes < 1) {
             return '< 1 min';
         } else if (minutes < 60) {
             return `${Math.round(minutes)} min`;
@@ -303,8 +306,11 @@ class WordCounter {
         // Average speaking speed: 150-160 words per minute
         const wordsPerMinute = 155;
         const minutes = wordCount / wordsPerMinute;
-        
-        if (minutes < 1) {
+
+        // Show "0 min" when there is no text
+        if (wordCount === 0) {
+            return '0 min';
+        } else if (minutes < 1) {
             return '< 1 min';
         } else if (minutes < 60) {
             return `${Math.round(minutes)} min`;
