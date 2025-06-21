@@ -109,7 +109,7 @@ class WordCounter {
         this.addToHistory(text);
         
         // Show/hide clear button based on content
-        const clearBtn = document.getElementById('clear-btn');
+        const clearBtn = document.querySelector('.clear-btn');
         clearBtn.style.display = text.length > 0 ? 'inline-block' : 'none';
         
         // Update keyword density if enabled
