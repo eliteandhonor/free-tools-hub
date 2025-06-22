@@ -43,9 +43,9 @@ The verification script may show "missing tools" due to:
   added missing ones for meta-tag, qr-code, slug, and uuid generators
 - Fixed clear button selector in Word Counter tool; now uses `document.querySelector('.clear-btn')` and toggles visibility correctly.
 - Removed inline code from script tags in pdf-to-text tool to avoid duplication
-
 - Appended newline to free-tools-hub.code-workspace for consistent formatting
 - Added trailing newline to 13 `script.js` files: age-calculator, hex-rgb-converter, keyword-density-checker, logo-generator, meta-tag-generator, password-generator, robots-txt-generator, seo-analyzer, serp-preview, sitemap-generator, text-case-converter, url-encoder-decoder, uuid-generator
-
 - Appended newline to data/tools-config.json for consistent formatting and to enforce the rule that JSON files end with a newline at EOF
+- Removed malformed <style> block from timezone converter page to ensure valid HTML.
 - Updated `.csslintrc` to remove `known-properties` from the CSS errors list, allowing custom properties like `gap` and `backdrop-filter`
+
