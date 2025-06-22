@@ -147,6 +147,9 @@ The website requires minimal maintenance:
 - Monitor CDN performance and fallback usage
 - Regular security header verification
 - Periodic SEO audit and optimization
+- Ensure each tool loads the main navigation script:
+  `<script src="../../js/main.js" defer></script>` should appear before the
+  tool-specific `script.js` on every page.
 
 ### 🎉 **Production Ready**
 
