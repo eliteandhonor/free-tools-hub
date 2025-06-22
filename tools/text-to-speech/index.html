@@ -37,6 +37,7 @@
     <!-- Stylesheets -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" rel="stylesheet" onerror="this.onerror=null;this.href='/vendor/fontawesome/css/all.min.css'">
     <link href="../../css/main.css" rel="stylesheet">
+
     <link href="../../css/text.css" rel="stylesheet">
 
     <!-- Vendor Library Loader with CDN Fallbacks -->
@@ -190,7 +191,539 @@
     </footer>
 
     <script src="../../js/main.js"></script>
+    
+    <!-- External Libraries CSS -->
+    <link rel="stylesheet" href="../../vendor/speechsynthesis-libs/nouislider.min.css">
+    <link rel="stylesheet" href="../../vendor/speechsynthesis-libs/sweetalert2.min.css">
+    
+    <!-- Tool-specific styles -->
+    <style></style>
+        .tts-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .control-group {
+            margin-bottom: 20px;
+        }
+        
+        .control-row {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .control-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            min-width: 150px;
+        }
+        
+        .control-item label {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .slider-container input[type="range"] {
+            flex: 1;
+            min-width: 100px;
+        }
+        
+        .slider-value {
+            min-width: 50px;
+            text-align: center;
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0056b3, #004085);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+        
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: #c82333;
+        }
+        
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .text-input {
+            width: 100%;
+            min-height: 200px;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            line-height: 1.5;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+        
+        .text-input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+        
+        .char-counter {
+            text-align: right;
+            color: #666;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .examples-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .example-item {
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .example-item:hover {
+            border-color: #007bff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.1);
+        }
+        
+        .example-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .example-text {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .status-indicator {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+        
+        .status-speaking {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-paused {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-stopped {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .keyboard-shortcuts {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .keyboard-shortcuts h4 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        
+        .shortcut-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .shortcut-key {
+            font-family: monospace;
+            background: #fff;
+            padding: 2px 6px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+        
+        /* Enhanced features styles */
+        .audio-visualizer {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .preset-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+        .recording-controls {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .advanced-controls {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e9ecef;
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+        
+        .voice-preset {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .voice-preset:hover {
+            border-color: #007bff;
+            box-shadow: 0 2px 8px rgba(0,123,255,0.1);
+        }
+        
+        .voice-preset.active {
+            border-color: #007bff;
+            background: #e7f3ff;
+        }
+        
+        .copy-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .copy-btn:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="tts-container">
+        <h1><i class="fas fa-volume-up"></i> Text to Speech Converter</h1>
+        <p class="lead">Convert your text into natural-sounding speech with customizable voice options and controls.</p>
+        
+        <div class="control-group">
+            <label for="text-input">Enter your text:</label>
+            <textarea id="text-input" class="text-input" placeholder="Type or paste your text here to convert it to speech..."></textarea>
+            <div class="char-counter">
+                <span id="char-count">0</span> / 5000 characters
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <div class="control-row">
+                <div class="control-item">
+                    <label for="voice-select">Voice:</label>
+                    <select id="voice-select" class="form-control">
+                        <option value="">Loading voices...</option>
+                    </select>
+                </div>
+                
+                <div class="control-item">
+                    <label for="language-select">Language:</label>
+                    <select id="language-select" class="form-control">
+                        <option value="">All Languages</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="control-row">
+                <div class="control-item">
+                    <label for="rate-slider">Speed:</label>
+                    <div class="slider-container">
+                        <div id="rate-slider-enhanced"></div>
+                        <span id="rate-value" class="slider-value">1.0x</span>
+                    </div>
+                </div>
+                
+                <div class="control-item">
+                    <label for="pitch-slider">Pitch:</label>
+                    <div class="slider-container">
+                        <div id="pitch-slider-enhanced"></div>
+                        <span id="pitch-value" class="slider-value">1.0</span>
+                    </div>
+                </div>
+                
+                <div class="control-item">
+                    <label for="volume-slider">Volume:</label>
+                    <div class="slider-container">
+                        <div id="volume-slider-enhanced"></div>
+                        <span id="volume-value" class="slider-value">100%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Voice Presets -->
+            <div class="preset-controls">
+                <label>Voice Presets:</label>
+                <button class="btn btn-secondary" onclick="savePreset()">
+                    <i class="fas fa-save"></i> Save Preset
+                </button>
+                <select id="preset-select" class="form-control" style="max-width: 200px;">
+                    <option value="">Select Preset...</option>
+                </select>
+                <button class="btn btn-secondary" onclick="loadPreset()">
+                    <i class="fas fa-upload"></i> Load
+                </button>
+                <button class="btn btn-danger" onclick="deletePreset()">
+                    <i class="fas fa-trash"></i> Delete
+                </button>
+            </div>
+        </div>
+        
+        <!-- Audio Visualization -->
+        <div class="control-group">
+            <h3><i class="fas fa-chart-line"></i> Audio Visualization</h3>
+            <div id="waveform" class="audio-visualizer">
+                <p style="color: #666; margin: 0;">
+                    <i class="fas fa-info-circle"></i> 
+                    Audio waveform will appear here during speech synthesis
+                </p>
+            </div>
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+        </div>
+        
+        <!-- Recording Controls -->
+        <div class="recording-controls">
+            <h4><i class="fas fa-microphone"></i> Audio Recording & Comparison</h4>
+            <p>Record your own voice to compare with the synthesized speech.</p>
+            <div class="button-group">
+                <button id="record-btn" class="btn btn-secondary">
+                    <i class="fas fa-microphone"></i> Start Recording
+                </button>
+                <button id="stop-record-btn" class="btn btn-danger" disabled>
+                    <i class="fas fa-stop"></i> Stop Recording
+                </button>
+                <button id="play-recording-btn" class="btn btn-secondary" disabled>
+                    <i class="fas fa-play"></i> Play Recording
+                </button>
+                <button id="download-recording-btn" class="btn btn-secondary" disabled>
+                    <i class="fas fa-download"></i> Download Recording
+                </button>
+            </div>
+        </div>
+        
+        <!-- Advanced Controls -->
+        <div class="advanced-controls">
+            <h4><i class="fas fa-cogs"></i> Advanced Features</h4>
+            <div class="control-row">
+                <div class="control-item">
+                    <label>
+                        <input type="checkbox" id="auto-scroll"> 
+                        Auto-scroll text during speech
+                    </label>
+                </div>
+                <div class="control-item">
+                    <label>
+                        <input type="checkbox" id="highlight-words"> 
+                        Highlight words as spoken
+                    </label>
+                </div>
+                <div class="control-item">
+                    <label>
+                        <input type="checkbox" id="loop-playback"> 
+                        Loop playback
+                    </label>
+                </div>
+            </div>
+            <div class="control-row">
+                <button class="copy-btn" onclick="copyTextToClipboard()">
+                    <i class="fas fa-copy"></i> Copy Text
+                </button>
+                <button class="btn btn-secondary" onclick="downloadAudio()">
+                    <i class="fas fa-download"></i> Download Audio
+                </button>
+                <button class="btn btn-secondary" onclick="shareText()">
+                    <i class="fas fa-share"></i> Share Text
+                </button>
+                <button class="btn btn-secondary" onclick="openFullscreen()">
+                    <i class="fas fa-expand"></i> Fullscreen
+                </button>
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <div class="button-group">
+                <button id="play-btn" class="btn btn-primary">
+                    <i class="fas fa-play"></i> Play
+                </button>
+                <button id="pause-btn" class="btn btn-secondary" disabled>
+                    <i class="fas fa-pause"></i> Pause
+                </button>
+                <button id="stop-btn" class="btn btn-danger" disabled>
+                    <i class="fas fa-stop"></i> Stop
+                </button>
+                <button id="clear-btn" class="btn btn-secondary">
+                    <i class="fas fa-eraser"></i> Clear
+                </button>
+                <span id="status-indicator" class="status-indicator status-stopped">Ready</span>
+            </div>
+        </div>
+        
+        <div class="examples-section">
+            <h3>Example Texts</h3>
+            <p>Click on any example below to load it into the text area:</p>
+            <div class="examples-grid">
+                <div class="example-item" data-example="greeting">
+                    <div class="example-title">Greeting</div>
+                    <div class="example-text">Welcome message with natural speech patterns</div>
+                </div>
+                <div class="example-item" data-example="announcement">
+                    <div class="example-title">Announcement</div>
+                    <div class="example-text">Public announcement style text</div>
+                </div>
+                <div class="example-item" data-example="story">
+                    <div class="example-title">Story</div>
+                    <div class="example-text">Narrative text with engaging tone</div>
+                </div>
+                <div class="example-item" data-example="numbers">
+                    <div class="example-title">Numbers & Dates</div>
+                    <div class="example-text">Text with numbers, dates, and currency</div>
+                </div>
+                <div class="example-item" data-example="punctuation">
+                    <div class="example-title">Punctuation</div>
+                    <div class="example-text">Various punctuation marks and pauses</div>
+                </div>
+                <div class="example-item" data-example="multilingual">
+                    <div class="example-title">Multilingual</div>
+                    <div class="example-text">Text with words from different languages</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="keyboard-shortcuts">
+            <h4>Keyboard Shortcuts</h4>
+            <div class="shortcut-item">
+                <span>Play/Speak Text</span>
+                <span class="shortcut-key">Ctrl/Cmd + Enter</span>
+            </div>
+            <div class="shortcut-item">
+                <span>Pause/Resume</span>
+                <span class="shortcut-key">Ctrl/Cmd + Space</span>
+            </div>
+            <div class="shortcut-item">
+                <span>Stop</span>
+                <span class="shortcut-key">Ctrl/Cmd + Esc</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- External Libraries -->
+    <script src="../../vendor/speechsynthesis-libs/sweetalert2.min.js"></script>
+    <script src="../../vendor/speechsynthesis-libs/nouislider.min.js"></script>
+    <script src="../../vendor/speechsynthesis-libs/wavesurfer.min.js"></script>
+    <script src="../../vendor/speechsynthesis-libs/recordrtc.min.js"></script>
+    <script src="../../vendor/speechsynthesis-libs/clipboard.min.js"></script>
+    
+    <!-- Core Scripts -->
     <script src="../../js/tool-common.js"></script>
-    <script src="script.js"></script>
+    <script src="script-enhanced.js"></script>
 </body>
 </html>

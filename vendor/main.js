@@ -3,6 +3,66 @@
  * Handles all site functionality including search, navigation, and tool loading
  */
 
+// External Libraries Integration
+const ExternalLibraries = {
+    // Speech synthesis enhancement libraries
+    speechSynthesis: {
+        wavesurfer: '/vendor/speechsynthesis-libs/wavesurfer.min.js',
+        recordrtc: '/vendor/speechsynthesis-libs/recordrtc.min.js',
+        nouislider: '/vendor/speechsynthesis-libs/nouislider.min.js',
+        sweetalert2: '/vendor/speechsynthesis-libs/sweetalert2.min.js',
+        clipboard: '/vendor/speechsynthesis-libs/clipboard.min.js'
+    },
+    
+    // Core libraries
+    core: {
+        bootstrap: '/vendor/bootstrap/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js',
+        jquery: '/vendor/jquery/jquery-3.7.1.min.js',
+        fontawesome: '/vendor/fontawesome/css/all.min.css',
+        jsbeautify: '/vendor/js-beautify/beautify-1.15.4.min.js',
+        cryptojs: '/vendor/cryptojs/crypto-js-4.2.0.min.js',
+        filesaver: '/vendor/filesaver/FileSaver-2.0.5.min.js',
+        chartjs: '/vendor/chartjs/chart-4.5.0.min.js',
+        qrcodejs: '/vendor/qrcodejs/qrcode.min.js',
+        mathjs: '/vendor/mathjs/math-14.5.2.min.js',
+        codemirror: '/vendor/codemirror/codemirror-6.0.1.min.js'
+    },
+    
+    // Load library dynamically
+    loadLibrary: function(category, library) {
+        return new Promise((resolve, reject) => {
+            const path = this[category] && this[category][library];
+            if (!path) {
+                reject(new Error(`Library ${library} not found in category ${category}`));
+                return;
+            }
+            
+            const isCSS = path.endsWith('.css');
+            const element = isCSS ? document.createElement('link') : document.createElement('script');
+            
+            if (isCSS) {
+                element.rel = 'stylesheet';
+                element.href = path;
+            } else {
+                element.src = path;
+            }
+            
+            element.onload = resolve;
+            element.onerror = reject;
+            
+            document.head.appendChild(element);
+        });
+    },
+    
+    // Load multiple libraries
+    loadLibraries: async function(libraryList) {
+        const promises = libraryList.map(({category, library}) => 
+            this.loadLibrary(category, library)
+        );
+        return Promise.all(promises);
+    }
+};
+
 const FreeToolsHub = {
     // Application state
     config: {
