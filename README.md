@@ -75,6 +75,7 @@ registering its event listener to avoid errors when the button is absent.
 ## Housekeeping
 
 Removed unused `script_backup.js` from the barcode generator tool.
+- Added `const DEBUG = false` to barcode generator script to silence console logs.
 
 
 ## Testing
