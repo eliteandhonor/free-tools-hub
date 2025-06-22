@@ -7,24 +7,33 @@ class CharacterCounter {
     init() {
         this.bindEvents();
         this.setupDefaultState();
+        
+        // Initialize, making sure all features work including file upload
+        window.addEventListener('click', (e) => {
+            // Fix any broken UI interactions by reattaching handlers
+            if (e.target.closest('label[for="file-upload"]') && this.fileInput) {
+                this.fileInput.click();
+            }
+        });
     }
 
     bindEvents() {
         // Get DOM elements
         this.textInput = document.getElementById('text-input');
-        this.clearBtn = document.getElementById('clear-btn');
-        this.copyBtn = document.getElementById('copy-btn');
+        this.clearBtn = document.querySelector('.clear-btn');
+        this.copyBtn = document.querySelector('.copy-btn');
         this.pasteBtn = document.getElementById('paste-btn');
-        this.fileInput = document.getElementById('file-input');
-        this.fileUploadBtn = document.getElementById('file-upload-btn');
+        this.fileInput = document.getElementById('file-upload');
+        // Fix: Use querySelector with label element instead of by ID
+        this.fileUploadBtn = document.querySelector('label[for="file-upload"]');
         
         // Result elements
-        this.charactersTotal = document.getElementById('characters-total');
-        this.charactersNoSpaces = document.getElementById('characters-no-spaces');
-        this.wordsCount = document.getElementById('words-count');
-        this.sentencesCount = document.getElementById('sentences-count');
-        this.paragraphsCount = document.getElementById('paragraphs-count');
-        this.linesCount = document.getElementById('lines-count');
+        this.charactersTotal = document.getElementById('char-count');
+        this.charactersNoSpaces = document.getElementById('char-no-spaces');
+        this.wordsCount = document.getElementById('word-count');
+        this.sentencesCount = document.getElementById('sentence-count');
+        this.paragraphsCount = document.getElementById('paragraph-count');
+        this.linesCount = document.getElementById('line-count');
         this.readingTime = document.getElementById('reading-time');
         this.speakingTime = document.getElementById('speaking-time');
         
@@ -174,33 +183,110 @@ class CharacterCounter {
         if (this.charactersTotal) {
             this.charactersTotal.textContent = counts.charactersTotal.toLocaleString();
         }
-        
         if (this.charactersNoSpaces) {
             this.charactersNoSpaces.textContent = counts.charactersNoSpaces.toLocaleString();
         }
-        
         if (this.wordsCount) {
             this.wordsCount.textContent = counts.words.toLocaleString();
         }
-        
         if (this.sentencesCount) {
             this.sentencesCount.textContent = counts.sentences.toLocaleString();
         }
-        
         if (this.paragraphsCount) {
             this.paragraphsCount.textContent = counts.paragraphs.toLocaleString();
         }
-        
         if (this.linesCount) {
             this.linesCount.textContent = counts.lines.toLocaleString();
         }
+        // Social Media Limits
+        this.updateSocialMediaLimits(counts.charactersTotal);
+        // Reading Time Estimation
+        this.updateReadingTimes(counts.words);
+        // Text Analysis
+        this.updateTextAnalysis(counts);
+    }
+
+    updateSocialMediaLimits(charCount) {
+        const limits = [
+            { id: 'twitter', max: 280 },
+            { id: 'instagram', max: 2200 },
+            { id: 'facebook', max: 63206 },
+            { id: 'linkedin', max: 3000 },
+            { id: 'youtube', max: 5000 },
+            { id: 'tiktok', max: 2200 }
+        ];
         
-        if (this.readingTime) {
-            this.readingTime.textContent = this.formatTime(counts.readingTime);
+        limits.forEach(({ id, max }) => {
+            const countEl = document.getElementById(`${id}-count`);
+            const remainingEl = document.getElementById(`${id}-remaining`);
+            const progressEl = document.getElementById(`${id}-progress`);
+            const platformEl = document.getElementById(`${id}-limit`);
+            
+            if (!countEl || !remainingEl || !progressEl) return;
+            
+            // Update count and remaining
+            countEl.textContent = charCount.toLocaleString();
+            const remaining = Math.max(0, max - charCount);
+            remainingEl.textContent = `${remaining.toLocaleString()} remaining`;
+            
+            // Update progress bar
+            const percentage = Math.min(100, (charCount / max) * 100);
+            progressEl.style.width = `${percentage}%`;
+            
+            // Update colors based on remaining characters
+            if (platformEl) {
+                if (charCount > max) {
+                    progressEl.style.backgroundColor = '#dc2626'; // Red
+                    platformEl.classList.add('over-limit');
+                } else if (charCount > max * 0.9) {
+                    progressEl.style.backgroundColor = '#f97316'; // Orange
+                    platformEl.classList.add('near-limit');
+                    platformEl.classList.remove('over-limit');
+                } else {
+                    progressEl.style.backgroundColor = '#3b82f6'; // Blue
+                    platformEl.classList.remove('near-limit', 'over-limit');
+                }
+            }
+        });
+    }
+
+    updateReadingTimes(wordCount) {
+        const speeds = [
+            { id: 'reading-slow', wpm: 200 },
+            { id: 'reading-average', wpm: 250 },
+            { id: 'reading-fast', wpm: 300 }
+        ];
+        speeds.forEach(({ id, wpm }) => {
+            const el = document.getElementById(id);
+            if (el) {
+                const min = wordCount / wpm;
+                el.textContent = min < 1 ? '0 min' : `${Math.round(min)} min`;
+            }
+        });
+    }
+
+    updateTextAnalysis(counts) {
+        const avgWordsSentence = document.getElementById('avg-words-sentence');
+        const avgCharsWord = document.getElementById('avg-chars-word');
+        const longestWord = document.getElementById('longest-word');
+        const readability = document.getElementById('readability-score');
+        
+        if (avgWordsSentence) {
+            avgWordsSentence.textContent = counts.sentences > 0 ? 
+                counts.averageWordsPerSentence.toFixed(1) : '0';
         }
         
-        if (this.speakingTime) {
-            this.speakingTime.textContent = this.formatTime(counts.speakingTime);
+        if (avgCharsWord && this.textInput) {
+            const avgLength = this.getAverageWordLength(this.textInput.value);
+            avgCharsWord.textContent = avgLength > 0 ? avgLength.toFixed(1) : '0';
+        }
+        
+        if (longestWord) {
+            longestWord.textContent = counts.longestWord || '-';
+        }
+        
+        if (readability) {
+            readability.textContent = this.getReadabilityLevel(counts);
         }
     }
 
@@ -388,7 +474,7 @@ class CharacterCounter {
     }
 
     handleFileUpload(event) {
-        const file = event.target.files[0];
+        const file = event.target?.files?.[0];
         if (!file) return;
 
         if (file.size > 10 * 1024 * 1024) { // 10MB limit
@@ -413,7 +499,7 @@ class CharacterCounter {
                     this.showSuccess(`File "${file.name}" loaded successfully!`);
                 }
             } catch (error) {
-                this.showError('Failed to read file: ' + error.message);
+                this.showError('Failed to read file: ' + (error.message || 'Unknown error'));
             }
         };
 
@@ -472,10 +558,72 @@ class CharacterCounter {
         if (errorContainer) errorContainer.style.display = 'none';
         if (successContainer) successContainer.style.display = 'none';
     }
+
+    ensureMessageContainers() {
+        // Create error container if it doesn't exist
+        if (!document.getElementById('error-container')) {
+            const errorContainer = document.createElement('div');
+            errorContainer.id = 'error-container';
+            errorContainer.className = 'message error-message';
+            errorContainer.style.display = 'none';
+            document.querySelector('.counter-stats')?.parentNode?.insertBefore(
+                errorContainer, 
+                document.querySelector('.counter-stats')
+            );
+        }
+        
+        // Create success container if it doesn't exist
+        if (!document.getElementById('success-container')) {
+            const successContainer = document.createElement('div');
+            successContainer.id = 'success-container';
+            successContainer.className = 'message success-message';
+            successContainer.style.display = 'none';
+            document.querySelector('.counter-stats')?.parentNode?.insertBefore(
+                successContainer, 
+                document.querySelector('.counter-stats')
+            );
+        }
+    }
 }
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Add styles for message containers if not already in the CSS
+    if (!document.querySelector('style#character-counter-dynamic-styles')) {
+        const styleEl = document.createElement('style');
+        styleEl.id = 'character-counter-dynamic-styles';
+        styleEl.textContent = `
+            .message {
+                padding: 10px 15px;
+                border-radius: 4px;
+                margin: 15px 0;
+                display: flex;
+                align-items: center;
+                font-weight: 500;
+            }
+            .error-message {
+                background-color: #fee2e2;
+                color: #dc2626;
+                border-left: 4px solid #dc2626;
+            }
+            .success-message {
+                background-color: #d1fae5;
+                color: #10b981;
+                border-left: 4px solid #10b981;
+            }
+            .message i {
+                margin-right: 8px;
+            }
+            .social-platform.over-limit {
+                background-color: rgba(220, 38, 38, 0.1);
+            }
+            .social-platform.near-limit {
+                background-color: rgba(249, 115, 22, 0.1);
+            }
+        `;
+        document.head.appendChild(styleEl);
+    }
+    
     new CharacterCounter();
 });
 
