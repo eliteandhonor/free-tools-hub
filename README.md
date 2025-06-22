@@ -76,6 +76,18 @@ safeguards prevent console errors when the feature markup is omitted. The
 copy statistics button handler now checks for `.copy-stats-btn` before
 registering its event listener to avoid errors when the button is absent.
 
+### Slug Generator Notes
+
+The inline JavaScript has been moved to `script.js` so the page only loads one external script. The generator still works in the browser.
+
+### Icon Generator Notes
+
+As with the slug tool, its inline logic now resides in `script.js`. All features continue to function normally.
+
+### HTML CSS JS Beautifier Notes
+
+Both inline script blocks were consolidated into a single `script.js` file. The beautifier behaves the same as before.
+
 ## Housekeeping
 
 Removed unused `script_backup.js` from the barcode generator tool.
