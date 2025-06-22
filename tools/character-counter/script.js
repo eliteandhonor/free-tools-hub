@@ -173,34 +173,70 @@ class CharacterCounter {
         if (this.charactersTotal) {
             this.charactersTotal.textContent = counts.charactersTotal.toLocaleString();
         }
-        
         if (this.charactersNoSpaces) {
             this.charactersNoSpaces.textContent = counts.charactersNoSpaces.toLocaleString();
         }
-        
         if (this.wordsCount) {
             this.wordsCount.textContent = counts.words.toLocaleString();
         }
-        
         if (this.sentencesCount) {
             this.sentencesCount.textContent = counts.sentences.toLocaleString();
         }
-        
         if (this.paragraphsCount) {
             this.paragraphsCount.textContent = counts.paragraphs.toLocaleString();
         }
-        
         if (this.linesCount) {
             this.linesCount.textContent = counts.lines.toLocaleString();
         }
-        
-        if (this.readingTime) {
-            this.readingTime.textContent = this.formatTime(counts.readingTime);
-        }
-        
-        if (this.speakingTime) {
-            this.speakingTime.textContent = this.formatTime(counts.speakingTime);
-        }
+        // Social Media Limits
+        this.updateSocialMediaLimits(counts.charactersTotal);
+        // Reading Time Estimation
+        this.updateReadingTimes(counts.words);
+        // Text Analysis
+        this.updateTextAnalysis(counts);
+    }
+
+    updateSocialMediaLimits(charCount) {
+        const limits = [
+            { id: 'twitter', max: 280 },
+            { id: 'instagram', max: 2200 },
+            { id: 'facebook', max: 63206 },
+            { id: 'linkedin', max: 3000 },
+            { id: 'youtube', max: 5000 },
+            { id: 'tiktok', max: 2200 }
+        ];
+        limits.forEach(({ id, max }) => {
+            const countEl = document.getElementById(`${id}-count`);
+            const remainingEl = document.getElementById(`${id}-remaining`);
+            if (countEl) countEl.textContent = charCount.toLocaleString();
+            if (remainingEl) remainingEl.textContent = `${(max - charCount).toLocaleString()} remaining`;
+        });
+    }
+
+    updateReadingTimes(wordCount) {
+        const speeds = [
+            { id: 'reading-slow', wpm: 200 },
+            { id: 'reading-average', wpm: 250 },
+            { id: 'reading-fast', wpm: 300 }
+        ];
+        speeds.forEach(({ id, wpm }) => {
+            const el = document.getElementById(id);
+            if (el) {
+                const min = wordCount / wpm;
+                el.textContent = min < 1 ? '0 min' : `${Math.round(min)} min`;
+            }
+        });
+    }
+
+    updateTextAnalysis(counts) {
+        const avgWordsSentence = document.getElementById('avg-words-sentence');
+        const avgCharsWord = document.getElementById('avg-chars-word');
+        const longestWord = document.getElementById('longest-word');
+        const readability = document.getElementById('readability-score');
+        if (avgWordsSentence) avgWordsSentence.textContent = counts.averageWordsPerSentence.toFixed(1);
+        if (avgCharsWord) avgCharsWord.textContent = this.getAverageWordLength(this.textInput.value).toFixed(1);
+        if (longestWord) longestWord.textContent = counts.longestWord || '-';
+        if (readability) readability.textContent = this.getReadabilityLevel(counts);
     }
 
     updateDetailedStats(text, counts) {
