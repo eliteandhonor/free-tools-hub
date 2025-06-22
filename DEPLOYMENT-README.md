@@ -145,6 +145,7 @@ Add the resulting value to the `integrity` attribute of the `<link>` or `<script
 The website requires minimal maintenance:
 - Update vendor libraries annually
 - Monitor CDN performance and fallback usage
+- Ensure all CDN links include `crossorigin="anonymous"` so Subresource Integrity works with fallbacks
 - Regular security header verification
 - Periodic SEO audit and optimization
 
