@@ -14,50 +14,87 @@ class TextCaseConverter {
         this.bindEvents();
         this.loadFromLocalStorage();
         this.initializeWordListFeature();
+        // Check if elements exist and create them if missing
+        this.ensureElementsExist();
+    }
+
+    // Added to ensure all required elements exist
+    ensureElementsExist() {
+        // Create error & success message containers if needed
+        if (!document.getElementById('error-container')) {
+            const errorContainer = document.createElement('div');
+            errorContainer.id = 'error-container';
+            errorContainer.className = 'message error-message';
+            errorContainer.style.display = 'none';
+            document.querySelector('.form-group')?.parentNode?.appendChild(errorContainer);
+        }
+        
+        if (!document.getElementById('success-container')) {
+            const successContainer = document.createElement('div');
+            successContainer.id = 'success-container';
+            successContainer.className = 'message success-message';
+            successContainer.style.display = 'none';
+            document.querySelector('.form-group')?.parentNode?.appendChild(successContainer);
+        }
     }
 
     bindEvents() {
         // Main conversion buttons
-        document.getElementById('uppercase-btn').addEventListener('click', () => this.convertToUpperCase());
-        document.getElementById('lowercase-btn').addEventListener('click', () => this.convertToLowerCase());
-        document.getElementById('title-case-btn').addEventListener('click', () => this.convertToTitleCase());
-        document.getElementById('sentence-case-btn').addEventListener('click', () => this.convertToSentenceCase());
-        document.getElementById('camel-case-btn').addEventListener('click', () => this.convertToCamelCase());
-        document.getElementById('pascal-case-btn').addEventListener('click', () => this.convertToPascalCase());
-        document.getElementById('snake-case-btn').addEventListener('click', () => this.convertToSnakeCase());
-        document.getElementById('kebab-case-btn').addEventListener('click', () => this.convertToKebabCase());
-        document.getElementById('constant-case-btn').addEventListener('click', () => this.convertToConstantCase());
-        document.getElementById('alternating-case-btn').addEventListener('click', () => this.convertToAlternatingCase());
-        document.getElementById('inverse-case-btn').addEventListener('click', () => this.convertToInverseCase());
+        this.setupConversionButton('uppercase-btn', this.convertToUpperCase.bind(this));
+        this.setupConversionButton('lowercase-btn', this.convertToLowerCase.bind(this));
+        this.setupConversionButton('title-case-btn', this.convertToTitleCase.bind(this));
+        this.setupConversionButton('sentence-case-btn', this.convertToSentenceCase.bind(this));
+        this.setupConversionButton('camel-case-btn', this.convertToCamelCase.bind(this));
+        this.setupConversionButton('pascal-case-btn', this.convertToPascalCase.bind(this));
+        this.setupConversionButton('snake-case-btn', this.convertToSnakeCase.bind(this));
+        this.setupConversionButton('kebab-case-btn', this.convertToKebabCase.bind(this));
+        this.setupConversionButton('constant-case-btn', this.convertToConstantCase.bind(this));
+        this.setupConversionButton('alternating-case-btn', this.convertToAlternatingCase.bind(this));
+        this.setupConversionButton('inverse-case-btn', this.convertToInverseCase.bind(this));
+        
+        // Add missing random case button handler
+        this.setupConversionButton('random-case-btn', this.convertToRandomCase.bind(this));
+        
+        // Support data-case attributes for case cards
+        document.querySelectorAll('.case-option').forEach(card => {
+            card.addEventListener('click', () => {
+                const caseType = card.getAttribute('data-case');
+                if (caseType) {
+                    this.convertByType(caseType);
+                }
+            });
+        });
 
         // Utility buttons
-        document.getElementById('copy-btn').addEventListener('click', () => this.copyToClipboard());
-        document.getElementById('clear-btn').addEventListener('click', () => this.clearText());
-        document.getElementById('swap-btn').addEventListener('click', () => this.swapInputOutput());
-        document.getElementById('download-btn').addEventListener('click', () => this.downloadText());
+        document.getElementById('copy-btn')?.addEventListener('click', () => this.copyToClipboard());
+        document.querySelector('.clear-btn')?.addEventListener('click', () => this.clearText());
+        document.getElementById('swap-btn')?.addEventListener('click', () => this.swapInputOutput());
+        document.getElementById('download-btn')?.addEventListener('click', () => this.downloadText());
 
         // Text input events
-        document.getElementById('input-text').addEventListener('input', () => this.onTextInput());
-        document.getElementById('input-text').addEventListener('paste', () => {
+        document.getElementById('text-input')?.addEventListener('input', () => this.onTextInput());
+        document.getElementById('text-input')?.addEventListener('paste', () => {
             // Small delay to allow paste to complete
             setTimeout(() => this.onTextInput(), 10);
         });
 
         // History navigation
-        document.getElementById('undo-btn').addEventListener('click', () => this.undo());
-        document.getElementById('redo-btn').addEventListener('click', () => this.redo());
+        document.getElementById('undo-btn')?.addEventListener('click', () => this.undo());
+        document.getElementById('redo-btn')?.addEventListener('click', () => this.redo());
 
         // Word list feature
-        document.getElementById('toggle-word-list').addEventListener('change', (e) => this.toggleWordList(e.target.checked));
-        document.getElementById('word-list-format').addEventListener('change', () => this.updateWordList());
+        document.getElementById('toggle-word-list')?.addEventListener('change', (e) => this.toggleWordList(e.target.checked));
+        document.getElementById('word-list-format')?.addEventListener('change', () => this.updateWordList());
 
-        // File upload
-        document.getElementById('file-input').addEventListener('change', (e) => this.handleFileUpload(e));
-        document.getElementById('upload-btn').addEventListener('click', () => document.getElementById('file-input').click());
+        // File upload - fix file input ID mismatch
+        document.getElementById('file-upload')?.addEventListener('change', (e) => this.handleFileUpload(e));
+        document.querySelector('label[for="file-upload"]')?.addEventListener('click', () => {
+            // No need to trigger click as the label does it automatically
+        });
 
         // Custom case options
-        document.getElementById('preserve-numbers').addEventListener('change', () => this.updateCustomOptions());
-        document.getElementById('preserve-special').addEventListener('change', () => this.updateCustomOptions());
+        document.getElementById('preserve-numbers')?.addEventListener('change', () => this.updateCustomOptions());
+        document.getElementById('preserve-special')?.addEventListener('change', () => this.updateCustomOptions());
 
         // Auto-save functionality
         setInterval(() => this.saveToLocalStorage(), 5000);
@@ -65,6 +102,32 @@ class TextCaseConverter {
 
         // Keyboard shortcuts
         document.addEventListener('keydown', (e) => this.handleKeyboardShortcuts(e));
+    }
+
+    // Helper function to set up conversion buttons that might not exist
+    setupConversionButton(id, handler) {
+        const button = document.getElementById(id);
+        if (button) {
+            button.addEventListener('click', handler);
+        }
+    }
+    
+    // Add method to handle conversion based on data-case attributes
+    convertByType(caseType) {
+        switch (caseType) {
+            case 'uppercase': this.convertToUpperCase(); break;
+            case 'lowercase': this.convertToLowerCase(); break;
+            case 'title': this.convertToTitleCase(); break;
+            case 'sentence': this.convertToSentenceCase(); break;
+            case 'camel': this.convertToCamelCase(); break;
+            case 'pascal': this.convertToPascalCase(); break;
+            case 'snake': this.convertToSnakeCase(); break;
+            case 'kebab': this.convertToKebabCase(); break;
+            case 'constant': this.convertToConstantCase(); break;
+            case 'alternating': this.convertToAlternatingCase(); break;
+            case 'inverse': this.convertToInverseCase(); break;
+            case 'random': this.convertToRandomCase(); break;
+        }
     }
 
     // Core conversion methods
@@ -189,6 +252,21 @@ class TextCaseConverter {
         this.trackConversion('inverse_case');
     }
 
+    // Add missing Random Case conversion
+    convertToRandomCase() {
+        const input = this.getInputText();
+        if (!input) return;
+
+        const result = input.split('').map(char => {
+            return Math.random() > 0.5 ? char.toUpperCase() : char.toLowerCase();
+        }).join('');
+        
+        this.setOutputText(result);
+        this.addToHistory('Random Case', input, result);
+        this.updateWordList();
+        this.trackConversion('random_case');
+    }
+
     // Case conversion helper methods
     toTitleCase(text) {
         const articles = ['a', 'an', 'the'];
@@ -294,7 +372,13 @@ class TextCaseConverter {
 
     // Utility methods
     getInputText() {
-        const text = document.getElementById('input-text').value;
+        const inputElem = document.getElementById('text-input');
+        if (!inputElem) {
+            this.showError('Input text element not found.');
+            return null;
+        }
+        
+        const text = inputElem.value;
         if (!text.trim()) {
             this.showError('Please enter some text to convert.');
             return null;
@@ -303,33 +387,53 @@ class TextCaseConverter {
     }
 
     setOutputText(text) {
-        document.getElementById('output-text').value = text;
-        this.updateTextStats();
+        const outputElem = document.getElementById('output-text');
+        if (outputElem) {
+            outputElem.value = text;
+            this.updateTextStats();
+        } else {
+            console.error('Output text element not found');
+        }
     }
 
     onTextInput() {
         this.updateTextStats();
         this.saveToLocalStorage();
         
-        const text = document.getElementById('input-text').value;
+        const inputElem = document.getElementById('text-input');
+        if (!inputElem) return;
+        
+        const text = inputElem.value;
         if (text.length > 10000) {
             this.showWarning('Large text detected. Performance may be slower for very long texts.');
         }
     }
 
     updateTextStats() {
-        const inputText = document.getElementById('input-text').value;
-        const outputText = document.getElementById('output-text').value;
+        const inputText = document.getElementById('text-input')?.value || '';
+        const outputText = document.getElementById('output-text')?.value || '';
         
         // Update input stats
-        document.getElementById('input-chars').textContent = inputText.length;
-        document.getElementById('input-words').textContent = this.countWords(inputText);
-        document.getElementById('input-lines').textContent = this.countLines(inputText);
+        if (document.getElementById('input-chars')) {
+            document.getElementById('input-chars').textContent = inputText.length;
+        }
+        if (document.getElementById('input-words')) {
+            document.getElementById('input-words').textContent = this.countWords(inputText);
+        }
+        if (document.getElementById('input-lines')) {
+            document.getElementById('input-lines').textContent = this.countLines(inputText);
+        }
         
         // Update output stats
-        document.getElementById('output-chars').textContent = outputText.length;
-        document.getElementById('output-words').textContent = this.countWords(outputText);
-        document.getElementById('output-lines').textContent = this.countLines(outputText);
+        if (document.getElementById('output-chars')) {
+            document.getElementById('output-chars').textContent = outputText.length;
+        }
+        if (document.getElementById('output-words')) {
+            document.getElementById('output-words').textContent = this.countWords(outputText);
+        }
+        if (document.getElementById('output-lines')) {
+            document.getElementById('output-lines').textContent = this.countLines(outputText);
+        }
     }
 
     countWords(text) {
