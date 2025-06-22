@@ -66,6 +66,14 @@ Each tool's logic resides in a `script.js` file within its folder. Include this 
 
 Avoid duplicating logic with inline JavaScript.
 
+Common functionality shared across tools now lives in `js/tool-common.js`. Load
+this script before any tool specific scripts:
+
+```html
+<script src="../../js/tool-common.js"></script>
+<script src="script.js"></script>
+```
+
 ### Word Counter Notes
 
 The Word Counter tool now guards optional UI elements before wiring events.
