@@ -1,4 +1,5 @@
 // Simple Barcode Generator Tool
+const DEBUG = false;
 class BarcodeGenerator {
     constructor() {
         if (DEBUG) console.log('Initializing Simple Barcode Generator');
