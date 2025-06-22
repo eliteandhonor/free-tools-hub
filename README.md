@@ -76,6 +76,11 @@ registering its event listener to avoid errors when the button is absent.
 
 Removed unused `script_backup.js` from the barcode generator tool.
 
+## Formatting
+
+Ensure all HTML and JSON files end with a newline at EOF. The doctor script
+checks for this requirement.
+
 
 ## Testing
 
