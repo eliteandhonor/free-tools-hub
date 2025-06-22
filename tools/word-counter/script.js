@@ -723,11 +723,15 @@ ${analysis.recommendations.map(rec => `- ${rec}`).join('\n')}
 
     async copyStats() {
         const text = document.getElementById('text-input').value;
+        if (!text.trim()) {
+            this.showError('No text to analyze');
+            return;
+        }
+        // Always analyze fresh stats
         const stats = this.analyzeText(text);
-        
         // Improved formatting and more stats
-        const statsText = `Text Statistics\n=================\n\nWords: ${stats.words}\nCharacters: ${stats.characters}\nCharacters (no spaces): ${stats.charactersNoSpaces}\nSentences: ${stats.sentences}\nParagraphs: ${stats.paragraphs}\nLines: ${stats.lines}\nAverage words per sentence: ${stats.avgWordsPerSentence}\nAverage characters per word: ${stats.avgCharsPerWord}\nLongest word: ${stats.longestWord}\nMost frequent word: ${stats.mostFrequentWord}\nReading time: ${this.calculateReadingTime(stats.words)}\nSpeaking time: ${this.calculateSpeakingTime(stats.words)}\nReadability score: ${stats.readabilityScore}\n`;
-        
+        const statsText =
+`Text Statistics\n=================\n\nWords:                 ${stats.words}\nCharacters:            ${stats.characters}\nCharacters (no spaces):${stats.charactersNoSpaces}\nSentences:             ${stats.sentences}\nParagraphs:            ${stats.paragraphs}\nLines:                 ${stats.lines}\nAverage words/sentence:${stats.avgWordsPerSentence}\nAverage chars/word:    ${stats.avgCharsPerWord}\nLongest word:          ${stats.longestWord}\nMost frequent word:    ${stats.mostFrequentWord}\nReading time:          ${this.calculateReadingTime(stats.words)}\nSpeaking time:         ${this.calculateSpeakingTime(stats.words)}\nReadability score:     ${stats.readabilityScore}\n`;
         try {
             await this.copyToClipboard(statsText);
             this.showSuccess('Statistics copied to clipboard!');
