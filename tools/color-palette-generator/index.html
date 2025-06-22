@@ -312,8 +312,7 @@
 
     <!-- Scripts -->
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-    <script src="script.js" defer></script>
-    <script>
+        <script>
         // Hide export section initially
         document.addEventListener('DOMContentLoaded', function() {
             const exportSection = document.getElementById('exportSection');
@@ -322,6 +321,6 @@
             }
         });
     </script>
-    <script src="script.js"></script>
+        <script src="script.js" defer onerror="this.onerror=null;this.src='/tools/color-palette-generator/script.js'"></script>
 </body>
 </html>

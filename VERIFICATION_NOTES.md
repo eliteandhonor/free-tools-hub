@@ -48,4 +48,7 @@ The verification script may show "missing tools" due to:
 - Appended newline to data/tools-config.json for consistent formatting and to enforce the rule that JSON files end with a newline at EOF
 - Removed malformed <style> block from timezone converter page to ensure valid HTML.
 - Updated `.csslintrc` to remove `known-properties` from the CSS errors list, allowing custom properties like `gap` and `backdrop-filter`
+- Removed duplicate `<script src="script.js">` tags from all tool pages
+  and added a single deferred script tag before closing `</body>`
+  (verified by running `grep` after automated update)
 

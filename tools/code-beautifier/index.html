@@ -1321,8 +1321,7 @@
     <!-- Scripts -->
     <script src="../../js/main.js"></script>
     <script src="../../vendor/js-beautify/beautify.min.js"></script>
-    <script src="script.js"></script>
-    <script>
+        <script>
         // Fix accessibility issues with lists by removing whitespace text nodes
         document.addEventListener('DOMContentLoaded', function() {
             // Fix lists structure
@@ -1620,5 +1619,6 @@
         }
     });
     </script>
+    <script src="script.js" defer onerror="this.onerror=null;this.src='/tools/code-beautifier/script.js'"></script>
 </body>
 </html>

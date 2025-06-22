@@ -18,7 +18,7 @@ describe('Tool configuration', function() {
     it(`tool ${tool.id} includes script.js script tag`, function() {
       expect(fs.existsSync(indexPath)).to.be.true;
       const content = fs.readFileSync(indexPath, 'utf8');
-      expect(content.includes('<script src="script.js"></script>')).to.be.true;
+      expect(content.includes('<script src="script.js"')).to.be.true;
     });
   });
 });
