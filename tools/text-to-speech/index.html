@@ -16,27 +16,181 @@
     <meta name="keywords" content="text to speech, text to audio, speech synthesis, TTS, voice generator, audio converter, read aloud">
     <meta name="author" content="Free Tools Hub">
     <link rel="canonical" href="/tools/text-to-speech/">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="/tools/text-to-speech/">
     <meta property="og:title" content="Text to Speech Converter - Free Online Tool">
     <meta property="og:description" content="Convert text to speech with natural-sounding voices. Multiple languages and voice options available.">
     <meta property="og:image" content="/images/text-to-speech.jpg">
-    
+
     <!-- X (formerly Twitter) -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/tools/text-to-speech/">
     <meta property="twitter:title" content="Text to Speech Converter">
     <meta property="twitter:description" content="Convert text to speech with natural-sounding voices.">
     <meta property="twitter:image" content="/images/text-to-speech.jpg">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
+
     <!-- Stylesheets -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" rel="stylesheet" onerror="this.onerror=null;this.href='/vendor/fontawesome/css/all.min.css'">
     <link href="../../css/main.css" rel="stylesheet">
+
+    <link href="../../css/text.css" rel="stylesheet">
+
+    <!-- Vendor Library Loader with CDN Fallbacks -->
+    <script src="../../js/vendor-loader.js"></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="navbar-brand">
+                    <i class="fas fa-tools"></i>
+                    Free Tools Hub
+                </a>
+                <ul class="navbar-nav">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/#categories" class="nav-link">Categories</a></li>
+                    <li><a href="/tools/" class="nav-link">All Tools</a></li>
+                    <li><a href="/about/" class="nav-link">About</a></li>
+                    <li><a href="/contact/" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="navbar-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="tool-header">
+        <div class="container">
+            <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/tools/">Tools</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/tools/text/">Text Tools</a>
+                <span class="breadcrumb-separator">/</span>
+                <span>Text to Speech</span>
+            </nav>
+            <h1 class="tool-title">
+                <i class="fas fa-volume-up"></i>
+                Text to Speech Converter
+            </h1>
+            <p class="tool-description">
+                Convert written text into realistic speech with adjustable voice, rate, pitch, and volume options.
+            </p>
+        </div>
+    </section>
+
+    <main id="main-content" role="main">
+        <div class="container tool-container">
+            <div class="tool-interface">
+                <div class="form-group">
+                    <label for="text-input" class="form-label">Text Input</label>
+                    <textarea id="text-input" class="form-textarea" placeholder="Type or paste your text here..." rows="8" maxlength="32000"></textarea>
+                    <div class="text-help"><span id="char-count">0</span> / 32,000 characters</div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="voice-select" class="form-label">Voice</label>
+                        <select id="voice-select" class="form-select">
+                            <option value="">Loading voices...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="language-select" class="form-label">Language</label>
+                        <select id="language-select" class="form-select">
+                            <option value="">Auto-detect</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="rate-slider" class="form-label">Rate</label>
+                        <input type="range" id="rate-slider" class="form-range" min="0.1" max="2" step="0.1" value="1">
+                        <div id="rate-value">1.0x</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pitch-slider" class="form-label">Pitch</label>
+                        <input type="range" id="pitch-slider" class="form-range" min="0" max="2" step="0.1" value="1">
+                        <div id="pitch-value">1.0</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="volume-slider" class="form-label">Volume</label>
+                        <input type="range" id="volume-slider" class="form-range" min="0" max="1" step="0.1" value="1">
+                        <div id="volume-value">100%</div>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-primary" id="speak-btn" onclick="speakText()">
+                        <i class="fas fa-play"></i> Speak
+                    </button>
+                    <button class="btn btn-secondary" id="pause-btn" onclick="pauseSpeech()" disabled>
+                        <i class="fas fa-pause"></i> Pause
+                    </button>
+                    <button class="btn btn-secondary" id="stop-btn" onclick="stopSpeech()" disabled>
+                        <i class="fas fa-stop"></i> Stop
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearText()">
+                        <i class="fas fa-eraser"></i> Clear
+                    </button>
+                </div>
+
+                <div id="loading-spinner" class="loading-spinner" style="display:none">
+                    <div class="spinner"></div>
+                    <p>Preparing speech...</p>
+                </div>
+                <div id="error-message" class="error-message" style="display:none"></div>
+                <div id="success-message" class="success-message" style="display:none"></div>
+            </div>
+
+            <div class="quick-examples">
+                <h2>Quick Examples</h2>
+                <p>Click on any example to load it into the text area.</p>
+                <ul class="examples-grid">
+                    <li><button type="button" onclick="loadExample('greeting')">Greeting</button></li>
+                    <li><button type="button" onclick="loadExample('announcement')">Announcement</button></li>
+                    <li><button type="button" onclick="loadExample('story')">Short Story</button></li>
+                    <li><button type="button" onclick="loadExample('numbers')">Numbers & Dates</button></li>
+                    <li><button type="button" onclick="loadExample('punctuation')">Punctuation Test</button></li>
+                    <li><button type="button" onclick="loadExample('multilingual')">Multiple Languages</button></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Free Tools Hub</h4>
+                    <p>Professional online tools for text analysis, SEO optimization, development and more.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy/">Privacy</a></li>
+                        <li><a href="/terms/">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Free Tools Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
     
     <!-- External Libraries CSS -->
     <link rel="stylesheet" href="../../vendor/speechsynthesis-libs/nouislider.min.css">
