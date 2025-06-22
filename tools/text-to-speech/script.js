@@ -22,7 +22,7 @@ class TextToSpeechConverter {
 
     init() {
         if (!this.isSupported) {
-            alert('Speech synthesis is not supported in your browser. Please try a modern browser like Chrome, Edge, or Safari.');
+            this.showError('Speech synthesis is not supported in your browser. Please try a modern browser like Chrome, Edge, or Safari.');
             return;
         }
 
@@ -40,20 +40,6 @@ class TextToSpeechConverter {
         // Text input character counter
         const textInput = document.getElementById('text-input');
         textInput.addEventListener('input', () => this.updateCharCounter());
-
-        // Button events
-        document.getElementById('play-btn').addEventListener('click', () => this.speakText());
-        document.getElementById('pause-btn').addEventListener('click', () => this.pauseSpeech());
-        document.getElementById('stop-btn').addEventListener('click', () => this.stopSpeech());
-        document.getElementById('clear-btn').addEventListener('click', () => this.clearText());
-
-        // Example items
-        document.querySelectorAll('.example-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const exampleType = item.getAttribute('data-example');
-                this.loadExample(exampleType);
-            });
-        });
 
         // Slider updates
         document.getElementById('rate-slider').addEventListener('input', (e) => {
@@ -156,7 +142,7 @@ class TextToSpeechConverter {
 
     populateLanguageSelect() {
         const languageSelect = document.getElementById('language-select');
-        languageSelect.innerHTML = '<option value="">All Languages</option>';
+        languageSelect.innerHTML = '<option value="">Auto-detect</option>';
 
         const languages = new Set();
         this.voices.forEach(voice => {
@@ -187,14 +173,43 @@ class TextToSpeechConverter {
 
     getLanguageName(code) {
         const languages = {
-            'en': 'English', 'es': 'Spanish', 'fr': 'French', 'de': 'German', 'it': 'Italian',
-            'pt': 'Portuguese', 'ru': 'Russian', 'ja': 'Japanese', 'ko': 'Korean', 'zh': 'Chinese',
-            'ar': 'Arabic', 'hi': 'Hindi', 'tr': 'Turkish', 'pl': 'Polish', 'nl': 'Dutch',
-            'sv': 'Swedish', 'da': 'Danish', 'no': 'Norwegian', 'fi': 'Finnish', 'he': 'Hebrew',
-            'th': 'Thai', 'vi': 'Vietnamese', 'cs': 'Czech', 'hu': 'Hungarian', 'ro': 'Romanian',
-            'bg': 'Bulgarian', 'hr': 'Croatian', 'sk': 'Slovak', 'sl': 'Slovenian', 'et': 'Estonian',
-            'lv': 'Latvian', 'lt': 'Lithuanian', 'mt': 'Maltese', 'ga': 'Irish', 'cy': 'Welsh'
+            'en': 'English',
+            'es': 'Spanish',
+            'fr': 'French',
+            'de': 'German',
+            'it': 'Italian',
+            'pt': 'Portuguese',
+            'ru': 'Russian',
+            'ja': 'Japanese',
+            'ko': 'Korean',
+            'zh': 'Chinese',
+            'ar': 'Arabic',
+            'hi': 'Hindi',
+            'tr': 'Turkish',
+            'pl': 'Polish',
+            'nl': 'Dutch',
+            'sv': 'Swedish',
+            'da': 'Danish',
+            'no': 'Norwegian',
+            'fi': 'Finnish',
+            'he': 'Hebrew',
+            'th': 'Thai',
+            'vi': 'Vietnamese',
+            'cs': 'Czech',
+            'hu': 'Hungarian',
+            'ro': 'Romanian',
+            'bg': 'Bulgarian',
+            'hr': 'Croatian',
+            'sk': 'Slovak',
+            'sl': 'Slovenian',
+            'et': 'Estonian',
+            'lv': 'Latvian',
+            'lt': 'Lithuanian',
+            'mt': 'Maltese',
+            'ga': 'Irish',
+            'cy': 'Welsh'
         };
+        
         return languages[code] || code.toUpperCase();
     }
 
@@ -219,12 +234,12 @@ class TextToSpeechConverter {
         const text = document.getElementById('text-input').value.trim();
         
         if (!text) {
-            alert('Please enter some text to convert to speech.');
+            this.showError('Please enter some text to convert to speech.');
             return;
         }
 
         if (text.length > 32000) {
-            alert('Text is too long. Please limit to 32,000 characters.');
+            this.showError('Text is too long. Please limit to 32,000 characters.');
             return;
         }
 
@@ -254,15 +269,19 @@ class TextToSpeechConverter {
         // Event handlers
         this.currentUtterance.onstart = () => {
             this.updateButtonStates('speaking');
+            this.showSuccess('Speech started successfully!');
+            this.hideLoading();
         };
 
         this.currentUtterance.onend = () => {
             this.updateButtonStates('stopped');
+            this.showSuccess('Speech completed!');
         };
 
         this.currentUtterance.onerror = (event) => {
             this.updateButtonStates('stopped');
-            console.error('Speech error:', event.error);
+            this.showError('Speech error: ' + event.error);
+            this.hideLoading();
         };
 
         this.currentUtterance.onpause = () => {
@@ -275,7 +294,8 @@ class TextToSpeechConverter {
             this.isPaused = false;
         };
 
-        // Start speech
+        // Show loading and start speech
+        this.showLoading();
         this.synth.speak(this.currentUtterance);
     }
 
@@ -293,41 +313,69 @@ class TextToSpeechConverter {
         }
         this.updateButtonStates('stopped');
         this.isPaused = false;
+        this.hideLoading();
     }
 
     updateButtonStates(state) {
-        const playBtn = document.getElementById('play-btn');
+        const speakBtn = document.getElementById('speak-btn');
         const pauseBtn = document.getElementById('pause-btn');
         const stopBtn = document.getElementById('stop-btn');
-        const statusIndicator = document.getElementById('status-indicator');
 
         switch (state) {
             case 'speaking':
-                playBtn.disabled = true;
+                speakBtn.disabled = true;
                 pauseBtn.disabled = false;
                 pauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
                 stopBtn.disabled = false;
-                statusIndicator.textContent = 'Speaking';
-                statusIndicator.className = 'status-indicator status-speaking';
                 break;
             case 'paused':
-                playBtn.disabled = true;
+                speakBtn.disabled = true;
                 pauseBtn.disabled = false;
                 pauseBtn.innerHTML = '<i class="fas fa-play"></i> Resume';
                 stopBtn.disabled = false;
-                statusIndicator.textContent = 'Paused';
-                statusIndicator.className = 'status-indicator status-paused';
                 break;
             case 'stopped':
             default:
-                playBtn.disabled = false;
+                speakBtn.disabled = false;
                 pauseBtn.disabled = true;
                 pauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
                 stopBtn.disabled = true;
-                statusIndicator.textContent = 'Ready';
-                statusIndicator.className = 'status-indicator status-stopped';
                 break;
         }
+    }
+
+    showLoading() {
+        document.getElementById('loading-spinner').style.display = 'block';
+    }
+
+    hideLoading() {
+        document.getElementById('loading-spinner').style.display = 'none';
+    }
+
+    showError(message) {
+        const errorEl = document.getElementById('error-message');
+        errorEl.textContent = message;
+        errorEl.style.display = 'block';
+        
+        const successEl = document.getElementById('success-message');
+        successEl.style.display = 'none';
+        
+        setTimeout(() => {
+            errorEl.style.display = 'none';
+        }, 5000);
+    }
+
+    showSuccess(message) {
+        const successEl = document.getElementById('success-message');
+        successEl.textContent = message;
+        successEl.style.display = 'block';
+        
+        const errorEl = document.getElementById('error-message');
+        errorEl.style.display = 'none';
+        
+        setTimeout(() => {
+            successEl.style.display = 'none';
+        }, 3000);
     }
 
     loadExample(type) {
@@ -347,6 +395,12 @@ class TextToSpeechConverter {
         document.getElementById('text-input').value = '';
         this.updateCharCounter();
         this.stopSpeech();
+        this.hideMessages();
+    }
+
+    hideMessages() {
+        document.getElementById('error-message').style.display = 'none';
+        document.getElementById('success-message').style.display = 'none';
     }
 }
 
@@ -378,6 +432,104 @@ function clearText() {
 function loadExample(type) {
     if (window.ttsConverter) {
         window.ttsConverter.loadExample(type);
+    }
+}
+
+// Utility class for advanced speech features
+class SpeechUtilities {
+    static estimateReadingTime(text, wordsPerMinute = 150) {
+        const words = text.trim().split(/\s+/).length;
+        const minutes = words / wordsPerMinute;
+        return Math.ceil(minutes * 60); // Return seconds
+    }
+
+    static preprocessText(text) {
+        // Replace common abbreviations with full words for better pronunciation
+        const replacements = {
+            'Dr.': 'Doctor',
+            'Mr.': 'Mister',
+            'Mrs.': 'Missus',
+            'Ms.': 'Miss',
+            'Prof.': 'Professor',
+            'vs.': 'versus',
+            'etc.': 'et cetera',
+            'e.g.': 'for example',
+            'i.e.': 'that is',
+            'LLC': 'Limited Liability Company',
+            'Inc.': 'Incorporated',
+            'Corp.': 'Corporation',
+            'Ltd.': 'Limited',
+            '&': 'and',
+            '%': 'percent',
+            '$': 'dollars',
+            '@': 'at'
+        };
+
+        let processedText = text;
+        Object.keys(replacements).forEach(abbr => {
+            const regex = new RegExp('\\b' + abbr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'gi');
+            processedText = processedText.replace(regex, replacements[abbr]);
+        });
+
+        return processedText;
+    }
+
+    static splitLongText(text, maxLength = 200) {
+        // Split long text into chunks at sentence boundaries
+        const sentences = text.match(/[^\.!?]+[\.!?]+/g) || [text];
+        const chunks = [];
+        let currentChunk = '';
+
+        sentences.forEach(sentence => {
+            if ((currentChunk + sentence).length <= maxLength) {
+                currentChunk += sentence;
+            } else {
+                if (currentChunk) {
+                    chunks.push(currentChunk.trim());
+                }
+                currentChunk = sentence;
+            }
+        });
+
+        if (currentChunk) {
+            chunks.push(currentChunk.trim());
+        }
+
+        return chunks;
+    }
+
+    static getVoicesByLanguage(voices, languageCode) {
+        return voices.filter(voice => voice.lang.startsWith(languageCode));
+    }
+
+    static getBestVoiceForLanguage(voices, languageCode, preferFemale = false) {
+        const languageVoices = this.getVoicesByLanguage(voices, languageCode);
+        
+        if (languageVoices.length === 0) {
+            return null;
+        }
+
+        // Prefer default voice
+        const defaultVoice = languageVoices.find(voice => voice.default);
+        if (defaultVoice) {
+            return defaultVoice;
+        }
+
+        // Filter by gender preference if specified
+        if (preferFemale) {
+            const femaleVoices = languageVoices.filter(voice => 
+                voice.name.toLowerCase().includes('female') || 
+                voice.name.toLowerCase().includes('woman') ||
+                voice.name.toLowerCase().includes('sara') ||
+                voice.name.toLowerCase().includes('alice')
+            );
+            if (femaleVoices.length > 0) {
+                return femaleVoices[0];
+            }
+        }
+
+        // Return first available voice
+        return languageVoices[0];
     }
 }
 
