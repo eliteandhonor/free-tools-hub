@@ -7,6 +7,13 @@
 - Domain name with SSL certificate
 - GZIP compression enabled
 
+### Generating SRI Hashes
+Use the following command to create a SHA-384 integrity hash for any CDN asset:
+```
+curl -sL <URL> | openssl dgst -sha384 -binary | openssl base64 -A
+```
+Add the resulting value to the `integrity` attribute of the `<link>` or `<script>` tag and include `crossorigin="anonymous"`.
+
 ### Deployment Steps
 
 1. **Upload Files**
