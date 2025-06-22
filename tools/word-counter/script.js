@@ -160,7 +160,8 @@ class WordCounter {
         // Update main counters
         document.getElementById('word-count').textContent = stats.words;
         document.getElementById('char-count').textContent = stats.characters;
-        document.getElementById('char-no-spaces-count').textContent = stats.charactersNoSpaces;
+        // FIX: Correct ID for Characters (no spaces)
+        document.getElementById('char-count-no-spaces').textContent = stats.charactersNoSpaces;
         document.getElementById('paragraph-count').textContent = stats.paragraphs;
         document.getElementById('sentence-count').textContent = stats.sentences;
         document.getElementById('line-count').textContent = stats.lines;
@@ -168,8 +169,8 @@ class WordCounter {
         // Update additional stats
         document.getElementById('avg-words-per-sentence').textContent = stats.avgWordsPerSentence;
         document.getElementById('avg-chars-per-word').textContent = stats.avgCharsPerWord;
-        document.getElementById('longest-word').textContent = stats.longestWord;
-        document.getElementById('most-frequent-word').textContent = stats.mostFrequentWord;
+        document.getElementById('longest-word').textContent = stats.longestWord || '-';
+        document.getElementById('most-frequent-word').textContent = stats.mostFrequentWord || '-';
         
         // Update reading time if enabled
         if (this.settings.showReadingTime) {
