@@ -12,19 +12,18 @@ class CharacterCounter {
     bindEvents() {
         // Get DOM elements
         this.textInput = document.getElementById('text-input');
-        this.clearBtn = document.getElementById('clear-btn');
-        this.copyBtn = document.getElementById('copy-btn');
+        this.clearBtn = document.querySelector('.clear-btn');
+        this.copyBtn = document.querySelector('.copy-btn');
         this.pasteBtn = document.getElementById('paste-btn');
-        this.fileInput = document.getElementById('file-input');
-        this.fileUploadBtn = document.getElementById('file-upload-btn');
+        this.fileInput = document.getElementById('file-upload');
         
         // Result elements
-        this.charactersTotal = document.getElementById('characters-total');
-        this.charactersNoSpaces = document.getElementById('characters-no-spaces');
-        this.wordsCount = document.getElementById('words-count');
-        this.sentencesCount = document.getElementById('sentences-count');
-        this.paragraphsCount = document.getElementById('paragraphs-count');
-        this.linesCount = document.getElementById('lines-count');
+        this.charactersTotal = document.getElementById('char-count');
+        this.charactersNoSpaces = document.getElementById('char-no-spaces');
+        this.wordsCount = document.getElementById('word-count');
+        this.sentencesCount = document.getElementById('sentence-count');
+        this.paragraphsCount = document.getElementById('paragraph-count');
+        this.linesCount = document.getElementById('line-count');
         this.readingTime = document.getElementById('reading-time');
         this.speakingTime = document.getElementById('speaking-time');
         
