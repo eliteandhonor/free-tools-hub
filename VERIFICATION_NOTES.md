@@ -48,3 +48,4 @@ The verification script may show "missing tools" due to:
 - Added trailing newline to 13 `script.js` files: age-calculator, hex-rgb-converter, keyword-density-checker, logo-generator, meta-tag-generator, password-generator, robots-txt-generator, seo-analyzer, serp-preview, sitemap-generator, text-case-converter, url-encoder-decoder, uuid-generator
 
 - Appended newline to data/tools-config.json for consistent formatting and to enforce the rule that JSON files end with a newline at EOF
+- Updated `.csslintrc` to remove `known-properties` from the CSS errors list, allowing custom properties like `gap` and `backdrop-filter`
