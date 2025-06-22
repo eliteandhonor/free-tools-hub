@@ -725,14 +725,8 @@ ${analysis.recommendations.map(rec => `- ${rec}`).join('\n')}
         const text = document.getElementById('text-input').value;
         const stats = this.analyzeText(text);
         
-        const statsText = `Text Statistics:
-Words: ${stats.words}
-Characters: ${stats.characters}
-Characters (no spaces): ${stats.charactersNoSpaces}
-Sentences: ${stats.sentences}
-Paragraphs: ${stats.paragraphs}
-Lines: ${stats.lines}
-Reading time: ${this.calculateReadingTime(stats.words)}`;
+        // Improved formatting and more stats
+        const statsText = `Text Statistics\n=================\n\nWords: ${stats.words}\nCharacters: ${stats.characters}\nCharacters (no spaces): ${stats.charactersNoSpaces}\nSentences: ${stats.sentences}\nParagraphs: ${stats.paragraphs}\nLines: ${stats.lines}\nAverage words per sentence: ${stats.avgWordsPerSentence}\nAverage characters per word: ${stats.avgCharsPerWord}\nLongest word: ${stats.longestWord}\nMost frequent word: ${stats.mostFrequentWord}\nReading time: ${this.calculateReadingTime(stats.words)}\nSpeaking time: ${this.calculateSpeakingTime(stats.words)}\nReadability score: ${stats.readabilityScore}\n`;
         
         try {
             await this.copyToClipboard(statsText);
