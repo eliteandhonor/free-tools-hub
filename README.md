@@ -33,6 +33,10 @@ The script automatically installs missing Node dependencies if needed.
 The script lints HTML/CSS assets (ignoring third-party files in `vendor/`) and optionally runs Python checks. Review the output for any warnings.
 Custom lint rules are stored in `.htmlhintrc` and `.csslintrc` at the project root.
 
+### ID Naming Convention
+
+IDs use **camelCase** to make JavaScript hooks predictable. The `.htmlhintrc` file sets `id-class-value` to `"hump"`, and each HTML page disables the rule with `<!--htmlhint id-class-value:false -->` so existing dash-case classes remain valid.
+
 
 ## Sitemap Generation
 
@@ -75,6 +79,12 @@ registering its event listener to avoid errors when the button is absent.
 ## Housekeeping
 
 Removed unused `script_backup.js` from the barcode generator tool.
+- Added `const DEBUG = false` to barcode generator script to silence console logs.
+
+## Formatting
+
+Ensure all HTML and JSON files end with a newline at EOF. The doctor script
+checks for this requirement.
 
 
 ## Testing
