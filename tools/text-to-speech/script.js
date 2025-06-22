@@ -187,43 +187,14 @@ class TextToSpeechConverter {
 
     getLanguageName(code) {
         const languages = {
-            'en': 'English',
-            'es': 'Spanish',
-            'fr': 'French',
-            'de': 'German',
-            'it': 'Italian',
-            'pt': 'Portuguese',
-            'ru': 'Russian',
-            'ja': 'Japanese',
-            'ko': 'Korean',
-            'zh': 'Chinese',
-            'ar': 'Arabic',
-            'hi': 'Hindi',
-            'tr': 'Turkish',
-            'pl': 'Polish',
-            'nl': 'Dutch',
-            'sv': 'Swedish',
-            'da': 'Danish',
-            'no': 'Norwegian',
-            'fi': 'Finnish',
-            'he': 'Hebrew',
-            'th': 'Thai',
-            'vi': 'Vietnamese',
-            'cs': 'Czech',
-            'hu': 'Hungarian',
-            'ro': 'Romanian',
-            'bg': 'Bulgarian',
-            'hr': 'Croatian',
-            'sk': 'Slovak',
-            'sl': 'Slovenian',
-            'et': 'Estonian',
-            'lv': 'Latvian',
-            'lt': 'Lithuanian',
-            'mt': 'Maltese',
-            'ga': 'Irish',
-            'cy': 'Welsh'
+            'en': 'English', 'es': 'Spanish', 'fr': 'French', 'de': 'German', 'it': 'Italian',
+            'pt': 'Portuguese', 'ru': 'Russian', 'ja': 'Japanese', 'ko': 'Korean', 'zh': 'Chinese',
+            'ar': 'Arabic', 'hi': 'Hindi', 'tr': 'Turkish', 'pl': 'Polish', 'nl': 'Dutch',
+            'sv': 'Swedish', 'da': 'Danish', 'no': 'Norwegian', 'fi': 'Finnish', 'he': 'Hebrew',
+            'th': 'Thai', 'vi': 'Vietnamese', 'cs': 'Czech', 'hu': 'Hungarian', 'ro': 'Romanian',
+            'bg': 'Bulgarian', 'hr': 'Croatian', 'sk': 'Slovak', 'sl': 'Slovenian', 'et': 'Estonian',
+            'lv': 'Latvian', 'lt': 'Lithuanian', 'mt': 'Maltese', 'ga': 'Irish', 'cy': 'Welsh'
         };
-        
         return languages[code] || code.toUpperCase();
     }
 
@@ -407,104 +378,6 @@ function clearText() {
 function loadExample(type) {
     if (window.ttsConverter) {
         window.ttsConverter.loadExample(type);
-    }
-}
-
-// Utility class for advanced speech features
-class SpeechUtilities {
-    static estimateReadingTime(text, wordsPerMinute = 150) {
-        const words = text.trim().split(/\s+/).length;
-        const minutes = words / wordsPerMinute;
-        return Math.ceil(minutes * 60); // Return seconds
-    }
-
-    static preprocessText(text) {
-        // Replace common abbreviations with full words for better pronunciation
-        const replacements = {
-            'Dr.': 'Doctor',
-            'Mr.': 'Mister',
-            'Mrs.': 'Missus',
-            'Ms.': 'Miss',
-            'Prof.': 'Professor',
-            'vs.': 'versus',
-            'etc.': 'et cetera',
-            'e.g.': 'for example',
-            'i.e.': 'that is',
-            'LLC': 'Limited Liability Company',
-            'Inc.': 'Incorporated',
-            'Corp.': 'Corporation',
-            'Ltd.': 'Limited',
-            '&': 'and',
-            '%': 'percent',
-            '$': 'dollars',
-            '@': 'at'
-        };
-
-        let processedText = text;
-        Object.keys(replacements).forEach(abbr => {
-            const regex = new RegExp('\\b' + abbr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'gi');
-            processedText = processedText.replace(regex, replacements[abbr]);
-        });
-
-        return processedText;
-    }
-
-    static splitLongText(text, maxLength = 200) {
-        // Split long text into chunks at sentence boundaries
-        const sentences = text.match(/[^\.!?]+[\.!?]+/g) || [text];
-        const chunks = [];
-        let currentChunk = '';
-
-        sentences.forEach(sentence => {
-            if ((currentChunk + sentence).length <= maxLength) {
-                currentChunk += sentence;
-            } else {
-                if (currentChunk) {
-                    chunks.push(currentChunk.trim());
-                }
-                currentChunk = sentence;
-            }
-        });
-
-        if (currentChunk) {
-            chunks.push(currentChunk.trim());
-        }
-
-        return chunks;
-    }
-
-    static getVoicesByLanguage(voices, languageCode) {
-        return voices.filter(voice => voice.lang.startsWith(languageCode));
-    }
-
-    static getBestVoiceForLanguage(voices, languageCode, preferFemale = false) {
-        const languageVoices = this.getVoicesByLanguage(voices, languageCode);
-        
-        if (languageVoices.length === 0) {
-            return null;
-        }
-
-        // Prefer default voice
-        const defaultVoice = languageVoices.find(voice => voice.default);
-        if (defaultVoice) {
-            return defaultVoice;
-        }
-
-        // Filter by gender preference if specified
-        if (preferFemale) {
-            const femaleVoices = languageVoices.filter(voice => 
-                voice.name.toLowerCase().includes('female') || 
-                voice.name.toLowerCase().includes('woman') ||
-                voice.name.toLowerCase().includes('sara') ||
-                voice.name.toLowerCase().includes('alice')
-            );
-            if (femaleVoices.length > 0) {
-                return femaleVoices[0];
-            }
-        }
-
-        // Return first available voice
-        return languageVoices[0];
     }
 }
 
