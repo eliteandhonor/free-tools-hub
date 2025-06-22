@@ -141,10 +141,6 @@
                         <i class="fas fa-eraser"></i>
                         Clear
                     </button>
-                    <button class="btn btn-secondary copy-btn" data-target="#text-input">
-                        <i class="fas fa-copy"></i>
-                        Copy Input
-                    </button>
                     <button id="paste-btn" class="btn btn-secondary">
                         <i class="fas fa-paste"></i>
                         Paste
@@ -153,7 +149,18 @@
                         <i class="fas fa-upload"></i>
                         Upload File
                     </label>
-                    <input type="file" id="file-upload" accept=".txt,.md" class="visually-hidden" aria-label="Upload text file for case conversion">
+                </div>
+                
+                <!-- Copy Actions -->
+                <div class="quick-actions">
+                    <button class="btn btn-secondary copy-btn" data-target="#text-input">
+                        <i class="fas fa-copy"></i>
+                        Copy Input
+                    </button>
+                    <button class="btn btn-secondary copy-output-btn" data-target="#output-text">
+                        <i class="fas fa-copy"></i>
+                        Copy Output
+                    </button>
                 </div>
                 
                 <!-- Case Conversion Options -->

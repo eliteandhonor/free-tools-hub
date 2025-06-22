@@ -116,22 +116,24 @@ class TextCaseConverter {
         });
 
         // Utility buttons
-        const copyBtn = document.querySelector('.copy-btn');
-        if (copyBtn) {
-            copyBtn.addEventListener('click', () => {
-                const targetSelector = copyBtn.getAttribute('data-target');
+        document.querySelectorAll('.copy-btn, .copy-output-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetSelector = btn.getAttribute('data-target');
                 if (targetSelector) {
                     const targetElement = document.querySelector(targetSelector);
                     if (targetElement && targetElement.value) {
                         navigator.clipboard.writeText(targetElement.value).then(() => {
-                            this.showSuccess('Input copied to clipboard!');
+                            const isCopyInput = btn.classList.contains('copy-btn');
+                            this.showSuccess(`${isCopyInput ? 'Input' : 'Output'} copied to clipboard!`);
                         }).catch(err => {
                             this.showError('Failed to copy text');
                         });
+                    } else if (targetElement && !targetElement.value.trim()) {
+                        this.showWarning(`No ${btn.classList.contains('copy-btn') ? 'input' : 'output'} text to copy`);
                     }
                 }
             });
-        }
+        });
 
         document.querySelector('.clear-btn')?.addEventListener('click', () => this.clearText());
         document.getElementById('paste-btn')?.addEventListener('click', () => this.handlePaste());
@@ -445,6 +447,13 @@ class TextCaseConverter {
             const statsSection = document.getElementById('text-stats');
             if (statsSection && statsSection.classList.contains('d-none')) {
                 statsSection.classList.remove('d-none');
+            }
+            
+            // Add text to the results container as well for reference
+            const resultsContainer = document.getElementById('results-container');
+            if (resultsContainer) {
+                const truncatedText = text.length > 250 ? `${text.substring(0, 250)}...` : text;
+                resultsContainer.innerHTML = `<div class="result-preview">${truncatedText}</div>`;
             }
             
             this.updateTextStats();
@@ -839,6 +848,18 @@ class TextCaseConverter {
         
         if (textInput) textInput.value = '';
         if (outputText) outputText.value = '';
+        
+        // Clear results container
+        const resultsContainer = document.getElementById('results-container');
+        if (resultsContainer) {
+            resultsContainer.innerHTML = '';
+        }
+        
+        // Hide the conversion-results section
+        const resultsSection = document.getElementById('conversion-results');
+        if (resultsSection) {
+            resultsSection.classList.add('d-none');
+        }
         
         this.updateTextStats();
         this.updateWordList();
